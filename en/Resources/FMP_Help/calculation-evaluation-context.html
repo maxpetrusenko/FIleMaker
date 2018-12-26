@@ -1,0 +1,864 @@
+<!DOCTYPE html ><html xml:lang="en" lang="en" data-highlight-require-whitespace="false" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- saved from url=(0016)http://localhost -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="keywords" content="TO, TOG, table occurrence, table occurrence group" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>Choosing the evaluation context for a calculation field</title><link rel="Prev" href="language-indexing-sorting.html" title="Previous" /><link rel="Next" href="specify-calculation.html" title="Next" /><link rel="StyleSheet" href="css/non_toc.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/skin.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/social.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" /><!--[if IE 7]><link rel="StyleSheet" href="css/non_toc_IE7.css" type="text/css" media="all" /><![endif]--><link rel="StyleSheet" href="css/print.css" type="text/css" media="print" /><script type="text/javascript">
+    'use strict';
+
+    var redirect_url, page_hash;
+
+    if ((window === window.top) && (window.navigator.userAgent.indexOf('bot/') === -1)) {
+        // Redirect
+        //
+        redirect_url = "../index.html#page/FMP_Help/calculation-evaluation-context.html";
+        if (window.document.location.hash.length > 1) {
+            // Sanitize and append it
+            //
+            page_hash = window.document.location.hash.substring(1);
+            page_hash = page_hash.replace(/[\\><:;"]|%5C|%3C|%3E|%3A|%3B|%22/gi, '');
+            redirect_url += '#' + page_hash;
+        }
+        window.document.location.replace(redirect_url);
+    }
+</script><script type="text/javascript" src="scripts/common.js"></script><script type="text/javascript" src="scripts/page.js"></script><script type="text/javascript" src="scripts/search-client.js"></script><script type="text/javascript" src="scripts/unidata.js"></script><script type="text/javascript" src="scripts/unibreak.js"></script><script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-15064788-14', 'auto');
+       ga('set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('send', 'pageview');
+       ga('create', 'UA-15064788-10', 'auto', 'globalProperty');
+       ga('globalProperty.set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('globalProperty.send', 'pageview');</script><script type="text/javascript"><!--
+    //FMI - tracking events for GA
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", function AddGaqPush() {
+        var links = document.getElementsByTagName("a");
+        for (var i=0; i < links.length; i++)
+        {
+            if (links[i].href.indexOf("page=help_zip") !== -1) { 
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Download', 'ZIP', '');");
+            } else if (links[i].href.indexOf("documentation") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Documentation Page', '');");
+            } else if (links[i].href.indexOf("page=doc_") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Document', '');");
+            } else if (links[i].href.indexOf("page=helphome_support") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Support', '');");
+            } else if (links[i].href.indexOf("page=feedback") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Feedback', location.href, '');");
+            }
+        }
+      }
+      , false)
+    }
+    // --></script><style type="text/css">
+/*FMI CSS*/
+      <!--
+/* General */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+	line-height: 170%;
+	background-color: rgb(245, 245, 245);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+img.Default {
+	vertical-align: text-bottom;
+}
+
+/* Page */
+div.feedbacklink
+{
+	margin:2em 0 0;
+	font-size:90%;
+	border-top:1px solid #bfbfbf;
+	padding:8px 12px 8px 12px;
+	color:#8d8d8d
+}
+
+.code_pre_wrap {
+	white-space: pre-wrap;
+}
+
+a:link .g-glosslink, a:visited .g-glosslink
+{
+	color: #000000;
+	text-decoration: underline;
+}
+
+.ti-title
+{
+	display: none;
+}
+
+span.c-code {
+  font-size: 9pt;
+}
+
+/* Page toolbar margin-top under breadcrumb */
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+}
+
+.ww_skin_toolbar {
+	padding-top: 20px;
+}
+
+.ti-title
+{
+	display: none;
+}
+.layout_wide {
+    padding: 0 0px 18px 0px;
+}
+
+div#layout_div.layout_narrow input.ww_skin_search_input,
+div#layout_div.layout_wide div#presentation_div.panel_overlay input.ww_skin_search_input {
+    display: inline;
+	visibility: visible;
+}
+
+div#container_div {
+	max-width: 1200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+	width:100%;
+	margin-top: 12px;
+}
+
+div#layout_div.layout_wide div#container_div {
+    left: 0px;
+    right: 0px;
+}
+
+div#index_content {
+  padding: 12px;
+}
+
+div#search {
+  background-color: white;
+}
+
+div#search {
+  background-color: white;
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+
+/* Search */
+body#searchBody {
+	background-color: transparent;
+}
+
+button#back_button {
+  float: left;
+  background: none;
+  background-image: url('../images/back_grey.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  border: 0;
+  text-decoration: none;
+  -webkit-apperance: none;
+  outline: 0;
+  text-display: none;
+  width: 20px;
+  height: 30px;
+  color: rgba(0,0,0,0);
+}
+
+button#back_button:hover {
+    cursor: pointer;
+	background-image: url('../images/back.png');
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+#search-input-text {
+  width: 50%;
+  background: #fff url('../images/search-50.png');
+  margin: 0;
+padding: 2px 0 2px 30px;
+height: 25px;
+background-color: #fff;
+background-size: 15px 15px;
+background-position: 5px 7px;
+background-repeat: no-repeat;
+font-size: 1.2em;
+border: 1px solid rgba(233,233,233,1);
+-webkit-appearance: none;
+border-radius: 3px;
+}
+
+#search-button {
+display: none;	/* original value: inline-block;*/
+overflow: hidden;
+width: 67px;
+height: 31px;
+color: white;
+background-image:linear-gradient(to bottom, #1681c3, #1066a1);
+border-radius: 0 4px 4px 0;
+border: 0px;
+font-size: 1em;
+padding: 3px 6px 3px 6px;
+position: absolute;
+}
+
+#search-results-container {
+  padding: 0.5em 0.5em;
+}
+
+.search-result-title {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.search-result-title > a {
+  color: rgb(67,114,255);
+  text-decoration: none;
+}
+
+.search-result-title > a:active {
+  color: rgb(67,114,255);
+}
+
+.search-result-title > a:visited {
+  color: rgb(67,114,255);
+}
+
+.search-result-summary {
+  padding-top: 4px;
+}
+
+.search-result-highlight{
+	padding:2px;
+	margin:-2px;
+	background-color: #ffffc7;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #ffffc7;
+	padding:2px;
+	margin:-2px;
+}
+
+/*tab size for code snippets - ID Custom */
+.co-code, .co1-code1, ff-funcformat, .ssf-scriptformat{
+	tab-size:3;
+}
+@media only screen and (min-width : 481px) {
+  /*see also "widget" - ID Custom */
+  .sah-seealsohead{
+	float: right;
+	width: 200px;
+	clear: both;
+	margin: 1.6em 0 0 1.8em;
+	padding: 5px 10px;
+	background-color: #F2F2F2;
+  }
+  
+  .sal-seealsolink{
+	float: right;
+	width: 200px;
+	clear: both;
+	background-color: #F2F2F2;
+	margin-top: 0 !important;
+	margin-left: 1.8em;
+	padding: 0 10px 10px;
+	line-height: 120%;
+  }
+}
+/*homepage - ID Custom */
+.welcome {
+  padding-top: 0;
+}
+
+.wol-outlinelinks,
+.wom-outlinemenu {
+  display:flex;
+  flex-wrap:wrap;
+  min-width: 140px;
+}
+.wom-outlinemenu a {
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  font-size: 11pt;
+  width: 40%;
+  background: -moz-linear-gradient(top, #f5f5f5, #fafafa); 
+  background: -webkit-linear-gradient(top,#f5f5f5, #fafafa);
+  background: linear-gradient(to bottom, #f5f5f5, #fafafa);
+  margin: 0 5px 10px 5px;
+}
+.wol-outlinelinks a{
+  font-size: 10pt;
+  width: 28%;
+}
+.wom-outlinemenu a,
+.wol-outlinelinks a{
+  padding: 10px;
+  text-align:center;
+  flex-grow: 1;
+
+}
+.wom-outlinemenu a .h-hyperlink,
+.wol-outlinelinks a .h-hyperlink,
+.wol-outlinelinks a .zh-hyper{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/*Skin.css*/
+a#banner {
+  background-image: url('images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 38px;
+  width: 300px;
+  margin-bottom: -5px;
+  display:block;
+}
+
+.ww_skin_company_logo > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:link:hover, .ww_skin_company_logo > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_name > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:link:hover, .ww_skin_company_name > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_email > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:link:hover, .ww_skin_company_email > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_progress_bar {
+    border: 1px solid #353535;
+}
+
+.ww_skin_progress_segment_complete {
+    background-color: #353535;
+}
+
+.ww_skin {
+	background-size: 600px auto;
+}
+
+.ww_skin_toc {
+    width: 38px;
+    height: 38px;
+    background-position: -306px -32px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_toc:hover {
+    background-position: -378px -32px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_toc {
+    background-position: -451px -32px;
+}
+
+a.ww_skin_toc_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_index {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -128px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_index:hover {
+    background-position: -376px -128px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_index {
+    background-position: -448px -128px;
+}
+
+a.ww_skin_index_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_home {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_home {
+    background-position: -304px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_home:hover {
+    background-position: -376px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_home {
+    background-position: -448px -1376px;
+}
+
+a.ww_skin_home_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_search {
+    height: 38px;
+	background-image: none !important;
+	width: 10px;
+  background-position: -100px -100px;
+  margin-left:3px;
+}
+
+.layout_wide .ww_skin_search{
+  width: 10px;
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_wide .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_narrow .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_search {
+    background-position: -450px -224px;
+}
+
+.ww_skin_globe {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -320px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_globe:hover {
+    background-position: -376px -320px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_globe {
+    background-position: -448px -320px;
+}
+
+a.ww_skin_globe_spacer {
+    background-image: none;
+    width: 24px;
+}
+
+.ww_skin_next {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -416px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_next {
+    background-position: -304px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_next:hover {
+    background-position: -376px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_next {
+    background-position: -448px -416px;
+}
+
+a.ww_skin_next_spacer {
+    display: none;
+}
+
+.layout_narrow a.ww_skin_next_spacer {
+    display: none;
+}
+
+.ww_skin_prev {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -512px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_prev {
+    background-position: -304px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_prev:hover {
+    background-position: -376px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_prev {
+    background-position: -448px -512px;
+}
+
+#toolbar_div {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.ww_skin_toolbar {
+	padding-top: 15px;
+}
+
+.ww_skin_toolbar_button_left {
+	padding-left: 5px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_center {
+    height: 38px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_right {
+	border: none;
+}
+
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+    background: #757575;
+}
+
+.ww_skin_search_form .ww_skin_toolbar_background_selected {
+	display: none !important;
+}
+
+.ww_skin_toolbar_left_background {
+    margin-left: 0;
+}
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+	background: transparent;
+}
+
+.ww_skin_toolbar_background_default {
+	background: transparent;
+}
+
+.ww_skin_search_input {
+  color: #525252;
+  height: 20px;
+  font-size: 13px;
+  margin: 5px 0 0 18px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  background-image: url('images/search-50.png');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding: 3px;
+  text-indent: 20px;
+  width: 250px;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_toc_container {
+	background-color: transparent;
+	border: none;
+}
+
+.ww_skin_toc_level_1 > li > div {
+    padding-left: 23px;
+}
+
+.ww_skin_toc_level_2 > li > div {
+    padding-left: 43px;
+}
+
+.ww_skin_toc_level_3 > li > div {
+    padding-left: 63px;
+}
+
+.ww_skin_toc_level_4 > li > div {
+    padding-left: 83px;
+}
+
+.ww_skin_toc_level_5 > li > div {
+    padding-left: 103px;
+}
+
+.ww_skin_toc_level_6 > li > div {
+    padding-left: 123px;
+}
+
+.ww_skin_toc_level_7 > li > div {
+    padding-left: 138px;
+}
+
+.ww_skin_toc_entry {
+    font-family: Helvetica, Arial, sans-serif;
+    border-width: 0px 0 0 0;
+    margin: 0;
+    padding: 8px 20px 8px 0;
+	line-height: 15px;
+}
+
+.ww_skin_toc_level_1:first-child > li:first-child > .ww_skin_toc_entry:first-child {
+    border-width: 0;
+}
+
+.ww_skin_toc_entry:hover {
+    background: #E0E0E0;
+}
+
+.ww_skin_toc_entry > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.ww_skin_toc_entry > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry:hover > a {
+    color: black;
+}
+
+.ww_skin_toc_entry:hover > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+    background-color: rgb(67,114,255);
+}
+
+.ww_skin_toc_dropdown {
+    margin: 2px 4px 0 0px;
+}
+
+.ww_skin_index_link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_panel_frame {
+    padding: 9px 0 0 0;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_panel_content {
+  border-width: 0px;
+  background-color: #fcfcfc;
+}
+
+.ww_skin_lightbox_frame {
+    top: 0;
+    left: 0;
+}
+
+.ww_skin_page_body {
+    padding: 30px 30px;
+	background-color: #fff;
+}
+
+.ww_skin_breadcrumbs {
+    margin: -6px -6px 0 -8px;
+    padding: 4px 24px 4px 12px;
+    color: #a4a4a4;
+    font-weight: normal;
+	max-width: 85%;
+	background: transparent;
+}
+
+.ww_skin_breadcrumbs a:link {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:visited {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:link:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_breadcrumbs a:visited:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+#wwconnect_header {
+  margin-bottom: 20px;
+}
+
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_toc_entry{
+	border: none;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+	background: rgb(67,114,255);
+}
+
+
+/* medium */
+@media only screen
+and (max-width : 769px) {
+  .ww_skin_search_input {
+    width: 170px;
+}
+
+}
+
+/* small */
+@media only screen
+and (max-width: 535px) {
+  .ww_skin_search_input {
+    width: 150px;
+  }
+
+a#banner{
+  height: 30px;
+  width: 160px;
+  margin-left: 15px;
+}
+
+div#container_div {
+  margin-top: 5px;
+}
+
+table.ww_skin_toolbar {
+  padding-top: 10px;
+}
+
+}
+
+/*phone*/
+@media only screen
+and (max-width : 435px) {
+
+  a#banner {
+    width: 129px;
+  }
+
+  .ww_skin_search_input {
+    width: 130px;
+  }
+   
+  body { 
+    overflow-x: hidden;
+  }
+  
+  .layout_narrow {
+    overflow-x: hidden;
+  }
+  
+  #presentation_div {
+    overflow-x:hidden;
+  }
+  
+  #page_div {
+    overflow-x:hidden;
+  }
+    div#page_div {
+    overflow-x: hidden;
+  }
+  html {
+   overflow-x: hidden;
+  }
+  body.ww_skin_page_body {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  
+}
+--></style></head><body id="pN6vrgkvL5S0GRAbPEaUX6GQ" class="ww_skin_page_body" onload="Page.OnLoad('../index.html#page/FMP_Help/calculation-evaluation-context.html');"><header id="wwconnect_header"><div class="ww_skin_page_toolbar"><a class="ww_behavior_print ww_skin ww_skin_print" title="Print" href="#">&nbsp;</a></div></header><h1 id="ww1098829" class="hx3-head3notoc">Choosing the evaluation context for a calculation field</h1><p id="ww1098832" class="b-body">Context is the table in the 
+    <a href="../FMP_Help/glossary.html#ww1028051"
+   
+     title="Glossary"
+    ><span class="g-glosslink">relationships graph</span></a> from which a 
+    <a href="../FMP_Help/glossary.html#ww1028048"
+   
+     title="Glossary"
+    ><span class="g-glosslink">relationship</span></a> is evaluated. When you define a calculation in a source table, and the table has more than one occurrence in the relationships graph, you must specify the context from which you want the calculation to evaluate.</p><p id="ww1027579" class="b-body">Each context choice represents a different table in the relationships graph, and a different perspective into your data; when you choose the context for a calculation, you tell FileMaker&nbsp;Pro Advanced to evaluate the calculation starting from that table occurrence. Because each context choice represents a different association of related tables and fields, choosing the evaluation context for your calculation is critical to getting the results you expect.</p><h2 id="ww1027580" class="hs1-headsub1">An example of how context changes the results of a calculation</h2><p id="ww1027581" class="b-body">You have a database with two source tables named ColorsSourceTable and ShapesSourceTable. The tables have these properties:</p><p id="ww1027606" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 467.47584000000006pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 115.66008pt"><p id="ww1027584" class="th-tablehead"><span>Source table name</span></p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 245.90808pt"><p id="ww1027586" class="th-tablehead">Table occurrences in relationships graph</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 105.90768pt"><p id="ww1027588" class="th-tablehead">Field names</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027590" class="td-tabledata">ColorsSourceTable</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027592" class="td-tabledata">ColorsTable&nbsp;1, ColorsTable&nbsp;2</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027594" class="td-tabledata">Color</p><p id="ww1027595" class="td-tabledata">Style Number</p><p id="ww1027596" class="td-tabledata">Weight</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027598" class="td-tabledata">ShapesSourceTable</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027600" class="td-tabledata">ShapesTable</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027602" class="td-tabledata">Shape</p><p id="ww1027603" class="td-tabledata">Style Number</p><p id="ww1027604" class="td-tabledata">Weight</p><p id="ww1027605" class="td-tabledata">Price</p></td></tr></table></div><p id="ww1027607" class="b-body">The tables are related as follows:</p><div class="ww_skin_page_overflow"><p id="ww1027611" class="gr-graphicanchor"><img class="Default" src="../FMP_Help/images/calculation_context4.gif" width="100%" style="display: block; left: 0.0pt; max-height: 163px; max-width: 174px; top: 0.0pt" alt="Example of two tables having different relationships to a third table" /></p></div><p id="ww1027612" class="b-body">There are two separate relationships:</p><p id="ww1027613" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>In the first, ColorsTable&nbsp;1 and ShapesTable are related using the Style&nbsp;Number fields.</p><p id="ww1027614" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>In the second, ColorsTable&nbsp;2 and ShapesTable are related using the Weight fields.</p><p id="ww1027615" class="b-body">Because ColorsTable&nbsp;1 and ColorsTable&nbsp;2 share the same source table, a calculation defined in ColorsSourceTable can be evaluated from the context of either the ColorsTable&nbsp;1 table occurrence or the ColorsTable&nbsp;2 table occurrence.</p><p id="ww1027616" class="b-body">To see how this works, consider the effects of context on two calculation fields in the table ColorsSourceTable. Each calculation field uses the same formula to determine the sum of prices in the table ShapesSourceTable; the only change is the evaluation context. ShapesSourceTable has three records with these values:</p><p id="ww1027650" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 468.38304pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 127.32696pt"><p id="ww1027619" class="th-tablehead">Shape</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 126.74088pt"><p id="ww1027621" class="th-tablehead">Style Number</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 112.57416pt"><p id="ww1027623" class="th-tablehead">Weight</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 101.74104pt"><p id="ww1027625" class="th-tablehead">Price</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027627" class="td-tabledata">circle</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027629" class="td-tabledata">100</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027631" class="td-tabledata">5</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027633" class="td-tabledata">$2.00</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027635" class="td-tabledata">square</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027637" class="td-tabledata">100</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027639" class="td-tabledata">2</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027641" class="td-tabledata">$6.00</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027643" class="td-tabledata">triangle</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027645" class="td-tabledata">200</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027647" class="td-tabledata">2</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027649" class="td-tabledata">$9.00</p></td></tr></table></div><p id="ww1027651" class="b-body">A single record in the ColorsSourceTable has these values:</p><p id="ww1027665" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 366.642pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 127.32696pt"><p id="ww1027654" class="th-tablehead">Color</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 126.74088pt"><p id="ww1027656" class="th-tablehead">Style Number</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 112.57416pt"><p id="ww1027658" class="th-tablehead">Weight</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027660" class="td-tabledata">red</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027662" class="td-tabledata">100</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027664" class="td-tabledata">2</p></td></tr></table></div><p id="ww1027667" class="b-body">Because the relationships use different 
+    <a href="../FMP_Help/glossary.html#ww1027907"
+   
+     title="Glossary"
+    ><span class="g-glosslink">match fields</span></a>, each relationship returns a different set of related records.</p><h2 id="ww1027668" class="hs1-headsub1">Calculation result 1</h2><p id="ww1027669" class="b-body">The relationship between ColorsTable&nbsp;1 and ShapesTable, which uses Style Number as the match field, returns these two records:</p><p id="ww1027695" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 468.38304pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 127.32696pt"><p id="ww1027672" class="th-tablehead">Shape</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 126.74088pt"><p id="ww1027674" class="th-tablehead">Style Number</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 112.57416pt"><p id="ww1027676" class="th-tablehead">Weight</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 101.74104pt"><p id="ww1027678" class="th-tablehead">Price</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027680" class="td-tabledata">circle</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027682" class="td-tabledata">100</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027684" class="td-tabledata">5</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027686" class="td-tabledata">$2.00</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027688" class="td-tabledata">square</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027690" class="td-tabledata">100</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027692" class="td-tabledata">2</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027694" class="td-tabledata">$6.00</p></td></tr></table></div><p id="ww1027696" class="b-body">A calculation field defined in the ColorsSourceTable with the formula <code class="c-code code_pre_wrap">Sum(ShapesTable::Price)</code> that is set to evaluate from the context of the table ColorsTable&nbsp;1 returns the value $8.00.</p><h2 id="ww1027697" class="hs1-headsub1">Calculation result 2</h2><p id="ww1027698" class="b-body">The relationship between ColorsTable&nbsp;2 and ShapesTable, which uses Weight as the match field, returns these two records:</p><p id="ww1027724" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 468.38304pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 127.32696pt"><p id="ww1027701" class="th-tablehead">Shape</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 126.74088pt"><p id="ww1027703" class="th-tablehead">Style Number</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 112.57416pt"><p id="ww1027705" class="th-tablehead">Weight</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 101.74104pt"><p id="ww1027707" class="th-tablehead">Price</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027709" class="td-tabledata">square</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027711" class="td-tabledata">100</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027713" class="td-tabledata">2</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027715" class="td-tabledata">$6.00</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027717" class="td-tabledata">triangle</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027719" class="td-tabledata">200</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027721" class="td-tabledata">2</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1027723" class="td-tabledata">$9.00</p></td></tr></table></div><p id="ww1027725" class="b-body">A second calculation field defined in the ColorsSourceTable with the same formula, <code class="c-code code_pre_wrap">Sum(ShapesTable::Price)</code>, but set to evaluate from the context of the table ColorsTable&nbsp;2 returns the value $15.00.</p><h2 id="ww1027726" class="hs1n-headsub1notes"><span>Notes</span>&nbsp;</h2><p id="ww1027727" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>When constructing a calculation formula, evaluation context determines which tables appear as related and unrelated in the Specify Calculation dialog box.</p><p id="ww1027728" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>A calculation formula can use global fields from unrelated tables. These are the only fields that can be used from unrelated tables.</p><h2 id="ww1027729" class="rh-relatedhead"><span>Related topics</span>&nbsp;</h2><p id="ww1098868" class="rt-relatedtopic">
+    <a href="../FMP_Help/related-tables-files.html#ww1137545"
+   
+     title="Working with related tables"
+    ><span class="zh-hyper">Working with related tables</span></a></p><p id="ww1098872" class="rt-relatedtopic">
+    <a href="../FMP_Help/calculation-fields.html#ww1166392"
+   
+     title="Defining calculation fields"
+    ><span class="zh-hyper">Defining calculation fields</span></a></p><p id="ww1098876" class="rt-relatedtopic">
+    <a href="../FMP_Help/formulas.html#ww1030710"
+   
+     title="About formulas"
+    ><span class="zh-hyper">About formulas</span></a></p><!-- FMI - Feedback Link --><div class="feedbacklink">Was this topic helpful? <a href="https://www.filemaker.com/redirects/fmp18_admin.html?page=feedback&amp;lang=en" target="external_window">Send feedback.</a></div><footer><!-- Related Topics --><!--                --><!-- Disqus --><!--        --><!-- Google Translation --><!--                    --><br /></footer></body></html>

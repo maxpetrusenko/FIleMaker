@@ -1,0 +1,27 @@
+var pairs =
+{
+"lower":{"returns":1,"text":1,"abcd":1,"bill":1}
+,"returns":{"all":1,"abcd":1,"history":1,"bill":1}
+,"all":{"letters":1}
+,"letters":{"text":1}
+,"text":{"lowercase":1,"text":1,"-any":1,"expression":1,"field":1,"filemaker":1,"formatting":1}
+,"lowercase":{"lower":1}
+,"-any":{"text":1}
+,"expression":{"text":1}
+,"field":{"text":1,"displays":1,"history":1}
+,"filemaker":{"pro":1}
+,"pro":{"6.0":1}
+,"6.0":{"earlier":1}
+,"earlier":{"change":1}
+,"change":{"field":1}
+,"displays":{"modifying":1}
+,"modifying":{"contents":1}
+,"contents":{"text":1}
+,"formatting":{"functions":1}
+,"functions":{"lower":1}
+,"abcd":{"returns":1,"lower":1}
+,"history":{"field":1,"lower":1}
+,"bill":{"overdue":1}
+,"overdue":{"returns":1}
+}
+;Search.control.loadWordPairs(pairs);

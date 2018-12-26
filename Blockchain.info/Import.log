@@ -1,0 +1,15 @@
+﻿Timestamp	Filename	Error	Message
+2018-12-17 17:12:08.876 -0800	BlockchainInfo.fmp12	0	Import of script steps from clipboard started
+2018-12-17 17:12:08.877 -0800	InsertTransaction	0	script steps imported : 1
+2018-12-17 17:12:08.877 -0800	BlockchainInfo.fmp12	0	Import completed
+2018-12-17 17:16:20.211 -0800	BlockchainInfo.fmp12	0	Import of script steps from clipboard started
+2018-12-17 17:16:20.214 -0800	LastBlock	0	script steps imported : 3
+2018-12-17 17:16:20.214 -0800	BlockchainInfo.fmp12	0	Import completed
+2018-12-17 17:22:46.079 -0800	BlockchainInfo.fmp12	0	Import of script steps from clipboard started
+2018-12-17 17:22:46.081 -0800	Pool	0	script steps imported : 3
+2018-12-17 17:22:46.082 -0800	BlockchainInfo.fmp12	0	Import completed
+2018-12-19 12:50:01.561 -0800	BlockchainInfo.fmp12	0	Import of script steps from clipboard started
+2018-12-19 12:50:01.567 -0800	New Script::6::Set Variable	106	Table referred to in the calculation “$_data & Measures::write_to_json_ms & ","” is missing.
+2018-12-19 12:50:01.568 -0800	New Script::10::Set Field	102	Field “G_WRITE_TO_JSON” missing.
+2018-12-19 12:50:01.569 -0800	New Script	0	script steps imported : 14
+2018-12-19 12:50:01.569 -0800	BlockchainInfo.fmp12	0	Import completed

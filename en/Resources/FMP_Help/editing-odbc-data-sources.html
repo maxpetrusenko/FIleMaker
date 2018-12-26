@@ -1,0 +1,940 @@
+<!DOCTYPE html ><html xml:lang="en" lang="en" data-highlight-require-whitespace="false" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- saved from url=(0016)http://localhost -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>Editing ODBC data sources</title><link rel="Prev" href="editing-external-data-sources.html" title="Previous" /><link rel="Next" href="odbc-single-sign-on.html" title="Next" /><link rel="StyleSheet" href="css/odbc_ess.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/skin.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/social.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" /><!--[if IE 7]><link rel="StyleSheet" href="css/odbc_ess_IE7.css" type="text/css" media="all" /><![endif]--><link rel="StyleSheet" href="css/print.css" type="text/css" media="print" /><script type="text/javascript">
+    'use strict';
+
+    var redirect_url, page_hash;
+
+    if ((window === window.top) && (window.navigator.userAgent.indexOf('bot/') === -1)) {
+        // Redirect
+        //
+        redirect_url = "../index.html#page/FMP_Help/editing-odbc-data-sources.html";
+        if (window.document.location.hash.length > 1) {
+            // Sanitize and append it
+            //
+            page_hash = window.document.location.hash.substring(1);
+            page_hash = page_hash.replace(/[\\><:;"]|%5C|%3C|%3E|%3A|%3B|%22/gi, '');
+            redirect_url += '#' + page_hash;
+        }
+        window.document.location.replace(redirect_url);
+    }
+</script><script type="text/javascript" src="scripts/common.js"></script><script type="text/javascript" src="scripts/page.js"></script><script type="text/javascript" src="scripts/search-client.js"></script><script type="text/javascript" src="scripts/unidata.js"></script><script type="text/javascript" src="scripts/unibreak.js"></script><script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-15064788-14', 'auto');
+       ga('set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('send', 'pageview');
+       ga('create', 'UA-15064788-10', 'auto', 'globalProperty');
+       ga('globalProperty.set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('globalProperty.send', 'pageview');</script><script type="text/javascript"><!--
+    //FMI - tracking events for GA
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", function AddGaqPush() {
+        var links = document.getElementsByTagName("a");
+        for (var i=0; i < links.length; i++)
+        {
+            if (links[i].href.indexOf("page=help_zip") !== -1) { 
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Download', 'ZIP', '');");
+            } else if (links[i].href.indexOf("documentation") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Documentation Page', '');");
+            } else if (links[i].href.indexOf("page=doc_") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Document', '');");
+            } else if (links[i].href.indexOf("page=helphome_support") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Support', '');");
+            } else if (links[i].href.indexOf("page=feedback") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Feedback', location.href, '');");
+            }
+        }
+      }
+      , false)
+    }
+    // --></script><style type="text/css">
+/*FMI CSS*/
+      <!--
+/* General */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+	line-height: 170%;
+	background-color: rgb(245, 245, 245);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+img.Default {
+	vertical-align: text-bottom;
+}
+
+/* Page */
+div.feedbacklink
+{
+	margin:2em 0 0;
+	font-size:90%;
+	border-top:1px solid #bfbfbf;
+	padding:8px 12px 8px 12px;
+	color:#8d8d8d
+}
+
+.code_pre_wrap {
+	white-space: pre-wrap;
+}
+
+a:link .g-glosslink, a:visited .g-glosslink
+{
+	color: #000000;
+	text-decoration: underline;
+}
+
+.ti-title
+{
+	display: none;
+}
+
+span.c-code {
+  font-size: 9pt;
+}
+
+/* Page toolbar margin-top under breadcrumb */
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+}
+
+.ww_skin_toolbar {
+	padding-top: 20px;
+}
+
+.ti-title
+{
+	display: none;
+}
+.layout_wide {
+    padding: 0 0px 18px 0px;
+}
+
+div#layout_div.layout_narrow input.ww_skin_search_input,
+div#layout_div.layout_wide div#presentation_div.panel_overlay input.ww_skin_search_input {
+    display: inline;
+	visibility: visible;
+}
+
+div#container_div {
+	max-width: 1200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+	width:100%;
+	margin-top: 12px;
+}
+
+div#layout_div.layout_wide div#container_div {
+    left: 0px;
+    right: 0px;
+}
+
+div#index_content {
+  padding: 12px;
+}
+
+div#search {
+  background-color: white;
+}
+
+div#search {
+  background-color: white;
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+
+/* Search */
+body#searchBody {
+	background-color: transparent;
+}
+
+button#back_button {
+  float: left;
+  background: none;
+  background-image: url('../images/back_grey.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  border: 0;
+  text-decoration: none;
+  -webkit-apperance: none;
+  outline: 0;
+  text-display: none;
+  width: 20px;
+  height: 30px;
+  color: rgba(0,0,0,0);
+}
+
+button#back_button:hover {
+    cursor: pointer;
+	background-image: url('../images/back.png');
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+#search-input-text {
+  width: 50%;
+  background: #fff url('../images/search-50.png');
+  margin: 0;
+padding: 2px 0 2px 30px;
+height: 25px;
+background-color: #fff;
+background-size: 15px 15px;
+background-position: 5px 7px;
+background-repeat: no-repeat;
+font-size: 1.2em;
+border: 1px solid rgba(233,233,233,1);
+-webkit-appearance: none;
+border-radius: 3px;
+}
+
+#search-button {
+display: none;	/* original value: inline-block;*/
+overflow: hidden;
+width: 67px;
+height: 31px;
+color: white;
+background-image:linear-gradient(to bottom, #1681c3, #1066a1);
+border-radius: 0 4px 4px 0;
+border: 0px;
+font-size: 1em;
+padding: 3px 6px 3px 6px;
+position: absolute;
+}
+
+#search-results-container {
+  padding: 0.5em 0.5em;
+}
+
+.search-result-title {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.search-result-title > a {
+  color: rgb(67,114,255);
+  text-decoration: none;
+}
+
+.search-result-title > a:active {
+  color: rgb(67,114,255);
+}
+
+.search-result-title > a:visited {
+  color: rgb(67,114,255);
+}
+
+.search-result-summary {
+  padding-top: 4px;
+}
+
+.search-result-highlight{
+	padding:2px;
+	margin:-2px;
+	background-color: #ffffc7;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #ffffc7;
+	padding:2px;
+	margin:-2px;
+}
+
+/*tab size for code snippets - ID Custom */
+.co-code, .co1-code1, ff-funcformat, .ssf-scriptformat{
+	tab-size:3;
+}
+@media only screen and (min-width : 481px) {
+  /*see also "widget" - ID Custom */
+  .sah-seealsohead{
+	float: right;
+	width: 200px;
+	clear: both;
+	margin: 1.6em 0 0 1.8em;
+	padding: 5px 10px;
+	background-color: #F2F2F2;
+  }
+  
+  .sal-seealsolink{
+	float: right;
+	width: 200px;
+	clear: both;
+	background-color: #F2F2F2;
+	margin-top: 0 !important;
+	margin-left: 1.8em;
+	padding: 0 10px 10px;
+	line-height: 120%;
+  }
+}
+/*homepage - ID Custom */
+.welcome {
+  padding-top: 0;
+}
+
+.wol-outlinelinks,
+.wom-outlinemenu {
+  display:flex;
+  flex-wrap:wrap;
+  min-width: 140px;
+}
+.wom-outlinemenu a {
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  font-size: 11pt;
+  width: 40%;
+  background: -moz-linear-gradient(top, #f5f5f5, #fafafa); 
+  background: -webkit-linear-gradient(top,#f5f5f5, #fafafa);
+  background: linear-gradient(to bottom, #f5f5f5, #fafafa);
+  margin: 0 5px 10px 5px;
+}
+.wol-outlinelinks a{
+  font-size: 10pt;
+  width: 28%;
+}
+.wom-outlinemenu a,
+.wol-outlinelinks a{
+  padding: 10px;
+  text-align:center;
+  flex-grow: 1;
+
+}
+.wom-outlinemenu a .h-hyperlink,
+.wol-outlinelinks a .h-hyperlink,
+.wol-outlinelinks a .zh-hyper{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/*Skin.css*/
+a#banner {
+  background-image: url('images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 38px;
+  width: 300px;
+  margin-bottom: -5px;
+  display:block;
+}
+
+.ww_skin_company_logo > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:link:hover, .ww_skin_company_logo > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_name > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:link:hover, .ww_skin_company_name > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_email > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:link:hover, .ww_skin_company_email > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_progress_bar {
+    border: 1px solid #353535;
+}
+
+.ww_skin_progress_segment_complete {
+    background-color: #353535;
+}
+
+.ww_skin {
+	background-size: 600px auto;
+}
+
+.ww_skin_toc {
+    width: 38px;
+    height: 38px;
+    background-position: -306px -32px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_toc:hover {
+    background-position: -378px -32px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_toc {
+    background-position: -451px -32px;
+}
+
+a.ww_skin_toc_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_index {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -128px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_index:hover {
+    background-position: -376px -128px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_index {
+    background-position: -448px -128px;
+}
+
+a.ww_skin_index_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_home {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_home {
+    background-position: -304px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_home:hover {
+    background-position: -376px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_home {
+    background-position: -448px -1376px;
+}
+
+a.ww_skin_home_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_search {
+    height: 38px;
+	background-image: none !important;
+	width: 10px;
+  background-position: -100px -100px;
+  margin-left:3px;
+}
+
+.layout_wide .ww_skin_search{
+  width: 10px;
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_wide .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_narrow .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_search {
+    background-position: -450px -224px;
+}
+
+.ww_skin_globe {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -320px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_globe:hover {
+    background-position: -376px -320px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_globe {
+    background-position: -448px -320px;
+}
+
+a.ww_skin_globe_spacer {
+    background-image: none;
+    width: 24px;
+}
+
+.ww_skin_next {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -416px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_next {
+    background-position: -304px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_next:hover {
+    background-position: -376px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_next {
+    background-position: -448px -416px;
+}
+
+a.ww_skin_next_spacer {
+    display: none;
+}
+
+.layout_narrow a.ww_skin_next_spacer {
+    display: none;
+}
+
+.ww_skin_prev {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -512px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_prev {
+    background-position: -304px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_prev:hover {
+    background-position: -376px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_prev {
+    background-position: -448px -512px;
+}
+
+#toolbar_div {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.ww_skin_toolbar {
+	padding-top: 15px;
+}
+
+.ww_skin_toolbar_button_left {
+	padding-left: 5px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_center {
+    height: 38px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_right {
+	border: none;
+}
+
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+    background: #757575;
+}
+
+.ww_skin_search_form .ww_skin_toolbar_background_selected {
+	display: none !important;
+}
+
+.ww_skin_toolbar_left_background {
+    margin-left: 0;
+}
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+	background: transparent;
+}
+
+.ww_skin_toolbar_background_default {
+	background: transparent;
+}
+
+.ww_skin_search_input {
+  color: #525252;
+  height: 20px;
+  font-size: 13px;
+  margin: 5px 0 0 18px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  background-image: url('images/search-50.png');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding: 3px;
+  text-indent: 20px;
+  width: 250px;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_toc_container {
+	background-color: transparent;
+	border: none;
+}
+
+.ww_skin_toc_level_1 > li > div {
+    padding-left: 23px;
+}
+
+.ww_skin_toc_level_2 > li > div {
+    padding-left: 43px;
+}
+
+.ww_skin_toc_level_3 > li > div {
+    padding-left: 63px;
+}
+
+.ww_skin_toc_level_4 > li > div {
+    padding-left: 83px;
+}
+
+.ww_skin_toc_level_5 > li > div {
+    padding-left: 103px;
+}
+
+.ww_skin_toc_level_6 > li > div {
+    padding-left: 123px;
+}
+
+.ww_skin_toc_level_7 > li > div {
+    padding-left: 138px;
+}
+
+.ww_skin_toc_entry {
+    font-family: Helvetica, Arial, sans-serif;
+    border-width: 0px 0 0 0;
+    margin: 0;
+    padding: 8px 20px 8px 0;
+	line-height: 15px;
+}
+
+.ww_skin_toc_level_1:first-child > li:first-child > .ww_skin_toc_entry:first-child {
+    border-width: 0;
+}
+
+.ww_skin_toc_entry:hover {
+    background: #E0E0E0;
+}
+
+.ww_skin_toc_entry > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.ww_skin_toc_entry > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry:hover > a {
+    color: black;
+}
+
+.ww_skin_toc_entry:hover > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+    background-color: rgb(67,114,255);
+}
+
+.ww_skin_toc_dropdown {
+    margin: 2px 4px 0 0px;
+}
+
+.ww_skin_index_link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_panel_frame {
+    padding: 9px 0 0 0;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_panel_content {
+  border-width: 0px;
+  background-color: #fcfcfc;
+}
+
+.ww_skin_lightbox_frame {
+    top: 0;
+    left: 0;
+}
+
+.ww_skin_page_body {
+    padding: 30px 30px;
+	background-color: #fff;
+}
+
+.ww_skin_breadcrumbs {
+    margin: -6px -6px 0 -8px;
+    padding: 4px 24px 4px 12px;
+    color: #a4a4a4;
+    font-weight: normal;
+	max-width: 85%;
+	background: transparent;
+}
+
+.ww_skin_breadcrumbs a:link {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:visited {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:link:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_breadcrumbs a:visited:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+#wwconnect_header {
+  margin-bottom: 20px;
+}
+
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_toc_entry{
+	border: none;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+	background: rgb(67,114,255);
+}
+
+
+/* medium */
+@media only screen
+and (max-width : 769px) {
+  .ww_skin_search_input {
+    width: 170px;
+}
+
+}
+
+/* small */
+@media only screen
+and (max-width: 535px) {
+  .ww_skin_search_input {
+    width: 150px;
+  }
+
+a#banner{
+  height: 30px;
+  width: 160px;
+  margin-left: 15px;
+}
+
+div#container_div {
+  margin-top: 5px;
+}
+
+table.ww_skin_toolbar {
+  padding-top: 10px;
+}
+
+}
+
+/*phone*/
+@media only screen
+and (max-width : 435px) {
+
+  a#banner {
+    width: 129px;
+  }
+
+  .ww_skin_search_input {
+    width: 130px;
+  }
+   
+  body { 
+    overflow-x: hidden;
+  }
+  
+  .layout_narrow {
+    overflow-x: hidden;
+  }
+  
+  #presentation_div {
+    overflow-x:hidden;
+  }
+  
+  #page_div {
+    overflow-x:hidden;
+  }
+    div#page_div {
+    overflow-x: hidden;
+  }
+  html {
+   overflow-x: hidden;
+  }
+  body.ww_skin_page_body {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  
+}
+--></style></head><body id="pu0NVIIk4ze_002bockKczNuXWA" class="ww_skin_page_body" onload="Page.OnLoad('../index.html#page/FMP_Help/editing-odbc-data-sources.html');"><header id="wwconnect_header"><div class="ww_skin_breadcrumbs"><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/external-data-sources.html#wwconnect_header">Accessing external data sources</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/working-with-data-sources.html#wwconnect_header">Working with external data sources</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_current">Editing ODBC data sources</span></div><div class="ww_skin_page_toolbar"><a class="ww_behavior_print ww_skin ww_skin_print" title="Print" href="#">&nbsp;</a></div></header><h1 id="ww1030069" class="h3-head3">Editing ODBC data sources</h1><p id="ww1030072" class="b-body">An 
+    <a href="../FMP_Help/glossary.html#ww1027961"
+   
+     title="Glossary"
+    ><span class="g-glosslink">ODBC</span></a> 
+    <a href="../FMP_Help/glossary.html#ww1027629"
+   
+     title="Glossary"
+    ><span class="g-glosslink">data source</span></a> lets a FileMaker file access data from external ODBC tables. You can view and update ODBC tables interactively in the 
+    <a href="../FMP_Help/glossary.html#ww1028051"
+   
+     title="Glossary"
+    ><span class="g-glosslink">relationships graph</span></a> in much the same way you view and update FileMaker 
+    <a href="../FMP_Help/glossary.html#ww1045562"
+   
+     title="Glossary"
+    ><span class="g-glosslink">tables</span></a>. </p><p id="ww1027762" class="b-body">FileMaker can connect to many relational database management systems (RDBMSs) that provide ODBC APIs for external use. See 
+    <a href="../FMP_Help/configuring-odbc-driver.html#ww1027549"
+   
+     title="Configuring an ODBC client driver"
+    ><span class="zh-hyper">Configuring an ODBC client driver</span></a> for a list of the data sources that are supported.</p><p id="ww1027766" class="b-body"><span class="zan-autonum">Important</span>&nbsp;&nbsp;To work with ODBC data sources, you must:</p><p id="ww1027771" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>connect to the data source via an ODBC 
+    <a href="../FMP_Help/glossary.html#ww1027659"
+   
+     title="Glossary"
+    ><span class="g-glosslink">driver</span></a> and set up 
+    <a href="../FMP_Help/glossary.html#ww1027632"
+   
+     title="Glossary"
+    ><span class="g-glosslink">DSNs</span></a>. See 
+    <a href="../FMP_Help/configuring-odbc-driver.html#ww1027549"
+   
+     title="Configuring an ODBC client driver"
+    ><span class="zh-hyper">Configuring an ODBC client driver</span></a>. </p><p id="ww1027776" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>add an ODBC data source. See 
+    <a href="../FMP_Help/connecting-to-data-sources.html#ww1027612"
+   
+     title="Connecting to external data sources"
+    ><span class="zh-hyper">Connecting to external data sources</span></a>. </p><p id="ww1027777" class="b-body">After you have linked the ODBC data source to a FileMaker&nbsp;Pro Advanced file, you can set and edit options.</p><h2 id="ww1027779" class="hs1-headsub1">To edit an ODBC data source:</h2><p id="ww1027780" class="s1f-step1first"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">1.	</span></span>Choose <strong class="o-onscreen">File</strong> menu&nbsp;&gt; <strong class="o-onscreen">Manage</strong>&nbsp;&gt; <strong class="o-onscreen">External Data Sources</strong>.</p><p id="ww1027782" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">2.	</span></span>Select the ODBC data source in the list and click <strong class="o-onscreen">Edit</strong>.</p><p id="ww1027785" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">3.	</span></span>You can change the name of the data source, specify a different DSN, set 
+    <a href="../FMP_Help/glossary.html#ww1054523"
+   
+     title="Glossary"
+    ><span class="g-glosslink">authentication</span></a> options to log in to a named ODBC data source, or set view options.</p><p id="ww1027786" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">4.	</span></span>For <strong class="o-onscreen">Authentication</strong>, the default option is <strong class="o-onscreen">Prompt user for user name and password</strong>. Users must enter a user name and password the first time they access the table.</p><p id="ww1027787" class="b1-body1">If you don't want any user of this FileMaker file to be prompted, select <strong class="o-onscreen">Specify user name and password (applies to all users)</strong> and enter a user name and password. You can also create a calculation to determine user access to the external table. You cannot use variables or fields in these calculations. See 
+    <a href="../FMP_Help/specify-calculation.html#ww1107694"
+   
+     title="Specify Calculation dialog box"
+    ><span class="zh-hyper">Specify Calculation dialog box</span></a> for more information on setting up calculations.</p><p id="ww1030488" class="b1-body1">If you work with shared database files that access ODBC data from Microsoft SQL Server and you want to enable ODBC data source single sign-on, select <strong class="o-onscreen">Use Windows Authentication (Single Sign-on) </strong>and enter the <strong class="o-onscreen">SPN</strong> (Service Principal Name). See 
+    <a href="../FMP_Help/odbc-single-sign-on.html#ww1027863"
+   
+     title="Enabling ODBC data source single sign-on (Windows only)"
+    ><span class="zh-hyper">Enabling ODBC data source single sign-on (Windows only)</span></a>.</p><p id="ww1027791" class="n1-note1"><span class="zan-autonum">Note&nbsp;&nbsp;</span>FileMaker encrypts passwords. However, encryption on data sources depends on whether encryption is supported by the ODBC driver.</p><p id="ww1027792" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">5.	</span></span>To enhance performance, you can filter the list of external tables or views that are available for you to add to the relationships graph. The default is to list all the tables from the data source.</p><p id="ww1027793" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>For <strong class="o-onscreen">Catalog name</strong>, enter a name. Otherwise, tables from all catalogs are listed.</p><p id="ww1027794" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>For <strong class="o-onscreen">Schema name</strong>, enter a name. Otherwise, tables from all schemas are listed.</p><p id="ww1027795" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>For <strong class="o-onscreen">Table name</strong>, enter a name to list only that table.</p><p id="ww1027796" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">6.	</span></span>You can filter the list of tables by type: <strong class="o-onscreen">Tables</strong>, <strong class="o-onscreen">Views</strong>, or <strong class="o-onscreen">System table</strong>.</p><p id="ww1027797" class="n1-note1"><span class="zan-autonum">Note&nbsp;&nbsp;</span>If you want to include other types, deselect all the <strong class="o-onscreen">Filter by Type</strong> options.</p><h2 id="ww1035790" class="hs1-headsub1">Setting up an ODBC table in the relationships graph</h2><p id="ww1035791" class="b-body">After you have added an ODBC data source, you can work with ODBC tables in the relationships graph and on 
+    <a href="../FMP_Help/glossary.html#ww1027851"
+   
+     title="Glossary"
+    ><span class="g-glosslink">layouts</span></a> as you would other FileMaker tables. You can retrieve, add, update, and delete data in the ODBC table interactively, in real time.</p><p id="ww1027802" class="s1f-step1first"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">1.	</span></span>Choose <strong class="o-onscreen">File</strong> menu&nbsp;&gt; <strong class="o-onscreen">Manage</strong>&nbsp;&gt; <strong class="o-onscreen">Database</strong>.</p><div class="ww_skin_page_overflow"><p id="ww1027806" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">2.	</span></span>In the <strong class="o-onscreen">Relationships</strong> tab in the Manage Database dialog box, click <img class="Default" src="../FMP_Help/images/IDB_DEFINE_RELATIONS_ADDTABLE2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 15px; max-width: 21px; top: 0.0pt" alt="Add table button" />. </p></div><p id="ww1027807" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">3.	</span></span>In the Specify Table dialog box, for <strong class="o-onscreen">Data Source</strong>, choose <strong class="o-onscreen">ODBC data source</strong>.</p><p id="ww1027808" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">4.	</span></span>If you are prompted, enter the user name and password for the ODBC data source.</p><p id="ww1027809" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">5.	</span></span>You see a list of the external tables for that data source.</p><p id="ww1027810" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">6.	</span></span>Select the table you want and click <strong class="o-onscreen">OK</strong>. </p><p id="ww1027811" class="b1-body1">The external table appears in the relationships graph. The table name appears in italics. For information on linking to and working with tables in the relationships graph, see 
+    <a href="../FMP_Help/working-relationships-graph.html#ww1156152"
+   
+     title="Working with the relationships graph"
+    ><span class="zh-hyper">Working with the relationships graph</span></a>.</p><p id="ww1027815" class="b1-body1"><span class="zan-autonum">Tip </span>To identify whether a table in the relationships graph is a FileMaker table or from an ODBC data source, move the pointer over the arrow in the table header. You might want to add a color to ODBC tables in order to identify them more easily.</p><p id="ww1027816" class="b1-body1">After you add a table to the relationships graph, FileMaker adds a layout with that table name to the 
+    <a href="../FMP_Help/glossary.html#ww1027861"
+   
+     title="Glossary"
+    ><span class="g-glosslink">Layout pop-up menu</span></a> and the table is listed in the <strong class="o-onscreen">Tables</strong> tab. The table name appears in italics.</p><p id="ww1027818" class="b1-body1">Columns from the ODBC table appear in the <strong class="o-onscreen">Fields</strong> tab. The field names appear in italics. You can remove fields if you do not want FileMaker&nbsp;Pro Advanced to display them within your solution. These columns are not removed from the external SQL data source table schema, only from the FileMaker&nbsp;Pro Advanced representation of that table's schema. See 
+    <a href="../FMP_Help/updating-data-between-data-sources.html#ww1030203"
+   
+     title="Updating data between FileMaker and ODBC data sources"
+    ><span class="zh-hyper">Updating data between FileMaker and ODBC data sources</span></a> for more information.</p><h2 id="ww1027822" class="hs1-headsub1">Considerations before you begin working with ODBC data sources</h2><p id="ww1030962" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Decide whether you want to work with ODBC tables interactively in the relationships graph or through "static" ODBC imports. For an overview of the various ways of working with ODBC data sources, see 
+    <a href="../FMP_Help/odbc-jdbc.html#ww1027500"
+   
+     title="Using ODBC and JDBC with FileMaker Pro Advanced"
+    ><span class="zh-hyper">Using ODBC and JDBC with FileMaker Pro Advanced</span></a>. </p><p id="ww1027823" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Determine which tables you want to access, and which data sources they are in.</p><p id="ww1030952" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>If FileMaker cannot automatically determine a table's primary 
+    <a href="../FMP_Help/glossary.html#ww1027838"
+   
+     title="Glossary"
+    ><span class="g-glosslink">key</span></a>, you will be asked to select the columns that comprise a unique key. FileMaker requires every table to have one or more columns that have a unique value for each row.</p><h2 id="ww1027831" class="hs1-headsub1">Limitations on working with ODBC data sources</h2><p id="ww1027832" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>You cannot change the schema of ODBC data sources. However, you can add 
+    <a href="../FMP_Help/glossary.html#ww1028157"
+   
+     title="Glossary"
+    ><span class="g-glosslink">supplemental fields</span></a> to do calculations and summaries on data from ODBC tables.</p><p id="ww1027838" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Fields from ODBC data sources can be used in 
+    <a href="../FMP_Help/glossary.html#ww1028227"
+   
+     title="Glossary"
+    ><span class="g-glosslink">value lists</span></a>, but character large objects (CLOBs) such as long text strings are not supported.</p><p id="ww1035826" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>For value lists with ODBC data, the <strong class="o-onscreen">No access</strong> privilege and <strong class="o-onscreen">Limited</strong> custom privilege are not supported. To prohibit a user from seeing ODBC data in a value list, you must enforce row-level security in the external SQL database. See 
+    <a href="../FMP_Help/value-list-privileges.html#ww1029001"
+   
+     title="Editing value list privileges"
+    ><span class="zh-hyper">Editing value list privileges</span></a>.</p><p id="ww1035830" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>The SQL Server Timestamp data type is not supported.</p><p id="ww1035831" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Binary large objects (BLOBs) such as pictures and sounds are not supported.</p><p id="ww1035832" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>When you're working with external tables in the <strong class="o-onscreen">Fields</strong> tab of the Manage Database dialog box, the following field options are not supported. See 
+    <a href="../FMP_Help/setting-field-options.html#ww1056816"
+   
+     title="Setting options for fields"
+    ><span class="zh-hyper">Setting options for fields</span></a> for information on field options.</p><p id="ww1027845" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>On the <strong class="o-onscreen">Auto-Enter</strong> tab, you can auto-enter serial numbers when you create records, but not when you commit records. (The external database controls how records are committed.) When a 
+    <a href="../FMP_Help/glossary.html#ww1027894"
+   
+     title="Glossary"
+    ><span class="g-glosslink">lookup</span></a> is to related data in an ODBC data source, <strong class="o-onscreen">copy next lower value</strong> and <strong class="o-onscreen">copy next higher value</strong> are disabled.</p><p id="ww1027847" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>On the <strong class="o-onscreen">Validation</strong> tab, <strong class="o-onscreen">Unique value</strong> and <strong class="o-onscreen">Existing value</strong> are disabled. The <strong class="o-onscreen">Maximum number of characters</strong> allowed in a field is determined by the external data source.</p><p id="ww1027848" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>The <strong class="o-onscreen">Storage</strong> tab is disabled.</p><p id="ww1027849" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>FileMaker cannot control validation and other options that ODBC administrators set. See 
+    <a href="../FMP_Help/updating-data-between-data-sources.html#ww1030203"
+   
+     title="Updating data between FileMaker and ODBC data sources"
+    ><span class="zh-hyper">Updating data between FileMaker and ODBC data sources</span></a> for information on how field options are affected in <strong class="o-onscreen">Sync</strong> operations.</p><p id="ww1027853" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>FileMaker files linked to ODBC data sources don't inherent relationships that are created in the ODBC data sources.</p><h2 id="ww1027854" class="hs1n-headsub1notes"><span>Notes</span>&nbsp;</h2><p id="ww1027857" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>You can apply conditional formatting to data from external fields. See 
+    <a href="../FMP_Help/conditional-formatting.html#ww1066700"
+   
+     title="Defining conditional formatting for layout objects"
+    ><span class="zh-hyper">Defining conditional formatting for layout objects</span></a>.</p><p id="ww1027859" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>When FileMaker&nbsp;Server hosts databases linked to ODBC data sources, FileMaker clients do not need to set up a DSN to access the external data source. However, the DSN must be set up on the machine running FileMaker&nbsp;Server.</p><p id="ww1027860" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>FileMaker does not use SQL set semantics on queries. FileMaker may execute one query for each related table on a layout. If you want to retain certain SQL join behavior or obtain the results of SQL predicates such as GROUP BY, create views. Then access the data from FileMaker through those views. (Views are sometimes called "virtual tables.")</p><p id="ww1030937" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Long queries, attempts to scroll the entire ODBC table, or opening a large table can result in slower performance.</p><p id="ww1031124" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Microsoft SQL Server: By default, DATETIME, DATETIME2, and SMALLDATETIME data from ODBC tables is imported as the timestamp field type. You can change the field type of a timestamp shadow field to either date or time, but the data must be structured in a specific manner. If the imported ODBC table contains timestamp data and you treat the timestamp field as a date field, the time portion must equal 12:00 AM (or midnight) for all records in the table. Likewise, if you import an ODBC table that contains timestamp data and you treat the timestamp field as a time field, the date portion must equal 1900-01-01 (or January 1, 1900) for all records in the table.</p><p id="ww1031087" class="b1-body1">As with any ODBC table, if the field is a primary key and the values are not unique, the results may be inconsistent.</p><!-- FMI - Feedback Link --><div class="feedbacklink">Was this topic helpful? <a href="https://www.filemaker.com/redirects/fmp18_admin.html?page=feedback&amp;lang=en" target="external_window">Send feedback.</a></div><footer><!-- Related Topics --><!--                --><!-- Disqus --><!--        --><!-- Google Translation --><!--                    --><br /></footer></body></html>

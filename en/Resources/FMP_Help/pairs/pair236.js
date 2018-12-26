@@ -1,0 +1,20 @@
+var pairs =
+{
+"get":{"layo":1,"layoutcount":1,"layout":1}
+,"layo":{"utcount":1}
+,"utcount":{"returns":1}
+,"returns":{"total":1,"file":1}
+,"total":{"number":1}
+,"number":{"layouts":1,"filemaker":1}
+,"layouts":{"file":1,"get":1}
+,"file":{"get":1,"layouts":1}
+,"layoutcount":{"none":1,"get":1}
+,"none":{"number":1}
+,"filemaker":{"pro":1}
+,"pro":{"6.0":1}
+,"6.0":{"earlier":1}
+,"earlier":{"returns":1}
+,"layout":{"count":1,"number":1}
+,"count":{"get":1}
+}
+;Search.control.loadWordPairs(pairs);

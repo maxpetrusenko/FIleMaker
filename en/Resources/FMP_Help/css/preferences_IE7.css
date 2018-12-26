@@ -1,0 +1,80 @@
+.bu1-bullet1 > span.WebWorks_Number
+{
+  text-indent: -1.5em;
+}
+
+.bu1-bullet1 > span.WebWorks_Number > *
+{
+  text-indent: 0;
+}
+
+.bu2-bullet2 > span.WebWorks_Number
+{
+  text-indent: -1.5em;
+}
+
+.bu2-bullet2 > span.WebWorks_Number > *
+{
+  text-indent: 0;
+}
+
+.s1f-step1first > span.WebWorks_Number
+{
+  text-indent: -1.5em;
+}
+
+.s1f-step1first > span.WebWorks_Number > *
+{
+  text-indent: 0;
+}
+
+.s1r-step1reg > span.WebWorks_Number
+{
+  text-indent: -1.5em;
+}
+
+.s1r-step1reg > span.WebWorks_Number > *
+{
+  text-indent: 0;
+}
+
+.s2f-step2first > span.WebWorks_Number
+{
+  text-indent: -1.5em;
+}
+
+.s2f-step2first > span.WebWorks_Number > *
+{
+  text-indent: 0;
+}
+
+.s2r-step2reg > span.WebWorks_Number
+{
+  text-indent: -1.5em;
+}
+
+.s2r-step2reg > span.WebWorks_Number > *
+{
+  text-indent: 0;
+}
+
+.tb1-tablebullet1 > span.WebWorks_Number
+{
+  text-indent: -1.5em;
+}
+
+.tb1-tablebullet1 > span.WebWorks_Number > *
+{
+  text-indent: 0;
+}
+
+.tb2-tablebullet2 > span.WebWorks_Number
+{
+  text-indent: -1.5em;
+}
+
+.tb2-tablebullet2 > span.WebWorks_Number > *
+{
+  text-indent: 0;
+}
+

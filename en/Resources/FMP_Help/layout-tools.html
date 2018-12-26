@@ -1,0 +1,948 @@
+<!DOCTYPE html ><html xml:lang="en" lang="en" data-highlight-require-whitespace="false" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- saved from url=(0016)http://localhost -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>Working with the layout tools</title><link rel="Prev" href="drawing-inserting-objects.html" title="Previous" /><link rel="Next" href="adding-text.html" title="Next" /><link rel="StyleSheet" href="css/create_layout.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/skin.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/social.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" /><!--[if IE 7]><link rel="StyleSheet" href="css/create_layout_IE7.css" type="text/css" media="all" /><![endif]--><link rel="StyleSheet" href="css/print.css" type="text/css" media="print" /><script type="text/javascript">
+    'use strict';
+
+    var redirect_url, page_hash;
+
+    if ((window === window.top) && (window.navigator.userAgent.indexOf('bot/') === -1)) {
+        // Redirect
+        //
+        redirect_url = "../index.html#page/FMP_Help/layout-tools.html";
+        if (window.document.location.hash.length > 1) {
+            // Sanitize and append it
+            //
+            page_hash = window.document.location.hash.substring(1);
+            page_hash = page_hash.replace(/[\\><:;"]|%5C|%3C|%3E|%3A|%3B|%22/gi, '');
+            redirect_url += '#' + page_hash;
+        }
+        window.document.location.replace(redirect_url);
+    }
+</script><script type="text/javascript" src="scripts/common.js"></script><script type="text/javascript" src="scripts/page.js"></script><script type="text/javascript" src="scripts/search-client.js"></script><script type="text/javascript" src="scripts/unidata.js"></script><script type="text/javascript" src="scripts/unibreak.js"></script><script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-15064788-14', 'auto');
+       ga('set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('send', 'pageview');
+       ga('create', 'UA-15064788-10', 'auto', 'globalProperty');
+       ga('globalProperty.set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('globalProperty.send', 'pageview');</script><script type="text/javascript"><!--
+    //FMI - tracking events for GA
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", function AddGaqPush() {
+        var links = document.getElementsByTagName("a");
+        for (var i=0; i < links.length; i++)
+        {
+            if (links[i].href.indexOf("page=help_zip") !== -1) { 
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Download', 'ZIP', '');");
+            } else if (links[i].href.indexOf("documentation") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Documentation Page', '');");
+            } else if (links[i].href.indexOf("page=doc_") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Document', '');");
+            } else if (links[i].href.indexOf("page=helphome_support") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Support', '');");
+            } else if (links[i].href.indexOf("page=feedback") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Feedback', location.href, '');");
+            }
+        }
+      }
+      , false)
+    }
+    // --></script><style type="text/css">
+/*FMI CSS*/
+      <!--
+/* General */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+	line-height: 170%;
+	background-color: rgb(245, 245, 245);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+img.Default {
+	vertical-align: text-bottom;
+}
+
+/* Page */
+div.feedbacklink
+{
+	margin:2em 0 0;
+	font-size:90%;
+	border-top:1px solid #bfbfbf;
+	padding:8px 12px 8px 12px;
+	color:#8d8d8d
+}
+
+.code_pre_wrap {
+	white-space: pre-wrap;
+}
+
+a:link .g-glosslink, a:visited .g-glosslink
+{
+	color: #000000;
+	text-decoration: underline;
+}
+
+.ti-title
+{
+	display: none;
+}
+
+span.c-code {
+  font-size: 9pt;
+}
+
+/* Page toolbar margin-top under breadcrumb */
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+}
+
+.ww_skin_toolbar {
+	padding-top: 20px;
+}
+
+.ti-title
+{
+	display: none;
+}
+.layout_wide {
+    padding: 0 0px 18px 0px;
+}
+
+div#layout_div.layout_narrow input.ww_skin_search_input,
+div#layout_div.layout_wide div#presentation_div.panel_overlay input.ww_skin_search_input {
+    display: inline;
+	visibility: visible;
+}
+
+div#container_div {
+	max-width: 1200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+	width:100%;
+	margin-top: 12px;
+}
+
+div#layout_div.layout_wide div#container_div {
+    left: 0px;
+    right: 0px;
+}
+
+div#index_content {
+  padding: 12px;
+}
+
+div#search {
+  background-color: white;
+}
+
+div#search {
+  background-color: white;
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+
+/* Search */
+body#searchBody {
+	background-color: transparent;
+}
+
+button#back_button {
+  float: left;
+  background: none;
+  background-image: url('../images/back_grey.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  border: 0;
+  text-decoration: none;
+  -webkit-apperance: none;
+  outline: 0;
+  text-display: none;
+  width: 20px;
+  height: 30px;
+  color: rgba(0,0,0,0);
+}
+
+button#back_button:hover {
+    cursor: pointer;
+	background-image: url('../images/back.png');
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+#search-input-text {
+  width: 50%;
+  background: #fff url('../images/search-50.png');
+  margin: 0;
+padding: 2px 0 2px 30px;
+height: 25px;
+background-color: #fff;
+background-size: 15px 15px;
+background-position: 5px 7px;
+background-repeat: no-repeat;
+font-size: 1.2em;
+border: 1px solid rgba(233,233,233,1);
+-webkit-appearance: none;
+border-radius: 3px;
+}
+
+#search-button {
+display: none;	/* original value: inline-block;*/
+overflow: hidden;
+width: 67px;
+height: 31px;
+color: white;
+background-image:linear-gradient(to bottom, #1681c3, #1066a1);
+border-radius: 0 4px 4px 0;
+border: 0px;
+font-size: 1em;
+padding: 3px 6px 3px 6px;
+position: absolute;
+}
+
+#search-results-container {
+  padding: 0.5em 0.5em;
+}
+
+.search-result-title {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.search-result-title > a {
+  color: rgb(67,114,255);
+  text-decoration: none;
+}
+
+.search-result-title > a:active {
+  color: rgb(67,114,255);
+}
+
+.search-result-title > a:visited {
+  color: rgb(67,114,255);
+}
+
+.search-result-summary {
+  padding-top: 4px;
+}
+
+.search-result-highlight{
+	padding:2px;
+	margin:-2px;
+	background-color: #ffffc7;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #ffffc7;
+	padding:2px;
+	margin:-2px;
+}
+
+/*tab size for code snippets - ID Custom */
+.co-code, .co1-code1, ff-funcformat, .ssf-scriptformat{
+	tab-size:3;
+}
+@media only screen and (min-width : 481px) {
+  /*see also "widget" - ID Custom */
+  .sah-seealsohead{
+	float: right;
+	width: 200px;
+	clear: both;
+	margin: 1.6em 0 0 1.8em;
+	padding: 5px 10px;
+	background-color: #F2F2F2;
+  }
+  
+  .sal-seealsolink{
+	float: right;
+	width: 200px;
+	clear: both;
+	background-color: #F2F2F2;
+	margin-top: 0 !important;
+	margin-left: 1.8em;
+	padding: 0 10px 10px;
+	line-height: 120%;
+  }
+}
+/*homepage - ID Custom */
+.welcome {
+  padding-top: 0;
+}
+
+.wol-outlinelinks,
+.wom-outlinemenu {
+  display:flex;
+  flex-wrap:wrap;
+  min-width: 140px;
+}
+.wom-outlinemenu a {
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  font-size: 11pt;
+  width: 40%;
+  background: -moz-linear-gradient(top, #f5f5f5, #fafafa); 
+  background: -webkit-linear-gradient(top,#f5f5f5, #fafafa);
+  background: linear-gradient(to bottom, #f5f5f5, #fafafa);
+  margin: 0 5px 10px 5px;
+}
+.wol-outlinelinks a{
+  font-size: 10pt;
+  width: 28%;
+}
+.wom-outlinemenu a,
+.wol-outlinelinks a{
+  padding: 10px;
+  text-align:center;
+  flex-grow: 1;
+
+}
+.wom-outlinemenu a .h-hyperlink,
+.wol-outlinelinks a .h-hyperlink,
+.wol-outlinelinks a .zh-hyper{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/*Skin.css*/
+a#banner {
+  background-image: url('images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 38px;
+  width: 300px;
+  margin-bottom: -5px;
+  display:block;
+}
+
+.ww_skin_company_logo > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:link:hover, .ww_skin_company_logo > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_name > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:link:hover, .ww_skin_company_name > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_email > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:link:hover, .ww_skin_company_email > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_progress_bar {
+    border: 1px solid #353535;
+}
+
+.ww_skin_progress_segment_complete {
+    background-color: #353535;
+}
+
+.ww_skin {
+	background-size: 600px auto;
+}
+
+.ww_skin_toc {
+    width: 38px;
+    height: 38px;
+    background-position: -306px -32px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_toc:hover {
+    background-position: -378px -32px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_toc {
+    background-position: -451px -32px;
+}
+
+a.ww_skin_toc_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_index {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -128px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_index:hover {
+    background-position: -376px -128px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_index {
+    background-position: -448px -128px;
+}
+
+a.ww_skin_index_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_home {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_home {
+    background-position: -304px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_home:hover {
+    background-position: -376px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_home {
+    background-position: -448px -1376px;
+}
+
+a.ww_skin_home_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_search {
+    height: 38px;
+	background-image: none !important;
+	width: 10px;
+  background-position: -100px -100px;
+  margin-left:3px;
+}
+
+.layout_wide .ww_skin_search{
+  width: 10px;
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_wide .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_narrow .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_search {
+    background-position: -450px -224px;
+}
+
+.ww_skin_globe {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -320px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_globe:hover {
+    background-position: -376px -320px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_globe {
+    background-position: -448px -320px;
+}
+
+a.ww_skin_globe_spacer {
+    background-image: none;
+    width: 24px;
+}
+
+.ww_skin_next {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -416px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_next {
+    background-position: -304px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_next:hover {
+    background-position: -376px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_next {
+    background-position: -448px -416px;
+}
+
+a.ww_skin_next_spacer {
+    display: none;
+}
+
+.layout_narrow a.ww_skin_next_spacer {
+    display: none;
+}
+
+.ww_skin_prev {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -512px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_prev {
+    background-position: -304px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_prev:hover {
+    background-position: -376px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_prev {
+    background-position: -448px -512px;
+}
+
+#toolbar_div {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.ww_skin_toolbar {
+	padding-top: 15px;
+}
+
+.ww_skin_toolbar_button_left {
+	padding-left: 5px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_center {
+    height: 38px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_right {
+	border: none;
+}
+
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+    background: #757575;
+}
+
+.ww_skin_search_form .ww_skin_toolbar_background_selected {
+	display: none !important;
+}
+
+.ww_skin_toolbar_left_background {
+    margin-left: 0;
+}
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+	background: transparent;
+}
+
+.ww_skin_toolbar_background_default {
+	background: transparent;
+}
+
+.ww_skin_search_input {
+  color: #525252;
+  height: 20px;
+  font-size: 13px;
+  margin: 5px 0 0 18px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  background-image: url('images/search-50.png');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding: 3px;
+  text-indent: 20px;
+  width: 250px;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_toc_container {
+	background-color: transparent;
+	border: none;
+}
+
+.ww_skin_toc_level_1 > li > div {
+    padding-left: 23px;
+}
+
+.ww_skin_toc_level_2 > li > div {
+    padding-left: 43px;
+}
+
+.ww_skin_toc_level_3 > li > div {
+    padding-left: 63px;
+}
+
+.ww_skin_toc_level_4 > li > div {
+    padding-left: 83px;
+}
+
+.ww_skin_toc_level_5 > li > div {
+    padding-left: 103px;
+}
+
+.ww_skin_toc_level_6 > li > div {
+    padding-left: 123px;
+}
+
+.ww_skin_toc_level_7 > li > div {
+    padding-left: 138px;
+}
+
+.ww_skin_toc_entry {
+    font-family: Helvetica, Arial, sans-serif;
+    border-width: 0px 0 0 0;
+    margin: 0;
+    padding: 8px 20px 8px 0;
+	line-height: 15px;
+}
+
+.ww_skin_toc_level_1:first-child > li:first-child > .ww_skin_toc_entry:first-child {
+    border-width: 0;
+}
+
+.ww_skin_toc_entry:hover {
+    background: #E0E0E0;
+}
+
+.ww_skin_toc_entry > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.ww_skin_toc_entry > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry:hover > a {
+    color: black;
+}
+
+.ww_skin_toc_entry:hover > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+    background-color: rgb(67,114,255);
+}
+
+.ww_skin_toc_dropdown {
+    margin: 2px 4px 0 0px;
+}
+
+.ww_skin_index_link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_panel_frame {
+    padding: 9px 0 0 0;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_panel_content {
+  border-width: 0px;
+  background-color: #fcfcfc;
+}
+
+.ww_skin_lightbox_frame {
+    top: 0;
+    left: 0;
+}
+
+.ww_skin_page_body {
+    padding: 30px 30px;
+	background-color: #fff;
+}
+
+.ww_skin_breadcrumbs {
+    margin: -6px -6px 0 -8px;
+    padding: 4px 24px 4px 12px;
+    color: #a4a4a4;
+    font-weight: normal;
+	max-width: 85%;
+	background: transparent;
+}
+
+.ww_skin_breadcrumbs a:link {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:visited {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:link:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_breadcrumbs a:visited:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+#wwconnect_header {
+  margin-bottom: 20px;
+}
+
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_toc_entry{
+	border: none;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+	background: rgb(67,114,255);
+}
+
+
+/* medium */
+@media only screen
+and (max-width : 769px) {
+  .ww_skin_search_input {
+    width: 170px;
+}
+
+}
+
+/* small */
+@media only screen
+and (max-width: 535px) {
+  .ww_skin_search_input {
+    width: 150px;
+  }
+
+a#banner{
+  height: 30px;
+  width: 160px;
+  margin-left: 15px;
+}
+
+div#container_div {
+  margin-top: 5px;
+}
+
+table.ww_skin_toolbar {
+  padding-top: 10px;
+}
+
+}
+
+/*phone*/
+@media only screen
+and (max-width : 435px) {
+
+  a#banner {
+    width: 129px;
+  }
+
+  .ww_skin_search_input {
+    width: 130px;
+  }
+   
+  body { 
+    overflow-x: hidden;
+  }
+  
+  .layout_narrow {
+    overflow-x: hidden;
+  }
+  
+  #presentation_div {
+    overflow-x:hidden;
+  }
+  
+  #page_div {
+    overflow-x:hidden;
+  }
+    div#page_div {
+    overflow-x: hidden;
+  }
+  html {
+   overflow-x: hidden;
+  }
+  body.ww_skin_page_body {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  
+}
+--></style></head><body id="pN1GlYCaCAvd4wdJFupUKlFg" class="ww_skin_page_body" onload="Page.OnLoad('../index.html#page/FMP_Help/layout-tools.html');"><header id="wwconnect_header"><div class="ww_skin_breadcrumbs"><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/layouts-and-reports.html#wwconnect_header">Creating and managing layouts and reports</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/drawing-inserting-objects.html#wwconnect_header">Drawing and inserting objects on a layout</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_current">Working with the layout tools</span></div><div class="ww_skin_page_toolbar"><a class="ww_behavior_print ww_skin ww_skin_print" title="Print" href="#">&nbsp;</a></div></header><h1 id="ww1028753" class="h3-head3">Working with the layout tools</h1><p id="ww1290445" class="b-body">For each type of object you work with in Layout mode, you use the 
+    <a href="../FMP_Help/glossary.html#ww1034702"
+   
+     title="Glossary"
+    ><span class="g-glosslink">layout tools</span></a> in the 
+    <a href="../FMP_Help/glossary.html#ww1028139"
+   
+     title="Glossary"
+    ><span class="g-glosslink">status toolbar</span></a>.</p><div class="ww_skin_page_overflow"><p id="ww1290449" class="gr-graphicanchor"><img class="Default" src="../FMP_Help/images/layout-tools.png" width="100%" style="display: block; left: 0.0pt; max-height: 30px; max-width: 403px; top: 0.0pt" alt="Layout tools" /></p></div><p id="ww1290745" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 426.0168pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 65.60784pt"><p id="ww1294755" class="th-tablehead">Tool</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 140.87664pt"><p id="ww1294757" class="th-tablehead">Tool name</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 219.53232pt"><p id="ww1294759" class="th-tablehead">Related topic</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1294764" class="td-tabledata"><img class="Default" src="../FMP_Help/images/selection-tool.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Selection tool" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294766" class="td-tabledata">Selection tool</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294770" class="td-tabledata">
+    <a href="../FMP_Help/editing-objects-parts-background.html#ww1264108"
+   
+     title="Editing objects, layout parts, and the layout background"
+    ><span class="zh-hyper">Editing objects, layout parts, and the layout background</span></a></p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1294776" class="td-tabledata"><img class="Default" src="../FMP_Help/images/text-tool.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Text tool" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294778" class="td-tabledata">Text tool</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294783" class="td-tabledata">
+    <a href="../FMP_Help/adding-text.html#ww1028955"
+   
+     title="Adding text to a layout"
+    ><span class="zh-hyper">Adding text to a layout</span></a></p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1294788" class="td-tabledata"><img class="Default" src="../FMP_Help/images/line-tool.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Line tool" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294790" class="td-tabledata">Line tool</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294795" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1294800" class="td-tabledata"><img class="Default" src="../FMP_Help/images/rectToolTemplate.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Rectangle tool" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294802" class="td-tabledata">Rectangle tool</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294807" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1294812" class="td-tabledata"><img class="Default" src="../FMP_Help/images/roundedRectToolTemplate.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Rounded rectangle tool" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294814" class="td-tabledata">Rounded Rectangle tool</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294819" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1294824" class="td-tabledata"><img class="Default" src="../FMP_Help/images/ellipseToolTemplate.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Oval tool" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294826" class="td-tabledata">Oval tool</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294831" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1294836" class="td-tabledata"><img class="Default" src="../FMP_Help/images/fieldControlToolEditTemplate.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Edit box tool" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294838" class="td-tabledata">Edit Box tool</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294843" class="td-tabledata">
+    <a href="../FMP_Help/placing-removing-fields.html#ww1028465"
+   
+     title="Placing and removing fields on a layout"
+    ><span class="zh-hyper">Placing and removing fields on a layout</span></a></p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1294848" class="td-tabledata"><img class="Default" src="../FMP_Help/images/fieldControlToolDropDownTemplate.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Drop-down list tool" /> </p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294850" class="td-tabledata">Drop-down List tool</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294855" class="td-tabledata">
+    <a href="../FMP_Help/placing-removing-fields.html#ww1028465"
+   
+     title="Placing and removing fields on a layout"
+    ><span class="zh-hyper">Placing and removing fields on a layout</span></a></p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1294860" class="td-tabledata"><img class="Default" src="../FMP_Help/images/fieldControlToolPopupTemplate.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Pop-up menu tool" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294862" class="td-tabledata">Pop-up Menu tool</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294867" class="td-tabledata">
+    <a href="../FMP_Help/placing-removing-fields.html#ww1028465"
+   
+     title="Placing and removing fields on a layout"
+    ><span class="zh-hyper">Placing and removing fields on a layout</span></a></p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1294872" class="td-tabledata"><img class="Default" src="../FMP_Help/images/fieldControlToolCheckboxTemplate.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Checkbox set tool" /> </p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294874" class="td-tabledata">Checkbox Set tool</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294879" class="td-tabledata">
+    <a href="../FMP_Help/placing-removing-fields.html#ww1028465"
+   
+     title="Placing and removing fields on a layout"
+    ><span class="zh-hyper">Placing and removing fields on a layout</span></a></p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1294884" class="td-tabledata"><img class="Default" src="../FMP_Help/images/fieldControlToolRadioTemplate.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Radio button set tool" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294886" class="td-tabledata">Radio Button Set tool</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294891" class="td-tabledata">
+    <a href="../FMP_Help/placing-removing-fields.html#ww1028465"
+   
+     title="Placing and removing fields on a layout"
+    ><span class="zh-hyper">Placing and removing fields on a layout</span></a></p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1294896" class="td-tabledata"><img class="Default" src="../FMP_Help/images/fieldControlToolCalendarTemplate.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Drop-down calendar tool" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294898" class="td-tabledata">Drop-down Calendar tool</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294903" class="td-tabledata">
+    <a href="../FMP_Help/placing-removing-fields.html#ww1028465"
+   
+     title="Placing and removing fields on a layout"
+    ><span class="zh-hyper">Placing and removing fields on a layout</span></a></p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1294908" class="td-tabledata"><img class="Default" src="../FMP_Help/images/fieldControlToolObscureTemplate.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Concealed edit box tool" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294910" class="td-tabledata">Concealed Edit Box tool</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294915" class="td-tabledata">
+    <a href="../FMP_Help/placing-removing-fields.html#ww1028465"
+   
+     title="Placing and removing fields on a layout"
+    ><span class="zh-hyper">Placing and removing fields on a layout</span></a></p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1294920" class="td-tabledata"><img class="Default" src="../FMP_Help/images/buttonToolTemplate.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Button tool" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294922" class="td-tabledata">Button tool</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294927" class="td-tabledata">
+    <a href="../FMP_Help/defining-changing-button.html#ww1248309"
+   
+     title="Defining or changing a button"
+    ><span class="zh-hyper">Defining or changing a button</span></a></p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1294932" class="td-tabledata"><img class="Default" src="../FMP_Help/images/popoverButtonToolTemplate.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Popover button tool" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294934" class="td-tabledata">Popover Button tool</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294939" class="td-tabledata">
+    <a href="../FMP_Help/adding-popover.html#ww1282404"
+   
+     title="Adding a popover"
+    ><span class="zh-hyper">Adding a popover</span></a></p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1294944" class="td-tabledata"><img class="Default" src="../FMP_Help/images/segmentedBarToolTemplate.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Button bar tool" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294946" class="td-tabledata">Button Bar tool </p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294951" class="td-tabledata">
+    <a href="../FMP_Help/defining-changing-button-bar.html#ww1255688"
+   
+     title="Defining or changing a button bar"
+    ><span class="zh-hyper">Defining or changing a button bar</span></a></p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1294956" class="td-tabledata"><img class="Default" src="../FMP_Help/images/tabControlToolTemplate.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Tab control tool" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294958" class="td-tabledata">Tab Control tool</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294963" class="td-tabledata">
+    <a href="../FMP_Help/adding-tab-control.html#ww1168324"
+   
+     title="Adding a tab control"
+    ><span class="zh-hyper">Adding a tab control</span></a></p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1294968" class="td-tabledata"><img class="Default" src="../FMP_Help/images/dotControlToolTemplate.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Slide control tool" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294970" class="td-tabledata">Slide Control tool</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294975" class="td-tabledata">
+    <a href="../FMP_Help/adding-slide-control.html#ww1210315"
+   
+     title="Adding a slide control"
+    ><span class="zh-hyper">Adding a slide control</span></a></p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1294980" class="td-tabledata"><img class="Default" src="../FMP_Help/images/portalToolTemplate.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Portal tool" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294982" class="td-tabledata">Portal tool</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294987" class="td-tabledata">
+    <a href="../FMP_Help/creating-portals.html#ww1313746"
+   
+     title="Creating portals to display related records"
+    ><span class="zh-hyper">Creating portals to display related records</span></a></p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1294992" class="td-tabledata"><img class="Default" src="../FMP_Help/images/chartToolTemplate.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Chart tool" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294994" class="td-tabledata">Chart tool</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1294999" class="td-tabledata">
+    <a href="../FMP_Help/creating-charts.html#ww1176342"
+   
+     title="Creating charts from data"
+    ><span class="zh-hyper">Creating charts from data</span></a></p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1295004" class="td-tabledata"><img class="Default" src="../FMP_Help/images/webViewerToolTemplate.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Web viewer tool" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1295006" class="td-tabledata">Web Viewer tool</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1295011" class="td-tabledata">
+    <a href="../FMP_Help/web-viewers.html#ww1202978"
+   
+     title="Working with web viewers on layouts"
+    ><span class="zh-hyper">Working with web viewers on layouts</span></a></p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1295016" class="td-tabledata"><img class="Default" src="../FMP_Help/images/fieldButton.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Field tool" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1295018" class="td-tabledata">Field tool</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1295023" class="td-tabledata">
+    <a href="../FMP_Help/placing-removing-fields.html#ww1028465"
+   
+     title="Placing and removing fields on a layout"
+    ><span class="zh-hyper">Placing and removing fields on a layout</span></a></p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1295028" class="td-tabledata"><img class="Default" src="../FMP_Help/images/partButton.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Part tool" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1295030" class="td-tabledata">Part tool</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1295035" class="td-tabledata">
+    <a href="../FMP_Help/adding-layout-part.html#ww1028136"
+   
+     title="Adding a layout part"
+    ><span class="zh-hyper">Adding a layout part</span></a></p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1295040" class="td-tabledata"><img class="Default" src="../FMP_Help/images/formatPainterToolSelected.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Format painter tool" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1295042" class="td-tabledata">Format Painter tool</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1295046" class="td-tabledata">
+    <a href="../FMP_Help/copying-formatting-attributes.html#ww1231183"
+   
+     title="Copying formatting attributes in layouts"
+    ><span class="zh-hyper">Copying formatting attributes in layouts</span></a></p></td></tr></table></div><p id="ww1028902" class="b-body">As you are designing a layout, you can work with a tool once, use it repeatedly, or switch between the tool last used and the Selection tool.</p><h2 id="ww1028903" class="hs1-headsub1">To work with layout tools:</h2><p id="ww1028929" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 439.2pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 178.7616pt"><p id="ww1028907" class="th-tablehead">To</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 260.4384pt"><p id="ww1028909" class="th-tablehead">Do this</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028911" class="td-tabledata">Use a tool once</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028913" class="td-tabledata">Click a tool to select it.</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028915" class="td-tabledata">Keep a tool selected, or locked </p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028917" class="td-tabledata">Double-click a tool.</p><p id="ww1028918" class="td-tabledata"><span class="zan-autonum">Note&nbsp;&nbsp;</span>You can specify a preference to keep layout tools locked. See 
+    <a href="../FMP_Help/layout-preferences.html#ww1027658"
+   
+     title="Setting layout preferences"
+    ><span class="zh-hyper">Setting layout preferences</span></a>.</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1028923" class="td-tabledata">Switch between the tool last used and the Selection tool <img class="Default" src="../FMP_Help/images/selection-tool.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="Selection tool" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028928" class="td-tabledata">Press Ctrl+Enter or Enter on the numeric keypad (Windows) or press Enter (macOS).</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1195232" class="td-tabledata">Select a tool that includes an arrow</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1195234" class="td-tabledata">Windows: Click the arrow to display additional tools, then choose the tool you want.</p><p id="ww1195241" class="td-tabledata">macOS: Click and hold the tool to display additional tools, then choose the tool you want.</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1305347" class="td-tabledata">Create an object that is constrained to a certain angle or shape (for example, draw a circle with the Oval tool, or create a square tab control)</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1305349" class="td-tabledata">Select the tool, and press Ctrl (Windows) or Option (macOS) as you create the object on the layout.</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1305385" class="td-tabledata">Create a horizontal or vertical line</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1305387" class="td-tabledata">Select the line tool, and press Shift as you draw the line on the layout.</p></td></tr></table></div><h2 id="ww1028933" class="rh-relatedhead"><span>Related topics</span>&nbsp;</h2><p id="ww1028945" class="rt-relatedtopic">
+    <a href="../FMP_Help/buttons-button-bars.html#ww1220836"
+   
+     title="Working with buttons and button bars on layouts"
+    ><span class="zh-hyper">Working with buttons and button bars on layouts</span></a></p><p id="ww1028949" class="rt-relatedtopic">
+    <a href="../FMP_Help/adding-fields-to-layout.html#ww1296106"
+   
+     title="Working with fields on a layout"
+    ><span class="zh-hyper">Working with fields on a layout</span></a></p><p id="ww1028953" class="rt-relatedtopic">
+    <a href="../FMP_Help/editing-objects-parts-background.html#ww1264108"
+   
+     title="Editing objects, layout parts, and the layout background"
+    ><span class="zh-hyper">Editing objects, layout parts, and the layout background</span></a></p><p id="ww1298339" class="rt-relatedtopic">
+    <a href="../FMP_Help/status-toolbar.html#ww1027830"
+   
+     title="Using the status toolbar"
+    ><span class="zh-hyper">Using the status toolbar</span></a></p><!-- FMI - Feedback Link --><div class="feedbacklink">Was this topic helpful? <a href="https://www.filemaker.com/redirects/fmp18_admin.html?page=feedback&amp;lang=en" target="external_window">Send feedback.</a></div><footer><!-- Related Topics --><!--                --><!-- Disqus --><!--        --><!-- Google Translation --><!--                    --><br /></footer></body></html>

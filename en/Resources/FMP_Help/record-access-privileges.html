@@ -1,0 +1,948 @@
+<!DOCTYPE html ><html xml:lang="en" lang="en" data-highlight-require-whitespace="false" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- saved from url=(0016)http://localhost -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>Editing record access privileges</title><link rel="Prev" href="creating-editing-privilege-sets.html" title="Previous" /><link rel="Next" href="layouts-privileges.html" title="Next" /><link rel="StyleSheet" href="css/passwords.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/skin.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/social.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" /><!--[if IE 7]><link rel="StyleSheet" href="css/passwords_IE7.css" type="text/css" media="all" /><![endif]--><link rel="StyleSheet" href="css/print.css" type="text/css" media="print" /><script type="text/javascript">
+    'use strict';
+
+    var redirect_url, page_hash;
+
+    if ((window === window.top) && (window.navigator.userAgent.indexOf('bot/') === -1)) {
+        // Redirect
+        //
+        redirect_url = "../index.html#page/FMP_Help/record-access-privileges.html";
+        if (window.document.location.hash.length > 1) {
+            // Sanitize and append it
+            //
+            page_hash = window.document.location.hash.substring(1);
+            page_hash = page_hash.replace(/[\\><:;"]|%5C|%3C|%3E|%3A|%3B|%22/gi, '');
+            redirect_url += '#' + page_hash;
+        }
+        window.document.location.replace(redirect_url);
+    }
+</script><script type="text/javascript" src="scripts/common.js"></script><script type="text/javascript" src="scripts/page.js"></script><script type="text/javascript" src="scripts/search-client.js"></script><script type="text/javascript" src="scripts/unidata.js"></script><script type="text/javascript" src="scripts/unibreak.js"></script><script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-15064788-14', 'auto');
+       ga('set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('send', 'pageview');
+       ga('create', 'UA-15064788-10', 'auto', 'globalProperty');
+       ga('globalProperty.set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('globalProperty.send', 'pageview');</script><script type="text/javascript"><!--
+    //FMI - tracking events for GA
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", function AddGaqPush() {
+        var links = document.getElementsByTagName("a");
+        for (var i=0; i < links.length; i++)
+        {
+            if (links[i].href.indexOf("page=help_zip") !== -1) { 
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Download', 'ZIP', '');");
+            } else if (links[i].href.indexOf("documentation") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Documentation Page', '');");
+            } else if (links[i].href.indexOf("page=doc_") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Document', '');");
+            } else if (links[i].href.indexOf("page=helphome_support") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Support', '');");
+            } else if (links[i].href.indexOf("page=feedback") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Feedback', location.href, '');");
+            }
+        }
+      }
+      , false)
+    }
+    // --></script><style type="text/css">
+/*FMI CSS*/
+      <!--
+/* General */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+	line-height: 170%;
+	background-color: rgb(245, 245, 245);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+img.Default {
+	vertical-align: text-bottom;
+}
+
+/* Page */
+div.feedbacklink
+{
+	margin:2em 0 0;
+	font-size:90%;
+	border-top:1px solid #bfbfbf;
+	padding:8px 12px 8px 12px;
+	color:#8d8d8d
+}
+
+.code_pre_wrap {
+	white-space: pre-wrap;
+}
+
+a:link .g-glosslink, a:visited .g-glosslink
+{
+	color: #000000;
+	text-decoration: underline;
+}
+
+.ti-title
+{
+	display: none;
+}
+
+span.c-code {
+  font-size: 9pt;
+}
+
+/* Page toolbar margin-top under breadcrumb */
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+}
+
+.ww_skin_toolbar {
+	padding-top: 20px;
+}
+
+.ti-title
+{
+	display: none;
+}
+.layout_wide {
+    padding: 0 0px 18px 0px;
+}
+
+div#layout_div.layout_narrow input.ww_skin_search_input,
+div#layout_div.layout_wide div#presentation_div.panel_overlay input.ww_skin_search_input {
+    display: inline;
+	visibility: visible;
+}
+
+div#container_div {
+	max-width: 1200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+	width:100%;
+	margin-top: 12px;
+}
+
+div#layout_div.layout_wide div#container_div {
+    left: 0px;
+    right: 0px;
+}
+
+div#index_content {
+  padding: 12px;
+}
+
+div#search {
+  background-color: white;
+}
+
+div#search {
+  background-color: white;
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+
+/* Search */
+body#searchBody {
+	background-color: transparent;
+}
+
+button#back_button {
+  float: left;
+  background: none;
+  background-image: url('../images/back_grey.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  border: 0;
+  text-decoration: none;
+  -webkit-apperance: none;
+  outline: 0;
+  text-display: none;
+  width: 20px;
+  height: 30px;
+  color: rgba(0,0,0,0);
+}
+
+button#back_button:hover {
+    cursor: pointer;
+	background-image: url('../images/back.png');
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+#search-input-text {
+  width: 50%;
+  background: #fff url('../images/search-50.png');
+  margin: 0;
+padding: 2px 0 2px 30px;
+height: 25px;
+background-color: #fff;
+background-size: 15px 15px;
+background-position: 5px 7px;
+background-repeat: no-repeat;
+font-size: 1.2em;
+border: 1px solid rgba(233,233,233,1);
+-webkit-appearance: none;
+border-radius: 3px;
+}
+
+#search-button {
+display: none;	/* original value: inline-block;*/
+overflow: hidden;
+width: 67px;
+height: 31px;
+color: white;
+background-image:linear-gradient(to bottom, #1681c3, #1066a1);
+border-radius: 0 4px 4px 0;
+border: 0px;
+font-size: 1em;
+padding: 3px 6px 3px 6px;
+position: absolute;
+}
+
+#search-results-container {
+  padding: 0.5em 0.5em;
+}
+
+.search-result-title {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.search-result-title > a {
+  color: rgb(67,114,255);
+  text-decoration: none;
+}
+
+.search-result-title > a:active {
+  color: rgb(67,114,255);
+}
+
+.search-result-title > a:visited {
+  color: rgb(67,114,255);
+}
+
+.search-result-summary {
+  padding-top: 4px;
+}
+
+.search-result-highlight{
+	padding:2px;
+	margin:-2px;
+	background-color: #ffffc7;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #ffffc7;
+	padding:2px;
+	margin:-2px;
+}
+
+/*tab size for code snippets - ID Custom */
+.co-code, .co1-code1, ff-funcformat, .ssf-scriptformat{
+	tab-size:3;
+}
+@media only screen and (min-width : 481px) {
+  /*see also "widget" - ID Custom */
+  .sah-seealsohead{
+	float: right;
+	width: 200px;
+	clear: both;
+	margin: 1.6em 0 0 1.8em;
+	padding: 5px 10px;
+	background-color: #F2F2F2;
+  }
+  
+  .sal-seealsolink{
+	float: right;
+	width: 200px;
+	clear: both;
+	background-color: #F2F2F2;
+	margin-top: 0 !important;
+	margin-left: 1.8em;
+	padding: 0 10px 10px;
+	line-height: 120%;
+  }
+}
+/*homepage - ID Custom */
+.welcome {
+  padding-top: 0;
+}
+
+.wol-outlinelinks,
+.wom-outlinemenu {
+  display:flex;
+  flex-wrap:wrap;
+  min-width: 140px;
+}
+.wom-outlinemenu a {
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  font-size: 11pt;
+  width: 40%;
+  background: -moz-linear-gradient(top, #f5f5f5, #fafafa); 
+  background: -webkit-linear-gradient(top,#f5f5f5, #fafafa);
+  background: linear-gradient(to bottom, #f5f5f5, #fafafa);
+  margin: 0 5px 10px 5px;
+}
+.wol-outlinelinks a{
+  font-size: 10pt;
+  width: 28%;
+}
+.wom-outlinemenu a,
+.wol-outlinelinks a{
+  padding: 10px;
+  text-align:center;
+  flex-grow: 1;
+
+}
+.wom-outlinemenu a .h-hyperlink,
+.wol-outlinelinks a .h-hyperlink,
+.wol-outlinelinks a .zh-hyper{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/*Skin.css*/
+a#banner {
+  background-image: url('images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 38px;
+  width: 300px;
+  margin-bottom: -5px;
+  display:block;
+}
+
+.ww_skin_company_logo > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:link:hover, .ww_skin_company_logo > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_name > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:link:hover, .ww_skin_company_name > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_email > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:link:hover, .ww_skin_company_email > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_progress_bar {
+    border: 1px solid #353535;
+}
+
+.ww_skin_progress_segment_complete {
+    background-color: #353535;
+}
+
+.ww_skin {
+	background-size: 600px auto;
+}
+
+.ww_skin_toc {
+    width: 38px;
+    height: 38px;
+    background-position: -306px -32px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_toc:hover {
+    background-position: -378px -32px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_toc {
+    background-position: -451px -32px;
+}
+
+a.ww_skin_toc_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_index {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -128px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_index:hover {
+    background-position: -376px -128px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_index {
+    background-position: -448px -128px;
+}
+
+a.ww_skin_index_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_home {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_home {
+    background-position: -304px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_home:hover {
+    background-position: -376px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_home {
+    background-position: -448px -1376px;
+}
+
+a.ww_skin_home_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_search {
+    height: 38px;
+	background-image: none !important;
+	width: 10px;
+  background-position: -100px -100px;
+  margin-left:3px;
+}
+
+.layout_wide .ww_skin_search{
+  width: 10px;
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_wide .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_narrow .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_search {
+    background-position: -450px -224px;
+}
+
+.ww_skin_globe {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -320px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_globe:hover {
+    background-position: -376px -320px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_globe {
+    background-position: -448px -320px;
+}
+
+a.ww_skin_globe_spacer {
+    background-image: none;
+    width: 24px;
+}
+
+.ww_skin_next {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -416px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_next {
+    background-position: -304px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_next:hover {
+    background-position: -376px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_next {
+    background-position: -448px -416px;
+}
+
+a.ww_skin_next_spacer {
+    display: none;
+}
+
+.layout_narrow a.ww_skin_next_spacer {
+    display: none;
+}
+
+.ww_skin_prev {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -512px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_prev {
+    background-position: -304px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_prev:hover {
+    background-position: -376px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_prev {
+    background-position: -448px -512px;
+}
+
+#toolbar_div {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.ww_skin_toolbar {
+	padding-top: 15px;
+}
+
+.ww_skin_toolbar_button_left {
+	padding-left: 5px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_center {
+    height: 38px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_right {
+	border: none;
+}
+
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+    background: #757575;
+}
+
+.ww_skin_search_form .ww_skin_toolbar_background_selected {
+	display: none !important;
+}
+
+.ww_skin_toolbar_left_background {
+    margin-left: 0;
+}
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+	background: transparent;
+}
+
+.ww_skin_toolbar_background_default {
+	background: transparent;
+}
+
+.ww_skin_search_input {
+  color: #525252;
+  height: 20px;
+  font-size: 13px;
+  margin: 5px 0 0 18px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  background-image: url('images/search-50.png');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding: 3px;
+  text-indent: 20px;
+  width: 250px;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_toc_container {
+	background-color: transparent;
+	border: none;
+}
+
+.ww_skin_toc_level_1 > li > div {
+    padding-left: 23px;
+}
+
+.ww_skin_toc_level_2 > li > div {
+    padding-left: 43px;
+}
+
+.ww_skin_toc_level_3 > li > div {
+    padding-left: 63px;
+}
+
+.ww_skin_toc_level_4 > li > div {
+    padding-left: 83px;
+}
+
+.ww_skin_toc_level_5 > li > div {
+    padding-left: 103px;
+}
+
+.ww_skin_toc_level_6 > li > div {
+    padding-left: 123px;
+}
+
+.ww_skin_toc_level_7 > li > div {
+    padding-left: 138px;
+}
+
+.ww_skin_toc_entry {
+    font-family: Helvetica, Arial, sans-serif;
+    border-width: 0px 0 0 0;
+    margin: 0;
+    padding: 8px 20px 8px 0;
+	line-height: 15px;
+}
+
+.ww_skin_toc_level_1:first-child > li:first-child > .ww_skin_toc_entry:first-child {
+    border-width: 0;
+}
+
+.ww_skin_toc_entry:hover {
+    background: #E0E0E0;
+}
+
+.ww_skin_toc_entry > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.ww_skin_toc_entry > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry:hover > a {
+    color: black;
+}
+
+.ww_skin_toc_entry:hover > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+    background-color: rgb(67,114,255);
+}
+
+.ww_skin_toc_dropdown {
+    margin: 2px 4px 0 0px;
+}
+
+.ww_skin_index_link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_panel_frame {
+    padding: 9px 0 0 0;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_panel_content {
+  border-width: 0px;
+  background-color: #fcfcfc;
+}
+
+.ww_skin_lightbox_frame {
+    top: 0;
+    left: 0;
+}
+
+.ww_skin_page_body {
+    padding: 30px 30px;
+	background-color: #fff;
+}
+
+.ww_skin_breadcrumbs {
+    margin: -6px -6px 0 -8px;
+    padding: 4px 24px 4px 12px;
+    color: #a4a4a4;
+    font-weight: normal;
+	max-width: 85%;
+	background: transparent;
+}
+
+.ww_skin_breadcrumbs a:link {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:visited {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:link:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_breadcrumbs a:visited:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+#wwconnect_header {
+  margin-bottom: 20px;
+}
+
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_toc_entry{
+	border: none;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+	background: rgb(67,114,255);
+}
+
+
+/* medium */
+@media only screen
+and (max-width : 769px) {
+  .ww_skin_search_input {
+    width: 170px;
+}
+
+}
+
+/* small */
+@media only screen
+and (max-width: 535px) {
+  .ww_skin_search_input {
+    width: 150px;
+  }
+
+a#banner{
+  height: 30px;
+  width: 160px;
+  margin-left: 15px;
+}
+
+div#container_div {
+  margin-top: 5px;
+}
+
+table.ww_skin_toolbar {
+  padding-top: 10px;
+}
+
+}
+
+/*phone*/
+@media only screen
+and (max-width : 435px) {
+
+  a#banner {
+    width: 129px;
+  }
+
+  .ww_skin_search_input {
+    width: 130px;
+  }
+   
+  body { 
+    overflow-x: hidden;
+  }
+  
+  .layout_narrow {
+    overflow-x: hidden;
+  }
+  
+  #presentation_div {
+    overflow-x:hidden;
+  }
+  
+  #page_div {
+    overflow-x:hidden;
+  }
+    div#page_div {
+    overflow-x: hidden;
+  }
+  html {
+   overflow-x: hidden;
+  }
+  body.ww_skin_page_body {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  
+}
+--></style></head><body id="pwKlSOayUCcLkARka3u5mYg" class="ww_skin_page_body" onload="Page.OnLoad('../index.html#page/FMP_Help/record-access-privileges.html');"><header id="wwconnect_header"><div class="ww_skin_breadcrumbs"><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/protecting-databases.html#wwconnect_header">Protecting databases</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/creating-editing-privilege-sets.html#wwconnect_header">Creating and editing privilege sets</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_current">Editing record access privileges</span></div><div class="ww_skin_page_toolbar"><a class="ww_behavior_print ww_skin ww_skin_print" title="Print" href="#">&nbsp;</a></div></header><h1 id="ww1028570" class="h3-head3">Editing record access privileges</h1><p id="ww1028574" class="b-body">
+    <a href="../FMP_Help/glossary.html#ww1028013"
+   
+     title="Glossary"
+    ><span class="g-glosslink">Privilege sets</span></a> can limit 
+    <a href="../FMP_Help/glossary.html#ww1027504"
+   
+     title="Glossary"
+    ><span class="g-glosslink">access</span></a> to 
+    <a href="../FMP_Help/glossary.html#ww1028030"
+   
+     title="Glossary"
+    ><span class="g-glosslink">records</span></a> in a file. For a file, you can set:</p><p id="ww1028575" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><em class="e-emphasis">Privileges for all tables:</em> you can limit whether a privilege set allows creating, editing, and deleting records in all the 
+    <a href="../FMP_Help/glossary.html#ww1045562"
+   
+     title="Glossary"
+    ><span class="g-glosslink">tables</span></a> in a file.</p><p id="ww1028577" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><em class="e-emphasis">Custom privileges for individual tables:</em> you can set individual record access limits for each table. For example, the privilege set can limit the ability to:</p><p id="ww1028578" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>View, edit, create, or delete all records in each table.</p><p id="ww1028579" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>View, edit, and delete certain records within each table. The privileges are limited by means of calculation that returns a 
+    <a href="../FMP_Help/glossary.html#ww1038496"
+   
+     title="Glossary"
+    ><span class="g-glosslink">Boolean</span></a> result for each record. When the calculation evaluates to True, access is allowed for that specific activity (such as viewing the record). When the calculation evaluates to False, access to that activity is prohibited.</p><p id="ww1028582" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Access or modify certain 
+    <a href="../FMP_Help/glossary.html#ww1027703"
+   
+     title="Glossary"
+    ><span class="g-glosslink">fields</span></a> within each table. When access to one or more fields is restricted in a table that is otherwise visible, the user will see<code class="c-code code_pre_wrap"> &lt;No Access&gt; </code>instead of the field data.</p><p id="ww1028583" class="b-body">You can only set record access privileges for tables defined in the current file. If the file contains relationships to tables in other files that you want to protect, you need to create 
+    <a href="../FMP_Help/glossary.html#ww1027507"
+   
+     title="Glossary"
+    ><span class="g-glosslink">accounts</span></a> and privilege sets in the other files to protect those tables. See 
+    <a href="../FMP_Help/accounts-privilege-sets-privileges.html#ww1082057"
+   
+     title="About accounts, privilege sets, and extended privileges"
+    ><span class="zh-hyper">About accounts, privilege sets, and extended privileges</span></a>.</p><h2 id="ww1028588" class="hs1-headsub1">To edit record access privileges for all tables:</h2><p id="ww1028589" class="s1f-step1first"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">1.	</span></span>Start editing a new or existing privilege set in the Edit Privilege Set dialog box.</p><p id="ww1028595" class="b1-body1">See 
+    <a href="../FMP_Help/creating-editing-privilege-sets.html#ww1088352"
+   
+     title="Creating and editing privilege sets"
+    ><span class="zh-hyper">Creating and editing privilege sets</span></a>.</p><p id="ww1028597" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">2.	</span></span>In the Data Access and Design area, for <strong class="o-onscreen">Records</strong>, choose an option.</p><p id="ww1028635" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t1-table1" style="width: 421.2pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 210.6pt"><p id="ww1028600" class="th-tablehead">To edit the privilege set to</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 210.6pt"><p id="ww1028602" class="th-tablehead">Choose</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028604" class="td-tabledata">Permit creating, editing, and deleting records in all tables</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028606" class="td-tabledata"><strong class="o-onscreen">Create, edit, and delete in all tables</strong></p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028611" class="td-tabledata">Permit creating and editing records only (prohibit deleting records) in all tables</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028613" class="td-tabledata"><strong class="o-onscreen">Create and edit in all tables</strong></p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028618" class="td-tabledata">Permit viewing records only (prohibit creating, editing, and deleting records) in all tables</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028620" class="td-tabledata"><strong class="o-onscreen">View only in all tables</strong></p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028625" class="td-tabledata">Prohibit accessing records in all tables</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028630" class="td-tabledata"><strong class="o-onscreen">All no access</strong></p></td></tr></table></div><p id="ww1079804" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">3.	</span></span>Click <strong class="o-onscreen">OK</strong>, then click <strong class="o-onscreen">OK</strong> in the Manage Security dialog box.</p><p id="ww1079808" class="b1-body1">Or, to assign the privilege set to one or more accounts, see 
+    <a href="../FMP_Help/creating-editing-accounts.html#ww1091713"
+   
+     title="Creating and editing accounts"
+    ><span class="zh-hyper">Creating and editing accounts</span></a>. </p><h2 id="ww1079615" class="hs1-headsub1">To edit record access privileges for individual tables:</h2><p id="ww1079616" class="s1f-step1first"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">1.	</span></span>Start editing a new or existing privilege set in the Edit Privilege Set dialog box.</p><p id="ww1079620" class="b1-body1">See 
+    <a href="../FMP_Help/creating-editing-privilege-sets.html#ww1088352"
+   
+     title="Creating and editing privilege sets"
+    ><span class="zh-hyper">Creating and editing privilege sets</span></a>.</p><p id="ww1079621" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">2.	</span></span>In the Data Access and Design area, for <strong class="o-onscreen">Records</strong>, choose <strong class="o-onscreen">Custom privileges</strong>. </p><p id="ww1079862" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">3.	</span></span>In the Custom Record Privileges dialog box, select one or more tables for which you want to edit custom privileges. (Or select <strong class="o-onscreen">Any New Table</strong> to set privileges for any table created later.)</p><p id="ww1080203" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">4.	</span></span>To set custom privileges for viewing, editing, creating, and deleting records, choose one of the following options from the <strong class="o-onscreen">View</strong>, <strong class="o-onscreen">Edit</strong>, <strong class="o-onscreen">Create</strong>, and <strong class="o-onscreen">Delete</strong> lists in the Set Privileges area:</p><p id="ww1079688" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t1-table1" style="width: 421.20000000000004pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 135.83304pt"><p id="ww1079669" class="th-tablehead">Choose</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 285.36696pt"><p id="ww1079671" class="th-tablehead">To</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079673" class="td-tabledata"><strong class="o-onscreen">Yes</strong></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079675" class="td-tabledata">Allow the privilege (viewing, editing, creating, or deleting records).</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079677" class="td-tabledata"><strong class="o-onscreen">Limited</strong> (available when only a single table is selected)</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079679" class="td-tabledata">Allow or prohibit the privilege (viewing, editing, and deleting records) for certain records within the table.</p><p id="ww1079680" class="td-tabledata">In the Specify Calculation dialog box, enter a calculation, and click <strong class="o-onscreen">OK</strong>. See 
+    <a href="../FMP_Help/record-access-privileges.html#ww1028797"
+   
+     title="Editing record access privileges"
+    ><span class="zh-hyper">Entering a formula for limiting access on a record-by-record basis</span></a>, below.</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079685" class="td-tabledata"><strong class="o-onscreen">No</strong></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079687" class="td-tabledata">Prohibit the privilege (viewing, editing, creating, or deleting records).</p></td></tr></table></div><p id="ww1079689" class="n1-note1"><span class="zan-autonum">Note&nbsp;&nbsp;</span>Avoid creating inconsistent combinations of view, edit, create, and delete privileges. For example, you most likely do not want to permit users to delete records that they cannot view.</p><p id="ww1079690" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">5.	</span></span>To limit access or modification of certain fields within a table, continue with the next step.</p><p id="ww1079691" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">6.	</span></span>Select the table that contains the fields for which you want to limit access. Then, for <strong class="o-onscreen">Field Access</strong>, choose <strong class="o-onscreen">Limited</strong>.</p><p id="ww1079692" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">7.	</span></span>In the Custom Field Privileges dialog box, select each field for which you want to limit access (or select <strong class="o-onscreen">Any New Field</strong> to set custom privileges for any field created later). Then choose one of the following options:</p><p id="ww1079711" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t1-table1" style="width: 421.20000000000004pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 69.66648pt"><p id="ww1079695" class="th-tablehead">Choose</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 351.53352pt"><p id="ww1079697" class="th-tablehead">To</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079699" class="td-tabledata"><strong class="o-onscreen">Modifiable</strong></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079701" class="td-tabledata">Allow viewing and editing of the field data.</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079703" class="td-tabledata"><strong class="o-onscreen">View only</strong></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079705" class="td-tabledata">Allow viewing of the field data. (Editing of field data is not allowed.)</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079707" class="td-tabledata"><strong class="o-onscreen">No access</strong></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079709" class="td-tabledata">Prohibit access to the field. </p><p id="ww1079710" class="td-tabledata"><span class="zan-autonum">Note&nbsp;&nbsp;</span>When access to one or more fields is prohibited in a table that is otherwise visible, the user will see<code class="c-code code_pre_wrap"> &lt;No Access&gt; </code>instead of the field data.</p></td></tr></table></div><h2 id="ww1028728" class="hs1n-headsub1notes"><span>Notes</span>&nbsp;</h2><p id="ww1028738" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Users that cannot view certain records can still browse these records, but the user will see<code class="c-code code_pre_wrap"> &lt;No Access&gt; </code>instead of the field data within each record.</p><p id="ww1028739" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Many features in FileMaker&nbsp;Pro Advanced are affected when you limit access to records, fields, and tables within a file. The following table summarizes the effects for some features.</p><p id="ww1028795" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t1-table1" style="width: 450pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 103.01328pt"><p id="ww1028742" class="th-tablehead">Feature</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 346.98672pt"><p id="ww1028744" class="th-tablehead">Effect of limiting data access</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028747" class="td-tabledata">
+    <a href="../FMP_Help/glossary.html#ww1027894"
+   
+     title="Glossary"
+    ><span class="g-glosslink">Lookups</span></a> and Relookups</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028749" class="td-tabledata">Lookups and relookups are defined by three components, all of which can be affected by data access privileges:</p><p id="ww1028752" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>At a minimum, the 
+    <a href="../FMP_Help/glossary.html#ww1027907"
+   
+     title="Glossary"
+    ><span class="g-glosslink">match fields</span></a> used in the 
+    <a href="../FMP_Help/glossary.html#ww1028048"
+   
+     title="Glossary"
+    ><span class="g-glosslink">relationship</span></a> must have view privileges. Also, no lookup will occur for any records that are not viewable in both the source and destination tables because a match cannot occur under these circumstances. This includes the first related matching record, as well as any records used to copy the next higher or lower value.</p><p id="ww1028753" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>At a minimum, the source field for the lookup must have view privileges.</p><p id="ww1028754" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>The destination field for the lookup must have edit privileges.</p><p id="ww1028755" class="td-tabledata">FileMaker&nbsp;Pro Advanced does not display an error message if a lookup operation skips certain records due to access privilege restrictions.</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028757" class="td-tabledata">Accessing related data</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028759" class="td-tabledata">At a minimum, both matching fields in a relationship must have view privileges in order for the relationship to work. Any 
+    <a href="../FMP_Help/glossary.html#ww1028036"
+   
+     title="Glossary"
+    ><span class="g-glosslink">related fields</span></a> you want to display based on the matching fields must also have view privileges at a minimum.</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028762" class="td-tabledata">Finds</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028765" class="td-tabledata">The 
+    <a href="../FMP_Help/glossary.html#ww1027747"
+   
+     title="Glossary"
+    ><span class="g-glosslink">found set</span></a> is always filtered to display only those records that have view privileges at a minimum. The results of the Get(FoundCount) 
+    <a href="../FMP_Help/glossary.html#ww1027756"
+   
+     title="Glossary"
+    ><span class="g-glosslink">function</span></a> are also affected if access is limited.</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028769" class="td-tabledata">
+    <a href="../FMP_Help/glossary.html#ww1028227"
+   
+     title="Glossary"
+    ><span class="g-glosslink">Value lists</span></a></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028771" class="td-tabledata">When a value list is based on the content of a field, and view privileges are prohibited on the field, then the value list does not display any values. This is so that users do not inadvertently gain access to confidential information. The results of the<code class="c-code code_pre_wrap"> ValueListItems </code>function are also hidden when access is limited.</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028774" class="td-tabledata">
+    <a href="../FMP_Help/glossary.html#ww1028154"
+   
+     title="Glossary"
+    ><span class="g-glosslink">Summary fields</span></a> and 
+    <a href="../FMP_Help/glossary.html#ww1027566"
+   
+     title="Glossary"
+    ><span class="g-glosslink">calculated fields</span></a></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028777" class="td-tabledata">The results displayed in summary fields as well as calculated fields which summarize over multiple records will exclude data from records for which view privileges have been prohibited.</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028779" class="td-tabledata">Find/Replace, Replace&nbsp;Contents, and spelling checking</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028781" class="td-tabledata">A user can only change data using these features in:</p><p id="ww1028782" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>records that have edit privileges.</p><p id="ww1028783" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>fields that are modifiable.</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028785" class="td-tabledata">Scripts</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028787" class="td-tabledata">You can set an option for a script to run with full access privileges, which permits a script to perform operations that a user with limited privileges would not usually be able to do. If you don't enable this option, any script steps that attempt to access or change restricted data will fail. See 
+    <a href="../FMP_Help/creating-editing-scripts.html#ww1059866"
+   
+     title="Creating and editing scripts"
+    ><span class="zh-hyper">Creating and editing scripts</span></a>.</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028792" class="td-tabledata">Apple events</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028794" class="td-tabledata">Data access privileges can affect the ability of a user to get, set, and delete data using Apple events. Some Apple event commands may fail if the user does not have appropriate access privileges.</p></td></tr></table></div><h2 id="ww1028797" class="hs1-headsub1">Entering a formula for limiting access on a record-by-record basis</h2><p id="ww1028798" class="b-body">To allow or prohibit record viewing, editing, and deleting privileges to certain records within a table, you need to specify a <span class="g-glosslink">Boolean</span> calculation that determines whether the privilege is permitted. For each record in the database, access is allowed when the calculation evaluates to True or to a non-zero result, and access is prohibited when the calculation evaluates to False or zero. Here are two examples:</p><p id="ww1028800" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><em class="e-emphasis">To limit access to only those records created by the current account:</em> Define a text field named <code class="c-code code_pre_wrap">Record_Created_By</code>, and set the auto-enter option for the field to automatically enter the account name when the record is created. (See 
+    <a href="../FMP_Help/automatic-data-entry.html#ww1136760"
+   
+     title="Defining automatic data entry"
+    ><span class="zh-hyper">Defining automatic data entry</span></a>.) Then use the following calculation when defining custom record access privileges:</p><code id="ww1028804" class="co1-code1 code_pre_wrap">Record_Created_By = Get(AccountName)</code><p id="ww1028805" class="b1-body1">The user will only have Browse access to records for which the above calculation evaluates as True.</p><p id="ww1028806" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><em class="e-emphasis">To limit access to only those records created on the current date:</em> Define a date field named <code class="c-code code_pre_wrap">Record_creation_date</code>, and set the auto-enter option for the field to automatically enter the creation date when the record is created. (See 
+    <a href="../FMP_Help/automatic-data-entry.html#ww1136760"
+   
+     title="Defining automatic data entry"
+    ><span class="zh-hyper">Defining automatic data entry</span></a>.) Then use the following calculation when defining custom record access privileges:</p><code id="ww1028810" class="co1-code1 code_pre_wrap">Record_creation_date = Get(CurrentDate)</code><p id="ww1028811" class="b1-body1">The user will only have Browse access to records for which the above calculation evaluates as True.</p><p id="ww1085558" class="nt-notetip"><span class="zan-autonum">Tip&nbsp;&nbsp;</span>If you specify a calculation to prohibit viewing of certain records within a table, in most cases you should use the same calculation to prohibit editing and deleting of the same types of records. Otherwise, you may inadvertently allow users to edit or delete records that they cannot view.</p><h2 id="ww1085559" class="hs1n-headsub1notes"><span>Notes</span>&nbsp;</h2><p id="ww1085560" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>The Boolean calculation that determines record access privileges can have unexpected results, particularly if it is based on a user-editable field. For example, it's possible for a user with access privileges for only certain records to inadvertently deny themselves access to a record after editing it. The user could make a change to a record's content that changes the result of the Boolean record access calculation so that it evaluates to false; then that user would no longer be able to view, edit, or delete the record once he or she exits that record. </p><p id="ww1085531" class="b1-body1">Because changes are committed as soon as a user exits a record, a user making changes of this type will not be able to return to the record. (In most cases, you should base record access calculations on fields that are not directly editable by users, such as auto-entered fields that contain account names, creation dates, and modification dates.)</p><p id="ww1028816" class="b1-body1">Also, if the file is 
+    <a href="../FMP_Help/glossary.html#ww1028096"
+   
+     title="Glossary"
+    ><span class="g-glosslink">shared</span></a> and the Boolean calculation that determines record access privileges contains one or more 
+    <a href="../FMP_Help/glossary.html#ww1058324"
+   
+     title="Glossary"
+    ><span class="g-glosslink">global fields</span></a>, you may be able to improve network performance by moving some global fields into a separate table. See the Notes section in 
+    <a href="../FMP_Help/global-fields.html#ww1029739"
+   
+     title="Defining global fields (fields with global storage)"
+    ><span class="zh-hyper">Defining global fields (fields with global storage)</span></a>.</p><p id="ww1050981" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>To fully support multiple windows that have their own found sets, summary values are a part of the found set. A record may appear in multiple windows, and each window has its own found set and sort order. For these reasons, do not base privilege calculations on summary or Get functions that rely on values using a particular found set.</p><!-- FMI - Feedback Link --><div class="feedbacklink">Was this topic helpful? <a href="https://www.filemaker.com/redirects/fmp18_admin.html?page=feedback&amp;lang=en" target="external_window">Send feedback.</a></div><footer><!-- Related Topics --><!--                --><!-- Disqus --><!--        --><!-- Google Translation --><!--                    --><br /></footer></body></html>

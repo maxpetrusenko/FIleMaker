@@ -1,0 +1,20 @@
+var pairs =
+{
+"floor":{"returns":1,"number":1,"1.25":1,"(-1.25":1}
+,"returns":{"number":1,"floor":1,"-2":1}
+,"number":{"rounded":1,"number":1,"-any":1,"filemaker":1}
+,"rounded":{"next":1}
+,"next":{"lower":1}
+,"lower":{"integer":1}
+,"integer":{"floor":1}
+,"-any":{"numeric":1}
+,"numeric":{"expression":1}
+,"expression":{"field":1,"number":1}
+,"field":{"numeric":1}
+,"filemaker":{"pro":1}
+,"pro":{"7.0":1}
+,"7.0":{"floor":1}
+,"1.25":{"returns":1}
+,"(-1.25":{"returns":1}
+}
+;Search.control.loadWordPairs(pairs);

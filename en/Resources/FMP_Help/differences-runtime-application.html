@@ -1,0 +1,904 @@
+<!DOCTYPE html ><html xml:lang="en" lang="en" data-highlight-require-whitespace="false" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- saved from url=(0016)http://localhost -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>Differences between the runtime application and FileMaker Pro Advanced</title><link rel="Prev" href="recovering-runtime.html" title="Previous" /><link rel="Next" href="kiosk-mode.html" title="Next" /><link rel="StyleSheet" href="css/fmpa_tools.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/skin.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/social.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" /><!--[if IE 7]><link rel="StyleSheet" href="css/fmpa_tools_IE7.css" type="text/css" media="all" /><![endif]--><link rel="StyleSheet" href="css/print.css" type="text/css" media="print" /><script type="text/javascript">
+    'use strict';
+
+    var redirect_url, page_hash;
+
+    if ((window === window.top) && (window.navigator.userAgent.indexOf('bot/') === -1)) {
+        // Redirect
+        //
+        redirect_url = "../index.html#page/FMP_Help/differences-runtime-application.html";
+        if (window.document.location.hash.length > 1) {
+            // Sanitize and append it
+            //
+            page_hash = window.document.location.hash.substring(1);
+            page_hash = page_hash.replace(/[\\><:;"]|%5C|%3C|%3E|%3A|%3B|%22/gi, '');
+            redirect_url += '#' + page_hash;
+        }
+        window.document.location.replace(redirect_url);
+    }
+</script><script type="text/javascript" src="scripts/common.js"></script><script type="text/javascript" src="scripts/page.js"></script><script type="text/javascript" src="scripts/search-client.js"></script><script type="text/javascript" src="scripts/unidata.js"></script><script type="text/javascript" src="scripts/unibreak.js"></script><script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-15064788-14', 'auto');
+       ga('set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('send', 'pageview');
+       ga('create', 'UA-15064788-10', 'auto', 'globalProperty');
+       ga('globalProperty.set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('globalProperty.send', 'pageview');</script><script type="text/javascript"><!--
+    //FMI - tracking events for GA
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", function AddGaqPush() {
+        var links = document.getElementsByTagName("a");
+        for (var i=0; i < links.length; i++)
+        {
+            if (links[i].href.indexOf("page=help_zip") !== -1) { 
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Download', 'ZIP', '');");
+            } else if (links[i].href.indexOf("documentation") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Documentation Page', '');");
+            } else if (links[i].href.indexOf("page=doc_") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Document', '');");
+            } else if (links[i].href.indexOf("page=helphome_support") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Support', '');");
+            } else if (links[i].href.indexOf("page=feedback") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Feedback', location.href, '');");
+            }
+        }
+      }
+      , false)
+    }
+    // --></script><style type="text/css">
+/*FMI CSS*/
+      <!--
+/* General */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+	line-height: 170%;
+	background-color: rgb(245, 245, 245);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+img.Default {
+	vertical-align: text-bottom;
+}
+
+/* Page */
+div.feedbacklink
+{
+	margin:2em 0 0;
+	font-size:90%;
+	border-top:1px solid #bfbfbf;
+	padding:8px 12px 8px 12px;
+	color:#8d8d8d
+}
+
+.code_pre_wrap {
+	white-space: pre-wrap;
+}
+
+a:link .g-glosslink, a:visited .g-glosslink
+{
+	color: #000000;
+	text-decoration: underline;
+}
+
+.ti-title
+{
+	display: none;
+}
+
+span.c-code {
+  font-size: 9pt;
+}
+
+/* Page toolbar margin-top under breadcrumb */
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+}
+
+.ww_skin_toolbar {
+	padding-top: 20px;
+}
+
+.ti-title
+{
+	display: none;
+}
+.layout_wide {
+    padding: 0 0px 18px 0px;
+}
+
+div#layout_div.layout_narrow input.ww_skin_search_input,
+div#layout_div.layout_wide div#presentation_div.panel_overlay input.ww_skin_search_input {
+    display: inline;
+	visibility: visible;
+}
+
+div#container_div {
+	max-width: 1200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+	width:100%;
+	margin-top: 12px;
+}
+
+div#layout_div.layout_wide div#container_div {
+    left: 0px;
+    right: 0px;
+}
+
+div#index_content {
+  padding: 12px;
+}
+
+div#search {
+  background-color: white;
+}
+
+div#search {
+  background-color: white;
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+
+/* Search */
+body#searchBody {
+	background-color: transparent;
+}
+
+button#back_button {
+  float: left;
+  background: none;
+  background-image: url('../images/back_grey.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  border: 0;
+  text-decoration: none;
+  -webkit-apperance: none;
+  outline: 0;
+  text-display: none;
+  width: 20px;
+  height: 30px;
+  color: rgba(0,0,0,0);
+}
+
+button#back_button:hover {
+    cursor: pointer;
+	background-image: url('../images/back.png');
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+#search-input-text {
+  width: 50%;
+  background: #fff url('../images/search-50.png');
+  margin: 0;
+padding: 2px 0 2px 30px;
+height: 25px;
+background-color: #fff;
+background-size: 15px 15px;
+background-position: 5px 7px;
+background-repeat: no-repeat;
+font-size: 1.2em;
+border: 1px solid rgba(233,233,233,1);
+-webkit-appearance: none;
+border-radius: 3px;
+}
+
+#search-button {
+display: none;	/* original value: inline-block;*/
+overflow: hidden;
+width: 67px;
+height: 31px;
+color: white;
+background-image:linear-gradient(to bottom, #1681c3, #1066a1);
+border-radius: 0 4px 4px 0;
+border: 0px;
+font-size: 1em;
+padding: 3px 6px 3px 6px;
+position: absolute;
+}
+
+#search-results-container {
+  padding: 0.5em 0.5em;
+}
+
+.search-result-title {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.search-result-title > a {
+  color: rgb(67,114,255);
+  text-decoration: none;
+}
+
+.search-result-title > a:active {
+  color: rgb(67,114,255);
+}
+
+.search-result-title > a:visited {
+  color: rgb(67,114,255);
+}
+
+.search-result-summary {
+  padding-top: 4px;
+}
+
+.search-result-highlight{
+	padding:2px;
+	margin:-2px;
+	background-color: #ffffc7;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #ffffc7;
+	padding:2px;
+	margin:-2px;
+}
+
+/*tab size for code snippets - ID Custom */
+.co-code, .co1-code1, ff-funcformat, .ssf-scriptformat{
+	tab-size:3;
+}
+@media only screen and (min-width : 481px) {
+  /*see also "widget" - ID Custom */
+  .sah-seealsohead{
+	float: right;
+	width: 200px;
+	clear: both;
+	margin: 1.6em 0 0 1.8em;
+	padding: 5px 10px;
+	background-color: #F2F2F2;
+  }
+  
+  .sal-seealsolink{
+	float: right;
+	width: 200px;
+	clear: both;
+	background-color: #F2F2F2;
+	margin-top: 0 !important;
+	margin-left: 1.8em;
+	padding: 0 10px 10px;
+	line-height: 120%;
+  }
+}
+/*homepage - ID Custom */
+.welcome {
+  padding-top: 0;
+}
+
+.wol-outlinelinks,
+.wom-outlinemenu {
+  display:flex;
+  flex-wrap:wrap;
+  min-width: 140px;
+}
+.wom-outlinemenu a {
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  font-size: 11pt;
+  width: 40%;
+  background: -moz-linear-gradient(top, #f5f5f5, #fafafa); 
+  background: -webkit-linear-gradient(top,#f5f5f5, #fafafa);
+  background: linear-gradient(to bottom, #f5f5f5, #fafafa);
+  margin: 0 5px 10px 5px;
+}
+.wol-outlinelinks a{
+  font-size: 10pt;
+  width: 28%;
+}
+.wom-outlinemenu a,
+.wol-outlinelinks a{
+  padding: 10px;
+  text-align:center;
+  flex-grow: 1;
+
+}
+.wom-outlinemenu a .h-hyperlink,
+.wol-outlinelinks a .h-hyperlink,
+.wol-outlinelinks a .zh-hyper{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/*Skin.css*/
+a#banner {
+  background-image: url('images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 38px;
+  width: 300px;
+  margin-bottom: -5px;
+  display:block;
+}
+
+.ww_skin_company_logo > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:link:hover, .ww_skin_company_logo > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_name > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:link:hover, .ww_skin_company_name > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_email > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:link:hover, .ww_skin_company_email > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_progress_bar {
+    border: 1px solid #353535;
+}
+
+.ww_skin_progress_segment_complete {
+    background-color: #353535;
+}
+
+.ww_skin {
+	background-size: 600px auto;
+}
+
+.ww_skin_toc {
+    width: 38px;
+    height: 38px;
+    background-position: -306px -32px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_toc:hover {
+    background-position: -378px -32px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_toc {
+    background-position: -451px -32px;
+}
+
+a.ww_skin_toc_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_index {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -128px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_index:hover {
+    background-position: -376px -128px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_index {
+    background-position: -448px -128px;
+}
+
+a.ww_skin_index_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_home {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_home {
+    background-position: -304px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_home:hover {
+    background-position: -376px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_home {
+    background-position: -448px -1376px;
+}
+
+a.ww_skin_home_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_search {
+    height: 38px;
+	background-image: none !important;
+	width: 10px;
+  background-position: -100px -100px;
+  margin-left:3px;
+}
+
+.layout_wide .ww_skin_search{
+  width: 10px;
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_wide .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_narrow .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_search {
+    background-position: -450px -224px;
+}
+
+.ww_skin_globe {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -320px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_globe:hover {
+    background-position: -376px -320px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_globe {
+    background-position: -448px -320px;
+}
+
+a.ww_skin_globe_spacer {
+    background-image: none;
+    width: 24px;
+}
+
+.ww_skin_next {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -416px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_next {
+    background-position: -304px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_next:hover {
+    background-position: -376px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_next {
+    background-position: -448px -416px;
+}
+
+a.ww_skin_next_spacer {
+    display: none;
+}
+
+.layout_narrow a.ww_skin_next_spacer {
+    display: none;
+}
+
+.ww_skin_prev {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -512px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_prev {
+    background-position: -304px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_prev:hover {
+    background-position: -376px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_prev {
+    background-position: -448px -512px;
+}
+
+#toolbar_div {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.ww_skin_toolbar {
+	padding-top: 15px;
+}
+
+.ww_skin_toolbar_button_left {
+	padding-left: 5px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_center {
+    height: 38px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_right {
+	border: none;
+}
+
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+    background: #757575;
+}
+
+.ww_skin_search_form .ww_skin_toolbar_background_selected {
+	display: none !important;
+}
+
+.ww_skin_toolbar_left_background {
+    margin-left: 0;
+}
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+	background: transparent;
+}
+
+.ww_skin_toolbar_background_default {
+	background: transparent;
+}
+
+.ww_skin_search_input {
+  color: #525252;
+  height: 20px;
+  font-size: 13px;
+  margin: 5px 0 0 18px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  background-image: url('images/search-50.png');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding: 3px;
+  text-indent: 20px;
+  width: 250px;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_toc_container {
+	background-color: transparent;
+	border: none;
+}
+
+.ww_skin_toc_level_1 > li > div {
+    padding-left: 23px;
+}
+
+.ww_skin_toc_level_2 > li > div {
+    padding-left: 43px;
+}
+
+.ww_skin_toc_level_3 > li > div {
+    padding-left: 63px;
+}
+
+.ww_skin_toc_level_4 > li > div {
+    padding-left: 83px;
+}
+
+.ww_skin_toc_level_5 > li > div {
+    padding-left: 103px;
+}
+
+.ww_skin_toc_level_6 > li > div {
+    padding-left: 123px;
+}
+
+.ww_skin_toc_level_7 > li > div {
+    padding-left: 138px;
+}
+
+.ww_skin_toc_entry {
+    font-family: Helvetica, Arial, sans-serif;
+    border-width: 0px 0 0 0;
+    margin: 0;
+    padding: 8px 20px 8px 0;
+	line-height: 15px;
+}
+
+.ww_skin_toc_level_1:first-child > li:first-child > .ww_skin_toc_entry:first-child {
+    border-width: 0;
+}
+
+.ww_skin_toc_entry:hover {
+    background: #E0E0E0;
+}
+
+.ww_skin_toc_entry > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.ww_skin_toc_entry > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry:hover > a {
+    color: black;
+}
+
+.ww_skin_toc_entry:hover > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+    background-color: rgb(67,114,255);
+}
+
+.ww_skin_toc_dropdown {
+    margin: 2px 4px 0 0px;
+}
+
+.ww_skin_index_link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_panel_frame {
+    padding: 9px 0 0 0;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_panel_content {
+  border-width: 0px;
+  background-color: #fcfcfc;
+}
+
+.ww_skin_lightbox_frame {
+    top: 0;
+    left: 0;
+}
+
+.ww_skin_page_body {
+    padding: 30px 30px;
+	background-color: #fff;
+}
+
+.ww_skin_breadcrumbs {
+    margin: -6px -6px 0 -8px;
+    padding: 4px 24px 4px 12px;
+    color: #a4a4a4;
+    font-weight: normal;
+	max-width: 85%;
+	background: transparent;
+}
+
+.ww_skin_breadcrumbs a:link {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:visited {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:link:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_breadcrumbs a:visited:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+#wwconnect_header {
+  margin-bottom: 20px;
+}
+
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_toc_entry{
+	border: none;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+	background: rgb(67,114,255);
+}
+
+
+/* medium */
+@media only screen
+and (max-width : 769px) {
+  .ww_skin_search_input {
+    width: 170px;
+}
+
+}
+
+/* small */
+@media only screen
+and (max-width: 535px) {
+  .ww_skin_search_input {
+    width: 150px;
+  }
+
+a#banner{
+  height: 30px;
+  width: 160px;
+  margin-left: 15px;
+}
+
+div#container_div {
+  margin-top: 5px;
+}
+
+table.ww_skin_toolbar {
+  padding-top: 10px;
+}
+
+}
+
+/*phone*/
+@media only screen
+and (max-width : 435px) {
+
+  a#banner {
+    width: 129px;
+  }
+
+  .ww_skin_search_input {
+    width: 130px;
+  }
+   
+  body { 
+    overflow-x: hidden;
+  }
+  
+  .layout_narrow {
+    overflow-x: hidden;
+  }
+  
+  #presentation_div {
+    overflow-x:hidden;
+  }
+  
+  #page_div {
+    overflow-x:hidden;
+  }
+    div#page_div {
+    overflow-x: hidden;
+  }
+  html {
+   overflow-x: hidden;
+  }
+  body.ww_skin_page_body {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  
+}
+--></style></head><body id="pPmFYWEme1qgdqCd35SLAFg" class="ww_skin_page_body" onload="Page.OnLoad('../index.html#page/FMP_Help/differences-runtime-application.html');"><header id="wwconnect_header"><div class="ww_skin_breadcrumbs"><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/using-advanced.html#wwconnect_header">Using advanced tools</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/runtime.html#wwconnect_header">About creating runtime solutions</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_current">Differences between the runtime application and FileMaker Pro Advanced</span></div><div class="ww_skin_page_toolbar"><a class="ww_behavior_print ww_skin ww_skin_print" title="Print" href="#">&nbsp;</a></div></header><h1 id="ww1048872" class="h3-head3">Differences between the runtime application and FileMaker Pro Advanced</h1><p id="ww1067460" class="n-note"><span class="zan-autonum">Note&nbsp;&nbsp;</span>This topic describes features that are available when the <strong class="o-onscreen">Use advanced tools</strong> general preference is selected. See 
+    <a href="../FMP_Help/using-advanced.html#ww1029978"
+   
+     title="Using advanced tools"
+    ><span class="zh-hyper">Using advanced tools</span></a>.</p><p id="ww1065511" class="b-body">When you double-click the FileMaker&nbsp;Pro Advanced application icon to start the application, you can create a new solution or choose a solution to open. When you start a FileMaker&nbsp;Pro Advanced runtime application, the primary bound file opens automatically. </p><p id="ww1047244" class="b-body">Other key differences between the runtime application and FileMaker&nbsp;Pro Advanced:</p><p id="ww1047245" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>All the database design features have been removed or hidden in the runtime application.</p><p id="ww1049595" class="b1-body1">This includes Layout mode and commands on the Manage submenu.</p><p id="ww1049596" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>
+    <a href="../FMP_Help/glossary.html#ww1027619"
+   
+     title="Glossary"
+    ><span class="g-glosslink">Custom functions</span></a> and 
+    <a href="../FMP_Help/glossary.html#ww1027622"
+   
+     title="Glossary"
+    ><span class="g-glosslink">custom menus</span></a> will work in the runtime application, although users of the runtime application cannot modify or create new custom functions or custom menus.</p><p id="ww1047248" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Some other menu commands have been removed from the runtime application.</p><p id="ww1047249" class="b1-body1">For example, you can't use the runtime application to create, open, or close a solution. (Bound runtime solutions must contain a custom button or script to close or open other files. There is no close command on a runtime solution window.)</p><p id="ww1047251" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Plug-ins can be enabled in the Preferences dialog box. The <strong class="o-onscreen">Allow Solutions to Install Files</strong> option in the Plug-Ins preferences allows plug-in updates to install automatically. See 
+    <a href="../FMP_Help/plug-in-preferences.html#ww1027768"
+   
+     title="Setting plug-in preferences"
+    ><span class="zh-hyper">Setting plug-in preferences</span></a>.</p><p id="ww1047258" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Although the XML Data filter appears as an option for the 
+    <a href="../FMP_Help/convert-file.html#ww1215464"
+   
+     title="Convert File"
+    ><span class="zh-hyper">Convert File script step</span></a>, you can't convert XML files using this script step in a runtime application.</p><p id="ww1047259" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>The FileMaker runtime application is for single-user solutions. Therefore a runtime solution cannot be shared peer-to-peer over a network. To allow multiple users to access the same runtime solution, you must open the runtime solution in FileMaker&nbsp;Pro Advanced or FileMaker&nbsp;Server.</p><p id="ww1047260" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>macOS: 
+    <a href="../FMP_Help/glossary.html#ww1027519"
+   
+     title="Glossary"
+    ><span class="g-glosslink">Apple events</span></a> are supported in runtime applications.</p><p id="ww1060830" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Additionally, runtime applications don't support:</p><p id="ww1060849" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>the ability to Save/Send Records as PDF files</p><p id="ww1067977" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>
+    <a href="../FMP_Help/glossary.html#ww1068482"
+   
+     title="Glossary"
+    ><span class="g-glosslink">advanced tools</span></a></p><p id="ww1067978" class="b2-body2">If a runtime database is opened in FileMaker&nbsp;Pro Advanced, advanced tools are available (unless full access privileges have been removed).</p><p id="ww1061160" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>external SQL 
+    <a href="../FMP_Help/glossary.html#ww1027629"
+   
+     title="Glossary"
+    ><span class="g-glosslink">data sources</span></a> (ESS), 
+    <a href="../FMP_Help/glossary.html#ww1027961"
+   
+     title="Glossary"
+    ><span class="g-glosslink">ODBC</span></a> import, or the 
+    <a href="../FMP_Help/execute-sql.html#ww1219061"
+   
+     title="Execute SQL"
+    ><span class="zh-hyper">Execute SQL script step</span></a></p><p id="ww1061162" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>
+    <a href="../FMP_Help/glossary.html#ww1036384"
+   
+     title="Glossary"
+    ><span class="g-glosslink">charts</span></a> </p><p id="ww1061164" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>
+    <a href="../FMP_Help/glossary.html#ww1059596"
+   
+     title="Glossary"
+    ><span class="g-glosslink">OAuth identity provider</span></a> accounts</p><p id="ww1061024" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>the JSON functions (see 
+    <a href="../FMP_Help/json-functions.html#ww1155067"
+   
+     title="Working with the JSON functions"
+    ><span class="zh-hyper">Working with the JSON functions</span></a>)</p><p id="ww1061061" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>specifying cURL options in the 
+    <a href="../FMP_Help/insert-from-url.html#ww1210738"
+   
+     title="Insert From URL"
+    ><span class="zh-hyper">Insert From URL script step</span></a></p><h2 id="ww1047269" class="hs1-headsub1">Application and document preferences</h2><p id="ww1047270" class="b-body">In the runtime application, some options are not available on the General tab of the Preferences dialog box. For example, the options to notify the user when an update or new version of FileMaker&nbsp;Pro Advanced is available are not present.</p><p id="ww1047271" class="b-body">The Layout tab is not included in the Preferences dialog box for the runtime application.</p><p id="ww1047272" class="b-body">The File Options dialog box in the runtime application displays only the Spelling tab. </p><h2 id="ww1048892" class="hs1-headsub1">Menu command comparison</h2><p id="ww1048893" class="b-body">The following tables show the menu commands that are available in FileMaker&nbsp;Pro Advanced and in the runtime application.</p><p id="ww1049143" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 468.00072pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 194.27616pt"><p id="ww1069283" class="th-tablehead">File menu command</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 73.85976pt"><p id="ww1069285" class="th-tablehead">FileMaker&nbsp;Pro Advanced in Windows</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 61.8696pt"><p id="ww1069287" class="th-tablehead">Runtime in Windows</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 73.85976pt"><p id="ww1069289" class="th-tablehead">FileMaker&nbsp;Pro Advanced in macOS</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 64.13544pt"><p id="ww1069291" class="th-tablehead">Runtime in macOS</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069293" class="td-tabledata">Create New</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069295" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069297" class="td-tabledata">&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069299" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069301" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069303" class="td-tabledata">My Apps</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069305" class="td-tabledata">&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069307" class="td-tabledata">&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069309" class="td-tabledata">&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069311" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069313" class="td-tabledata">Recent</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069315" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069317" class="td-tabledata">&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069319" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069321" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069323" class="td-tabledata">Hosts</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069325" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069327" class="td-tabledata">&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069329" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069331" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069333" class="td-tabledata">Open</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069335" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069337" class="td-tabledata">&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069339" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069341" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069353" class="td-tabledata">Close</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069355" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069357" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069359" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069361" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069363" class="td-tabledata">Manage</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069365" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069367" class="td-tabledata">&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069369" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069371" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069373" class="td-tabledata">Sharing</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069375" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069377" class="td-tabledata">&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069379" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069381" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069383" class="td-tabledata">File Options</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069385" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069387" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069389" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069391" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069393" class="td-tabledata">Change Password</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069395" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069397" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069399" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069401" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069403" class="td-tabledata">Print Setup </p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069405" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069407" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069409" class="td-tabledata">&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069411" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069413" class="td-tabledata">Page Setup</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069415" class="td-tabledata">&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069417" class="td-tabledata">&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069419" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069421" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069423" class="td-tabledata">Print</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069425" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069427" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069429" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069431" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069433" class="td-tabledata">Import Records</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069435" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069437" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069439" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069441" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069443" class="td-tabledata">Export Records</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069445" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069447" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069449" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069451" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069453" class="td-tabledata">Save/Send Records As</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069455" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069457" class="td-tabledata"><sup class="s-superscript">1</sup> </p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069459" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069461" class="td-tabledata"><sup class="s-superscript">1</sup> </p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069463" class="td-tabledata">Send</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069465" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069467" class="td-tabledata"><sup class="s-superscript">2</sup> </p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069469" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069471" class="td-tabledata"><sup class="s-superscript">2</sup> </p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069473" class="td-tabledata">Save a Copy As</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069475" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069477" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069479" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069481" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069483" class="td-tabledata">Recover</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069485" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069487" class="td-tabledata"><sup class="s-superscript">3</sup> </p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069489" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069491" class="td-tabledata"><sup class="s-superscript">3</sup> </p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069493" class="td-tabledata">Exit </p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069495" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069497" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069499" class="td-tabledata">&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1069501" class="td-tabledata">&nbsp;</p></td></tr></table></div><p id="ww1052047" class="s1f-step1first"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">1.	</span></span>You can't use Save/Send Records As PDF or Snapshot Link. However, macOS users can print the current record to PDF by choosing <strong class="o-onscreen">File</strong>&nbsp;menu&nbsp;&gt; <strong class="o-onscreen">Print</strong>.</p><p id="ww1052082" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">2.	</span></span>You can't use Send a Link to Database.</p><p id="ww1055591" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">3.	</span></span>Press Ctrl+Shift (Windows) or Option-Command (macOS) while starting a runtime solution. See 
+    <a href="../FMP_Help/recovering-runtime.html#ww1028748"
+   
+     title="Recovering runtime files"
+    ><span class="zh-hyper">Recovering runtime files</span></a>.</p><p id="ww1055595" class="b-body">&nbsp;</p><p id="ww1055739" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 468.00072pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 194.27616pt"><p id="ww1055598" class="th-tablehead">Edit menu command</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 73.85976pt"><p id="ww1055600" class="th-tablehead">FileMaker&nbsp;Pro Advanced in Windows</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 61.8696pt"><p id="ww1055602" class="th-tablehead">Runtime in Windows</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 73.85976pt"><p id="ww1055604" class="th-tablehead">FileMaker&nbsp;Pro Advanced in macOS</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 64.13544pt"><p id="ww1055606" class="th-tablehead">Runtime in macOS</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055608" class="td-tabledata">Undo/Can't Undo</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055610" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055612" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055614" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055616" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055618" class="td-tabledata">Redo/Can't Redo</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055620" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055622" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055624" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055626" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055628" class="td-tabledata">Cut</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055630" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055632" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055634" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055636" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055638" class="td-tabledata">Copy</p><p id="ww1055639" class="td-tabledata">(Copy All Records)</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055641" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055643" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055645" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055647" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055649" class="td-tabledata">Paste</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055651" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055653" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055655" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055657" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055659" class="td-tabledata">Paste Text Only</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055661" class="td-tabledata"><sup class="s-superscript">1</sup> </p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055663" class="td-tabledata"><sup class="s-superscript">1</sup> </p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055665" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055667" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055669" class="td-tabledata">Clear</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055671" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055673" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055675" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055677" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055679" class="td-tabledata">Duplicate</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055681" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055683" class="td-tabledata">&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055685" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055687" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055689" class="td-tabledata">Select All</p><p id="ww1055690" class="td-tabledata">(Select All Records)</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055692" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055694" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055696" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055698" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055700" class="td-tabledata">Find/Replace</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055702" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055704" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055706" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055708" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055710" class="td-tabledata">Spelling</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055712" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055714" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055716" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055718" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055720" class="td-tabledata">Export Field Contents</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055722" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055724" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055726" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055728" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055730" class="td-tabledata">Preferences</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055732" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055734" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055736" class="td-tabledata">&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1055738" class="td-tabledata">&nbsp;</p></td></tr></table></div><p id="ww1052354" class="s1f-step1first"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">1.	</span></span>Not visible in menu, but accessible via Ctrl+Shift+V.</p><p id="ww1052338" class="b-body">&nbsp;</p><p id="ww1052618" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 468.00072pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 194.27616pt"><p id="ww1049293" class="th-tablehead">View menu command</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 73.85976pt"><p id="ww1049295" class="th-tablehead">FileMaker&nbsp;Pro Advanced in Windows</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 61.8696pt"><p id="ww1049297" class="th-tablehead">Runtime in Windows</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 73.85976pt"><p id="ww1049299" class="th-tablehead">FileMaker&nbsp;Pro Advanced in macOS</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 64.13544pt"><p id="ww1049301" class="th-tablehead">Runtime in macOS</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049303" class="td-tabledata">Browse Mode</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049305" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049307" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049309" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049311" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049313" class="td-tabledata">Find Mode</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049315" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049317" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049319" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049321" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049323" class="td-tabledata">Layout Mode</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049325" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049327" class="td-tabledata">&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049329" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049331" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049333" class="td-tabledata">Preview Mode</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049335" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049337" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049339" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049341" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049343" class="td-tabledata">Go to Layout</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049345" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049347" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049349" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049351" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049353" class="td-tabledata">View as Form</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049355" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049357" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049359" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049361" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049363" class="td-tabledata">View as List</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049365" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049367" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049369" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049371" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049373" class="td-tabledata">View as Table</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049375" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049377" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049379" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049381" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049383" class="td-tabledata">Status Toolbar</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049385" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049387" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049389" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049391" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049393" class="td-tabledata">Customize Status Toolbar</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049395" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049397" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049399" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049401" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049403" class="td-tabledata">Formatting Bar</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049405" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049407" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049409" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049411" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049413" class="td-tabledata">Ruler</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049415" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049417" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049419" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049421" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049423" class="td-tabledata">Zoom In</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049425" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049427" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049429" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049431" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049433" class="td-tabledata">Zoom Out</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049435" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049437" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049439" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1049441" class="td-tabledata">X</p></td></tr></table></div><p id="ww1047919" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 468.00072pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 194.27616pt"><p id="ww1047810" class="th-tablehead">Insert menu command</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 73.85976pt"><p id="ww1047812" class="th-tablehead">FileMaker&nbsp;Pro Advanced in Windows</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 61.8696pt"><p id="ww1047814" class="th-tablehead">Runtime in Windows</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 73.85976pt"><p id="ww1047816" class="th-tablehead">FileMaker&nbsp;Pro Advanced in macOS</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 64.13544pt"><p id="ww1047818" class="th-tablehead">Runtime in macOS</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047820" class="td-tabledata">Picture</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047822" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047824" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047826" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047828" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047840" class="td-tabledata">Audio/Video</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047842" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047844" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047846" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047848" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047850" class="td-tabledata">PDF</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047852" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047854" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047856" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047858" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047860" class="td-tabledata">File</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047862" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047864" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047866" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047868" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047870" class="td-tabledata">Current Date</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047872" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047874" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047876" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047878" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047880" class="td-tabledata">Current Time</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047882" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047884" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047886" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047888" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047890" class="td-tabledata">Current User Name</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047892" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047894" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047896" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047898" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047900" class="td-tabledata">From Index</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047902" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047904" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047906" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047908" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047910" class="td-tabledata">From Last Visited Record</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047912" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047914" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047916" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047918" class="td-tabledata">X</p></td></tr></table></div><p id="ww1047991" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 468.00072pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 194.27616pt"><p id="ww1047922" class="th-tablehead">Format menu command</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 73.85976pt"><p id="ww1047924" class="th-tablehead">FileMaker&nbsp;Pro Advanced in Windows</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 61.8696pt"><p id="ww1047926" class="th-tablehead">Runtime in Windows</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 73.85976pt"><p id="ww1047928" class="th-tablehead">FileMaker&nbsp;Pro Advanced in macOS</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 64.13544pt"><p id="ww1047930" class="th-tablehead">Runtime in macOS</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047932" class="td-tabledata">Font</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047934" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047936" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047938" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047940" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047942" class="td-tabledata">Size</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047944" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047946" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047948" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047950" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047952" class="td-tabledata">Style</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047954" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047956" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047958" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047960" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047962" class="td-tabledata">Align Text</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047964" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047966" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047968" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047970" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047972" class="td-tabledata">Line Spacing</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047974" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047976" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047978" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047980" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047982" class="td-tabledata">Text Color</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047984" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047986" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047988" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1047990" class="td-tabledata">X</p></td></tr></table></div><p id="ww1048173" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 468.00072pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 194.27616pt"><p id="ww1047994" class="th-tablehead">Records menu command</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 73.85976pt"><p id="ww1047996" class="th-tablehead">FileMaker&nbsp;Pro Advanced in Windows</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 61.8696pt"><p id="ww1047998" class="th-tablehead">Runtime in Windows</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 73.85976pt"><p id="ww1048000" class="th-tablehead">FileMaker&nbsp;Pro Advanced in macOS</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 64.13544pt"><p id="ww1048002" class="th-tablehead">Runtime in macOS</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048004" class="td-tabledata">New Record</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048006" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048008" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048010" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048012" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048014" class="td-tabledata">Duplicate Record</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048016" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048018" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048020" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048022" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048024" class="td-tabledata">Delete Record</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048026" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048028" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048030" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048032" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048034" class="td-tabledata">Delete Found Records/Delete All Records</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048036" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048038" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048040" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048042" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048044" class="td-tabledata">Go to Record</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048046" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048048" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048050" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048052" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048054" class="td-tabledata">Refresh Window</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048056" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048058" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048060" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048062" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048064" class="td-tabledata">Show All Records</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048066" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048068" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048070" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048072" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048074" class="td-tabledata">Show Omitted Only</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048076" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048078" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048080" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048082" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048084" class="td-tabledata">Omit Record</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048086" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048088" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048090" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048092" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048094" class="td-tabledata">Omit Multiple</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048096" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048098" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048100" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048102" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048104" class="td-tabledata">Modify Last Find</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048106" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048108" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048110" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048112" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048114" class="td-tabledata">Saved Finds</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048116" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048118" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048120" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048122" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048124" class="td-tabledata">Sort Records</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048126" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048128" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048130" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048132" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048134" class="td-tabledata">Unsort</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048136" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048138" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048140" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048142" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048144" class="td-tabledata">Replace Field Contents</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048146" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048148" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048150" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048152" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048154" class="td-tabledata">Relookup Field Contents</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048156" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048158" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048160" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048162" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048164" class="td-tabledata">Revert Record</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048166" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048168" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048170" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048172" class="td-tabledata">X</p></td></tr></table></div><p id="ww1048275" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 468.00072pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 194.27616pt"><p id="ww1048176" class="th-tablehead">Requests menu command (Find mode)</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 73.85976pt"><p id="ww1048178" class="th-tablehead">FileMaker&nbsp;Pro Advanced in Windows</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 61.8696pt"><p id="ww1048180" class="th-tablehead">Runtime in Windows</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 73.85976pt"><p id="ww1048182" class="th-tablehead">FileMaker&nbsp;Pro Advanced in macOS</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 64.13544pt"><p id="ww1048184" class="th-tablehead">Runtime in macOS</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048186" class="td-tabledata">Add New Request</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048188" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048190" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048192" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048194" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048196" class="td-tabledata">Duplicate Request</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048198" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048200" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048202" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048204" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048206" class="td-tabledata">Delete Request</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048208" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048210" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048212" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048214" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048216" class="td-tabledata">Go to Request</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048218" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048220" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048222" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048224" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048226" class="td-tabledata">Show All Records</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048228" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048230" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048232" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048234" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048236" class="td-tabledata">Perform Find</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048238" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048240" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048242" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048244" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048246" class="td-tabledata">Constrain Found Set</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048248" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048250" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048252" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048254" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048256" class="td-tabledata">Extend Found Set</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048258" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048260" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048262" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048264" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048266" class="td-tabledata">Revert Request</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048268" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048270" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048272" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048274" class="td-tabledata">X</p></td></tr></table></div><p id="ww1051869" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 468.00072pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 194.27616pt"><p id="ww1051677" class="th-tablehead">Scripts menu command</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 73.85976pt"><p id="ww1051679" class="th-tablehead">FileMaker&nbsp;Pro Advanced in Windows</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 61.8696pt"><p id="ww1051681" class="th-tablehead">Runtime in Windows</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 73.85976pt"><p id="ww1051683" class="th-tablehead">FileMaker&nbsp;Pro Advanced in macOS</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 64.13544pt"><p id="ww1051685" class="th-tablehead">Runtime in macOS</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1051905" class="td-tabledata">&lt;Script names&gt;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1051907" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1051909" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1051911" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1051913" class="td-tabledata">X</p></td></tr></table></div><p id="ww1052425" class="n-note"><span class="zan-autonum">Note&nbsp;&nbsp;</span>All other Scripts menu commands are available only in FileMaker&nbsp;Pro Advanced.</p><p id="ww1052413" class="b-body">&nbsp;</p><p id="ww1052631" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 468.00072pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 194.27616pt"><p id="ww1048341" class="th-tablehead">Window menu command</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 73.85976pt"><p id="ww1048343" class="th-tablehead">FileMaker&nbsp;Pro Advanced in Windows</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 61.8696pt"><p id="ww1048345" class="th-tablehead">Runtime in Windows</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 73.85976pt"><p id="ww1048347" class="th-tablehead">FileMaker&nbsp;Pro Advanced in macOS</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 64.13544pt"><p id="ww1048349" class="th-tablehead">Runtime in macOS</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048351" class="td-tabledata">New Window</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048353" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048355" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048357" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048359" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048361" class="td-tabledata">Show Window</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048363" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048365" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048367" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048369" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048371" class="td-tabledata">Hide Window</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048373" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048375" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048377" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048379" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048381" class="td-tabledata">Minimize Window</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048383" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048385" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048387" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048389" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048391" class="td-tabledata">Tile Horizontally </p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048393" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048395" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048397" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048399" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048401" class="td-tabledata">Tile Vertically </p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048403" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048405" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048407" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048409" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048411" class="td-tabledata">Cascade Windows</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048413" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048415" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048417" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048419" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048431" class="td-tabledata">Bring All To Front</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048433" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048435" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048437" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048439" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048441" class="td-tabledata">&lt;Names of open windows&gt; </p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048443" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048445" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048447" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048449" class="td-tabledata">X</p></td></tr></table></div><p id="ww1048615" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 468.00072pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 194.27616pt"><p id="ww1048453" class="th-tablehead">Help menu command</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 73.85976pt"><p id="ww1048455" class="th-tablehead">FileMaker&nbsp;Pro Advanced in Windows</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 61.8696pt"><p id="ww1048457" class="th-tablehead">Runtime in Windows</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 73.85976pt"><p id="ww1048459" class="th-tablehead">FileMaker&nbsp;Pro Advanced in macOS</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 64.13544pt"><p id="ww1048461" class="th-tablehead">Runtime in macOS</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048463" class="td-tabledata">FileMaker&nbsp;Pro Advanced Help</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048465" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048467" class="td-tabledata">&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048469" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048471" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048473" class="td-tabledata">Keyboard Shortcuts</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048475" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048477" class="td-tabledata">&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048479" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048481" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048493" class="td-tabledata">Resource Center</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048495" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048497" class="td-tabledata">&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048499" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048501" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048503" class="td-tabledata">Product Documentation</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048505" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048507" class="td-tabledata">&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048509" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048511" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048513" class="td-tabledata">Consultants and Solutions</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048515" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048517" class="td-tabledata">&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048519" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048521" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048523" class="td-tabledata">Provide FileMaker Feedback</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048525" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048527" class="td-tabledata">&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048529" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048531" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048533" class="td-tabledata">Check for Updates</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048535" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048537" class="td-tabledata">&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048539" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048541" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048543" class="td-tabledata">Register FileMaker&nbsp;Pro Advanced</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048545" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048547" class="td-tabledata">&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048549" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048551" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048553" class="td-tabledata">FileMaker Community</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048555" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048557" class="td-tabledata">&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048559" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048561" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048563" class="td-tabledata">Service and Support</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048565" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048567" class="td-tabledata">&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048569" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048571" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048573" class="td-tabledata">About FileMaker&nbsp;Pro Advanced</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048575" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048577" class="td-tabledata">&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048582" class="td-tabledata"><sup class="s-superscript">1</sup> </p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048584" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048586" class="td-tabledata">About FileMaker&nbsp;Pro Advanced Runtime <br />(Displays if no custom About script is specified)</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048588" class="td-tabledata">&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048590" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048592" class="td-tabledata">&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048594" class="td-tabledata"><sup class="s-superscript">1</sup> </p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048596" class="td-tabledata">About &lt;runtime solution&gt; <br />(Displays if custom About script is specified)</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048598" class="td-tabledata">&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048600" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048602" class="td-tabledata">&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048604" class="td-tabledata"><sup class="s-superscript">1</sup> </p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048606" class="td-tabledata">&lt;Runtime solution Help script name&gt; <br />(Displays if custom Help script is specified)</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048608" class="td-tabledata">&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048610" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048612" class="td-tabledata">&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048614" class="td-tabledata">X</p></td></tr></table></div><p id="ww1052555" class="s1f-step1first"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">1.	</span></span>See Application menu command table.</p><p id="ww1052532" class="b-body">&nbsp;</p><p id="ww1052671" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 330.00552pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 194.27616pt"><p id="ww1048618" class="th-tablehead">Application menu command (macOS)</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 73.85976pt"><p id="ww1048620" class="th-tablehead">FileMaker&nbsp;Pro Advanced</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 61.8696pt"><p id="ww1048622" class="th-tablehead">Runtime</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048624" class="td-tabledata">About FileMaker&nbsp;Pro Advanced</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048626" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048628" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048630" class="td-tabledata">About FileMaker&nbsp;Pro Advanced Runtime <br />(Displays if no custom About script is specified)</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048632" class="td-tabledata">&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048634" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048636" class="td-tabledata">About &lt;runtime solution&gt; <br />(Displays if custom About script is specified)</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048638" class="td-tabledata">&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048640" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048642" class="td-tabledata">Preferences</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048644" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048646" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048648" class="td-tabledata">Services</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048650" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048652" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048654" class="td-tabledata">Hide FileMaker&nbsp;Pro Advanced</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048656" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048658" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048660" class="td-tabledata">Hide &lt;runtime solution&gt;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048662" class="td-tabledata">&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048664" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048666" class="td-tabledata">Hide Others</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048668" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048670" class="td-tabledata">X</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048672" class="td-tabledata">Show All</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048674" class="td-tabledata">X</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048676" class="td-tabledata">X</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048678" class="td-tabledata">Quit FileMaker&nbsp;Pro Advanced</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048680" class="td-tabledata">X</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048682" class="td-tabledata">&nbsp;</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048684" class="td-tabledata">Quit &lt;runtime solution&gt;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048686" class="td-tabledata">&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1048688" class="td-tabledata">X</p></td></tr></table></div><h2 id="ww1051997" class="hs1-headsub1">Ignored script steps</h2><p id="ww1051998" class="b-body">Because some features have been removed from the runtime application, some script steps are ignored by the runtime application. The ignored script steps are marked "No" or "Partial" for "Runtime solution" in the Compatibility section of each script step description. See 
+    <a href="../FMP_Help/script-steps-reference.html#ww947319"
+   
+     title="Script steps reference"
+    ><span class="zh-hyper">Script steps reference</span></a>.</p><p id="ww1048712" class="n-note"><span class="zan-autonum">Note&nbsp;&nbsp;</span>Open File returns an error if the specified file has not been bound to the runtime application. A runtime solution can only perform an external script if the external file is bound to the runtime solution.</p><h2 id="ww1048713" class="hs1-headsub1">Stored runtime settings or preferences</h2><p id="ww1058056" class="b-body">The runtime application stores its registry settings (Windows) or preferences (macOS) in the following location. </p><p id="ww1058068" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Windows: <code class="c-code code_pre_wrap">HKEY_CURRENT_USER\Software\FileMaker\&lt;solution name&gt;\18.0</code></p><p id="ww1058069" class="n1-note1"><span class="zan-autonum">Note&nbsp;&nbsp;</span>The file extension for the runtime database files is registered at HKEY_CLASSES_ROOT.</p><p id="ww1058070" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>macOS: <code class="c-code code_pre_wrap">com.filemaker.client.runtime.&lt;Solution name&gt;.plist</code></p><!-- FMI - Feedback Link --><div class="feedbacklink">Was this topic helpful? <a href="https://www.filemaker.com/redirects/fmp18_admin.html?page=feedback&amp;lang=en" target="external_window">Send feedback.</a></div><footer><!-- Related Topics --><!--                --><!-- Disqus --><!--        --><!-- Google Translation --><!--                    --><br /></footer></body></html>

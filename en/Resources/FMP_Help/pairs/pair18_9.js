@@ -1,0 +1,24 @@
+var pairs =
+{
+"leftwords":{"returns":1,"text":1,"plaid":1,"name":1}
+,"returns":{"text":1,"plaid":1,"sophie":1}
+,"text":{"numberofwords":1,"counting":1,"-any":1,"expression":1,"field":1,"filemaker":1}
+,"numberofwords":{"text":1,"-any":1}
+,"counting":{"left":1}
+,"left":{"leftwords":1}
+,"-any":{"text":1,"numeric":1}
+,"expression":{"text":1,"field":1}
+,"field":{"numberofwords":1,"number":1,"sophie":1}
+,"numeric":{"expression":1}
+,"number":{"text":1}
+,"filemaker":{"pro":1}
+,"pro":{"6.0":1}
+,"6.0":{"earlier":1}
+,"earlier":{"leftwords":1}
+,"plaid":{"canvas":1}
+,"canvas":{"suitcase":1,"leftwords":1}
+,"suitcase":{"returns":1}
+,"name":{"returns":1,"field":1}
+,"sophie":{"name":1,"tang":1}
+}
+;Search.control.loadWordPairs(pairs);

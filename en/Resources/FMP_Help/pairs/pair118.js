@@ -1,0 +1,20 @@
+var pairs =
+{
+"monthnamej":{"returns":1,"date":1,"6\u002F6\u002F2019":1}
+,"returns":{"name":1,"japanese":1}
+,"name":{"month":1}
+,"month":{"date":1,"occurring":1}
+,"date":{"japanese":1,"date":1,"-any":1,"text":1}
+,"japanese":{"monthnamej":1,"text":1}
+,"-any":{"calendar":1}
+,"calendar":{"date":1}
+,"text":{"filemaker":1,"name":1}
+,"filemaker":{"pro":1}
+,"pro":{"6.0":1}
+,"6.0":{"earlier":1}
+,"earlier":{"monthnamej":1}
+,"6\u002F6\u002F2019":{"returns":1}
+,"occurring":{"june":1}
+,"june":{"2014":1}
+}
+;Search.control.loadWordPairs(pairs);

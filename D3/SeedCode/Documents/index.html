@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+	<meta http-equiv="x-ua-compatible" content="IE=Edge"/>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+
+	<title>DayBack Calendar: It's Time</title>
+
+	<link rel="stylesheet" href="web-calendar.css?v=1539635767937-10.41" />
+
+	<link rel="stylesheet" href="dbk-theme.css?v=1539635767937-10.41" />
+
+	
+
+</head>
+<body ios-no-bounce>
+	<div id="app-container" ng-controller="AppCtrl">
+		<div ng-view class="fadeView">
+            <div class="app-loader">
+                <div class="spinner spinner-dark"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>
+                Loading DayBack
+            </div>
+		</div ng-view>
+		<view-loading-indicator loading="loadingSettings"></view-loading-indicator>
+	</div>
+
+	<script src="web-calendar.js?v=1539635767937-10.41"></script>
+  <script src="dbk-translations.js?v=1539635767937-10.41"></script>
+
+	
+</body>
+</html>
+

@@ -1,0 +1,912 @@
+<!DOCTYPE html ><html xml:lang="en" lang="en" data-highlight-require-whitespace="false" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- saved from url=(0016)http://localhost -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>Specify Find Requests and Edit Find Request dialog boxes</title><link rel="Prev" href="text-operators.html" title="Previous" /><link rel="Next" href="insert-file-options.html" title="Next" /><link rel="StyleSheet" href="css/non_toc.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/skin.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/social.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" /><!--[if IE 7]><link rel="StyleSheet" href="css/non_toc_IE7.css" type="text/css" media="all" /><![endif]--><link rel="StyleSheet" href="css/print.css" type="text/css" media="print" /><script type="text/javascript">
+    'use strict';
+
+    var redirect_url, page_hash;
+
+    if ((window === window.top) && (window.navigator.userAgent.indexOf('bot/') === -1)) {
+        // Redirect
+        //
+        redirect_url = "../index.html#page/FMP_Help/specify-edit-find-requests.html";
+        if (window.document.location.hash.length > 1) {
+            // Sanitize and append it
+            //
+            page_hash = window.document.location.hash.substring(1);
+            page_hash = page_hash.replace(/[\\><:;"]|%5C|%3C|%3E|%3A|%3B|%22/gi, '');
+            redirect_url += '#' + page_hash;
+        }
+        window.document.location.replace(redirect_url);
+    }
+</script><script type="text/javascript" src="scripts/common.js"></script><script type="text/javascript" src="scripts/page.js"></script><script type="text/javascript" src="scripts/search-client.js"></script><script type="text/javascript" src="scripts/unidata.js"></script><script type="text/javascript" src="scripts/unibreak.js"></script><script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-15064788-14', 'auto');
+       ga('set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('send', 'pageview');
+       ga('create', 'UA-15064788-10', 'auto', 'globalProperty');
+       ga('globalProperty.set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('globalProperty.send', 'pageview');</script><script type="text/javascript"><!--
+    //FMI - tracking events for GA
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", function AddGaqPush() {
+        var links = document.getElementsByTagName("a");
+        for (var i=0; i < links.length; i++)
+        {
+            if (links[i].href.indexOf("page=help_zip") !== -1) { 
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Download', 'ZIP', '');");
+            } else if (links[i].href.indexOf("documentation") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Documentation Page', '');");
+            } else if (links[i].href.indexOf("page=doc_") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Document', '');");
+            } else if (links[i].href.indexOf("page=helphome_support") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Support', '');");
+            } else if (links[i].href.indexOf("page=feedback") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Feedback', location.href, '');");
+            }
+        }
+      }
+      , false)
+    }
+    // --></script><style type="text/css">
+/*FMI CSS*/
+      <!--
+/* General */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+	line-height: 170%;
+	background-color: rgb(245, 245, 245);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+img.Default {
+	vertical-align: text-bottom;
+}
+
+/* Page */
+div.feedbacklink
+{
+	margin:2em 0 0;
+	font-size:90%;
+	border-top:1px solid #bfbfbf;
+	padding:8px 12px 8px 12px;
+	color:#8d8d8d
+}
+
+.code_pre_wrap {
+	white-space: pre-wrap;
+}
+
+a:link .g-glosslink, a:visited .g-glosslink
+{
+	color: #000000;
+	text-decoration: underline;
+}
+
+.ti-title
+{
+	display: none;
+}
+
+span.c-code {
+  font-size: 9pt;
+}
+
+/* Page toolbar margin-top under breadcrumb */
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+}
+
+.ww_skin_toolbar {
+	padding-top: 20px;
+}
+
+.ti-title
+{
+	display: none;
+}
+.layout_wide {
+    padding: 0 0px 18px 0px;
+}
+
+div#layout_div.layout_narrow input.ww_skin_search_input,
+div#layout_div.layout_wide div#presentation_div.panel_overlay input.ww_skin_search_input {
+    display: inline;
+	visibility: visible;
+}
+
+div#container_div {
+	max-width: 1200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+	width:100%;
+	margin-top: 12px;
+}
+
+div#layout_div.layout_wide div#container_div {
+    left: 0px;
+    right: 0px;
+}
+
+div#index_content {
+  padding: 12px;
+}
+
+div#search {
+  background-color: white;
+}
+
+div#search {
+  background-color: white;
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+
+/* Search */
+body#searchBody {
+	background-color: transparent;
+}
+
+button#back_button {
+  float: left;
+  background: none;
+  background-image: url('../images/back_grey.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  border: 0;
+  text-decoration: none;
+  -webkit-apperance: none;
+  outline: 0;
+  text-display: none;
+  width: 20px;
+  height: 30px;
+  color: rgba(0,0,0,0);
+}
+
+button#back_button:hover {
+    cursor: pointer;
+	background-image: url('../images/back.png');
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+#search-input-text {
+  width: 50%;
+  background: #fff url('../images/search-50.png');
+  margin: 0;
+padding: 2px 0 2px 30px;
+height: 25px;
+background-color: #fff;
+background-size: 15px 15px;
+background-position: 5px 7px;
+background-repeat: no-repeat;
+font-size: 1.2em;
+border: 1px solid rgba(233,233,233,1);
+-webkit-appearance: none;
+border-radius: 3px;
+}
+
+#search-button {
+display: none;	/* original value: inline-block;*/
+overflow: hidden;
+width: 67px;
+height: 31px;
+color: white;
+background-image:linear-gradient(to bottom, #1681c3, #1066a1);
+border-radius: 0 4px 4px 0;
+border: 0px;
+font-size: 1em;
+padding: 3px 6px 3px 6px;
+position: absolute;
+}
+
+#search-results-container {
+  padding: 0.5em 0.5em;
+}
+
+.search-result-title {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.search-result-title > a {
+  color: rgb(67,114,255);
+  text-decoration: none;
+}
+
+.search-result-title > a:active {
+  color: rgb(67,114,255);
+}
+
+.search-result-title > a:visited {
+  color: rgb(67,114,255);
+}
+
+.search-result-summary {
+  padding-top: 4px;
+}
+
+.search-result-highlight{
+	padding:2px;
+	margin:-2px;
+	background-color: #ffffc7;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #ffffc7;
+	padding:2px;
+	margin:-2px;
+}
+
+/*tab size for code snippets - ID Custom */
+.co-code, .co1-code1, ff-funcformat, .ssf-scriptformat{
+	tab-size:3;
+}
+@media only screen and (min-width : 481px) {
+  /*see also "widget" - ID Custom */
+  .sah-seealsohead{
+	float: right;
+	width: 200px;
+	clear: both;
+	margin: 1.6em 0 0 1.8em;
+	padding: 5px 10px;
+	background-color: #F2F2F2;
+  }
+  
+  .sal-seealsolink{
+	float: right;
+	width: 200px;
+	clear: both;
+	background-color: #F2F2F2;
+	margin-top: 0 !important;
+	margin-left: 1.8em;
+	padding: 0 10px 10px;
+	line-height: 120%;
+  }
+}
+/*homepage - ID Custom */
+.welcome {
+  padding-top: 0;
+}
+
+.wol-outlinelinks,
+.wom-outlinemenu {
+  display:flex;
+  flex-wrap:wrap;
+  min-width: 140px;
+}
+.wom-outlinemenu a {
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  font-size: 11pt;
+  width: 40%;
+  background: -moz-linear-gradient(top, #f5f5f5, #fafafa); 
+  background: -webkit-linear-gradient(top,#f5f5f5, #fafafa);
+  background: linear-gradient(to bottom, #f5f5f5, #fafafa);
+  margin: 0 5px 10px 5px;
+}
+.wol-outlinelinks a{
+  font-size: 10pt;
+  width: 28%;
+}
+.wom-outlinemenu a,
+.wol-outlinelinks a{
+  padding: 10px;
+  text-align:center;
+  flex-grow: 1;
+
+}
+.wom-outlinemenu a .h-hyperlink,
+.wol-outlinelinks a .h-hyperlink,
+.wol-outlinelinks a .zh-hyper{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/*Skin.css*/
+a#banner {
+  background-image: url('images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 38px;
+  width: 300px;
+  margin-bottom: -5px;
+  display:block;
+}
+
+.ww_skin_company_logo > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:link:hover, .ww_skin_company_logo > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_name > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:link:hover, .ww_skin_company_name > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_email > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:link:hover, .ww_skin_company_email > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_progress_bar {
+    border: 1px solid #353535;
+}
+
+.ww_skin_progress_segment_complete {
+    background-color: #353535;
+}
+
+.ww_skin {
+	background-size: 600px auto;
+}
+
+.ww_skin_toc {
+    width: 38px;
+    height: 38px;
+    background-position: -306px -32px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_toc:hover {
+    background-position: -378px -32px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_toc {
+    background-position: -451px -32px;
+}
+
+a.ww_skin_toc_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_index {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -128px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_index:hover {
+    background-position: -376px -128px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_index {
+    background-position: -448px -128px;
+}
+
+a.ww_skin_index_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_home {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_home {
+    background-position: -304px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_home:hover {
+    background-position: -376px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_home {
+    background-position: -448px -1376px;
+}
+
+a.ww_skin_home_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_search {
+    height: 38px;
+	background-image: none !important;
+	width: 10px;
+  background-position: -100px -100px;
+  margin-left:3px;
+}
+
+.layout_wide .ww_skin_search{
+  width: 10px;
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_wide .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_narrow .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_search {
+    background-position: -450px -224px;
+}
+
+.ww_skin_globe {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -320px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_globe:hover {
+    background-position: -376px -320px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_globe {
+    background-position: -448px -320px;
+}
+
+a.ww_skin_globe_spacer {
+    background-image: none;
+    width: 24px;
+}
+
+.ww_skin_next {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -416px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_next {
+    background-position: -304px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_next:hover {
+    background-position: -376px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_next {
+    background-position: -448px -416px;
+}
+
+a.ww_skin_next_spacer {
+    display: none;
+}
+
+.layout_narrow a.ww_skin_next_spacer {
+    display: none;
+}
+
+.ww_skin_prev {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -512px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_prev {
+    background-position: -304px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_prev:hover {
+    background-position: -376px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_prev {
+    background-position: -448px -512px;
+}
+
+#toolbar_div {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.ww_skin_toolbar {
+	padding-top: 15px;
+}
+
+.ww_skin_toolbar_button_left {
+	padding-left: 5px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_center {
+    height: 38px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_right {
+	border: none;
+}
+
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+    background: #757575;
+}
+
+.ww_skin_search_form .ww_skin_toolbar_background_selected {
+	display: none !important;
+}
+
+.ww_skin_toolbar_left_background {
+    margin-left: 0;
+}
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+	background: transparent;
+}
+
+.ww_skin_toolbar_background_default {
+	background: transparent;
+}
+
+.ww_skin_search_input {
+  color: #525252;
+  height: 20px;
+  font-size: 13px;
+  margin: 5px 0 0 18px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  background-image: url('images/search-50.png');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding: 3px;
+  text-indent: 20px;
+  width: 250px;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_toc_container {
+	background-color: transparent;
+	border: none;
+}
+
+.ww_skin_toc_level_1 > li > div {
+    padding-left: 23px;
+}
+
+.ww_skin_toc_level_2 > li > div {
+    padding-left: 43px;
+}
+
+.ww_skin_toc_level_3 > li > div {
+    padding-left: 63px;
+}
+
+.ww_skin_toc_level_4 > li > div {
+    padding-left: 83px;
+}
+
+.ww_skin_toc_level_5 > li > div {
+    padding-left: 103px;
+}
+
+.ww_skin_toc_level_6 > li > div {
+    padding-left: 123px;
+}
+
+.ww_skin_toc_level_7 > li > div {
+    padding-left: 138px;
+}
+
+.ww_skin_toc_entry {
+    font-family: Helvetica, Arial, sans-serif;
+    border-width: 0px 0 0 0;
+    margin: 0;
+    padding: 8px 20px 8px 0;
+	line-height: 15px;
+}
+
+.ww_skin_toc_level_1:first-child > li:first-child > .ww_skin_toc_entry:first-child {
+    border-width: 0;
+}
+
+.ww_skin_toc_entry:hover {
+    background: #E0E0E0;
+}
+
+.ww_skin_toc_entry > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.ww_skin_toc_entry > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry:hover > a {
+    color: black;
+}
+
+.ww_skin_toc_entry:hover > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+    background-color: rgb(67,114,255);
+}
+
+.ww_skin_toc_dropdown {
+    margin: 2px 4px 0 0px;
+}
+
+.ww_skin_index_link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_panel_frame {
+    padding: 9px 0 0 0;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_panel_content {
+  border-width: 0px;
+  background-color: #fcfcfc;
+}
+
+.ww_skin_lightbox_frame {
+    top: 0;
+    left: 0;
+}
+
+.ww_skin_page_body {
+    padding: 30px 30px;
+	background-color: #fff;
+}
+
+.ww_skin_breadcrumbs {
+    margin: -6px -6px 0 -8px;
+    padding: 4px 24px 4px 12px;
+    color: #a4a4a4;
+    font-weight: normal;
+	max-width: 85%;
+	background: transparent;
+}
+
+.ww_skin_breadcrumbs a:link {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:visited {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:link:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_breadcrumbs a:visited:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+#wwconnect_header {
+  margin-bottom: 20px;
+}
+
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_toc_entry{
+	border: none;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+	background: rgb(67,114,255);
+}
+
+
+/* medium */
+@media only screen
+and (max-width : 769px) {
+  .ww_skin_search_input {
+    width: 170px;
+}
+
+}
+
+/* small */
+@media only screen
+and (max-width: 535px) {
+  .ww_skin_search_input {
+    width: 150px;
+  }
+
+a#banner{
+  height: 30px;
+  width: 160px;
+  margin-left: 15px;
+}
+
+div#container_div {
+  margin-top: 5px;
+}
+
+table.ww_skin_toolbar {
+  padding-top: 10px;
+}
+
+}
+
+/*phone*/
+@media only screen
+and (max-width : 435px) {
+
+  a#banner {
+    width: 129px;
+  }
+
+  .ww_skin_search_input {
+    width: 130px;
+  }
+   
+  body { 
+    overflow-x: hidden;
+  }
+  
+  .layout_narrow {
+    overflow-x: hidden;
+  }
+  
+  #presentation_div {
+    overflow-x:hidden;
+  }
+  
+  #page_div {
+    overflow-x:hidden;
+  }
+    div#page_div {
+    overflow-x: hidden;
+  }
+  html {
+   overflow-x: hidden;
+  }
+  body.ww_skin_page_body {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  
+}
+--></style></head><body id="pxq7rsoGuy_002bpgp0BgUwglHg" class="ww_skin_page_body" onload="Page.OnLoad('../index.html#page/FMP_Help/specify-edit-find-requests.html');"><header id="wwconnect_header"><div class="ww_skin_page_toolbar"><a class="ww_behavior_print ww_skin ww_skin_print" title="Print" href="#">&nbsp;</a></div></header><h1 id="ww1029788" class="hx3-head3notoc">Specify Find Requests and Edit Find Request dialog boxes</h1><p id="ww1029790" class="b-body">Use these dialog boxes to create and manage 
+    <a href="../FMP_Help/glossary.html#ww1027732"
+   
+     title="Glossary"
+    ><span class="g-glosslink">find requests</span></a> that appear in the following script steps and when you create a saved find:</p><p id="ww1029791" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Enter Find Mode</p><p id="ww1029792" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Perform Find</p><p id="ww1029793" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Extend Found Set</p><p id="ww1029794" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Constrain Found Set</p><p id="ww1042006" class="b-body">For more information on saving a find request, see 
+    <a href="../FMP_Help/saving-find-request.html#ww1028826"
+   
+     title="Saving a find request"
+    ><span class="zh-hyper">Saving a find request</span></a>.</p><h2 id="ww1029795" class="hs1-headsub1">In the Specify Find Requests dialog box:</h2><p id="ww1029796" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><strong class="o-onscreen">New</strong> opens the Edit Find Request dialog box, where you define criteria for a find request.</p><p id="ww1029797" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><strong class="o-onscreen">Edit</strong> opens a selected find request from the list.</p><p id="ww1029798" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><strong class="o-onscreen">Duplicate</strong> duplicates one or more selected find requests from the list.</p><p id="ww1029799" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><strong class="o-onscreen">Delete</strong> deletes one or more selected find requests from the list.</p><h2 id="ww1029800" class="hs1-headsub1">In the Edit Find Request dialog box:</h2><p id="ww1029801" class="s1f-step1first"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">1.	</span></span>For<strong class="o-onscreen"> Action</strong>, select <strong class="o-onscreen">Find Records</strong> or <strong class="o-onscreen">Omit Records</strong> to specify whether this find request will find or omit records. </p><p id="ww1047440" class="b1-body1">Finding records adds them to your 
+    <a href="../FMP_Help/glossary.html#ww1027747"
+   
+     title="Glossary"
+    ><span class="g-glosslink">found set</span></a>. Omitting records excludes them. An individual request can find <em class="e-emphasis">or</em> omit records; use multiple requests if you need to find <em class="e-emphasis">and</em> omit records during the same Perform Find script step.</p><p id="ww1029804" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">2.	</span></span><strong class="o-onscreen">Find records when</strong> (or <strong class="o-onscreen">Omit records when</strong>) shows a list of the fields in your current 
+    <a href="../FMP_Help/glossary.html#ww1045562"
+   
+     title="Glossary"
+    ><span class="g-glosslink">table</span></a>. To construct a find request, begin by selecting a field from this list. </p><p id="ww1029806" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>To select a field from a 
+    <a href="../FMP_Help/glossary.html#ww1028042"
+   
+     title="Glossary"
+    ><span class="g-glosslink">related table</span></a>, click the name of the current table at the top of the list and select the related table you want. Select a 
+    <a href="../FMP_Help/glossary.html#ww1028036"
+   
+     title="Glossary"
+    ><span class="g-glosslink">related field</span></a> from this new list.</p><p id="ww1029809" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Change the value in <strong class="o-onscreen">Repetition</strong> to specify a particular cell of a 
+    <a href="../FMP_Help/glossary.html#ww1028056"
+   
+     title="Glossary"
+    ><span class="g-glosslink">repeating field</span></a>.</p><p id="ww1029811" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">3.	</span></span>Type your 
+    <a href="../FMP_Help/glossary.html#ww1028084"
+   
+     title="Glossary"
+    ><span class="g-glosslink">search criteria</span></a> for the selected field in the <strong class="o-onscreen">Criteria</strong> area.</p><p id="ww1029815" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Click <strong class="o-onscreen">Insert Operator</strong> to further refine your search criteria. See 
+    <a href="../FMP_Help/finding-records.html#ww1027519"
+   
+     title="Finding records"
+    ><span class="zh-hyper">Finding records</span></a>.</p><p id="ww1047312" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>You can include 
+    <a href="../FMP_Help/glossary.html#ww1028231"
+   
+     title="Glossary"
+    ><span class="g-glosslink">local variables</span></a> (beginning with $) and 
+    <a href="../FMP_Help/glossary.html#ww1027769"
+   
+     title="Glossary"
+    ><span class="g-glosslink">global variables</span></a> (beginning with $$) in find requests that you create or edit in the Edit Find Request dialog box. See "Notes for using variables in find requests," below.</p><p id="ww1029816" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">4.	</span></span>Click <strong class="o-onscreen">Add</strong> to add your criteria to the find request.</p><p id="ww1029817" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>To change existing criteria, select the line containing the field and criteria from the top of the dialog box, and make your changes to the field or criteria. Click <strong class="o-onscreen">Change</strong> to store your changes.</p><p id="ww1040274" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>To delete existing criteria, select the line containing the field and criteria from the top of the dialog box and click <strong class="o-onscreen">Remove</strong>.</p><h2 id="ww1047268" class="hs1-headsub1">Notes for using variables in find requests</h2><p id="ww1052508" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>A variable in a find request can represent a simple expression (for example, <code class="c-code code_pre_wrap">*/*/$birthYear</code>) or a complex expression (for example, <code class="c-code code_pre_wrap">$birthQuery</code>, where the value of <code class="c-code code_pre_wrap">$birthQuery</code> is <code class="c-code code_pre_wrap">*/*/1994</code>).</p><p id="ww1051632" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>A variable in a find request cannot include the repetition (index) number of a repeating field (as in the syntax <code class="c-code code_pre_wrap">$variable[repetition]</code>) or a file path.</p><p id="ww1051633" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Variables in a find request can't include additional variables. FileMaker&nbsp;Pro Advanced might not find matching records accurately if variables are nested.</p><p id="ww1047276" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Because the value of a variable might be unknown during the validation of a field's find request, validation stops when FileMaker&nbsp;Pro Advanced detects a variable. For example, when you enter find criteria for a date field in the Edit Find Request dialog box, FileMaker&nbsp;Pro Advanced stops validating the request when you enter the $ symbol (indicating a variable).</p><p id="ww1047277" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>If a find request contains a variable that FileMaker&nbsp;Pro Advanced doesn't recognize, the variable is not evaluated, and no matching records are found.</p><p id="ww1047514" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Use either a slash (/) or colon (:) as the terminator character in a variable used in a file path.</p><h2 id="ww1052489" class="hs1-headsub1">Example</h2><p id="ww1052180" class="b-body">The following table shows how criteria can be used to return certain records. Assume that six records have been entered into a text field called FirstName: Anne, Andrew, Lando5, Han, Han, Susan.</p><p id="ww1124588" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 411.62328pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 74.99952pt"><p id="ww1052018" class="th-tablehead">Action</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 164.24928pt"><p id="ww1052020" class="th-tablehead">Criteria</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 172.37448pt"><p id="ww1052022" class="th-tablehead">Record(s) Returned</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1052461" class="td-tabledata"><em class="e-emphasis">Find Records</em></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1052463" class="td-tabledata">Table::FirstName: [=="Andrew"]</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1052465" class="td-tabledata">Andrew</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1052024" class="td-tabledata"><em class="e-emphasis">Find Records</em></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1052028" class="td-tabledata">Table::FirstName: [*an]</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1052030" class="td-tabledata">Han, Han, Susan</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1052032" class="td-tabledata"><em class="e-emphasis">Find Records</em></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1052034" class="td-tabledata">Table::FirstName: [@an]</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1052036" class="td-tabledata">Han, Han</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1052441" class="td-tabledata"><span>Find Records</span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1052443" class="td-tabledata">Table::FirstName: [!]	</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1052445" class="td-tabledata">Han, Han</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1052447" class="td-tabledata"><span>Find Records</span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1052449" class="td-tabledata">Table::FirstName: [@an*]</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1052451" class="td-tabledata">Lando5, Han, Han</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1052260" class="td-tabledata"><span>Find Records</span></p><p id="ww1052273" class="td-tabledata"><span>Omit Records</span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1052255" class="td-tabledata">Table::FirstName: [*e*]</p><p id="ww1052307" class="td-tabledata">Table::FirstName: [*w*]</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1052257" class="td-tabledata">&nbsp;</p><p id="ww1052328" class="td-tabledata">Anne</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1052229" class="td-tabledata"><span>Find Records</span></p><p id="ww1052422" class="td-tabledata"><span>Omit Records</span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1052231" class="td-tabledata">Table::FirstName: [*an*]</p><p id="ww1052387" class="td-tabledata">Table::FirstName: [*#]</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1052233" class="td-tabledata">&nbsp;</p><p id="ww1052429" class="td-tabledata">Anne, Andrew, Han, Han, Susan</p></td></tr></table></div><h2 id="ww1052530" class="hs1n-headsub1notes"><span>Notes</span>&nbsp;</h2><p id="ww1124604" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>For a list of operators that can be used to find text, see 
+    <a href="../FMP_Help/finding-text.html#ww1050963"
+   
+     title="Finding text and characters"
+    ><span class="zh-hyper">Finding text and characters</span></a>.</p><h2 id="ww1040275" class="rh-relatedhead"><span>Related topics</span>&nbsp;</h2><p id="ww1100523" class="rt-relatedtopic">
+    <a href="../FMP_Help/enter-find-mode.html#ww1208277"
+   
+     title="Enter Find Mode"
+    ><span class="zh-hyper">Enter Find Mode script step</span></a></p><p id="ww1100527" class="rt-relatedtopic">
+    <a href="../FMP_Help/perform-find.html#ww1213498"
+   
+     title="Perform Find"
+    ><span class="zh-hyper">Perform Find script step</span></a></p><p id="ww1100531" class="rt-relatedtopic">
+    <a href="../FMP_Help/extend-found-set.html#ww1213120"
+   
+     title="Extend Found Set"
+    ><span class="zh-hyper">Extend Found Set script step</span></a></p><p id="ww1100535" class="rt-relatedtopic">
+    <a href="../FMP_Help/constrain-found-set.html#ww1213046"
+   
+     title="Constrain Found Set"
+    ><span class="zh-hyper">Constrain Found Set script step</span></a></p><p id="ww1100539" class="rt-relatedtopic">
+    <a href="../FMP_Help/finding-text.html#ww1050963"
+   
+     title="Finding text and characters"
+    ><span class="zh-hyper">Finding text and characters</span></a></p><p id="ww1100543" class="rt-relatedtopic">
+    <a href="../FMP_Help/using-variables.html#ww1030458"
+   
+     title="Using variables"
+    ><span class="zh-hyper">Using variables</span></a></p><!-- FMI - Feedback Link --><div class="feedbacklink">Was this topic helpful? <a href="https://www.filemaker.com/redirects/fmp18_admin.html?page=feedback&amp;lang=en" target="external_window">Send feedback.</a></div><footer><!-- Related Topics --><!--                --><!-- Disqus --><!--        --><!-- Google Translation --><!--                    --><br /></footer></body></html>

@@ -1,0 +1,884 @@
+<!DOCTYPE html ><html xml:lang="en" lang="en" data-highlight-require-whitespace="false" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- saved from url=(0016)http://localhost -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="keywords" content="delete relationship" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>Working with the relationships graph</title><link rel="Prev" href="planning-databases.html" title="Previous" /><link rel="Next" href="creating-relationships.html" title="Next" /><link rel="StyleSheet" href="css/relational.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/skin.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/social.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" /><!--[if IE 7]><link rel="StyleSheet" href="css/relational_IE7.css" type="text/css" media="all" /><![endif]--><link rel="StyleSheet" href="css/print.css" type="text/css" media="print" /><script type="text/javascript">
+    'use strict';
+
+    var redirect_url, page_hash;
+
+    if ((window === window.top) && (window.navigator.userAgent.indexOf('bot/') === -1)) {
+        // Redirect
+        //
+        redirect_url = "../index.html#page/FMP_Help/working-relationships-graph.html";
+        if (window.document.location.hash.length > 1) {
+            // Sanitize and append it
+            //
+            page_hash = window.document.location.hash.substring(1);
+            page_hash = page_hash.replace(/[\\><:;"]|%5C|%3C|%3E|%3A|%3B|%22/gi, '');
+            redirect_url += '#' + page_hash;
+        }
+        window.document.location.replace(redirect_url);
+    }
+</script><script type="text/javascript" src="scripts/common.js"></script><script type="text/javascript" src="scripts/page.js"></script><script type="text/javascript" src="scripts/search-client.js"></script><script type="text/javascript" src="scripts/unidata.js"></script><script type="text/javascript" src="scripts/unibreak.js"></script><script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-15064788-14', 'auto');
+       ga('set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('send', 'pageview');
+       ga('create', 'UA-15064788-10', 'auto', 'globalProperty');
+       ga('globalProperty.set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('globalProperty.send', 'pageview');</script><script type="text/javascript"><!--
+    //FMI - tracking events for GA
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", function AddGaqPush() {
+        var links = document.getElementsByTagName("a");
+        for (var i=0; i < links.length; i++)
+        {
+            if (links[i].href.indexOf("page=help_zip") !== -1) { 
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Download', 'ZIP', '');");
+            } else if (links[i].href.indexOf("documentation") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Documentation Page', '');");
+            } else if (links[i].href.indexOf("page=doc_") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Document', '');");
+            } else if (links[i].href.indexOf("page=helphome_support") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Support', '');");
+            } else if (links[i].href.indexOf("page=feedback") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Feedback', location.href, '');");
+            }
+        }
+      }
+      , false)
+    }
+    // --></script><style type="text/css">
+/*FMI CSS*/
+      <!--
+/* General */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+	line-height: 170%;
+	background-color: rgb(245, 245, 245);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+img.Default {
+	vertical-align: text-bottom;
+}
+
+/* Page */
+div.feedbacklink
+{
+	margin:2em 0 0;
+	font-size:90%;
+	border-top:1px solid #bfbfbf;
+	padding:8px 12px 8px 12px;
+	color:#8d8d8d
+}
+
+.code_pre_wrap {
+	white-space: pre-wrap;
+}
+
+a:link .g-glosslink, a:visited .g-glosslink
+{
+	color: #000000;
+	text-decoration: underline;
+}
+
+.ti-title
+{
+	display: none;
+}
+
+span.c-code {
+  font-size: 9pt;
+}
+
+/* Page toolbar margin-top under breadcrumb */
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+}
+
+.ww_skin_toolbar {
+	padding-top: 20px;
+}
+
+.ti-title
+{
+	display: none;
+}
+.layout_wide {
+    padding: 0 0px 18px 0px;
+}
+
+div#layout_div.layout_narrow input.ww_skin_search_input,
+div#layout_div.layout_wide div#presentation_div.panel_overlay input.ww_skin_search_input {
+    display: inline;
+	visibility: visible;
+}
+
+div#container_div {
+	max-width: 1200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+	width:100%;
+	margin-top: 12px;
+}
+
+div#layout_div.layout_wide div#container_div {
+    left: 0px;
+    right: 0px;
+}
+
+div#index_content {
+  padding: 12px;
+}
+
+div#search {
+  background-color: white;
+}
+
+div#search {
+  background-color: white;
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+
+/* Search */
+body#searchBody {
+	background-color: transparent;
+}
+
+button#back_button {
+  float: left;
+  background: none;
+  background-image: url('../images/back_grey.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  border: 0;
+  text-decoration: none;
+  -webkit-apperance: none;
+  outline: 0;
+  text-display: none;
+  width: 20px;
+  height: 30px;
+  color: rgba(0,0,0,0);
+}
+
+button#back_button:hover {
+    cursor: pointer;
+	background-image: url('../images/back.png');
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+#search-input-text {
+  width: 50%;
+  background: #fff url('../images/search-50.png');
+  margin: 0;
+padding: 2px 0 2px 30px;
+height: 25px;
+background-color: #fff;
+background-size: 15px 15px;
+background-position: 5px 7px;
+background-repeat: no-repeat;
+font-size: 1.2em;
+border: 1px solid rgba(233,233,233,1);
+-webkit-appearance: none;
+border-radius: 3px;
+}
+
+#search-button {
+display: none;	/* original value: inline-block;*/
+overflow: hidden;
+width: 67px;
+height: 31px;
+color: white;
+background-image:linear-gradient(to bottom, #1681c3, #1066a1);
+border-radius: 0 4px 4px 0;
+border: 0px;
+font-size: 1em;
+padding: 3px 6px 3px 6px;
+position: absolute;
+}
+
+#search-results-container {
+  padding: 0.5em 0.5em;
+}
+
+.search-result-title {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.search-result-title > a {
+  color: rgb(67,114,255);
+  text-decoration: none;
+}
+
+.search-result-title > a:active {
+  color: rgb(67,114,255);
+}
+
+.search-result-title > a:visited {
+  color: rgb(67,114,255);
+}
+
+.search-result-summary {
+  padding-top: 4px;
+}
+
+.search-result-highlight{
+	padding:2px;
+	margin:-2px;
+	background-color: #ffffc7;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #ffffc7;
+	padding:2px;
+	margin:-2px;
+}
+
+/*tab size for code snippets - ID Custom */
+.co-code, .co1-code1, ff-funcformat, .ssf-scriptformat{
+	tab-size:3;
+}
+@media only screen and (min-width : 481px) {
+  /*see also "widget" - ID Custom */
+  .sah-seealsohead{
+	float: right;
+	width: 200px;
+	clear: both;
+	margin: 1.6em 0 0 1.8em;
+	padding: 5px 10px;
+	background-color: #F2F2F2;
+  }
+  
+  .sal-seealsolink{
+	float: right;
+	width: 200px;
+	clear: both;
+	background-color: #F2F2F2;
+	margin-top: 0 !important;
+	margin-left: 1.8em;
+	padding: 0 10px 10px;
+	line-height: 120%;
+  }
+}
+/*homepage - ID Custom */
+.welcome {
+  padding-top: 0;
+}
+
+.wol-outlinelinks,
+.wom-outlinemenu {
+  display:flex;
+  flex-wrap:wrap;
+  min-width: 140px;
+}
+.wom-outlinemenu a {
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  font-size: 11pt;
+  width: 40%;
+  background: -moz-linear-gradient(top, #f5f5f5, #fafafa); 
+  background: -webkit-linear-gradient(top,#f5f5f5, #fafafa);
+  background: linear-gradient(to bottom, #f5f5f5, #fafafa);
+  margin: 0 5px 10px 5px;
+}
+.wol-outlinelinks a{
+  font-size: 10pt;
+  width: 28%;
+}
+.wom-outlinemenu a,
+.wol-outlinelinks a{
+  padding: 10px;
+  text-align:center;
+  flex-grow: 1;
+
+}
+.wom-outlinemenu a .h-hyperlink,
+.wol-outlinelinks a .h-hyperlink,
+.wol-outlinelinks a .zh-hyper{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/*Skin.css*/
+a#banner {
+  background-image: url('images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 38px;
+  width: 300px;
+  margin-bottom: -5px;
+  display:block;
+}
+
+.ww_skin_company_logo > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:link:hover, .ww_skin_company_logo > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_name > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:link:hover, .ww_skin_company_name > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_email > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:link:hover, .ww_skin_company_email > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_progress_bar {
+    border: 1px solid #353535;
+}
+
+.ww_skin_progress_segment_complete {
+    background-color: #353535;
+}
+
+.ww_skin {
+	background-size: 600px auto;
+}
+
+.ww_skin_toc {
+    width: 38px;
+    height: 38px;
+    background-position: -306px -32px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_toc:hover {
+    background-position: -378px -32px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_toc {
+    background-position: -451px -32px;
+}
+
+a.ww_skin_toc_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_index {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -128px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_index:hover {
+    background-position: -376px -128px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_index {
+    background-position: -448px -128px;
+}
+
+a.ww_skin_index_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_home {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_home {
+    background-position: -304px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_home:hover {
+    background-position: -376px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_home {
+    background-position: -448px -1376px;
+}
+
+a.ww_skin_home_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_search {
+    height: 38px;
+	background-image: none !important;
+	width: 10px;
+  background-position: -100px -100px;
+  margin-left:3px;
+}
+
+.layout_wide .ww_skin_search{
+  width: 10px;
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_wide .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_narrow .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_search {
+    background-position: -450px -224px;
+}
+
+.ww_skin_globe {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -320px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_globe:hover {
+    background-position: -376px -320px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_globe {
+    background-position: -448px -320px;
+}
+
+a.ww_skin_globe_spacer {
+    background-image: none;
+    width: 24px;
+}
+
+.ww_skin_next {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -416px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_next {
+    background-position: -304px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_next:hover {
+    background-position: -376px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_next {
+    background-position: -448px -416px;
+}
+
+a.ww_skin_next_spacer {
+    display: none;
+}
+
+.layout_narrow a.ww_skin_next_spacer {
+    display: none;
+}
+
+.ww_skin_prev {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -512px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_prev {
+    background-position: -304px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_prev:hover {
+    background-position: -376px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_prev {
+    background-position: -448px -512px;
+}
+
+#toolbar_div {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.ww_skin_toolbar {
+	padding-top: 15px;
+}
+
+.ww_skin_toolbar_button_left {
+	padding-left: 5px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_center {
+    height: 38px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_right {
+	border: none;
+}
+
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+    background: #757575;
+}
+
+.ww_skin_search_form .ww_skin_toolbar_background_selected {
+	display: none !important;
+}
+
+.ww_skin_toolbar_left_background {
+    margin-left: 0;
+}
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+	background: transparent;
+}
+
+.ww_skin_toolbar_background_default {
+	background: transparent;
+}
+
+.ww_skin_search_input {
+  color: #525252;
+  height: 20px;
+  font-size: 13px;
+  margin: 5px 0 0 18px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  background-image: url('images/search-50.png');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding: 3px;
+  text-indent: 20px;
+  width: 250px;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_toc_container {
+	background-color: transparent;
+	border: none;
+}
+
+.ww_skin_toc_level_1 > li > div {
+    padding-left: 23px;
+}
+
+.ww_skin_toc_level_2 > li > div {
+    padding-left: 43px;
+}
+
+.ww_skin_toc_level_3 > li > div {
+    padding-left: 63px;
+}
+
+.ww_skin_toc_level_4 > li > div {
+    padding-left: 83px;
+}
+
+.ww_skin_toc_level_5 > li > div {
+    padding-left: 103px;
+}
+
+.ww_skin_toc_level_6 > li > div {
+    padding-left: 123px;
+}
+
+.ww_skin_toc_level_7 > li > div {
+    padding-left: 138px;
+}
+
+.ww_skin_toc_entry {
+    font-family: Helvetica, Arial, sans-serif;
+    border-width: 0px 0 0 0;
+    margin: 0;
+    padding: 8px 20px 8px 0;
+	line-height: 15px;
+}
+
+.ww_skin_toc_level_1:first-child > li:first-child > .ww_skin_toc_entry:first-child {
+    border-width: 0;
+}
+
+.ww_skin_toc_entry:hover {
+    background: #E0E0E0;
+}
+
+.ww_skin_toc_entry > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.ww_skin_toc_entry > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry:hover > a {
+    color: black;
+}
+
+.ww_skin_toc_entry:hover > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+    background-color: rgb(67,114,255);
+}
+
+.ww_skin_toc_dropdown {
+    margin: 2px 4px 0 0px;
+}
+
+.ww_skin_index_link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_panel_frame {
+    padding: 9px 0 0 0;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_panel_content {
+  border-width: 0px;
+  background-color: #fcfcfc;
+}
+
+.ww_skin_lightbox_frame {
+    top: 0;
+    left: 0;
+}
+
+.ww_skin_page_body {
+    padding: 30px 30px;
+	background-color: #fff;
+}
+
+.ww_skin_breadcrumbs {
+    margin: -6px -6px 0 -8px;
+    padding: 4px 24px 4px 12px;
+    color: #a4a4a4;
+    font-weight: normal;
+	max-width: 85%;
+	background: transparent;
+}
+
+.ww_skin_breadcrumbs a:link {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:visited {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:link:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_breadcrumbs a:visited:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+#wwconnect_header {
+  margin-bottom: 20px;
+}
+
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_toc_entry{
+	border: none;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+	background: rgb(67,114,255);
+}
+
+
+/* medium */
+@media only screen
+and (max-width : 769px) {
+  .ww_skin_search_input {
+    width: 170px;
+}
+
+}
+
+/* small */
+@media only screen
+and (max-width: 535px) {
+  .ww_skin_search_input {
+    width: 150px;
+  }
+
+a#banner{
+  height: 30px;
+  width: 160px;
+  margin-left: 15px;
+}
+
+div#container_div {
+  margin-top: 5px;
+}
+
+table.ww_skin_toolbar {
+  padding-top: 10px;
+}
+
+}
+
+/*phone*/
+@media only screen
+and (max-width : 435px) {
+
+  a#banner {
+    width: 129px;
+  }
+
+  .ww_skin_search_input {
+    width: 130px;
+  }
+   
+  body { 
+    overflow-x: hidden;
+  }
+  
+  .layout_narrow {
+    overflow-x: hidden;
+  }
+  
+  #presentation_div {
+    overflow-x:hidden;
+  }
+  
+  #page_div {
+    overflow-x:hidden;
+  }
+    div#page_div {
+    overflow-x: hidden;
+  }
+  html {
+   overflow-x: hidden;
+  }
+  body.ww_skin_page_body {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  
+}
+--></style></head><body id="pA_002f2oNziRUOa7p55cNdJ0UQ" class="ww_skin_page_body" onload="Page.OnLoad('../index.html#page/FMP_Help/working-relationships-graph.html');"><header id="wwconnect_header"><div class="ww_skin_breadcrumbs"><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/related-tables-files.html#wwconnect_header">Working with related tables</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_current">Working with the relationships graph</span></div><div class="ww_skin_page_toolbar"><a class="ww_behavior_print ww_skin ww_skin_print" title="Print" href="#">&nbsp;</a></div></header><h1 id="ww1156152" class="h2-head2">Working with the relationships graph</h1><p id="ww1154339" class="b-body">When you create, change, and view the 
+    <a href="../FMP_Help/glossary.html#ww1028048"
+   
+     title="Glossary"
+    ><span class="g-glosslink">relationships</span></a> in a FileMaker&nbsp;Pro Advanced database, you use the relationships graph.</p><p id="ww1144748" class="b-body">Each box on the relationships graph represents a <em class="e-emphasis">table occurrence</em>, a separate view into a single underlying source table. A single source table may appear as many table occurrences, each with a different name and each of which you can relate to other table occurrences.</p><p id="ww1144731" class="b-body">You create a relationship between two table occurrences at a time. You can create chains of relationships between many table occurrences. However, FileMaker Pro Advanced prevents you from creating a chain of relationships that relates a table occurrence back to itself, which can't be resolved.</p><p id="ww1144734" class="b-body">Because each relationship represents an additional set of criteria, you must be aware of the 
+    <a href="../FMP_Help/glossary.html#ww1041249"
+   
+     title="Glossary"
+    ><span class="g-glosslink">context</span></a> within the relationships graph. Context is the point in the relationships graph from which a relationship is evaluated. Because the graph is never a cycle, each point along the graph offers a different perspective into your data.</p><h2 id="ww1141254" class="hs1-headsub1">To display the relationships graph:</h2><p id="ww1141255" class="s1f-step1first"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">1.	</span></span>Choose <strong class="o-onscreen">File</strong> menu&nbsp;&gt; <strong class="o-onscreen">Manage</strong>&nbsp;&gt;<strong class="o-onscreen"> Database</strong>.</p><p id="ww1173237" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">2.	</span></span>Click the <strong class="o-onscreen">Relationships</strong> tab, and use the buttons and other elements in the relationships graph to define relationships.</p><h2 id="ww1173238" class="hs1-headsub1">Relationships graph buttons</h2><p id="ww1173239" class="b-body">By default, the relationships graph displays all the tables that are in the current database file.</p><p id="ww1173234" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 469.06848pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 85.66056pt"><p id="ww1173090" class="th-tablehead">Click</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 383.40792pt"><p id="ww1173092" class="th-tablehead">To</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1173097" class="td-tabledata"><img class="Default" src="../FMP_Help/images/IDB_DEFINE_RELATIONS_ADDTABLE2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 21px; max-width: 28px; top: 0.0pt" alt="Add table button" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1173099" class="td-tabledata">Add a table to the relationships graph</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1173104" class="td-tabledata"><img class="Default" src="../FMP_Help/images/IDB_DEFINE_RELATIONS_ADDRELATION@2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 21px; max-width: 26px; top: 0.0pt" alt="Add relationship button" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1173106" class="td-tabledata">Create a relationship</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1173111" class="td-tabledata"><img class="Default" src="../FMP_Help/images/IDB_DEFINE_RELATIONS_DUPLICATE@2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 21px; max-width: 24px; top: 0.0pt" alt="Duplicate table button" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1173113" class="td-tabledata">Duplicate selected tables (and relationships) and selected notes</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1173118" class="td-tabledata"><img class="Default" src="../FMP_Help/images/IDB_DEFINE_FUNCTION_PARAMETER_MODIFY2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 21px; max-width: 21px; top: 0.0pt" alt="Edit button" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1173120" class="td-tabledata">Edit the selected relationship, table occurrence, or text note in the relationships graph</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1173125" class="td-tabledata"><img class="Default" src="../FMP_Help/images/IDB_DEFINE_RELATIONS_DELETE@2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 21px; max-width: 21px; top: 0.0pt" alt="Delete button" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1173127" class="td-tabledata">Delete selected relationships, table occurrences, or text notes in the relationships graph</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1173132" class="td-tabledata"><img class="Default" src="../FMP_Help/images/IDC_DEFINE_RELATIONS_ALIGN1_BTN@2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 21px; max-width: 21px; top: 0.0pt" alt="Align vertical button" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1173134" class="td-tabledata">Align the left edges, centers, or right edges of the selected objects</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1173139" class="td-tabledata"><img class="Default" src="../FMP_Help/images/IDC_DEFINE_RELATIONS_ALIGN2_BTN@2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 21px; max-width: 21px; top: 0.0pt" alt="Align horizontal button" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1173141" class="td-tabledata">Align the top edges, centers, or bottom edges of the selected objects</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1173146" class="td-tabledata"><img class="Default" src="../FMP_Help/images/IDC_DEFINE_RELATIONS_ALIGN3_BTN@2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 21px; max-width: 21px; top: 0.0pt" alt="Distribute objects button" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1173148" class="td-tabledata">Distribute the selected objects horizontally or vertically</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1173153" class="td-tabledata"><img class="Default" src="../FMP_Help/images/IDC_DEFINE_RELATIONS_ALIGN4_BTN@2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 21px; max-width: 21px; top: 0.0pt" alt="Resize button" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1173155" class="td-tabledata">Resize the selected objects</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1173160" class="td-tabledata"><img class="Default" src="../FMP_Help/images/relational.07.13.10.png" width="100%" style="display: inline; left: 0.0pt; max-height: 31.5px; max-width: 29px; top: 0.0pt" alt="Color palette button" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1173162" class="td-tabledata">Change the color of selected tables or notes in the relationships graph</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1173167" class="td-tabledata"><img class="Default" src="../FMP_Help/images/IDB_DEFINE_RELATIONS_SELECT@2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 21px; max-width: 21px; top: 0.0pt" alt="Select object button" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1173169" class="td-tabledata">Choose the object selection cursor (default cursor)</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1173174" class="td-tabledata"><img class="Default" src="../FMP_Help/images/IDB_DEFINE_RELATIONS_TEXTNOTE@2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 21px; max-width: 21px; top: 0.0pt" alt="Add text note button" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1173176" class="td-tabledata">Add a text note to the relationships graph; drag the cursor on the relationships graph to the size you want</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1173181" class="td-tabledata"><img class="Default" src="../FMP_Help/images/IDB_DEFINE_RELATIONS_ZOOMIN@2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 21px; max-width: 21px; top: 0.0pt" alt="Magnification cursor button" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1173183" class="td-tabledata">Choose the magnification cursor</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1173188" class="td-tabledata"><img class="Default" src="../FMP_Help/images/IDB_DEFINE_RELATIONS_ZOOMOUT@2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 21px; max-width: 21px; top: 0.0pt" alt="Reduction cursor button" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1173190" class="td-tabledata">Choose the view reduction cursor</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1173195" class="td-tabledata"><img class="Default" src="../FMP_Help/images/IDB_DEFINE_RELATIONS_ZOOMFIT@2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 21px; max-width: 21px; top: 0.0pt" alt="Reduce magnification of the relationships graph button" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1173197" class="td-tabledata">Adjust the magnification of the relationships graph to view all tables</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1173202" class="td-tabledata"><img class="Default" src="../FMP_Help/images/IDB_DEFINE_RELATIONS_SELECTTABLES@2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 21px; max-width: 21px; top: 0.0pt" alt="Select related tables button" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1173206" class="td-tabledata">Select related tables 
+    <a href="../FMP_Help/glossary.html#ww1027971"
+   
+     title="Glossary"
+    ><span class="g-glosslink">1-away</span></a> or select tables with the same 
+    <a href="../FMP_Help/glossary.html#ww1028123"
+   
+     title="Glossary"
+    ><span class="g-glosslink">source table</span></a></p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1173213" class="td-tabledata">100%</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1173215" class="td-tabledata">Manually reduce or increase the view of the relationships graph, up to 400%</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1173220" class="td-tabledata"><img class="Default" src="../FMP_Help/images/IDB_DEFINE_RELATIONS_PAGEGUIDES.png" width="100%" style="display: inline; left: 0.0pt; max-height: 21px; max-width: 21px; top: 0.0pt" alt="Show page breaks button" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1173222" class="td-tabledata">Show page breaks</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1173227" class="td-tabledata"><img class="Default" src="../FMP_Help/images/IDB_DEFINE_RELATIONS_PAGESETUP@2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 21px; max-width: 21px; top: 0.0pt" alt="Show Print Setup or Page Setup dialog box button" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1173229" class="td-tabledata">Show the Print Setup (Windows) or Page Setup (macOS) dialog box</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1173231" class="td-tabledata"><strong class="o-onscreen">Print</strong> </p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1173233" class="td-tabledata">Print the relationships graph across multiple pages, or resized to fit on one page</p></td></tr></table></div><h2 id="ww1141412" class="hs1-headsub1">Other relationships graph elements</h2><p id="ww1141472" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 469.06848pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 85.66056pt"><p id="ww1141415" class="th-tablehead">Element</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 383.40792pt"><p id="ww1141417" class="th-tablehead">Action</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1141422" class="td-tabledata"><img class="Default" src="../FMP_Help/images/relational1.png" width="100%" style="display: inline; left: 0.0pt; max-height: 30px; max-width: 61px; top: 0.0pt" alt="Display source table and source file names" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1141426" class="td-tabledata">Displays the names of the 
+    <a href="../FMP_Help/glossary.html#ww1028123"
+   
+     title="Glossary"
+    ><span class="g-glosslink">source table</span></a> and 
+    <a href="../FMP_Help/glossary.html#ww1028120"
+   
+     title="Glossary"
+    ><span class="g-glosslink">source file</span></a> as you move the pointer over the table header</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1141431" class="td-tabledata"><img class="Default" src="../FMP_Help/images/relational2.png" width="100%" style="display: inline; left: 0.0pt; max-height: 30px; max-width: 61px; top: 0.0pt" alt="Switch table display" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1141433" class="td-tabledata">Switches the display of the table. Click once to collapse all but the match fields. Click again to collapse all but the table name. Click again to return the table to its original size.</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1141438" class="td-tabledata"><img class="Default" src="../FMP_Help/images/relational3.png" width="100%" style="display: inline; left: 0.0pt; max-height: 30px; max-width: 61px; top: 0.0pt" alt="Switch text note display" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1141440" class="td-tabledata">Switches the display of the text note. Click once to collapse to the first line of text. Click again to return the text note to its original size.</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1141445" class="td-tabledata"><img class="Default" src="../FMP_Help/images/relational4.png" width="100%" style="display: inline; left: 0.0pt; max-height: 29px; max-width: 46px; top: 0.0pt" alt="Match field is available to many records indicator" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1141447" class="td-tabledata">Indicates that the match field is available to match many records (a 
+    <a href="../FMP_Help/glossary.html#ww1027974"
+   
+     title="Glossary"
+    ><span class="g-glosslink">one-to-many relationship</span></a>)</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1141452" class="td-tabledata"><img class="Default" src="../FMP_Help/images/relational5.png" width="100%" style="display: inline; left: 0.0pt; max-height: 30px; max-width: 45px; top: 0.0pt" alt="Match field can match a single record indicator" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1141454" class="td-tabledata">Indicates that the match field is intended to match a single record (a 
+    <a href="../FMP_Help/glossary.html#ww1027977"
+   
+     title="Glossary"
+    ><span class="g-glosslink">one-to-one relationship</span></a>), such as an auto-entered value</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1141459" class="td-tabledata"><img class="Default" src="../FMP_Help/images/relational6.png" width="100%" style="display: inline; left: 0.0pt; max-height: 24px; max-width: 44px; top: 0.0pt" alt="Unindexed match field indicator" /> </p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1141461" class="td-tabledata">Indicates that the join cannot be made. For example, a match field is missing or is an unindexed field (such as an unstored calculated field or a global field), or the table closest to the indicator is missing or unavailable.</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1141466" class="td-tabledata"><img class="Default" src="../FMP_Help/images/relational7.png" width="100%" style="display: inline; left: 0.0pt; max-height: 30px; max-width: 39px; top: 0.0pt" alt="Relational operator indicator" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1141471" class="td-tabledata">Displays the relational operator, or <img class="Default" src="../FMP_Help/images/relational8.png" width="100%" style="display: inline; left: 0.0pt; max-height: 20px; max-width: 26px; top: 0.0pt" alt="Multicriteria indicator" /> for a multicriteria relationship</p></div></td></tr></table></div><h2 id="ww1143663" class="rh-relatedhead"><span>Related topics</span>&nbsp;</h2><p id="ww1143667" class="rt-relatedtopic">
+    <a href="../FMP_Help/related-tables-files.html#ww1137545"
+   
+     title="Working with related tables"
+    ><span class="zh-hyper">Working with related tables</span></a></p><p id="ww1143671" class="rt-relatedtopic">
+    <a href="../FMP_Help/relationships.html#ww1153234"
+   
+     title="About relationships"
+    ><span class="zh-hyper">About relationships</span></a></p><p id="ww1141501" class="rt-relatedtopic">
+    <a href="../FMP_Help/creating-a-custom-app.html#ww1068656"
+   
+     title="Creating a custom app"
+    ><span class="zh-hyper">Creating a custom app</span></a></p><!-- FMI - Feedback Link --><div class="feedbacklink">Was this topic helpful? <a href="https://www.filemaker.com/redirects/fmp18_admin.html?page=feedback&amp;lang=en" target="external_window">Send feedback.</a></div><footer><!-- Related Topics --><!--                --><!-- Disqus --><!--        --><!-- Google Translation --><!--                    --><br /></footer></body></html>

@@ -1,0 +1,26 @@
+var pairs =
+{
+"div":{"returns":1,"number":1,"2.5;2":1,"(-2.5;2":1}
+,"returns":{"next":1,"div":1,"-2":1}
+,"next":{"lowest":1}
+,"lowest":{"integer":1}
+,"integer":{"value":1}
+,"value":{"dividing":1}
+,"dividing":{"number":1}
+,"number":{"by":1,"divisor":1,"-any":1,"filemaker":1}
+,"by":{"divisor":1}
+,"divisor":{"div":1,"number":1,"-any":1}
+,"-any":{"numeric":1}
+,"numeric":{"expression":1}
+,"expression":{"field":1,"divisor":1,"number":1}
+,"field":{"numeric":1}
+,"filemaker":{"pro":1}
+,"pro":{"7.0":1}
+,"7.0":{"equivalent":1}
+,"equivalent":{"floor":1}
+,"floor":{"number\u002Fdivisor":1}
+,"number\u002Fdivisor":{"div":1}
+,"2.5;2":{"returns":1}
+,"(-2.5;2":{"returns":1}
+}
+;Search.control.loadWordPairs(pairs);

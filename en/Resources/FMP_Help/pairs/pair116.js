@@ -1,0 +1,25 @@
+var pairs =
+{
+"kanjinumeral":{"converts":1,"text":1,"123":1,"japanese":1}
+,"converts":{"arabic":1}
+,"arabic":{"numerals":1}
+,"numerals":{"kanji":1,"kanjinumeral":1,"arabic":1,"seventh":1}
+,"kanji":{"numerals":1}
+,"text":{"text":1,"-any":1,"expression":1,"field":1,"filemaker":1,"string":1}
+,"-any":{"text":1}
+,"expression":{"text":1}
+,"field":{"text":1}
+,"filemaker":{"pro":1}
+,"pro":{"6.0":1}
+,"6.0":{"earlier":1}
+,"earlier":{"kanjinumeral":1}
+,"123":{"returns":1}
+,"returns":{"japanese":1}
+,"japanese":{"text":1}
+,"string":{"kanji":1}
+,"seventh":{"ninth":1}
+,"ninth":{"tenth":1}
+,"tenth":{"positions":1}
+,"positions":{"returns":1}
+}
+;Search.control.loadWordPairs(pairs);

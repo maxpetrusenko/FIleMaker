@@ -1,0 +1,24 @@
+var pairs =
+{
+"get":{"textrulervisib":1,"textrulervisible":1,"text":1}
+,"textrulervisib":{"le":1}
+,"le":{"returns":1}
+,"returns":{"true":1,"false":1,"returns":1,"text":1}
+,"true":{"if":1}
+,"if":{"text":1}
+,"text":{"ruler":1}
+,"ruler":{"displayed":1,"visible":1}
+,"displayed":{"returns":1}
+,"false":{"get":1}
+,"textrulervisible":{"none":1,"get":1}
+,"none":{"number":1}
+,"number":{"filemaker":1}
+,"filemaker":{"pro":1,"webdirect":1}
+,"pro":{"8.0":1}
+,"8.0":{"filemaker":1}
+,"webdirect":{"function":1}
+,"function":{"supported":1}
+,"supported":{"returns":1}
+,"visible":{"get":1}
+}
+;Search.control.loadWordPairs(pairs);

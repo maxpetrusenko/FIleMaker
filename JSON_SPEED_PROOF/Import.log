@@ -1,0 +1,15 @@
+﻿Timestamp	Filename	Error	Message
+2018-12-07 16:35:16.228 -0800	JSON_SPEED_ELSE.fmp12	0	Import of script steps from clipboard started
+2018-12-07 16:35:16.231 -0800	write_from_field_to json	0	script steps imported : 15
+2018-12-07 16:35:16.231 -0800	JSON_SPEED_ELSE.fmp12	0	Import completed
+2018-12-07 16:50:43.035 -0800	JSON_SPEED_ELSE.fmp12	0	Import of script steps from clipboard started
+2018-12-07 16:50:43.037 -0800	delete_json_key::68::Truncate Table::Step	11	Attribute value “BaseTable” unknown.
+2018-12-07 16:50:43.037 -0800	delete_json_key	0	script steps imported : 1
+2018-12-07 16:50:43.038 -0800	JSON_SPEED_ELSE.fmp12	0	Import completed
+2018-12-07 16:50:56.301 -0800	JSON_SPEED_ELSE.fmp12	0	Import of script steps from clipboard started
+2018-12-07 16:50:56.303 -0800	write_from_field_to json::45::Truncate Table::Step	11	Attribute value “BaseTable” unknown.
+2018-12-07 16:50:56.304 -0800	write_from_field_to json	0	script steps imported : 1
+2018-12-07 16:50:56.304 -0800	JSON_SPEED_ELSE.fmp12	0	Import completed
+2018-12-09 10:24:21.880 -0800	JSON_SPEED_ELSE.fmp12	0	Import of script steps from clipboard started
+2018-12-09 10:24:21.881 -0800	write_from_field_to json	0	script steps imported : 1
+2018-12-09 10:24:21.882 -0800	JSON_SPEED_ELSE.fmp12	0	Import completed

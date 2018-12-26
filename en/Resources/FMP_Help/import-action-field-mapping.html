@@ -1,0 +1,956 @@
+<!DOCTYPE html ><html xml:lang="en" lang="en" data-highlight-require-whitespace="false" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- saved from url=(0016)http://localhost -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>Setting the import action and mapping fields during import</title><link rel="Prev" href="importing-xml.html" title="Previous" /><link rel="Next" href="converting-to-new-file.html" title="Next" /><link rel="StyleSheet" href="css/import_export.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/skin.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/social.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" /><!--[if IE 7]><link rel="StyleSheet" href="css/import_export_IE7.css" type="text/css" media="all" /><![endif]--><link rel="StyleSheet" href="css/print.css" type="text/css" media="print" /><script type="text/javascript">
+    'use strict';
+
+    var redirect_url, page_hash;
+
+    if ((window === window.top) && (window.navigator.userAgent.indexOf('bot/') === -1)) {
+        // Redirect
+        //
+        redirect_url = "../index.html#page/FMP_Help/import-action-field-mapping.html";
+        if (window.document.location.hash.length > 1) {
+            // Sanitize and append it
+            //
+            page_hash = window.document.location.hash.substring(1);
+            page_hash = page_hash.replace(/[\\><:;"]|%5C|%3C|%3E|%3A|%3B|%22/gi, '');
+            redirect_url += '#' + page_hash;
+        }
+        window.document.location.replace(redirect_url);
+    }
+</script><script type="text/javascript" src="scripts/common.js"></script><script type="text/javascript" src="scripts/page.js"></script><script type="text/javascript" src="scripts/search-client.js"></script><script type="text/javascript" src="scripts/unidata.js"></script><script type="text/javascript" src="scripts/unibreak.js"></script><script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-15064788-14', 'auto');
+       ga('set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('send', 'pageview');
+       ga('create', 'UA-15064788-10', 'auto', 'globalProperty');
+       ga('globalProperty.set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('globalProperty.send', 'pageview');</script><script type="text/javascript"><!--
+    //FMI - tracking events for GA
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", function AddGaqPush() {
+        var links = document.getElementsByTagName("a");
+        for (var i=0; i < links.length; i++)
+        {
+            if (links[i].href.indexOf("page=help_zip") !== -1) { 
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Download', 'ZIP', '');");
+            } else if (links[i].href.indexOf("documentation") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Documentation Page', '');");
+            } else if (links[i].href.indexOf("page=doc_") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Document', '');");
+            } else if (links[i].href.indexOf("page=helphome_support") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Support', '');");
+            } else if (links[i].href.indexOf("page=feedback") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Feedback', location.href, '');");
+            }
+        }
+      }
+      , false)
+    }
+    // --></script><style type="text/css">
+/*FMI CSS*/
+      <!--
+/* General */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+	line-height: 170%;
+	background-color: rgb(245, 245, 245);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+img.Default {
+	vertical-align: text-bottom;
+}
+
+/* Page */
+div.feedbacklink
+{
+	margin:2em 0 0;
+	font-size:90%;
+	border-top:1px solid #bfbfbf;
+	padding:8px 12px 8px 12px;
+	color:#8d8d8d
+}
+
+.code_pre_wrap {
+	white-space: pre-wrap;
+}
+
+a:link .g-glosslink, a:visited .g-glosslink
+{
+	color: #000000;
+	text-decoration: underline;
+}
+
+.ti-title
+{
+	display: none;
+}
+
+span.c-code {
+  font-size: 9pt;
+}
+
+/* Page toolbar margin-top under breadcrumb */
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+}
+
+.ww_skin_toolbar {
+	padding-top: 20px;
+}
+
+.ti-title
+{
+	display: none;
+}
+.layout_wide {
+    padding: 0 0px 18px 0px;
+}
+
+div#layout_div.layout_narrow input.ww_skin_search_input,
+div#layout_div.layout_wide div#presentation_div.panel_overlay input.ww_skin_search_input {
+    display: inline;
+	visibility: visible;
+}
+
+div#container_div {
+	max-width: 1200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+	width:100%;
+	margin-top: 12px;
+}
+
+div#layout_div.layout_wide div#container_div {
+    left: 0px;
+    right: 0px;
+}
+
+div#index_content {
+  padding: 12px;
+}
+
+div#search {
+  background-color: white;
+}
+
+div#search {
+  background-color: white;
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+
+/* Search */
+body#searchBody {
+	background-color: transparent;
+}
+
+button#back_button {
+  float: left;
+  background: none;
+  background-image: url('../images/back_grey.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  border: 0;
+  text-decoration: none;
+  -webkit-apperance: none;
+  outline: 0;
+  text-display: none;
+  width: 20px;
+  height: 30px;
+  color: rgba(0,0,0,0);
+}
+
+button#back_button:hover {
+    cursor: pointer;
+	background-image: url('../images/back.png');
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+#search-input-text {
+  width: 50%;
+  background: #fff url('../images/search-50.png');
+  margin: 0;
+padding: 2px 0 2px 30px;
+height: 25px;
+background-color: #fff;
+background-size: 15px 15px;
+background-position: 5px 7px;
+background-repeat: no-repeat;
+font-size: 1.2em;
+border: 1px solid rgba(233,233,233,1);
+-webkit-appearance: none;
+border-radius: 3px;
+}
+
+#search-button {
+display: none;	/* original value: inline-block;*/
+overflow: hidden;
+width: 67px;
+height: 31px;
+color: white;
+background-image:linear-gradient(to bottom, #1681c3, #1066a1);
+border-radius: 0 4px 4px 0;
+border: 0px;
+font-size: 1em;
+padding: 3px 6px 3px 6px;
+position: absolute;
+}
+
+#search-results-container {
+  padding: 0.5em 0.5em;
+}
+
+.search-result-title {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.search-result-title > a {
+  color: rgb(67,114,255);
+  text-decoration: none;
+}
+
+.search-result-title > a:active {
+  color: rgb(67,114,255);
+}
+
+.search-result-title > a:visited {
+  color: rgb(67,114,255);
+}
+
+.search-result-summary {
+  padding-top: 4px;
+}
+
+.search-result-highlight{
+	padding:2px;
+	margin:-2px;
+	background-color: #ffffc7;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #ffffc7;
+	padding:2px;
+	margin:-2px;
+}
+
+/*tab size for code snippets - ID Custom */
+.co-code, .co1-code1, ff-funcformat, .ssf-scriptformat{
+	tab-size:3;
+}
+@media only screen and (min-width : 481px) {
+  /*see also "widget" - ID Custom */
+  .sah-seealsohead{
+	float: right;
+	width: 200px;
+	clear: both;
+	margin: 1.6em 0 0 1.8em;
+	padding: 5px 10px;
+	background-color: #F2F2F2;
+  }
+  
+  .sal-seealsolink{
+	float: right;
+	width: 200px;
+	clear: both;
+	background-color: #F2F2F2;
+	margin-top: 0 !important;
+	margin-left: 1.8em;
+	padding: 0 10px 10px;
+	line-height: 120%;
+  }
+}
+/*homepage - ID Custom */
+.welcome {
+  padding-top: 0;
+}
+
+.wol-outlinelinks,
+.wom-outlinemenu {
+  display:flex;
+  flex-wrap:wrap;
+  min-width: 140px;
+}
+.wom-outlinemenu a {
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  font-size: 11pt;
+  width: 40%;
+  background: -moz-linear-gradient(top, #f5f5f5, #fafafa); 
+  background: -webkit-linear-gradient(top,#f5f5f5, #fafafa);
+  background: linear-gradient(to bottom, #f5f5f5, #fafafa);
+  margin: 0 5px 10px 5px;
+}
+.wol-outlinelinks a{
+  font-size: 10pt;
+  width: 28%;
+}
+.wom-outlinemenu a,
+.wol-outlinelinks a{
+  padding: 10px;
+  text-align:center;
+  flex-grow: 1;
+
+}
+.wom-outlinemenu a .h-hyperlink,
+.wol-outlinelinks a .h-hyperlink,
+.wol-outlinelinks a .zh-hyper{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/*Skin.css*/
+a#banner {
+  background-image: url('images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 38px;
+  width: 300px;
+  margin-bottom: -5px;
+  display:block;
+}
+
+.ww_skin_company_logo > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:link:hover, .ww_skin_company_logo > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_name > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:link:hover, .ww_skin_company_name > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_email > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:link:hover, .ww_skin_company_email > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_progress_bar {
+    border: 1px solid #353535;
+}
+
+.ww_skin_progress_segment_complete {
+    background-color: #353535;
+}
+
+.ww_skin {
+	background-size: 600px auto;
+}
+
+.ww_skin_toc {
+    width: 38px;
+    height: 38px;
+    background-position: -306px -32px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_toc:hover {
+    background-position: -378px -32px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_toc {
+    background-position: -451px -32px;
+}
+
+a.ww_skin_toc_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_index {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -128px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_index:hover {
+    background-position: -376px -128px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_index {
+    background-position: -448px -128px;
+}
+
+a.ww_skin_index_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_home {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_home {
+    background-position: -304px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_home:hover {
+    background-position: -376px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_home {
+    background-position: -448px -1376px;
+}
+
+a.ww_skin_home_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_search {
+    height: 38px;
+	background-image: none !important;
+	width: 10px;
+  background-position: -100px -100px;
+  margin-left:3px;
+}
+
+.layout_wide .ww_skin_search{
+  width: 10px;
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_wide .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_narrow .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_search {
+    background-position: -450px -224px;
+}
+
+.ww_skin_globe {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -320px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_globe:hover {
+    background-position: -376px -320px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_globe {
+    background-position: -448px -320px;
+}
+
+a.ww_skin_globe_spacer {
+    background-image: none;
+    width: 24px;
+}
+
+.ww_skin_next {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -416px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_next {
+    background-position: -304px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_next:hover {
+    background-position: -376px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_next {
+    background-position: -448px -416px;
+}
+
+a.ww_skin_next_spacer {
+    display: none;
+}
+
+.layout_narrow a.ww_skin_next_spacer {
+    display: none;
+}
+
+.ww_skin_prev {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -512px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_prev {
+    background-position: -304px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_prev:hover {
+    background-position: -376px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_prev {
+    background-position: -448px -512px;
+}
+
+#toolbar_div {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.ww_skin_toolbar {
+	padding-top: 15px;
+}
+
+.ww_skin_toolbar_button_left {
+	padding-left: 5px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_center {
+    height: 38px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_right {
+	border: none;
+}
+
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+    background: #757575;
+}
+
+.ww_skin_search_form .ww_skin_toolbar_background_selected {
+	display: none !important;
+}
+
+.ww_skin_toolbar_left_background {
+    margin-left: 0;
+}
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+	background: transparent;
+}
+
+.ww_skin_toolbar_background_default {
+	background: transparent;
+}
+
+.ww_skin_search_input {
+  color: #525252;
+  height: 20px;
+  font-size: 13px;
+  margin: 5px 0 0 18px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  background-image: url('images/search-50.png');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding: 3px;
+  text-indent: 20px;
+  width: 250px;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_toc_container {
+	background-color: transparent;
+	border: none;
+}
+
+.ww_skin_toc_level_1 > li > div {
+    padding-left: 23px;
+}
+
+.ww_skin_toc_level_2 > li > div {
+    padding-left: 43px;
+}
+
+.ww_skin_toc_level_3 > li > div {
+    padding-left: 63px;
+}
+
+.ww_skin_toc_level_4 > li > div {
+    padding-left: 83px;
+}
+
+.ww_skin_toc_level_5 > li > div {
+    padding-left: 103px;
+}
+
+.ww_skin_toc_level_6 > li > div {
+    padding-left: 123px;
+}
+
+.ww_skin_toc_level_7 > li > div {
+    padding-left: 138px;
+}
+
+.ww_skin_toc_entry {
+    font-family: Helvetica, Arial, sans-serif;
+    border-width: 0px 0 0 0;
+    margin: 0;
+    padding: 8px 20px 8px 0;
+	line-height: 15px;
+}
+
+.ww_skin_toc_level_1:first-child > li:first-child > .ww_skin_toc_entry:first-child {
+    border-width: 0;
+}
+
+.ww_skin_toc_entry:hover {
+    background: #E0E0E0;
+}
+
+.ww_skin_toc_entry > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.ww_skin_toc_entry > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry:hover > a {
+    color: black;
+}
+
+.ww_skin_toc_entry:hover > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+    background-color: rgb(67,114,255);
+}
+
+.ww_skin_toc_dropdown {
+    margin: 2px 4px 0 0px;
+}
+
+.ww_skin_index_link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_panel_frame {
+    padding: 9px 0 0 0;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_panel_content {
+  border-width: 0px;
+  background-color: #fcfcfc;
+}
+
+.ww_skin_lightbox_frame {
+    top: 0;
+    left: 0;
+}
+
+.ww_skin_page_body {
+    padding: 30px 30px;
+	background-color: #fff;
+}
+
+.ww_skin_breadcrumbs {
+    margin: -6px -6px 0 -8px;
+    padding: 4px 24px 4px 12px;
+    color: #a4a4a4;
+    font-weight: normal;
+	max-width: 85%;
+	background: transparent;
+}
+
+.ww_skin_breadcrumbs a:link {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:visited {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:link:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_breadcrumbs a:visited:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+#wwconnect_header {
+  margin-bottom: 20px;
+}
+
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_toc_entry{
+	border: none;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+	background: rgb(67,114,255);
+}
+
+
+/* medium */
+@media only screen
+and (max-width : 769px) {
+  .ww_skin_search_input {
+    width: 170px;
+}
+
+}
+
+/* small */
+@media only screen
+and (max-width: 535px) {
+  .ww_skin_search_input {
+    width: 150px;
+  }
+
+a#banner{
+  height: 30px;
+  width: 160px;
+  margin-left: 15px;
+}
+
+div#container_div {
+  margin-top: 5px;
+}
+
+table.ww_skin_toolbar {
+  padding-top: 10px;
+}
+
+}
+
+/*phone*/
+@media only screen
+and (max-width : 435px) {
+
+  a#banner {
+    width: 129px;
+  }
+
+  .ww_skin_search_input {
+    width: 130px;
+  }
+   
+  body { 
+    overflow-x: hidden;
+  }
+  
+  .layout_narrow {
+    overflow-x: hidden;
+  }
+  
+  #presentation_div {
+    overflow-x:hidden;
+  }
+  
+  #page_div {
+    overflow-x:hidden;
+  }
+    div#page_div {
+    overflow-x: hidden;
+  }
+  html {
+   overflow-x: hidden;
+  }
+  body.ww_skin_page_body {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  
+}
+--></style></head><body id="pUNOnmzhPinKvYNyh_002fRYDig" class="ww_skin_page_body" onload="Page.OnLoad('../index.html#page/FMP_Help/import-action-field-mapping.html');"><header id="wwconnect_header"><div class="ww_skin_breadcrumbs"><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/saving-importing-exporting-data.html#wwconnect_header">Saving, importing, and exporting data</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/importing-data.html#wwconnect_header">Importing data into FileMaker Pro Advanced</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_current">Setting the import action and mapping fields during import</span></div><div class="ww_skin_page_toolbar"><a class="ww_behavior_print ww_skin ww_skin_print" title="Print" href="#">&nbsp;</a></div></header><h1 id="ww1083641" class="h3-head3">Setting the import action and mapping fields during import</h1><p id="ww1083642" class="b-body">When you import data into an existing FileMaker&nbsp;Pro Advanced file, the Import Field Mapping dialog box appears after you select the file or source of the data to import. Use this dialog box to specify the following import options:</p><p id="ww1028747" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><em class="e-emphasis">Import action:</em> Specify how to import the data into the existing file. You can add new records to the file, update matching records in the file, or replace existing records in the file. See 
+    <a href="../FMP_Help/importing-data.html#ww1074247"
+   
+     title="Importing data into FileMaker Pro Advanced"
+    ><span class="zh-hyper">Methods of importing data into an existing file</span></a>.</p><p id="ww1028751" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><em class="e-emphasis">Field mapping: </em>Specify where to import the data by mapping the fields in your 
+    <a href="../FMP_Help/glossary.html#ww1044531"
+   
+     title="Glossary"
+    ><span class="g-glosslink">target file</span></a> to the fields in the source data that you're importing.</p><p id="ww1075263" class="b1-body1">You can import data from any 
+    <a href="../FMP_Help/glossary.html#ww1027715"
+   
+     title="Glossary"
+    ><span class="g-glosslink">field type</span></a> into any compatible field except 
+    <a href="../FMP_Help/glossary.html#ww1027566"
+   
+     title="Glossary"
+    ><span class="g-glosslink">calculation fields</span></a> and 
+    <a href="../FMP_Help/glossary.html#ww1028154"
+   
+     title="Glossary"
+    ><span class="g-glosslink">summary fields</span></a>. You can only import into 
+    <a href="../FMP_Help/glossary.html#ww1041246"
+   
+     title="Glossary"
+    ><span class="g-glosslink">container</span></a> fields if you're importing from another FileMaker&nbsp;Pro Advanced file or importing a folder of image, video, or PDF files. When you import data into a 
+    <a href="../FMP_Help/glossary.html#ww1058324"
+   
+     title="Glossary"
+    ><span class="g-glosslink">global field</span></a>, the last item imported into the field from the source file determines the global field value.</p><h2 id="ww1028752" class="hs1-headsub1">To set the import action and map fields during import:</h2><p id="ww1028753" class="s1f-step1first"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">1.	</span></span>If you have not done so, choose the file or source of the data to import into an existing FileMaker&nbsp;Pro Advanced file.</p><p id="ww1028759" class="b1-body1">Follow the instructions in 
+    <a href="../FMP_Help/importing-data-into-file.html#ww1028245"
+   
+     title="Importing data into an existing file"
+    ><span class="zh-hyper">Importing data into an existing file</span></a>, 
+    <a href="../FMP_Help/importing-folder.html#ww1044791"
+   
+     title="Importing a folder of files all at once"
+    ><span class="zh-hyper">Importing a folder of files all at once</span></a>, or 
+    <a href="../FMP_Help/importing-xml.html#ww1041831"
+   
+     title="Importing XML data"
+    ><span class="zh-hyper">Importing XML data</span></a>. The Import Field Mapping dialog box opens.</p><div class="ww_skin_page_overflow"><p id="ww1075451" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">2.	</span></span>Click <img class="Default" src="../FMP_Help/images/import-action-arrow.png" width="100%" style="display: inline; left: 0.0pt; max-height: 15px; max-width: 26px; top: 0.0pt" alt="Import action icon" /> and choose the import action to perform.</p></div><p id="ww1028793" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t1-table1" style="width: 450pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 186.08184pt"><p id="ww1028775" class="th-tablehead">To</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 263.91816pt"><p id="ww1028777" class="th-tablehead">Select</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028779" class="td-tabledata">Add new records to the end of the target file</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028781" class="td-tabledata"><strong class="o-onscreen">Add</strong> </p><p id="ww1028782" class="td-tabledata"><span class="zan-autonum">Note&nbsp;&nbsp;</span>If the table you're importing into contains no data, you can only select <strong class="o-onscreen">Add</strong>; the other options described below are not available because there is no data to update or replace.</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1083672" class="td-tabledata">Update data in the target file with the data from matching records in the source</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1083674" class="td-tabledata"><strong class="o-onscreen">Update</strong> </p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028784" class="td-tabledata">Replace the 
+    <a href="../FMP_Help/glossary.html#ww1027747"
+   
+     title="Glossary"
+    ><span class="g-glosslink">found set</span></a> of records in the target file with the records you're importing from the source, in order, starting with the first record in each file</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028786" class="td-tabledata"><strong class="o-onscreen">Replace</strong> </p></td></tr></table></div><p id="ww1086016" class="b1-body1">For <strong class="o-onscreen">Update</strong> or <strong class="o-onscreen">Replace</strong>, select <strong class="o-onscreen">Add remaining data as new records</strong> to also add any additional records in the source as new records in the target file.</p><p id="ww1085914" class="ni1-noteimportant1"><span class="zan-autonum">Important&nbsp;&nbsp;</span>Updating matching records or replacing existing records overwrites data in the target file and cannot be undone. To safeguard your data, choose <strong class="o-onscreen">File</strong> menu&nbsp;&gt; <strong class="o-onscreen">Save a Copy As</strong> to make a 
+    <a href="../FMP_Help/glossary.html#ww1037742"
+   
+     title="Glossary"
+    ><span class="g-glosslink">backup</span></a> copy of the target FileMaker&nbsp;Pro Advanced file. You can do this only for a local file (located on your computer). Make sure you understand how updating or replacing records works. See 
+    <a href="../FMP_Help/importing-data.html#ww1027874"
+   
+     title="Importing data into FileMaker Pro Advanced"
+    ><span class="zh-hyper">Importing data into FileMaker Pro Advanced</span></a>.</p><p id="ww1082617" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">3.	</span></span>If you're importing data from another FileMaker&nbsp;Pro Advanced file and that file contains multiple tables, choose the table you want to import from the <strong class="o-onscreen">Source</strong> list.</p><div class="ww_skin_page_overflow"><p id="ww1088220" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">4.	</span></span>If a record in the source data you're importing contains field names (column headings) instead of data, click <img class="Default" src="../FMP_Help/images/icon_backward.png" width="100%" style="display: inline; left: 0.0pt; max-height: 17px; max-width: 17px; top: 0.0pt" alt="Backward arrow" /> or <img class="Default" src="../FMP_Help/images/icon_forward.png" width="100%" style="display: inline; left: 0.0pt; max-height: 17px; max-width: 17px; top: 0.0pt" alt="Forward arrow" /> until the record containing field names appears. Then choose <strong class="o-onscreen">Use as Field Names</strong>.</p></div><p id="ww1088227" class="b1-body1">Only the subsequent records will be available to import.</p><p id="ww1088228" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">5.	</span></span>If the target file contains multiple tables, choose a table from the <strong class="o-onscreen">Target</strong> list.</p><p id="ww1082828" class="b1-body1">Or, choose <strong class="o-onscreen">New Table</strong>. See 
+    <a href="../FMP_Help/creating-new-table-import.html#ww1080764"
+   
+     title="About creating a new table for imported data"
+    ><span class="zh-hyper">About creating a new table for imported data</span></a>.</p><p id="ww1082812" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">6.	</span></span>For <strong class="o-onscreen">Target Fields</strong>, choose a target field to indicate where source data will be imported or updated.</p><p id="ww1082896" class="b1-body1">You can do any of the following to map target fields to source fields:</p><p id="ww1082897" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>To change a selection, click the current target field name and choose another field from the list. To find a field in the list, type a few characters of the field name in the search box. An indicator next to the target field name in the list shows whether the field is available to map.</p><p id="ww1085319" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t2-table2" style="width: 359.24976000000003pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 84.00024pt"><p id="ww1085291" class="th-tablehead">Field mapping indicator</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 275.24952pt"><p id="ww1085293" class="th-tablehead">Description</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1085295" class="td-tabledata"><img class="Default" src="../FMP_Help/images/import-unmapped-target-fields.png" width="100%" style="display: inline; left: 0.0pt; max-height: 18px; max-width: 33px; top: 0.0pt" alt="Unmapped target field icon" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1085297" class="td-tabledata">Not currently mapped to a source field</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1085299" class="td-tabledata"><img class="Default" src="../FMP_Help/images/import-mapped-target-fields.png" width="100%" style="display: inline; left: 0.0pt; max-height: 18px; max-width: 33px; top: 0.0pt" alt="Mapped target field icon" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1085301" class="td-tabledata">Currently mapped to a source field</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1085303" class="td-tabledata"><img class="Default" src="../FMP_Help/images/import-match-target-fields.png" width="100%" style="display: inline; left: 0.0pt; max-height: 18px; max-width: 33px; top: 0.0pt" alt="Match target field icon" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1085305" class="td-tabledata">Currently mapped as a match field</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1085307" class="td-tabledata"><img class="Default" src="../FMP_Help/images/import-invalid-target-fields.png" width="100%" style="display: inline; left: 0.0pt; max-height: 18px; max-width: 33px; top: 0.0pt" alt="Invalid target field icon" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1085309" class="td-tabledata">Can't be mapped to the source field because the target field is an incompatible field type or you don't have sufficient 
+    <a href="../FMP_Help/glossary.html#ww1027504"
+   
+     title="Glossary"
+    ><span class="g-glosslink">access privileges</span></a> </p></td></tr></table></div><div class="ww_skin_page_overflow"><p id="ww1082882" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>To preview the data you're importing, click <img class="Default" src="../FMP_Help/images/icon_backward.png" width="100%" style="display: inline; left: 0.0pt; max-height: 17px; max-width: 17px; top: 0.0pt" alt="Backward arrow" /> or <img class="Default" src="../FMP_Help/images/icon_forward.png" width="100%" style="display: inline; left: 0.0pt; max-height: 17px; max-width: 17px; top: 0.0pt" alt="Forward arrow" />.</p></div><div class="ww_skin_page_overflow"><p id="ww1028807" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>To create or change fields in the table you're importing into, click a target field name then <img class="Default" src="../FMP_Help/images/import-target-manage-db.png" width="100%" style="display: inline; left: 0.0pt; max-height: 16px; max-width: 13px; top: 0.0pt" alt="Manage Database button" />, or in the Target list, choose <strong class="o-onscreen">Manage Database</strong>. In the Manage Database dialog box, make your changes, then click <strong class="o-onscreen">OK</strong>. (If the button is dimmed, either you don't have sufficient access privileges, or the database is shared over a network and does not currently permit database changes. See 
+    <a href="../FMP_Help/sharing-hosting.html#ww1029565"
+   
+     title="Sharing and hosting files"
+    ><span class="zh-hyper">Sharing and hosting files</span></a>.)</p></div><p id="ww1028812" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>To reorder the target fields relative to the source fields all at once, choose one of the following options from the menu in the Target Fields column:</p><p id="ww1028843" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t2-table2" style="width: 432pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 108pt"><p id="ww1028815" class="th-tablehead">Choose this option</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 324pt"><p id="ww1028817" class="th-tablehead">To list the fields by</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028819" class="td-tabledata"><strong class="o-onscreen">Matching Names</strong> </p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028821" class="td-tabledata">Field names that match in both the target table and the source</p><p id="ww1089180" class="td-tabledata">FileMaker&nbsp;Pro Advanced matches field names dynamically each time you choose this option. (This option is not available when the source data does not contain field names.)</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028823" class="td-tabledata"><strong class="o-onscreen">Last Order</strong></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028825" class="td-tabledata">The order used the last time FileMaker&nbsp;Pro Advanced imported data into this table or the default order (creation order)</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028827" class="td-tabledata"><strong class="o-onscreen">Creation Order</strong></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028829" class="td-tabledata">The order in which the fields were created</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028831" class="td-tabledata"><strong class="o-onscreen">Field Names</strong></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028833" class="td-tabledata">Alphabetical order</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028835" class="td-tabledata"><strong class="o-onscreen">Field Types</strong></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028838" class="td-tabledata">
+    <a href="../FMP_Help/glossary.html#ww1027715"
+   
+     title="Glossary"
+    ><span class="g-glosslink">Field type</span></a> </p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028840" class="td-tabledata"><strong class="o-onscreen">Custom Order</strong></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028842" class="td-tabledata">A custom order (which you create by changing target fields)</p></td></tr></table></div><p id="ww1075327" class="b1-body1">
+    <a href="../FMP_Help/glossary.html#ww1027907"
+   
+     title="Glossary"
+    ><span class="g-glosslink">Match fields</span></a> in the target file cannot be container, summary, or 
+    <a href="../FMP_Help/glossary.html#ww1028220"
+   
+     title="Glossary"
+    ><span class="g-glosslink">unstored calculation</span></a> fields. The 
+    <a href="../FMP_Help/glossary.html#ww1027715"
+   
+     title="Glossary"
+    ><span class="g-glosslink">field type</span></a> of match fields should correspond to the type of data in the matching field. For example, number fields should not be matched to fields containing text.</p><p id="ww1028853" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">7.	</span></span>In the Mapping column between each pair of fields in the list, click the current mapping and choose the field mapping to perform.</p><p id="ww1028854" class="b1-body1">You can choose whether or not to import each field into the target field, or use a field pairing as a match field for updating matching records.</p><p id="ww1087481" class="n1-note1"><span class="zan-autonum">Note&nbsp;&nbsp;</span>Data from a source field will not import when:</p><p id="ww1087482" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Mapping is set to <strong class="o-onscreen">Don't Import</strong>. For each source field you want to import, set Mapping to <strong class="o-onscreen">Import</strong> and choose a target field. Create a new target field if necessary.</p><p id="ww1087483" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><strong class="o-onscreen">Invalid Target</strong> appears between the source and target fields, which indicates that the target field does not support the source field data. You cannot import data into calculation or summary fields, or import some mismatched data types such as container data into a text field. (Invalid Target may also indicate that access privileges do not permit importing data into a particular target field.)</p><p id="ww1028857" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">8.	</span></span>For target fields in which automatic data entry (auto-enter) has been defined, choose whether to perform auto-enter options while importing (for example, to enter the date in a Modification Date field).</p><p id="ww1084071" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t1-table1" style="width: 451.4724pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 141.44832pt"><p id="ww1085114" class="th-tablehead">To auto-enter new data in fields defined with auto-enter options</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 310.02408pt"><p id="ww1085116" class="th-tablehead">Do this</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1085118" class="td-tabledata">For individual target fields</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1085123" class="td-tabledata">Click <img class="Default" src="../FMP_Help/images/import-settings.png" width="100%" style="display: inline; left: 0.0pt; max-height: 16px; max-width: 14px; top: 0.0pt" alt="Auto-enter option icon" /> next to a target field and choose <strong class="o-onscreen">Perform auto-enter options</strong>. Otherwise, <strong class="o-onscreen">Import value from source</strong> is selected and auto-entered values will not be entered.</p></div></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1085125" class="td-tabledata">For all target fields</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1085127" class="td-tabledata">In the Import Options area, select <strong class="o-onscreen">Perform auto-enter options during import</strong>. Otherwise, auto-entered values will not be entered for all target fields.</p><p id="ww1088976" class="n-note"><span class="zan-autonum">Note&nbsp;&nbsp;</span>If you select this option then set some individual fields to <strong class="o-onscreen">Import value from source</strong>, this option will indicate a mixed state. The state of this option is also affected by fields that may not currently be shown in the Target Fields list.</p></td></tr></table></div><p id="ww1084159" class="n1-note1"><span class="zan-autonum">Note&nbsp;&nbsp;</span>When you're importing into fields that are set to auto-enter a value (like modifier name, modification date or time, or 
+    <a href="../FMP_Help/glossary.html#ww1027894"
+   
+     title="Glossary"
+    ><span class="g-glosslink">lookup</span></a> data), choosing this option overwrites the data you're importing with auto-entered data.</p><p id="ww1084318" class="b1-body1">See 
+    <a href="../FMP_Help/automatic-data-entry.html#ww1136760"
+   
+     title="Defining automatic data entry"
+    ><span class="zh-hyper">Defining automatic data entry</span></a>.</p><p id="ww1084007" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">9.	</span></span>In the Import Options area, choose additional options if necessary.</p><p id="ww1084396" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t1-table1" style="width: 451.4724pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 141.44832pt"><p id="ww1084381" class="th-tablehead">To </p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 310.02408pt"><p id="ww1084383" class="th-tablehead">Do this</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1084385" class="td-tabledata">Choose the 
+    <a href="../FMP_Help/glossary.html#ww1027575"
+   
+     title="Glossary"
+    ><span class="g-glosslink">character encoding</span></a> used in the source file</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1084390" class="td-tabledata">For <strong class="o-onscreen">Character set for source file</strong>, choose a character encoding.</p><p id="ww1084546" class="td-tabledata">The character set list is either dimmed or available.</p><p id="ww1084547" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>If the list is dimmed, FileMaker&nbsp;Pro Advanced determined the encoding of the file and chose it automatically.</p><p id="ww1084548" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>If the list is available, FileMaker&nbsp;Pro Advanced could not determine the file encoding, and chose an appropriate character encoding based on your operating system and the file format you're importing. If you choose a different encoding, FileMaker&nbsp;Pro Advanced scans the import data, and displays an alert message if the data contains illegal characters.</p><p id="ww1084549" class="n-note"><span class="zan-autonum">Note&nbsp;&nbsp;</span>If you're importing a 16-bit Unicode (UTF-16) text file, the file must contain a Unicode standard Byte Order Mark (BOM). If the BOM is missing, FileMaker&nbsp;Pro Advanced will not properly recognize the file encoding.</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1084392" class="td-tabledata">Specify the field delimiter used in a source file that is in 
+    <a href="../FMP_Help/glossary.html#ww1070205"
+   
+     title="Glossary"
+    ><span class="g-glosslink">custom-separated values</span></a> format</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1084395" class="td-tabledata">For <strong class="o-onscreen">Field delimiter for source file</strong>, choose the character from the list (or choose <strong class="o-onscreen">Other</strong> and type the character) that separates field values in the source file.</p><p id="ww1084688" class="td-tabledata">This option is available only if you chose <strong class="o-onscreen">Custom-Separated Values</strong> for <strong class="o-onscreen">Files of type</strong> (Windows) or <strong class="o-onscreen">Show</strong> (macOS) in step 
+    <a href="../FMP_Help/import-action-field-mapping.html#ww1028753"
+   
+     title="Setting the import action and mapping fields during import"
+    >1</a>.</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1086335" class="td-tabledata">Suppress validation checking of container field contents during importing, to allow the target file to use existing external container field contents</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1084990" class="td-tabledata">Select <strong class="o-onscreen">Preserve external container storage</strong>. </p><p id="ww1084991" class="td-tabledata">Use this option, for example, to quickly import data into a cloned copy of a file without having to decrypt and re-encrypt files to move container data to the target file.</p><p id="ww1084992" class="td-tabledata">The base directory of the source and target fields must be the same.</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1084958" class="td-tabledata">Specify how to import data from 
+    <a href="../FMP_Help/glossary.html#ww1028056"
+   
+     title="Glossary"
+    ><span class="g-glosslink">repeating fields</span></a> in the source file</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1085003" class="td-tabledata">For <strong class="o-onscreen">Repeating Fields</strong>, select:</p><p id="ww1085004" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><strong class="o-onscreen">Keep values in the original record</strong> to maintain the field(s) as repeating fields.</p><p id="ww1084962" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><strong class="o-onscreen">Split values into separate records</strong> to import each repeating value into a separate record. (Use this option to work with individual values in repeating fields, such as to sort or summarize them.)</p><p id="ww1085032" class="n1-note1"><span class="zan-autonum">Note&nbsp;&nbsp;</span>When you split repeating field data into separate records any non-repeating fields that you import are duplicated in each separate record. For example, if a record in the source file has values in three repetitions, splitting them into separate records imports three records, each identical except for the values in the repeating fields. </p></td></tr></table></div><p id="ww1028862" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">10.	</span></span>Click <strong class="o-onscreen">OK</strong>.</p><p id="ww1075357" class="n1-note1"><span class="zan-autonum">Note&nbsp;&nbsp;</span>If you're importing a large amount of data, you may see an Importing dialog box that shows the progress of the import process. To stop importing, click <strong class="o-onscreen">Stop</strong>. Records that were already imported remain in the target file (the import is not reversed). To permanently delete the records already imported, choose <strong class="o-onscreen">Records</strong> menu&nbsp;&gt; <strong class="o-onscreen">Delete All Records</strong>.</p><p id="ww1028886" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">11.	</span></span>In the Import Summary dialog box, note the number of imported records and any data that was skipped. Then click <strong class="o-onscreen">OK</strong>.</p><p id="ww1028887" class="b1-body1">The Import Summary dialog box displays three statistics detailing the imported records and any skipped data:</p><p id="ww1028922" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t1-table1" style="width: 450pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 92.00016pt"><p id="ww1028890" class="th-tablehead">Statistic</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 357.99984pt"><p id="ww1028892" class="th-tablehead">Description</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028894" class="td-tabledata">Records added or updated</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028896" class="td-tabledata">The total number of records added or updated in the target file during the import process.</p><p id="ww1028897" class="n-note"><span class="zan-autonum">Note&nbsp;&nbsp;</span>This number will include multiple updates of the same record if you're updating matching records and more than one record in the source file matches a record in the found set of the target file. See the Notes section.</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028902" class="td-tabledata">Records skipped because of errors</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028904" class="td-tabledata">The number of records in the target file that were skipped because of:</p><p id="ww1028905" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><em class="e-emphasis">Privilege errors:</em> Access privileges prohibit modifying one or more records.</p><p id="ww1028906" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><em class="e-emphasis">Locked records:</em> One or more records cannot be modified because they are being accessed elsewhere, either in another window by the same user or (if the file is shared) by other 
+    <a href="../FMP_Help/glossary.html#ww1027578"
+   
+     title="Glossary"
+    ><span class="g-glosslink">clients</span></a>.</p><p id="ww1028908" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><em class="e-emphasis">Validation errors:</em> One or more records cannot be modified because record-level field validation requirements are not met, and the record could not be committed. See 
+    <a href="../FMP_Help/validating-data-import.html#ww1041408"
+   
+     title="About validating data during import"
+    ><span class="zh-hyper">About validating data during import</span></a>.</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028913" class="td-tabledata">Fields skipped because of errors</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028915" class="td-tabledata">The number of fields in the target file that were skipped because of:</p><p id="ww1028916" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><em class="e-emphasis">Validation errors:</em> One or more fields cannot be imported because the data does not match the validation requirements defined for the field. See 
+    <a href="../FMP_Help/validating-data-import.html#ww1041408"
+   
+     title="About validating data during import"
+    ><span class="zh-hyper">About validating data during import</span></a>.</p><p id="ww1028920" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><em class="e-emphasis">Privilege errors:</em> Access privileges prohibit modifying one or more fields.</p><p id="ww1028921" class="td-tabledata">Skipped fields do not prevent the updating of other fields in the same record.</p></td></tr></table></div><h2 id="ww1028923" class="hs1n-headsub1notes"><span>Notes</span>&nbsp;</h2><p id="ww1028925" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>The records you import become the found set. After importing, check the data in the found set. Choose <strong class="o-onscreen">Records</strong> menu&nbsp;&gt; <strong class="o-onscreen">Show All Records</strong>.</p><p id="ww1041061" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>If you're updating or replacing records, be sure your records are correct before discarding the backup copy of the file.</p><p id="ww1075230" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>If all specified match fields in a record are empty, that record will not be updated.</p><p id="ww1075231" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>If a record in the source file matches more than one record in the target file, all matching records in the found set of the target file will be updated. </p><p id="ww1075232" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>If more than one record in the source file matches a record in the found set of the target file, the target file will be updated with the last matching record in the source file. (During the import process, the matching record in the target file is actually updated multiple times—once by each matching record in the source file—so the last matching source record to update the matching target record determines its final content.)</p><p id="ww1075233" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>The found set after an update contains the records that were updated (those that matched) and any new records added, regardless of the found set before update.</p><p id="ww1086724" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>To set the field mapping for multiple fields, Ctrl-click (Windows) or Command-click (macOS) each row in the Source Fields column, or Shift-click a range of rows. Then click the current mapping for one of the selected fields and choose a mapping. (You can also press the Space bar, use the Tab, Up Arrow, or Down Arrow, then press Space or Return to choose the field mapping.)</p><!-- FMI - Feedback Link --><div class="feedbacklink">Was this topic helpful? <a href="https://www.filemaker.com/redirects/fmp18_admin.html?page=feedback&amp;lang=en" target="external_window">Send feedback.</a></div><footer><!-- Related Topics --><!--                --><!-- Disqus --><!--        --><!-- Google Translation --><!--                    --><br /></footer></body></html>

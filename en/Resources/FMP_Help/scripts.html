@@ -1,0 +1,1060 @@
+<!DOCTYPE html ><html xml:lang="en" lang="en" data-highlight-require-whitespace="false" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- saved from url=(0016)http://localhost -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>Automating tasks with scripts</title><link rel="Prev" href="example-charting-delimited-data.html" title="Previous" /><link rel="Next" href="creating-editing-scripts.html" title="Next" /><link rel="StyleSheet" href="css/create_script.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/skin.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/social.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" /><!--[if IE 7]><link rel="StyleSheet" href="css/create_script_IE7.css" type="text/css" media="all" /><![endif]--><link rel="StyleSheet" href="css/print.css" type="text/css" media="print" /><script type="text/javascript">
+    'use strict';
+
+    var redirect_url, page_hash;
+
+    if ((window === window.top) && (window.navigator.userAgent.indexOf('bot/') === -1)) {
+        // Redirect
+        //
+        redirect_url = "../index.html#page/FMP_Help/scripts.html";
+        if (window.document.location.hash.length > 1) {
+            // Sanitize and append it
+            //
+            page_hash = window.document.location.hash.substring(1);
+            page_hash = page_hash.replace(/[\\><:;"]|%5C|%3C|%3E|%3A|%3B|%22/gi, '');
+            redirect_url += '#' + page_hash;
+        }
+        window.document.location.replace(redirect_url);
+    }
+</script><script type="text/javascript" src="scripts/common.js"></script><script type="text/javascript" src="scripts/page.js"></script><script type="text/javascript" src="scripts/search-client.js"></script><script type="text/javascript" src="scripts/unidata.js"></script><script type="text/javascript" src="scripts/unibreak.js"></script><script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-15064788-14', 'auto');
+       ga('set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('send', 'pageview');
+       ga('create', 'UA-15064788-10', 'auto', 'globalProperty');
+       ga('globalProperty.set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('globalProperty.send', 'pageview');</script><script type="text/javascript"><!--
+    //FMI - tracking events for GA
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", function AddGaqPush() {
+        var links = document.getElementsByTagName("a");
+        for (var i=0; i < links.length; i++)
+        {
+            if (links[i].href.indexOf("page=help_zip") !== -1) { 
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Download', 'ZIP', '');");
+            } else if (links[i].href.indexOf("documentation") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Documentation Page', '');");
+            } else if (links[i].href.indexOf("page=doc_") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Document', '');");
+            } else if (links[i].href.indexOf("page=helphome_support") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Support', '');");
+            } else if (links[i].href.indexOf("page=feedback") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Feedback', location.href, '');");
+            }
+        }
+      }
+      , false)
+    }
+    // --></script><style type="text/css">
+/*FMI CSS*/
+      <!--
+/* General */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+	line-height: 170%;
+	background-color: rgb(245, 245, 245);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+img.Default {
+	vertical-align: text-bottom;
+}
+
+/* Page */
+div.feedbacklink
+{
+	margin:2em 0 0;
+	font-size:90%;
+	border-top:1px solid #bfbfbf;
+	padding:8px 12px 8px 12px;
+	color:#8d8d8d
+}
+
+.code_pre_wrap {
+	white-space: pre-wrap;
+}
+
+a:link .g-glosslink, a:visited .g-glosslink
+{
+	color: #000000;
+	text-decoration: underline;
+}
+
+.ti-title
+{
+	display: none;
+}
+
+span.c-code {
+  font-size: 9pt;
+}
+
+/* Page toolbar margin-top under breadcrumb */
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+}
+
+.ww_skin_toolbar {
+	padding-top: 20px;
+}
+
+.ti-title
+{
+	display: none;
+}
+.layout_wide {
+    padding: 0 0px 18px 0px;
+}
+
+div#layout_div.layout_narrow input.ww_skin_search_input,
+div#layout_div.layout_wide div#presentation_div.panel_overlay input.ww_skin_search_input {
+    display: inline;
+	visibility: visible;
+}
+
+div#container_div {
+	max-width: 1200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+	width:100%;
+	margin-top: 12px;
+}
+
+div#layout_div.layout_wide div#container_div {
+    left: 0px;
+    right: 0px;
+}
+
+div#index_content {
+  padding: 12px;
+}
+
+div#search {
+  background-color: white;
+}
+
+div#search {
+  background-color: white;
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+
+/* Search */
+body#searchBody {
+	background-color: transparent;
+}
+
+button#back_button {
+  float: left;
+  background: none;
+  background-image: url('../images/back_grey.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  border: 0;
+  text-decoration: none;
+  -webkit-apperance: none;
+  outline: 0;
+  text-display: none;
+  width: 20px;
+  height: 30px;
+  color: rgba(0,0,0,0);
+}
+
+button#back_button:hover {
+    cursor: pointer;
+	background-image: url('../images/back.png');
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+#search-input-text {
+  width: 50%;
+  background: #fff url('../images/search-50.png');
+  margin: 0;
+padding: 2px 0 2px 30px;
+height: 25px;
+background-color: #fff;
+background-size: 15px 15px;
+background-position: 5px 7px;
+background-repeat: no-repeat;
+font-size: 1.2em;
+border: 1px solid rgba(233,233,233,1);
+-webkit-appearance: none;
+border-radius: 3px;
+}
+
+#search-button {
+display: none;	/* original value: inline-block;*/
+overflow: hidden;
+width: 67px;
+height: 31px;
+color: white;
+background-image:linear-gradient(to bottom, #1681c3, #1066a1);
+border-radius: 0 4px 4px 0;
+border: 0px;
+font-size: 1em;
+padding: 3px 6px 3px 6px;
+position: absolute;
+}
+
+#search-results-container {
+  padding: 0.5em 0.5em;
+}
+
+.search-result-title {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.search-result-title > a {
+  color: rgb(67,114,255);
+  text-decoration: none;
+}
+
+.search-result-title > a:active {
+  color: rgb(67,114,255);
+}
+
+.search-result-title > a:visited {
+  color: rgb(67,114,255);
+}
+
+.search-result-summary {
+  padding-top: 4px;
+}
+
+.search-result-highlight{
+	padding:2px;
+	margin:-2px;
+	background-color: #ffffc7;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #ffffc7;
+	padding:2px;
+	margin:-2px;
+}
+
+/*tab size for code snippets - ID Custom */
+.co-code, .co1-code1, ff-funcformat, .ssf-scriptformat{
+	tab-size:3;
+}
+@media only screen and (min-width : 481px) {
+  /*see also "widget" - ID Custom */
+  .sah-seealsohead{
+	float: right;
+	width: 200px;
+	clear: both;
+	margin: 1.6em 0 0 1.8em;
+	padding: 5px 10px;
+	background-color: #F2F2F2;
+  }
+  
+  .sal-seealsolink{
+	float: right;
+	width: 200px;
+	clear: both;
+	background-color: #F2F2F2;
+	margin-top: 0 !important;
+	margin-left: 1.8em;
+	padding: 0 10px 10px;
+	line-height: 120%;
+  }
+}
+/*homepage - ID Custom */
+.welcome {
+  padding-top: 0;
+}
+
+.wol-outlinelinks,
+.wom-outlinemenu {
+  display:flex;
+  flex-wrap:wrap;
+  min-width: 140px;
+}
+.wom-outlinemenu a {
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  font-size: 11pt;
+  width: 40%;
+  background: -moz-linear-gradient(top, #f5f5f5, #fafafa); 
+  background: -webkit-linear-gradient(top,#f5f5f5, #fafafa);
+  background: linear-gradient(to bottom, #f5f5f5, #fafafa);
+  margin: 0 5px 10px 5px;
+}
+.wol-outlinelinks a{
+  font-size: 10pt;
+  width: 28%;
+}
+.wom-outlinemenu a,
+.wol-outlinelinks a{
+  padding: 10px;
+  text-align:center;
+  flex-grow: 1;
+
+}
+.wom-outlinemenu a .h-hyperlink,
+.wol-outlinelinks a .h-hyperlink,
+.wol-outlinelinks a .zh-hyper{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/*Skin.css*/
+a#banner {
+  background-image: url('images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 38px;
+  width: 300px;
+  margin-bottom: -5px;
+  display:block;
+}
+
+.ww_skin_company_logo > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:link:hover, .ww_skin_company_logo > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_name > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:link:hover, .ww_skin_company_name > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_email > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:link:hover, .ww_skin_company_email > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_progress_bar {
+    border: 1px solid #353535;
+}
+
+.ww_skin_progress_segment_complete {
+    background-color: #353535;
+}
+
+.ww_skin {
+	background-size: 600px auto;
+}
+
+.ww_skin_toc {
+    width: 38px;
+    height: 38px;
+    background-position: -306px -32px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_toc:hover {
+    background-position: -378px -32px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_toc {
+    background-position: -451px -32px;
+}
+
+a.ww_skin_toc_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_index {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -128px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_index:hover {
+    background-position: -376px -128px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_index {
+    background-position: -448px -128px;
+}
+
+a.ww_skin_index_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_home {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_home {
+    background-position: -304px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_home:hover {
+    background-position: -376px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_home {
+    background-position: -448px -1376px;
+}
+
+a.ww_skin_home_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_search {
+    height: 38px;
+	background-image: none !important;
+	width: 10px;
+  background-position: -100px -100px;
+  margin-left:3px;
+}
+
+.layout_wide .ww_skin_search{
+  width: 10px;
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_wide .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_narrow .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_search {
+    background-position: -450px -224px;
+}
+
+.ww_skin_globe {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -320px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_globe:hover {
+    background-position: -376px -320px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_globe {
+    background-position: -448px -320px;
+}
+
+a.ww_skin_globe_spacer {
+    background-image: none;
+    width: 24px;
+}
+
+.ww_skin_next {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -416px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_next {
+    background-position: -304px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_next:hover {
+    background-position: -376px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_next {
+    background-position: -448px -416px;
+}
+
+a.ww_skin_next_spacer {
+    display: none;
+}
+
+.layout_narrow a.ww_skin_next_spacer {
+    display: none;
+}
+
+.ww_skin_prev {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -512px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_prev {
+    background-position: -304px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_prev:hover {
+    background-position: -376px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_prev {
+    background-position: -448px -512px;
+}
+
+#toolbar_div {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.ww_skin_toolbar {
+	padding-top: 15px;
+}
+
+.ww_skin_toolbar_button_left {
+	padding-left: 5px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_center {
+    height: 38px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_right {
+	border: none;
+}
+
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+    background: #757575;
+}
+
+.ww_skin_search_form .ww_skin_toolbar_background_selected {
+	display: none !important;
+}
+
+.ww_skin_toolbar_left_background {
+    margin-left: 0;
+}
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+	background: transparent;
+}
+
+.ww_skin_toolbar_background_default {
+	background: transparent;
+}
+
+.ww_skin_search_input {
+  color: #525252;
+  height: 20px;
+  font-size: 13px;
+  margin: 5px 0 0 18px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  background-image: url('images/search-50.png');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding: 3px;
+  text-indent: 20px;
+  width: 250px;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_toc_container {
+	background-color: transparent;
+	border: none;
+}
+
+.ww_skin_toc_level_1 > li > div {
+    padding-left: 23px;
+}
+
+.ww_skin_toc_level_2 > li > div {
+    padding-left: 43px;
+}
+
+.ww_skin_toc_level_3 > li > div {
+    padding-left: 63px;
+}
+
+.ww_skin_toc_level_4 > li > div {
+    padding-left: 83px;
+}
+
+.ww_skin_toc_level_5 > li > div {
+    padding-left: 103px;
+}
+
+.ww_skin_toc_level_6 > li > div {
+    padding-left: 123px;
+}
+
+.ww_skin_toc_level_7 > li > div {
+    padding-left: 138px;
+}
+
+.ww_skin_toc_entry {
+    font-family: Helvetica, Arial, sans-serif;
+    border-width: 0px 0 0 0;
+    margin: 0;
+    padding: 8px 20px 8px 0;
+	line-height: 15px;
+}
+
+.ww_skin_toc_level_1:first-child > li:first-child > .ww_skin_toc_entry:first-child {
+    border-width: 0;
+}
+
+.ww_skin_toc_entry:hover {
+    background: #E0E0E0;
+}
+
+.ww_skin_toc_entry > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.ww_skin_toc_entry > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry:hover > a {
+    color: black;
+}
+
+.ww_skin_toc_entry:hover > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+    background-color: rgb(67,114,255);
+}
+
+.ww_skin_toc_dropdown {
+    margin: 2px 4px 0 0px;
+}
+
+.ww_skin_index_link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_panel_frame {
+    padding: 9px 0 0 0;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_panel_content {
+  border-width: 0px;
+  background-color: #fcfcfc;
+}
+
+.ww_skin_lightbox_frame {
+    top: 0;
+    left: 0;
+}
+
+.ww_skin_page_body {
+    padding: 30px 30px;
+	background-color: #fff;
+}
+
+.ww_skin_breadcrumbs {
+    margin: -6px -6px 0 -8px;
+    padding: 4px 24px 4px 12px;
+    color: #a4a4a4;
+    font-weight: normal;
+	max-width: 85%;
+	background: transparent;
+}
+
+.ww_skin_breadcrumbs a:link {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:visited {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:link:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_breadcrumbs a:visited:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+#wwconnect_header {
+  margin-bottom: 20px;
+}
+
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_toc_entry{
+	border: none;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+	background: rgb(67,114,255);
+}
+
+
+/* medium */
+@media only screen
+and (max-width : 769px) {
+  .ww_skin_search_input {
+    width: 170px;
+}
+
+}
+
+/* small */
+@media only screen
+and (max-width: 535px) {
+  .ww_skin_search_input {
+    width: 150px;
+  }
+
+a#banner{
+  height: 30px;
+  width: 160px;
+  margin-left: 15px;
+}
+
+div#container_div {
+  margin-top: 5px;
+}
+
+table.ww_skin_toolbar {
+  padding-top: 10px;
+}
+
+}
+
+/*phone*/
+@media only screen
+and (max-width : 435px) {
+
+  a#banner {
+    width: 129px;
+  }
+
+  .ww_skin_search_input {
+    width: 130px;
+  }
+   
+  body { 
+    overflow-x: hidden;
+  }
+  
+  .layout_narrow {
+    overflow-x: hidden;
+  }
+  
+  #presentation_div {
+    overflow-x:hidden;
+  }
+  
+  #page_div {
+    overflow-x:hidden;
+  }
+    div#page_div {
+    overflow-x: hidden;
+  }
+  html {
+   overflow-x: hidden;
+  }
+  body.ww_skin_page_body {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  
+}
+--></style></head><body id="pcPjkPR93ytCGIIgOW6Yddg" class="ww_skin_page_body" onload="Page.OnLoad('../index.html#page/FMP_Help/scripts.html');"><header id="wwconnect_header"><div class="ww_skin_breadcrumbs"><span class="ww_skin_breadcrumbs_current">Automating tasks with scripts</span></div><div class="ww_skin_page_toolbar"><a class="ww_behavior_print ww_skin ww_skin_print" title="Print" href="#">&nbsp;</a></div></header><h1 id="ww1059423" class="h1-head1">Automating tasks with scripts</h1><p id="ww1059425" class="b-body">Scripts can do simple tasks like setting print orientation, or complex tasks like preparing a customized mailing to each client.</p><p id="ww1040861" class="b-body">For example, you could define a complex set of tasks that creates a thank you email to clients in your Clients database who have made purchases in the last week. The script composes an email tailored to each client. The script switches to Preview mode and pauses so you can see what the message looks like before it is sent. The whole task is initiated by clicking a button on the Sales Entry layout.</p><p id="ww1059875" class="b-body">You build scripts by selecting from a list of FileMaker&nbsp;Pro Advanced commands, called <em class="e-emphasis">script steps</em>, specifying options (if necessary), and arranging the steps in the correct order to perform the task.</p><p id="ww1061584" class="b-body">Scripts normally run on the 
+    <a href="../FMP_Help/glossary.html#ww1027578"
+   
+     title="Glossary"
+    ><span class="g-glosslink">client</span></a>, but you may want to run some scripts on FileMaker&nbsp;Server or FileMaker&nbsp;Cloud to improve performance or to automatically run on a schedule. See 
+    <a href="../FMP_Help/running-scripts-on-server.html#ww1067981"
+   
+     title="About running scripts on FileMaker Server and FileMaker Cloud"
+    ><span class="zh-hyper">About running scripts on FileMaker Server and FileMaker Cloud</span></a>.</p><h2 id="ww1059876" class="hs1-headsub1">Planning a script</h2><p id="ww1059878" class="b-body">The more time you spend planning your script, the more likely that it will accomplish what you want. As you plan, ask yourself these questions:</p><p id="ww1027611" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Can you separate the task into smaller tasks? You can define 
+    <a href="../FMP_Help/glossary.html#ww1028145"
+   
+     title="Glossary"
+    ><span class="g-glosslink">sub-scripts</span></a> for each small task, and then define a script that performs the sub-scripts. It's easier to design and test several small scripts than one complex one. You can also reuse sub-scripts in other areas. (Use 
+    <a href="../FMP_Help/perform-script.html#ww1207665"
+   
+     title="Perform Script"
+    ><span class="zh-hyper">Perform Script script step</span></a> to perform a sub-script inside another script.)</p><p id="ww1027616" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>What script steps should be run under what conditions? Should every script step always be run? Should some be run a number of times until a certain condition is met? Should the script call other scripts and sub-scripts? You can control the progression of the script in a number of different ways. See 
+    <a href="../FMP_Help/control-script-steps.html#ww1206576"
+   
+     title="Control script steps"
+    ><span class="zh-hyper">Control script steps</span></a> for more information on creating scripts with conditional steps.</p><p id="ww1046443" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Do you want the script to run in a particular 
+    <a href="../FMP_Help/glossary.html#ww1027851"
+   
+     title="Glossary"
+    ><span class="g-glosslink">layout</span></a>? Because scripts are defined at the file level and can be called from any layout, you should make sure the script will operate in the layout or layouts you expect. Use the 
+    <a href="../FMP_Help/go-to-layout.html#ww1208509"
+   
+     title="Go to Layout"
+    ><span class="zh-hyper">Go to Layout script step</span></a> to change layouts.</p><p id="ww1046404" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Should the script work on all records in the database, the current found set, or a specific set of records? (Use the 
+    <a href="../FMP_Help/found-sets-script-steps.html#ww1213032"
+   
+     title="Found Sets script steps"
+    ><span class="zh-hyper">Found Sets script steps</span></a> to include only the records that you want to work with in the found set.)</p><p id="ww1046359" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Is all the data you need in one 
+    <a href="../FMP_Help/glossary.html#ww1065274"
+   
+     title="Glossary"
+    ><span class="g-glosslink">database file</span></a>, or will the script operate on more than one file? If you're using multiple files, which ones should the script open? In which file should the script(s) be defined? In most cases a script should be defined in the same file as the data it is processing. Database solutions with more than one file may need separate scripts in each file, depending on the complexity of the task you are trying to script.</p><p id="ww1027636" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>With which 
+    <a href="../FMP_Help/glossary.html#ww1028030"
+   
+     title="Glossary"
+    ><span class="g-glosslink">record</span></a> should the script start? For example, when using the 
+    <a href="../FMP_Help/loop.html#ww1207500"
+   
+     title="Loop"
+    ><span class="zh-hyper">Loop script step</span></a>, you must decide whether the loop starts at the first or last record, a specific record, or the current record in the 
+    <a href="../FMP_Help/glossary.html#ww1027747"
+   
+     title="Glossary"
+    ><span class="g-glosslink">found set</span></a>. (Use the 
+    <a href="../FMP_Help/go-to-record-request-page.html#ww1208953"
+   
+     title="Go to Record/Request/Page"
+    ><span class="zh-hyper">Go to Record/Request/Page script step</span></a>, 
+    <a href="../FMP_Help/go-to-related-record.html#ww1209048"
+   
+     title="Go to Related Record"
+    ><span class="zh-hyper">Go to Related Record script step</span></a>, or 
+    <a href="../FMP_Help/go-to-portal-row.html#ww1208790"
+   
+     title="Go to Portal Row"
+    ><span class="zh-hyper">Go to Portal Row script step</span></a> to specify a starting record. If you don't include a navigation script step to determine the current record, the loop begins with the record that's current when the script is performed.) </p><p id="ww1034308" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Which window do you want to use? A script is initially attached to a specific window, which may be in the background. The script remains on that window until a scripted action switches to another window. For example, use the 
+    <a href="../FMP_Help/select-window.html#ww1214773"
+   
+     title="Select Window"
+    ><span class="zh-hyper">Select Window script step</span></a> to specify a different window. If the specified window is not available, the script switches to the foreground window of the file. When you pause a script, the associated window becomes the foreground window if it is available. See 
+    <a href="../FMP_Help/windows-script-steps.html#ww1214101"
+   
+     title="Windows script steps"
+    ><span class="zh-hyper">Windows script steps</span></a>.</p><p id="ww1027649" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Should the script switch among 
+    <a href="../FMP_Help/glossary.html#ww1027931"
+   
+     title="Glossary"
+    ><span class="g-glosslink">modes</span></a>? A script can be run from Browse, Find, Layout, or Preview modes. Make sure your script is in the proper mode before it acts upon something. For example, use the 
+    <a href="../FMP_Help/enter-browse-mode.html#ww1208206"
+   
+     title="Enter Browse Mode"
+    ><span class="zh-hyper">Enter Browse Mode script step</span></a> to modify data in fields and records, and use the 
+    <a href="../FMP_Help/enter-find-mode.html#ww1208277"
+   
+     title="Enter Find Mode"
+    ><span class="zh-hyper">Enter Find Mode script step</span></a> to set up or perform a 
+    <a href="../FMP_Help/glossary.html#ww1027732"
+   
+     title="Glossary"
+    ><span class="g-glosslink">find request</span></a>.</p><p id="ww1027657" class="n1-note1"><span class="zan-autonum">Note&nbsp;&nbsp;</span>Scripts performed in Layout mode automatically switch to Browse mode before executing.</p><p id="ww1027660" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Which 
+    <a href="../FMP_Help/glossary.html#ww1027703"
+   
+     title="Glossary"
+    ><span class="g-glosslink">fields</span></a> and layouts will the script need? Some steps (such as the 
+    <a href="../FMP_Help/go-to-field.html#ww1208429"
+   
+     title="Go to Field"
+    ><span class="zh-hyper">Go to Field script step</span></a> and the 
+    <a href="../FMP_Help/insert-text.html#ww1211013"
+   
+     title="Insert Text"
+    ><span class="zh-hyper">Insert Text script step</span></a>) require a field to be on the current layout, while others (such as the 
+    <a href="../FMP_Help/set-field.html#ww1211284"
+   
+     title="Set Field"
+    ><span class="zh-hyper">Set Field script step</span></a>) don't. Either use the 
+    <a href="../FMP_Help/go-to-layout.html#ww1208509"
+   
+     title="Go to Layout"
+    ><span class="zh-hyper">Go to Layout script step</span></a> to switch to a layout that has the fields your script requires, or place the fields on the gray area to the right of the layout to make the fields available for script steps but not to users.</p><p id="ww1027699" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Should the records be processed in a certain order? Decide among the current 
+    <a href="../FMP_Help/glossary.html#ww1053486"
+   
+     title="Glossary"
+    ><span class="g-glosslink">sort order</span></a>, a specified sort order, or unsorted (the order in which the records were created). Use the 
+    <a href="../FMP_Help/sort-records.html#ww1213847"
+   
+     title="Sort Records"
+    ><span class="zh-hyper">Sort Records script step</span></a> or the 
+    <a href="../FMP_Help/unsort-records.html#ww1214030"
+   
+     title="Unsort Records"
+    ><span class="zh-hyper">Unsort Records script step</span></a> before entering a loop to order your records properly before processing them.</p><p id="ww1027708" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>How should the script advance through multiple fields or records? (Use the 
+    <a href="../FMP_Help/go-to-record-request-page.html#ww1208953"
+   
+     title="Go to Record/Request/Page"
+    ><span class="zh-hyper">Go to Record/Request/Page script step</span></a>, the 
+    <a href="../FMP_Help/loop.html#ww1207500"
+   
+     title="Loop"
+    ><span class="zh-hyper">Loop script step</span></a>, the 
+    <a href="../FMP_Help/exit-loop-if.html#ww1207066"
+   
+     title="Exit Loop If"
+    ><span class="zh-hyper">Exit Loop If script step</span></a> and the 
+    <a href="../FMP_Help/end-loop.html#ww1206990"
+   
+     title="End Loop"
+    ><span class="zh-hyper">End Loop script step</span></a> to control multiple field or record processing).</p><p id="ww1027719" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>When should the script finish? After all script steps have run? After a specified condition has been met? (Use the 
+    <a href="../FMP_Help/if-script-step.html#ww1207308"
+   
+     title="If"
+    ><span class="zh-hyper">If script step</span></a>, the 
+    <a href="../FMP_Help/else-if.html#ww1206839"
+   
+     title="Else If"
+    ><span class="zh-hyper">Else If script step</span></a>, and the 
+    <a href="../FMP_Help/else.html#ww1206763"
+   
+     title="Else"
+    ><span class="zh-hyper">Else script step</span></a> to perform a task such as the 
+    <a href="../FMP_Help/exit-script.html#ww1207151"
+   
+     title="Exit Script"
+    ><span class="zh-hyper">Exit Script script step</span></a> when the script reaches a specified condition.)</p><p id="ww1027732" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Should users be able to stop the script while it is running? Does the script contain a process that could result in incomplete or incorrect data if the script finishes too soon? Use the 
+    <a href="../FMP_Help/allow-user-abort.html#ww1206591"
+   
+     title="Allow User Abort"
+    ><span class="zh-hyper">Allow User Abort script step</span></a> to control if users can stop a script.</p><p id="ww1052504" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>How will you test your script? Use the 
+    <a href="../FMP_Help/pause-resume-script.html#ww1207588"
+   
+     title="Pause/Resume Script"
+    ><span class="zh-hyper">Pause/Resume Script script step</span></a> to pause at predefined points in your script. Save a copy of your database, and then define and test your script in it to preserve the original data.</p><p id="ww1046295" class="n1-note1"><span class="zan-autonum">Note&nbsp;&nbsp;</span>You can use the 
+    <a href="../FMP_Help/glossary.html#ww1028075"
+   
+     title="Glossary"
+    ><span class="g-glosslink">Script Debugger</span></a> to test and troubleshoot your scripts. See 
+    <a href="../FMP_Help/debugging-scripts.html#ww1033267"
+   
+     title="Debugging scripts"
+    ><span class="zh-hyper">Debugging scripts</span></a>.</p><p id="ww1027734" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>How will you handle error conditions (such as an empty found set)? You can capture the last error condition reported by FileMaker&nbsp;Pro Advanced by using the 
+    <a href="../FMP_Help/get-lasterror.html#ww1290406"
+   
+     title="Get(LastError)"
+    ><span class="zh-hyper">Get(LastError) function</span></a>. Use this function and the 
+    <a href="../FMP_Help/if-script-step.html#ww1207308"
+   
+     title="If"
+    ><span class="zh-hyper">If script step</span></a>, the 
+    <a href="../FMP_Help/else-if.html#ww1206839"
+   
+     title="Else If"
+    ><span class="zh-hyper">Else If script step</span></a>, and the 
+    <a href="../FMP_Help/else.html#ww1206763"
+   
+     title="Else"
+    ><span class="zh-hyper">Else script step</span></a> to create scripts that react gracefully to user errors or unexpected results. For even greater control, use the 
+    <a href="../FMP_Help/set-error-capture.html#ww1207877"
+   
+     title="Set Error Capture"
+    ><span class="zh-hyper">Set Error Capture script step</span></a> to suppress the error alerts that are normally displayed in these situations, and replace them with your own using the 
+    <a href="../FMP_Help/show-custom-dialog.html#ww1220335"
+   
+     title="Show Custom Dialog"
+    ><span class="zh-hyper">Show Custom Dialog script step</span></a>. </p><p id="ww1027754" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Should all users be allowed to perform all scripts? Use 
+    <a href="../FMP_Help/glossary.html#ww1028013"
+   
+     title="Glossary"
+    ><span class="g-glosslink">privilege sets</span></a> to control users' access to scripting. Through the use of privilege sets, users can be allowed to execute or modify individual scripts, no scripts, or all scripts. You can also set the default permission for each privileges set for any future new scripts that are defined in the file. Setting a script to run with full access privileges will allow the script to do things on behalf of the user that may not be normally allowed by their assigned privileges. See 
+    <a href="../FMP_Help/creating-editing-privilege-sets.html#ww1088352"
+   
+     title="Creating and editing privilege sets"
+    ><span class="zh-hyper">Creating and editing privilege sets</span></a>.</p><p id="ww1027759" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>How will users perform the script? You need to either create a 
+    <a href="../FMP_Help/glossary.html#ww1027559"
+   
+     title="Glossary"
+    ><span class="g-glosslink">button</span></a> to perform the script or specify that the script be added to the Scripts menu. Scripts can also be run from the Script Workspace or when a 
+    <a href="../FMP_Help/glossary.html#ww1033294"
+   
+     title="Glossary"
+    ><span class="g-glosslink">script trigger</span></a> is activated. For example, you can use the 
+    <a href="../FMP_Help/onfirstwindowopen.html#ww1033390"
+   
+     title="OnFirstWindowOpen"
+    ><span class="zh-hyper">OnFirstWindowOpen script trigger</span></a> to run a script when the database opens.</p><p id="ww1027763" class="b-body">Once you've considered these questions, you're ready to manage scripts in your database. See 
+    <a href="../FMP_Help/creating-editing-scripts.html#ww1059866"
+   
+     title="Creating and editing scripts"
+    ><span class="zh-hyper">Creating and editing scripts</span></a>. </p><h2 id="ww1059796" class="rh-relatedhead"><span>Related topics</span>&nbsp;</h2><p id="ww1059800" class="rt-relatedtopic">
+    <a href="../FMP_Help/script-steps-alphabetical.html#ww66468"
+   
+     title="Script steps reference (alphabetical list)"
+    ><span class="zh-hyper">Script steps reference (alphabetical list)</span></a></p><p id="ww1059804" class="rt-relatedtopic">
+    <a href="../FMP_Help/script-steps-category.html#ww947337"
+   
+     title="Script steps reference (category list)"
+    ><span class="zh-hyper">Script steps reference (category list)</span></a></p><!-- FMI - Feedback Link --><div class="feedbacklink">Was this topic helpful? <a href="https://www.filemaker.com/redirects/fmp18_admin.html?page=feedback&amp;lang=en" target="external_window">Send feedback.</a></div><footer><!-- Related Topics --><!--                --><!-- Disqus --><!--        --><!-- Google Translation --><!--                    --><br /></footer></body></html>

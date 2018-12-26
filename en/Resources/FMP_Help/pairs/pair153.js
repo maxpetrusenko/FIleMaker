@@ -1,0 +1,24 @@
+var pairs =
+{
+"atan":{"returns":1,"inverse":1,"number":1}
+,"returns":{"trigonometric":1,".78539816":1,"45":1}
+,"trigonometric":{"arc":1}
+,"arc":{"tangent":1}
+,"tangent":{"atan":1,"number":1,"angle":1,"equal":1}
+,"inverse":{"tangent":1}
+,"number":{"atan":1,"number":1,"-any":1,"filemaker":1}
+,"-any":{"numeric":1}
+,"numeric":{"expression":1}
+,"expression":{"field":1,"number":1}
+,"field":{"numeric":1}
+,"filemaker":{"pro":1}
+,"pro":{"6.0":1}
+,"6.0":{"earlier":1}
+,"earlier":{"arc":1}
+,"angle":{"radians":1}
+,"radians":{"tangent":1}
+,"equal":{"number":1}
+,".78539816":{"degrees":1}
+,"degrees":{"atan":1}
+}
+;Search.control.loadWordPairs(pairs);

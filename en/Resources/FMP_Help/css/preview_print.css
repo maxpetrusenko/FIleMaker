@@ -1,0 +1,1151 @@
+p.b-body, div.b-body, caption.b-body
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.b1-body1, div.b1-body1, caption.b1-body1
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-left: 1.5em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.b2-body2, div.b2-body2, caption.b2-body2
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-left: 3em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.bu1-bullet1, div.bu1-bullet1, caption.bu1-bullet1
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-left: 1.5em;
+  margin-top: .6em;
+  padding-right: .5em;
+  text-align: left;
+  text-indent: -1.5em;
+}
+
+p.bu2-bullet2, div.bu2-bullet2, caption.bu2-bullet2
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-left: 3em;
+  margin-top: .6em;
+  padding-right: .5em;
+  text-align: left;
+  text-indent: -1.5em;
+}
+
+p.cac-calloutcenter, div.cac-calloutcenter, caption.cac-calloutcenter
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: center;
+}
+
+p.cal-calloutleft, div.cal-calloutleft, caption.cal-calloutleft
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.car-calloutright, div.car-calloutright, caption.car-calloutright
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: right;
+}
+
+code.co-code, div.co-code, caption.co-code
+{
+  color: Black;
+  display: block;
+  font-family: Menlo, Monaco, 'Courier New', Courier, Monospace;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+code.co1-code1, div.co1-code1, caption.co1-code1
+{
+  color: Black;
+  display: block;
+  font-family: Menlo, Monaco, 'Courier New', Courier, Monospace;
+  margin-bottom: 0em;
+  margin-left: 1.5em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.ecd-errorcodedescription, div.ecd-errorcodedescription, caption.ecd-errorcodedescription
+{
+  color: Black;
+  margin-bottom: .3em;
+  margin-top: .3em;
+  text-align: left;
+}
+
+p.ecn-errorcodenumber, div.ecn-errorcodenumber, caption.ecn-errorcodenumber
+{
+  color: Black;
+  margin-bottom: .3em;
+  margin-top: .3em;
+  text-align: left;
+}
+
+h1.fch-funccatgryhead, div.fch-funccatgryhead, caption.fch-funccatgryhead
+{
+  color: Black;
+  font-size: 140%;
+  font-weight: normal;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: left;
+}
+
+h2.fdh-funcdeschead, div.fdh-funcdeschead, caption.fdh-funcdeschead
+{
+  color: Black;
+  font-size: 12pt;
+  font-weight: normal;
+  margin-bottom: 0em;
+  margin-top: 1.8em;
+  text-align: left;
+}
+
+code.ff-funcformat, div.ff-funcformat, caption.ff-funcformat
+{
+  color: Black;
+  display: block;
+  font-family: Menlo, Monaco, 'Courier New', Courier, Monospace;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+h2.ffh-funcformathead, div.ffh-funcformathead, caption.ffh-funcformathead
+{
+  color: Black;
+  font-size: 12pt;
+  font-weight: normal;
+  margin-bottom: 0em;
+  margin-top: 1.8em;
+  text-align: left;
+}
+
+h1.fh-funchead, div.fh-funchead, caption.fh-funchead
+{
+  color: Black;
+  font-size: 140%;
+  font-weight: normal;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: left;
+}
+
+p.fid-funcid, div.fid-funcid, caption.fid-funcid
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+h2.fpah-funcparamhead, div.fpah-funcparamhead, caption.fpah-funcparamhead
+{
+  color: Black;
+  font-size: 12pt;
+  font-weight: normal;
+  margin-bottom: 0em;
+  margin-top: 1.8em;
+  text-align: left;
+}
+
+p.fpu-funcpurpose, div.fpu-funcpurpose, caption.fpu-funcpurpose
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+h2.frh-funcreturnhead, div.frh-funcreturnhead, caption.frh-funcreturnhead
+{
+  color: Black;
+  font-size: 12pt;
+  font-weight: normal;
+  margin-bottom: 0em;
+  margin-top: 1.8em;
+  text-align: left;
+}
+
+p.gd-glossdef, div.gd-glossdef, caption.gd-glossdef
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.gh-glosshead, div.gh-glosshead, caption.gh-glosshead
+{
+  color: Black;
+  font-size: 110%;
+  font-weight: bold;
+  margin-bottom: 0em;
+  margin-top: 4em;
+  text-align: left;
+}
+
+p.gr-graphicanchor, div.gr-graphicanchor, caption.gr-graphicanchor
+{
+  color: Black;
+  margin-bottom: 1.2em;
+  margin-top: 1.2em;
+  text-align: left;
+}
+
+p.gt-glossterm, div.gt-glossterm, caption.gt-glossterm
+{
+  color: Black;
+  font-weight: bold;
+  margin-bottom: 0em;
+  margin-top: 4em;
+  text-align: left;
+}
+
+h1.h1-head1, div.h1-head1, caption.h1-head1
+{
+  color: Black;
+  font-size: 140%;
+  font-weight: normal;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: left;
+}
+
+h1.h2-head2, div.h2-head2, caption.h2-head2
+{
+  color: Black;
+  font-size: 140%;
+  font-weight: normal;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: left;
+}
+
+h1.h3-head3, div.h3-head3, caption.h3-head3
+{
+  color: Black;
+  font-size: 140%;
+  font-weight: normal;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: left;
+}
+
+h1.h4-head4, div.h4-head4, caption.h4-head4
+{
+  color: Black;
+  font-size: 140%;
+  font-weight: normal;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: left;
+}
+
+h2.hs1-headsub1, div.hs1-headsub1, caption.hs1-headsub1
+{
+  color: Black;
+  font-size: 12pt;
+  font-weight: normal;
+  margin-bottom: 0em;
+  margin-top: 1.8em;
+  text-align: left;
+}
+
+h2.hs1n-headsub1notes, div.hs1n-headsub1notes, caption.hs1n-headsub1notes
+{
+  color: Black;
+  font-size: 12pt;
+  font-weight: normal;
+  margin-bottom: 0em;
+  margin-top: 1.8em;
+  text-align: left;
+}
+
+h2.hs2-headsub2, div.hs2-headsub2, caption.hs2-headsub2
+{
+  color: Black;
+  font-size: 12pt;
+  font-weight: normal;
+  margin-bottom: 0em;
+  margin-left: 1.14em;
+  margin-top: 1.8em;
+  text-align: left;
+}
+
+h1.hx1-head1notoc, div.hx1-head1notoc, caption.hx1-head1notoc
+{
+  color: Black;
+  font-size: 140%;
+  font-weight: normal;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: left;
+}
+
+h1.hx2-head2notoc, div.hx2-head2notoc, caption.hx2-head2notoc
+{
+  color: Black;
+  font-size: 140%;
+  font-weight: normal;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: left;
+}
+
+h1.hx3-head3notoc, div.hx3-head3notoc, caption.hx3-head3notoc
+{
+  color: Black;
+  font-size: 140%;
+  font-weight: normal;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: left;
+}
+
+h1.hx4-head4notoc, div.hx4-head4notoc, caption.hx4-head4notoc
+{
+  color: Black;
+  font-size: 140%;
+  font-weight: normal;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: left;
+}
+
+p.n-note, div.n-note, caption.n-note
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.n1-note1, div.n1-note1, caption.n1-note1
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-left: 1.5em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.ni-noteimportant, div.ni-noteimportant, caption.ni-noteimportant
+{
+  background-color: #E0E0E0;
+  border-bottom-color: Gray;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: Gray;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: Gray;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: Gray;
+  border-top-style: solid;
+  border-top-width: 1px;
+  color: Black;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  padding-bottom: .5em;
+  padding-left: .5em;
+  padding-right: .5em;
+  padding-top: .5em;
+  text-align: left;
+}
+
+p.ni1-noteimportant1, div.ni1-noteimportant1, caption.ni1-noteimportant1
+{
+  background-color: #E0E0E0;
+  border-bottom-color: Gray;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: Gray;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: Gray;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: Gray;
+  border-top-style: solid;
+  border-top-width: 1px;
+  color: Black;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  margin-top: 1em;
+  padding-bottom: .5em;
+  padding-left: .5em;
+  padding-right: .5em;
+  padding-top: .5em;
+  text-align: left;
+}
+
+p.nt-notetip, div.nt-notetip, caption.nt-notetip
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.nt1-notetip1, div.nt1-notetip1, caption.nt1-notetip1
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-left: 1.5em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.nw-notewarning, div.nw-notewarning, caption.nw-notewarning
+{
+  background-color: #E0E0E0;
+  border-bottom-color: Gray;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: Gray;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: Gray;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: Gray;
+  border-top-style: solid;
+  border-top-width: 1px;
+  color: Black;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  padding-bottom: .5em;
+  padding-left: .5em;
+  padding-right: .5em;
+  padding-top: .5em;
+  text-align: left;
+}
+
+p.nw1-notewarning1, div.nw1-notewarning1, caption.nw1-notewarning1
+{
+  background-color: #E0E0E0;
+  border-bottom-color: Gray;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: Gray;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: Gray;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: Gray;
+  border-top-style: solid;
+  border-top-width: 1px;
+  color: Black;
+  margin-bottom: 1em;
+  margin-left: 1.5em;
+  margin-top: 1em;
+  padding-bottom: .5em;
+  padding-left: .5em;
+  padding-right: .5em;
+  padding-top: .5em;
+  text-align: left;
+}
+
+p.or-origin, div.or-origin, caption.or-origin
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+h2.orh-originhead, div.orh-originhead, caption.orh-originhead
+{
+  color: Black;
+  font-size: 12pt;
+  font-weight: normal;
+  margin-bottom: 0em;
+  margin-top: 1.8em;
+  text-align: left;
+}
+
+h2.rh-relatedhead, div.rh-relatedhead, caption.rh-relatedhead
+{
+  color: Black;
+  font-size: 12pt;
+  font-weight: normal;
+  margin-bottom: 0em;
+  margin-top: 1.8em;
+  text-align: left;
+}
+
+p.rt-relatedtopic, div.rt-relatedtopic, caption.rt-relatedtopic
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .3em;
+  text-align: left;
+}
+
+p.s1f-step1first, div.s1f-step1first, caption.s1f-step1first
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-left: 1.5em;
+  margin-top: 0.9em;
+  text-align: left;
+  text-indent: -1.5em;
+}
+
+p.s1r-step1reg, div.s1r-step1reg, caption.s1r-step1reg
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-left: 1.5em;
+  margin-top: 0.9em;
+  text-align: left;
+  text-indent: -1.5em;
+}
+
+p.s2f-step2first, div.s2f-step2first, caption.s2f-step2first
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-left: 3em;
+  margin-top: 0.9em;
+  text-align: left;
+  text-indent: -1.5em;
+}
+
+p.s2r-step2reg, div.s2r-step2reg, caption.s2r-step2reg
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-left: 3em;
+  margin-top: 0.9em;
+  text-align: left;
+  text-indent: -1.5em;
+}
+
+h2.sah-seealsohead, div.sah-seealsohead, caption.sah-seealsohead
+{
+  color: Black;
+  font-size: 12pt;
+  font-weight: normal;
+  margin-bottom: 0em;
+  margin-top: 1.8em;
+  text-align: left;
+}
+
+p.sal-seealsolink, div.sal-seealsolink, caption.sal-seealsolink
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .3em;
+  text-align: left;
+}
+
+h1.ssch-scriptcatgryhead, div.ssch-scriptcatgryhead, caption.ssch-scriptcatgryhead
+{
+  color: Black;
+  font-size: 140%;
+  font-weight: normal;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: left;
+}
+
+p.ssco1a-scriptstepcompt1api, div.ssco1a-scriptstepcompt1api, caption.ssco1a-scriptstepcompt1api
+{
+  color: Black;
+  margin-bottom: .3em;
+  margin-top: .3em;
+  text-align: left;
+}
+
+p.ssco1c-scriptstepcompt1cld, div.ssco1c-scriptstepcompt1cld, caption.ssco1c-scriptstepcompt1cld
+{
+  color: Black;
+  margin-bottom: .3em;
+  margin-top: .3em;
+  text-align: left;
+}
+
+p.ssco1g-scriptstepcompt1go, div.ssco1g-scriptstepcompt1go, caption.ssco1g-scriptstepcompt1go
+{
+  color: Black;
+  margin-bottom: .3em;
+  margin-top: .3em;
+  text-align: left;
+}
+
+p.ssco1p-scriptstepcompt1pro, div.ssco1p-scriptstepcompt1pro, caption.ssco1p-scriptstepcompt1pro
+{
+  color: Black;
+  margin-bottom: .3em;
+  margin-top: .3em;
+  text-align: left;
+}
+
+p.ssco1r-scriptstepcompt1run, div.ssco1r-scriptstepcompt1run, caption.ssco1r-scriptstepcompt1run
+{
+  color: Black;
+  margin-bottom: .3em;
+  margin-top: .3em;
+  text-align: left;
+}
+
+p.ssco1s-scriptstepcompt1svr, div.ssco1s-scriptstepcompt1svr, caption.ssco1s-scriptstepcompt1svr
+{
+  color: Black;
+  margin-bottom: .3em;
+  margin-top: .3em;
+  text-align: left;
+}
+
+p.ssco1u-scriptstepcompt1cwp, div.ssco1u-scriptstepcompt1cwp, caption.ssco1u-scriptstepcompt1cwp
+{
+  color: Black;
+  margin-bottom: .3em;
+  margin-top: .3em;
+  text-align: left;
+}
+
+p.ssco1w-scriptstepcompt1wd, div.ssco1w-scriptstepcompt1wd, caption.ssco1w-scriptstepcompt1wd
+{
+  color: Black;
+  margin-bottom: .3em;
+  margin-top: .3em;
+  text-align: left;
+}
+
+h2.sscoh-scriptcompathead, div.sscoh-scriptcompathead, caption.sscoh-scriptcompathead
+{
+  color: Black;
+  font-size: 12pt;
+  font-weight: normal;
+  margin-bottom: 0em;
+  margin-top: 1.8em;
+  text-align: left;
+}
+
+p.sscoh1-scriptstepcompthead1, div.sscoh1-scriptstepcompthead1, caption.sscoh1-scriptstepcompthead1
+{
+  color: Black;
+  font-weight: bold;
+  margin-bottom: .3em;
+  margin-top: .3em;
+  text-align: left;
+}
+
+p.sscoh2-scriptstepcompthead2, div.sscoh2-scriptstepcompthead2, caption.sscoh2-scriptstepcompthead2
+{
+  color: Black;
+  font-weight: bold;
+  margin-bottom: .3em;
+  margin-top: .3em;
+  text-align: left;
+}
+
+p.sscon-scriptstepcomptno, div.sscon-scriptstepcomptno, caption.sscon-scriptstepcomptno
+{
+  color: Black;
+  margin-bottom: .3em;
+  margin-top: .3em;
+  text-align: left;
+}
+
+p.sscop-scriptstepcomptpartial, div.sscop-scriptstepcomptpartial, caption.sscop-scriptstepcomptpartial
+{
+  color: Black;
+  margin-bottom: .3em;
+  margin-top: .3em;
+  text-align: left;
+}
+
+p.sscoy-scriptstepcomptyes, div.sscoy-scriptstepcomptyes, caption.sscoy-scriptstepcomptyes
+{
+  color: Black;
+  margin-bottom: .3em;
+  margin-top: .3em;
+  text-align: left;
+}
+
+h2.ssdh-scriptdeschead, div.ssdh-scriptdeschead, caption.ssdh-scriptdeschead
+{
+  color: Black;
+  font-size: 12pt;
+  font-weight: normal;
+  margin-bottom: 0em;
+  margin-top: 1.8em;
+  text-align: left;
+}
+
+h2.sseh1-scriptexamhead1, div.sseh1-scriptexamhead1, caption.sseh1-scriptexamhead1
+{
+  color: Black;
+  font-size: 12pt;
+  font-weight: normal;
+  margin-bottom: 0em;
+  margin-top: 1.8em;
+  text-align: left;
+}
+
+h2.ssehn-scriptexamheadn, div.ssehn-scriptexamheadn, caption.ssehn-scriptexamheadn
+{
+  color: Black;
+  font-size: 12pt;
+  font-weight: normal;
+  margin-bottom: 0em;
+  margin-top: 1.8em;
+  text-align: left;
+}
+
+h1.ssh-scripthead, div.ssh-scripthead, caption.ssh-scripthead
+{
+  color: Black;
+  font-size: 140%;
+  font-weight: normal;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: left;
+}
+
+p.ssid-scriptid, div.ssid-scriptid, caption.ssid-scriptid
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+h2.ssoh-scriptoptshead, div.ssoh-scriptoptshead, caption.ssoh-scriptoptshead
+{
+  color: Black;
+  font-size: 12pt;
+  font-weight: normal;
+  margin-bottom: 0em;
+  margin-top: 1.8em;
+  text-align: left;
+}
+
+p.sspu-scriptpurpose, div.sspu-scriptpurpose, caption.sspu-scriptpurpose
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.ta-tableanchor, div.ta-tableanchor, caption.ta-tableanchor
+{
+  color: Black;
+  font-size: 25%;
+  margin-bottom: 0em;
+  margin-top: 0em;
+  text-align: left;
+}
+
+p.taec-tableanchorerrorcodes, div.taec-tableanchorerrorcodes, caption.taec-tableanchorerrorcodes
+{
+  color: Black;
+  font-size: 25%;
+  margin-bottom: 0em;
+  margin-top: 0em;
+  text-align: left;
+}
+
+p.tb1-tablebullet1, div.tb1-tablebullet1, caption.tb1-tablebullet1
+{
+  color: Black;
+  margin-bottom: .3em;
+  margin-left: 1.5em;
+  margin-top: .3em;
+  padding-right: .5em;
+  text-align: left;
+  text-indent: -1.5em;
+}
+
+p.tb2-tablebullet2, div.tb2-tablebullet2, caption.tb2-tablebullet2
+{
+  color: Black;
+  margin-bottom: .3em;
+  margin-left: 3em;
+  margin-top: .3em;
+  padding-right: .5em;
+  text-align: left;
+  text-indent: -1.5em;
+}
+
+p.td-tabledata, div.td-tabledata, caption.td-tabledata
+{
+  color: Black;
+  margin-bottom: .3em;
+  margin-top: .3em;
+  text-align: left;
+}
+
+p.th-tablehead, div.th-tablehead, caption.th-tablehead
+{
+  color: Black;
+  font-weight: bold;
+  margin-bottom: .3em;
+  margin-top: .3em;
+  text-align: left;
+}
+
+div.ti-title, caption.ti-title
+{
+  color: Black;
+  margin-bottom: 12px;
+  margin-left: 0px;
+  margin-top: 0px;
+  text-align: left;
+}
+
+p.tn-tablenote, div.tn-tablenote, caption.tn-tablenote
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.wga-graphicanchor, div.wga-graphicanchor, caption.wga-graphicanchor
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.wob-outlinebody, div.wob-outlinebody, caption.wob-outlinebody
+{
+  color: DimGray;
+  font-size: 9pt;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  text-align: left;
+}
+
+p.wog-outlinegraphic, div.wog-outlinegraphic, caption.wog-outlinegraphic
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.woh-outlinehead, div.woh-outlinehead, caption.woh-outlinehead
+{
+  color: Black;
+  font-size: 12pt;
+  margin-bottom: 0px;
+  margin-top: 30px;
+  text-align: left;
+}
+
+p.wot-outlinetitle, div.wot-outlinetitle, caption.wot-outlinetitle
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.wsb-sidebarbody, div.wsb-sidebarbody, caption.wsb-sidebarbody
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.wsh-sidebarhead, div.wsh-sidebarhead, caption.wsh-sidebarhead
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.wst-sidebartitle, div.wst-sidebartitle, caption.wst-sidebartitle
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.wwb-webbody, div.wwb-webbody, caption.wwb-webbody
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.wwh-webhead, div.wwh-webhead, caption.wwh-webhead
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.wwt-webtitle, div.wwt-webtitle, caption.wwt-webtitle
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+div.zf-footer, caption.zf-footer
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.zfa-funcalphahead, div.zfa-funcalphahead, caption.zfa-funcalphahead
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.zfn-footnote, div.zfn-footnote, caption.zfn-footnote
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.zft-tablenote, div.zft-tablenote, caption.zft-tablenote
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+div.zh-header, caption.zh-header
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+p.zssa-scriptalphahead, div.zssa-scriptalphahead, caption.zssa-scriptalphahead
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+div.zw-watermark, caption.zw-watermark
+{
+  color: Black;
+  margin-bottom: 0em;
+  margin-top: .6em;
+  text-align: left;
+}
+
+code.c-code, abbreviation.c-code, acronym.c-code, citation.c-code
+{
+  font-family: Menlo, Monaco, 'Courier New', Courier, Monospace;
+}
+
+em.e-emphasis, abbreviation.e-emphasis, acronym.e-emphasis, citation.e-emphasis
+{
+  font-style: italic;
+}
+
+span.g-glosslink, abbreviation.g-glosslink, acronym.g-glosslink, citation.g-glosslink
+{
+  color: Black;
+}
+
+strong.o-onscreen, abbreviation.o-onscreen, acronym.o-onscreen, citation.o-onscreen
+{
+  color: #626262;
+  font-weight: bold;
+}
+
+sup.s-superscript, abbreviation.s-superscript, acronym.s-superscript, citation.s-superscript
+{
+  vertical-align: super;
+}
+
+var.v-variable, abbreviation.v-variable, acronym.v-variable, citation.v-variable
+{
+  font-style: italic;
+}
+
+var.ve-varemphasis, abbreviation.ve-varemphasis, acronym.ve-varemphasis, citation.ve-varemphasis
+{
+  font-style: italic;
+  font-weight: bold;
+}
+
+span.zan-autonum, abbreviation.zan-autonum, acronym.zan-autonum, citation.zan-autonum
+{
+  color: Black;
+  font-weight: bold;
+}
+
+span.zeq-equation, abbreviation.zeq-equation, acronym.zeq-equation, citation.zeq-equation
+{
+  font-weight: bold;
+}
+
+table.t-table
+{
+  border-bottom-color: Silver;
+  border-bottom-style: solid;
+  border-bottom-width: 1pt;
+  border-collapse: collapse;
+  border-left-color: Silver;
+  border-left-style: solid;
+  border-left-width: 1pt;
+  border-right-color: Silver;
+  border-right-style: solid;
+  border-right-width: 1pt;
+  border-top-color: Silver;
+  border-top-style: solid;
+  border-top-width: 1pt;
+  margin-bottom: 12.0pt;
+  margin-left: 0pt;
+  margin-right: 0pt;
+  margin-top: 0.0pt;
+  padding-bottom: 2pt;
+  padding-left: 4pt;
+  padding-right: 4pt;
+  padding-top: 4pt;
+  text-align: left;
+}
+
+table.wo-outline
+{
+  border-collapse: collapse;
+  margin-bottom: 12.0pt;
+  margin-left: 0pt;
+  margin-right: 0pt;
+  margin-top: -110.0pt;
+  padding-bottom: 2pt;
+  padding-left: 4pt;
+  padding-right: 4pt;
+  padding-top: 4pt;
+  text-align: left;
+}
+
+table.ws-sidebar
+{
+  border-collapse: collapse;
+  margin-bottom: -150.0pt;
+  margin-left: 0pt;
+  margin-right: 0pt;
+  margin-top: 0.0pt;
+  padding-bottom: 2pt;
+  padding-left: 4pt;
+  padding-right: 4pt;
+  padding-top: 4pt;
+  text-align: right;
+}
+
+table.t1-table1
+{
+  border-bottom-color: Silver;
+  border-bottom-style: solid;
+  border-bottom-width: 1pt;
+  border-collapse: collapse;
+  border-left-color: Silver;
+  border-left-style: solid;
+  border-left-width: 1pt;
+  border-right-color: Silver;
+  border-right-style: solid;
+  border-right-width: 1pt;
+  border-top-color: Silver;
+  border-top-style: solid;
+  border-top-width: 1pt;
+  margin-bottom: 12.0pt;
+  margin-left: 18pt;
+  margin-right: 0pt;
+  margin-top: 0.0pt;
+  padding-bottom: 2pt;
+  padding-left: 4pt;
+  padding-right: 4pt;
+  padding-top: 4pt;
+  text-align: left;
+}
+
+table.ww-web
+{
+  border-collapse: collapse;
+  margin-bottom: 12.0pt;
+  margin-left: 0pt;
+  margin-right: 0pt;
+  margin-top: 0.0pt;
+  padding-bottom: 2pt;
+  padding-left: 4pt;
+  padding-right: 4pt;
+  padding-top: 4pt;
+  text-align: left;
+}
+
+table.t2-table2
+{
+  border-bottom-color: Silver;
+  border-bottom-style: solid;
+  border-bottom-width: 1pt;
+  border-collapse: collapse;
+  border-left-color: Silver;
+  border-left-style: solid;
+  border-left-width: 1pt;
+  border-right-color: Silver;
+  border-right-style: solid;
+  border-right-width: 1pt;
+  border-top-color: Silver;
+  border-top-style: solid;
+  border-top-width: 1pt;
+  margin-bottom: 12.0pt;
+  margin-left: 36pt;
+  margin-right: 0pt;
+  margin-top: 0.0pt;
+  padding-bottom: 2pt;
+  padding-left: 4pt;
+  padding-right: 4pt;
+  padding-top: 4pt;
+  text-align: left;
+}
+

@@ -1,0 +1,322 @@
+﻿Timestamp	Filename	Error	Message
+2018-11-02 16:21:10.855 -0700	AMMcenter.fmp12	0	Import of scripts from clipboard started
+2018-11-02 16:21:10.861 -0700	LOgiCATOR Scripts	0	script steps imported : 0
+2018-11-02 16:21:10.890 -0700	Open LOgiCATOR ({ modifyLast; customizations.namingStyle; .fiscalYearStart; .fields })	0	script steps imported : 149
+2018-11-02 16:21:10.905 -0700	on timer | LOgiCATOR | Perform Find	0	script steps imported : 135
+2018-11-02 16:21:10.912 -0700	LOgiCATOR README	0	script steps imported : 98
+2018-11-02 16:21:10.913 -0700	--	0	script steps imported : 0
+2018-11-02 16:21:10.914 -0700	AMMcenter.fmp12	0	scripts imported : 4
+2018-11-02 16:21:10.914 -0700	AMMcenter.fmp12	0	Import completed
+2018-11-05 07:47:44.983 -0800	AMMcenter.fmp12	0	Import of scripts from clipboard started
+2018-11-05 07:47:44.993 -0800	Modules	0	script steps imported : 0
+2018-11-05 07:47:44.994 -0800	fmajax	0	script steps imported : 0
+2018-11-05 07:47:45.001 -0800	fmajax.READ ME	0	script steps imported : 102
+2018-11-05 07:47:45.002 -0800	Public	0	script steps imported : 0
+2018-11-05 07:47:45.011 -0800	fmajax.init	0	script steps imported : 14
+2018-11-05 07:47:45.013 -0800	fmajax.return_temp_path	0	script steps imported : 2
+2018-11-05 07:47:45.014 -0800	fmajax.(re)load_web_viewer ( [object name] )::9::Set Variable	106	Table referred to in the calculation “Case ( 	IsEmpty ( Get ( ScriptParameter ) ) ;	Let ([		~table = "\"" & Left ( GetFieldName ( web_viewer_instances_all::filename ) ; Position ( GetFieldName ( web_viewer_instances_all::filename ) ; "::" ; 1 ; 1 ) -1 ) & "\"" ;		~object_name = "\"" & Substitute (  GetFieldName ( web_viewer_instances_all::object_name ) ; "::" ; "\".\"" ) & "\"";		~query = "SELECT " & ~object_name & " FROM " & ~table 		];		ExecuteSQL ( ~query ; "" ; "" )	) ;	Get ( ScriptParameter ))” is missing.
+2018-11-05 07:47:45.016 -0800	fmajax.(re)load_web_viewer ( [object name] )::17::Set Variable	106	Table referred to in the calculation “Let ([	~table = "\"" & Left ( GetFieldName ( web_viewer_instances_all::filename ) ; Position ( GetFieldName ( web_viewer_instances_all::filename ) ; "::" ; 1 ; 1 ) -1 ) & "\"" ;	~layout = "\"" & Substitute (  GetFieldName ( web_viewer_instances_all::layout ) ; "::" ; "\".\"" ) & "\"";	~object_name = "\"" & Substitute (  GetFieldName ( web_viewer_instances_all::object_name ) ; "::" ; "\".\"" ) & "\"";	~query = "SELECT " & ~layout & " FROM " & ~table & " WHERE " & ~object_name & " = ?" 	];	ExecuteSQL ( ~query ; "¶" ; "" ; FMAjax::receiving_viewer ))” is missing.
+2018-11-05 07:47:45.019 -0800	fmajax.(re)load_web_viewer ( [object name] )	0	script steps imported : 27
+2018-11-05 07:47:45.021 -0800	fmajax.import_web_files ( [filename] )::12::Set Variable	106	Table referred to in the calculation “Case ( 	IsEmpty ( Get ( ScriptParameter ) ) ; 	List ( web_viewer_code_all::filename ) ; 	Get ( ScriptParameter ))” is missing.
+2018-11-05 07:47:45.022 -0800	fmajax.import_web_files ( [filename] )::18::If	106	Table referred to in the calculation “web_viewer_code_selected::modifiable” is missing.
+2018-11-05 07:47:45.024 -0800	fmajax.import_web_files ( [filename] )::26::Set Field	102	Field “code” missing.
+2018-11-05 07:47:45.025 -0800	fmajax.import_web_files ( [filename] )	0	script steps imported : 35
+2018-11-05 07:47:45.027 -0800	fmajax.set_hash ( data )::18::Set Variable	106	Table referred to in the calculation “Let ([	~table = "\"" & Left ( GetFieldName ( web_viewer_instances_all::filename ) ; Position ( GetFieldName ( web_viewer_instances_all::filename ) ; "::" ; 1 ; 1 ) -1 ) & "\"" ;	~filename = "\"" & Substitute (  GetFieldName ( web_viewer_instances_all::filename ) ; "::" ; "\".\"" ) & "\"";	~url_source = "\"" & Substitute (  GetFieldName ( web_viewer_instances_all::url_source ) ; "::" ; "\".\"" ) & "\"";	~layout = "\"" & Substitute (  GetFieldName ( web_viewer_instances_all::layout ) ; "::" ; "\".\"" ) & "\"";	~get_params = "\"" & Substitute (  GetFieldName ( web_viewer_instances_all::get_params ) ; "::" ; "\".\"" ) & "\"";	~object_name = "\"" & Substitute (  GetFieldName ( web_viewer_instances_all::object_name ) ; "::" ; "\".\"" ) & "\"";	~query = "SELECT " & ~filename &", " & ~url_source & ", " & ~layout & ", " & ~get_params & " FROM " & ~table & " WHERE " & ~object_name & " = ?" 	];	ExecuteSQL ( ~query ; "¶" ; "" ; FMAjax::receiving_viewer ))” is missing.
+2018-11-05 07:47:45.033 -0800	fmajax.set_hash ( data )	0	script steps imported : 41
+2018-11-05 07:47:45.036 -0800	fmajax.export_web_files ( [filename] )::10::Set Variable	106	Table referred to in the calculation “Case ( 	IsEmpty ( Get ( ScriptParameter ) ) ;	List ( web_viewer_code_all::filename ) ;	Get ( ScriptParameter ))” is missing.
+2018-11-05 07:47:45.038 -0800	fmajax.export_web_files ( [filename] )::21::If	106	Table referred to in the calculation “web_viewer_code_selected::active” is missing.
+2018-11-05 07:47:45.039 -0800	fmajax.export_web_files ( [filename] )::23::If	106	Table referred to in the calculation “web_viewer_code_selected::container” is missing.
+2018-11-05 07:47:45.039 -0800	fmajax.export_web_files ( [filename] )::25::Export Field Contents	102	Field “container” missing.
+2018-11-05 07:47:45.041 -0800	fmajax.export_web_files ( [filename] )::28::Export Records	102	Field “code” missing.
+2018-11-05 07:47:45.041 -0800	fmajax.export_web_files ( [filename] )::31::Export Field Contents	102	Field “code” missing.
+2018-11-05 07:47:45.042 -0800	fmajax.export_web_files ( [filename] )	0	script steps imported : 36
+2018-11-05 07:47:45.047 -0800	fmajax.set_file ( data )	0	script steps imported : 30
+2018-11-05 07:47:45.048 -0800	fmajax.set_receiving_viewer ( object name )	0	script steps imported : 9
+2018-11-05 07:47:45.050 -0800	fmajax.set_callback ( js function name )	0	script steps imported : 9
+2018-11-05 07:47:45.051 -0800	fmajax.new_code_file::12::If	106	Table referred to in the calculation “IsEmpty ( web_viewer_code_selected::filename )” is missing.
+2018-11-05 07:47:45.052 -0800	fmajax.new_code_file::13::Set Field	102	Field “active” missing.
+2018-11-05 07:47:45.052 -0800	fmajax.new_code_file	0	script steps imported : 18
+2018-11-05 07:47:45.054 -0800	fmajax.new_web_viewer::12::If	106	Table referred to in the calculation “IsEmpty ( web_viewer_instances_selected::object_name )” is missing.
+2018-11-05 07:47:45.054 -0800	fmajax.new_web_viewer::13::Set Field	102	Field “layout” missing.
+2018-11-05 07:47:45.055 -0800	fmajax.new_web_viewer::14::Set Field	102	Field “layout” missing.
+2018-11-05 07:47:45.056 -0800	fmajax.new_web_viewer	0	script steps imported : 20
+2018-11-05 07:47:45.059 -0800	fmajax.set_dev_path	0	script steps imported : 7
+2018-11-05 07:47:45.060 -0800	--	0	script steps imported : 0
+2018-11-05 07:47:45.060 -0800	Private	0	script steps imported : 0
+2018-11-05 07:47:45.063 -0800	fmajax.exportXSL	0	script steps imported : 13
+2018-11-05 07:47:45.065 -0800	JSONEncode	0	script steps imported : 3
+2018-11-05 07:47:45.066 -0800	--	0	script steps imported : 0
+2018-11-05 07:47:45.066 -0800	--	0	script steps imported : 0
+2018-11-05 07:47:45.067 -0800	--	0	script steps imported : 0
+2018-11-05 07:47:45.068 -0800	AMMcenter.fmp12	0	scripts imported : 19
+2018-11-05 07:47:45.068 -0800	AMMcenter.fmp12	0	Import completed
+2018-11-05 08:04:20.433 -0800	AMMcenter.fmp12	0	Import operations started
+2018-11-05 08:04:20.438 -0800	AMMcenter.fmp12	0	Import of tables from clipboard started
+2018-11-05 08:04:20.440 -0800	AMMcenter.fmp12	0	Table “web_viewer_code” imported as “web_viewer_code 2” since a table or table occurrence named “web_viewer_code” already exists.
+2018-11-05 08:04:20.444 -0800	AMMcenter.fmp12	0	Table “FMAjax” imported as “FMAjax 2” since a table or table occurrence named “FMAjax” already exists.
+2018-11-05 08:04:20.448 -0800	AMMcenter.fmp12	0	Table “web_viewer_instances” imported as “web_viewer_instances 2” since a table or table occurrence named “web_viewer_instances” already exists.
+2018-11-05 08:04:20.452 -0800	web_viewer_code 2	0	fields imported : 5
+2018-11-05 08:04:20.457 -0800	FMAjax 2	0	fields imported : 11
+2018-11-05 08:04:20.461 -0800	web_viewer_instances 2	0	fields imported : 6
+2018-11-05 08:04:20.461 -0800	AMMcenter.fmp12	0	tables imported : 3
+2018-11-05 08:04:20.462 -0800	AMMcenter.fmp12	0	Import completed
+2018-11-05 08:05:48.437 -0800	AMMcenter.fmp12	0	Import operations committed
+2018-11-05 08:05:48.437 -0800	AMMcenter.fmp12	0	==================================================================
+2018-11-05 09:06:38.371 -0800	AMMcenter.fmp12	0	Import operations started
+2018-11-05 09:06:38.375 -0800	AMMcenter.fmp12	0	Import of tables from file “FMAjax.fmp12” started
+2018-11-05 09:06:38.387 -0800	FMAjax	0	fields imported : 11
+2018-11-05 09:06:38.387 -0800	AMMcenter.fmp12	0	tables imported : 1
+2018-11-05 09:06:38.388 -0800	AMMcenter.fmp12	0	Import completed
+2018-11-05 09:06:38.392 -0800	AMMcenter.fmp12	0	Import operations committed
+2018-11-05 09:06:38.392 -0800	AMMcenter.fmp12	0	==================================================================
+2018-11-05 09:07:31.505 -0800	AMMcenter.fmp12	0	Import operations started
+2018-11-05 09:07:31.510 -0800	AMMcenter.fmp12	0	Import of tables from file “FMAjax.fmp12” started
+2018-11-05 09:07:31.518 -0800	web_viewer_code	0	fields imported : 5
+2018-11-05 09:07:31.518 -0800	AMMcenter.fmp12	0	tables imported : 1
+2018-11-05 09:07:31.519 -0800	AMMcenter.fmp12	0	Import completed
+2018-11-05 09:07:31.522 -0800	AMMcenter.fmp12	0	Import operations committed
+2018-11-05 09:07:31.523 -0800	AMMcenter.fmp12	0	==================================================================
+2018-11-05 09:07:50.056 -0800	AMMcenter.fmp12	0	Import operations started
+2018-11-05 09:07:50.061 -0800	AMMcenter.fmp12	0	Import of tables from file “FMAjax.fmp12” started
+2018-11-05 09:07:50.069 -0800	web_viewer_instances	0	fields imported : 6
+2018-11-05 09:07:50.069 -0800	AMMcenter.fmp12	0	tables imported : 1
+2018-11-05 09:07:50.069 -0800	AMMcenter.fmp12	0	Import completed
+2018-11-05 09:07:50.074 -0800	AMMcenter.fmp12	0	Import operations committed
+2018-11-05 09:07:50.074 -0800	AMMcenter.fmp12	0	==================================================================
+2018-11-05 09:27:46.955 -0800	AMMcenter.fmp12	0	Import of scripts from clipboard started
+2018-11-05 09:27:46.966 -0800	Modules	0	script steps imported : 0
+2018-11-05 09:27:46.967 -0800	fmajax	0	script steps imported : 0
+2018-11-05 09:27:46.975 -0800	fmajax.READ ME	0	script steps imported : 102
+2018-11-05 09:27:46.977 -0800	Public	0	script steps imported : 0
+2018-11-05 09:27:46.980 -0800	fmajax.init	0	script steps imported : 14
+2018-11-05 09:27:46.982 -0800	fmajax.return_temp_path	0	script steps imported : 2
+2018-11-05 09:27:46.987 -0800	fmajax.(re)load_web_viewer ( [object name] )	0	script steps imported : 27
+2018-11-05 09:27:46.995 -0800	fmajax.import_web_files ( [filename] )	0	script steps imported : 35
+2018-11-05 09:27:47.003 -0800	fmajax.set_hash ( data )	0	script steps imported : 41
+2018-11-05 09:27:47.010 -0800	fmajax.export_web_files ( [filename] )	0	script steps imported : 36
+2018-11-05 09:27:47.015 -0800	fmajax.set_file ( data )	0	script steps imported : 30
+2018-11-05 09:27:47.017 -0800	fmajax.set_receiving_viewer ( object name )	0	script steps imported : 9
+2018-11-05 09:27:47.018 -0800	fmajax.set_callback ( js function name )	0	script steps imported : 9
+2018-11-05 09:27:47.020 -0800	fmajax.new_code_file	0	script steps imported : 18
+2018-11-05 09:27:47.023 -0800	fmajax.new_web_viewer	0	script steps imported : 20
+2018-11-05 09:27:47.025 -0800	fmajax.set_dev_path	0	script steps imported : 7
+2018-11-05 09:27:47.026 -0800	--	0	script steps imported : 0
+2018-11-05 09:27:47.027 -0800	Private	0	script steps imported : 0
+2018-11-05 09:27:47.030 -0800	fmajax.exportXSL	0	script steps imported : 13
+2018-11-05 09:27:47.032 -0800	JSONEncode	0	script steps imported : 3
+2018-11-05 09:27:47.033 -0800	--	0	script steps imported : 0
+2018-11-05 09:27:47.033 -0800	--	0	script steps imported : 0
+2018-11-05 09:27:47.034 -0800	--	0	script steps imported : 0
+2018-11-05 09:27:47.034 -0800	AMMcenter.fmp12	0	scripts imported : 19
+2018-11-05 09:27:47.035 -0800	AMMcenter.fmp12	0	Import completed
+2018-11-05 09:40:33.648 -0800	AMMcenter.fmp12	0	Import of scripts from file “FMAjax.fmp12” started
+2018-11-05 09:40:33.656 -0800	Modules	0	script steps imported : 0
+2018-11-05 09:40:33.657 -0800	fmajax	0	script steps imported : 0
+2018-11-05 09:40:33.667 -0800	fmajax.READ ME	0	script steps imported : 102
+2018-11-05 09:40:33.671 -0800	Public	0	script steps imported : 0
+2018-11-05 09:40:33.677 -0800	fmajax.init	0	script steps imported : 14
+2018-11-05 09:40:33.678 -0800	fmajax.return_temp_path	0	script steps imported : 2
+2018-11-05 09:40:33.685 -0800	fmajax.(re)load_web_viewer ( [object name] )	0	script steps imported : 27
+2018-11-05 09:40:33.693 -0800	fmajax.import_web_files ( [filename] )	0	script steps imported : 35
+2018-11-05 09:40:33.705 -0800	fmajax.set_hash ( data )	0	script steps imported : 41
+2018-11-05 09:40:33.714 -0800	fmajax.export_web_files ( [filename] )	0	script steps imported : 36
+2018-11-05 09:40:33.724 -0800	fmajax.set_file ( data )	0	script steps imported : 30
+2018-11-05 09:40:33.725 -0800	fmajax.set_receiving_viewer ( object name )	0	script steps imported : 9
+2018-11-05 09:40:33.727 -0800	fmajax.set_callback ( js function name )	0	script steps imported : 9
+2018-11-05 09:40:33.730 -0800	fmajax.new_code_file	0	script steps imported : 18
+2018-11-05 09:40:33.733 -0800	fmajax.new_web_viewer	0	script steps imported : 20
+2018-11-05 09:40:33.736 -0800	fmajax.set_dev_path	0	script steps imported : 7
+2018-11-05 09:40:33.737 -0800	--	0	script steps imported : 0
+2018-11-05 09:40:33.737 -0800	Private	0	script steps imported : 0
+2018-11-05 09:40:33.740 -0800	fmajax.exportXSL	0	script steps imported : 13
+2018-11-05 09:40:33.743 -0800	JSONEncode	0	script steps imported : 3
+2018-11-05 09:40:33.744 -0800	--	0	script steps imported : 0
+2018-11-05 09:40:33.744 -0800	--	0	script steps imported : 0
+2018-11-05 09:40:33.745 -0800	--	0	script steps imported : 0
+2018-11-05 09:40:33.745 -0800	AMMcenter.fmp12	0	scripts imported : 19
+2018-11-05 09:40:33.746 -0800	AMMcenter.fmp12	0	Import completed
+2018-11-05 09:50:09.038 -0800	AMMcenter.fmp12	0	Import of scripts from file “FMAjax.fmp12” started
+2018-11-05 09:50:09.044 -0800	AMMcenter.fmp12	0	Script “Modules” imported as “Modules 2” since a script named “Modules” already exists.
+2018-11-05 09:50:09.044 -0800	AMMcenter.fmp12	0	Script “fmajax” imported as “fmajax 2” since a script named “fmajax” already exists.
+2018-11-05 09:50:09.045 -0800	AMMcenter.fmp12	0	Script “fmajax.READ ME” imported as “fmajax.READ ME 2” since a script named “fmajax.READ ME” already exists.
+2018-11-05 09:50:09.046 -0800	AMMcenter.fmp12	0	Script “Public” imported as “Public 2” since a script named “Public” already exists.
+2018-11-05 09:50:09.046 -0800	AMMcenter.fmp12	0	Script “fmajax.init” imported as “fmajax.init 2” since a script named “fmajax.init” already exists.
+2018-11-05 09:50:09.047 -0800	AMMcenter.fmp12	0	Script “fmajax.return_temp_path” imported as “fmajax.return_temp_path 2” since a script named “fmajax.return_temp_path” already exists.
+2018-11-05 09:50:09.048 -0800	AMMcenter.fmp12	0	Script “fmajax.(re)load_web_viewer ( [object name] )” imported as “fmajax.(re)load_web_viewer ( [object name] ) 2” since a script named “fmajax.(re)load_web_viewer ( [object name] )” already exists.
+2018-11-05 09:50:09.048 -0800	AMMcenter.fmp12	0	Script “fmajax.import_web_files ( [filename] )” imported as “fmajax.import_web_files ( [filename] ) 2” since a script named “fmajax.import_web_files ( [filename] )” already exists.
+2018-11-05 09:50:09.049 -0800	AMMcenter.fmp12	0	Script “fmajax.set_hash ( data )” imported as “fmajax.set_hash ( data ) 2” since a script named “fmajax.set_hash ( data )” already exists.
+2018-11-05 09:50:09.050 -0800	AMMcenter.fmp12	0	Script “fmajax.export_web_files ( [filename] )” imported as “fmajax.export_web_files ( [filename] ) 2” since a script named “fmajax.export_web_files ( [filename] )” already exists.
+2018-11-05 09:50:09.050 -0800	AMMcenter.fmp12	0	Script “fmajax.set_file ( data )” imported as “fmajax.set_file ( data ) 2” since a script named “fmajax.set_file ( data )” already exists.
+2018-11-05 09:50:09.051 -0800	AMMcenter.fmp12	0	Script “fmajax.set_receiving_viewer ( object name )” imported as “fmajax.set_receiving_viewer ( object name ) 2” since a script named “fmajax.set_receiving_viewer ( object name )” already exists.
+2018-11-05 09:50:09.052 -0800	AMMcenter.fmp12	0	Script “fmajax.set_callback ( js function name )” imported as “fmajax.set_callback ( js function name ) 2” since a script named “fmajax.set_callback ( js function name )” already exists.
+2018-11-05 09:50:09.053 -0800	AMMcenter.fmp12	0	Script “fmajax.new_code_file” imported as “fmajax.new_code_file 2” since a script named “fmajax.new_code_file” already exists.
+2018-11-05 09:50:09.053 -0800	AMMcenter.fmp12	0	Script “fmajax.new_web_viewer” imported as “fmajax.new_web_viewer 2” since a script named “fmajax.new_web_viewer” already exists.
+2018-11-05 09:50:09.054 -0800	AMMcenter.fmp12	0	Script “fmajax.set_dev_path” imported as “fmajax.set_dev_path 2” since a script named “fmajax.set_dev_path” already exists.
+2018-11-05 09:50:09.055 -0800	AMMcenter.fmp12	0	Script “Private” imported as “Private 2” since a script named “Private” already exists.
+2018-11-05 09:50:09.056 -0800	AMMcenter.fmp12	0	Script “fmajax.exportXSL” imported as “fmajax.exportXSL 2” since a script named “fmajax.exportXSL” already exists.
+2018-11-05 09:50:09.056 -0800	AMMcenter.fmp12	0	Script “JSONEncode” imported as “JSONEncode 2” since a script named “JSONEncode” already exists.
+2018-11-05 09:50:09.059 -0800	Example Scripts	0	script steps imported : 0
+2018-11-05 09:50:09.060 -0800	onDBOpen::2::Go to Layout	105	Layout “Introduction” missing.
+2018-11-05 09:50:09.061 -0800	onDBOpen	0	script steps imported : 2
+2018-11-05 09:50:09.063 -0800	onDBClose::8::Go to Layout	105	Layout “Introduction” missing.
+2018-11-05 09:50:09.064 -0800	onDBClose::10::Replace Field Contents	102	Field “url” missing.
+2018-11-05 09:50:09.065 -0800	onDBClose	0	script steps imported : 11
+2018-11-05 09:50:09.066 -0800	send_message_to_file::3::Set Variable	106	Table referred to in the calculation “main::message” is missing.
+2018-11-05 09:50:09.067 -0800	send_message_to_file	0	script steps imported : 4
+2018-11-05 09:50:09.068 -0800	send_messge_to_hash::3::Perform Script	106	Table referred to in the calculation “main::message” is missing.
+2018-11-05 09:50:09.068 -0800	send_messge_to_hash	0	script steps imported : 3
+2018-11-05 09:50:09.069 -0800	get_message::2::Set Variable	106	Table referred to in the calculation “Case (	not IsEmpty ( $_argument ) ; 	$_argument ;	$_getmessage ; 	main::message ;	Get ( ScriptParameter ))” is missing.
+2018-11-05 09:50:09.070 -0800	get_message	0	script steps imported : 3
+2018-11-05 09:50:09.072 -0800	quote_me	0	script steps imported : 5
+2018-11-05 09:50:09.072 -0800	--	0	script steps imported : 0
+2018-11-05 09:50:09.073 -0800	Modules 2	0	script steps imported : 0
+2018-11-05 09:50:09.074 -0800	fmajax 2	0	script steps imported : 0
+2018-11-05 09:50:09.082 -0800	fmajax.READ ME 2	0	script steps imported : 102
+2018-11-05 09:50:09.084 -0800	Public 2	0	script steps imported : 0
+2018-11-05 09:50:09.086 -0800	fmajax.init 2	0	script steps imported : 14
+2018-11-05 09:50:09.088 -0800	fmajax.return_temp_path 2	0	script steps imported : 2
+2018-11-05 09:50:09.094 -0800	fmajax.(re)load_web_viewer ( [object name] ) 2	0	script steps imported : 27
+2018-11-05 09:50:09.101 -0800	fmajax.import_web_files ( [filename] ) 2	0	script steps imported : 35
+2018-11-05 09:50:09.111 -0800	fmajax.set_hash ( data ) 2	0	script steps imported : 41
+2018-11-05 09:50:09.119 -0800	fmajax.export_web_files ( [filename] ) 2	0	script steps imported : 36
+2018-11-05 09:50:09.124 -0800	fmajax.set_file ( data ) 2	0	script steps imported : 30
+2018-11-05 09:50:09.126 -0800	fmajax.set_receiving_viewer ( object name ) 2	0	script steps imported : 9
+2018-11-05 09:50:09.128 -0800	fmajax.set_callback ( js function name ) 2	0	script steps imported : 9
+2018-11-05 09:50:09.131 -0800	fmajax.new_code_file 2	0	script steps imported : 18
+2018-11-05 09:50:09.135 -0800	fmajax.new_web_viewer 2	0	script steps imported : 20
+2018-11-05 09:50:09.138 -0800	fmajax.set_dev_path 2	0	script steps imported : 7
+2018-11-05 09:50:09.139 -0800	--	0	script steps imported : 0
+2018-11-05 09:50:09.139 -0800	Private 2	0	script steps imported : 0
+2018-11-05 09:50:09.142 -0800	fmajax.exportXSL 2	0	script steps imported : 13
+2018-11-05 09:50:09.145 -0800	JSONEncode 2	0	script steps imported : 3
+2018-11-05 09:50:09.146 -0800	--	0	script steps imported : 0
+2018-11-05 09:50:09.147 -0800	--	0	script steps imported : 0
+2018-11-05 09:50:09.148 -0800	--	0	script steps imported : 0
+2018-11-05 09:50:09.148 -0800	AMMcenter.fmp12	0	scripts imported : 26
+2018-11-05 09:50:09.149 -0800	AMMcenter.fmp12	0	Import completed
+2018-11-05 09:58:35.647 -0800	AMMcenter.fmp12	0	Import of scripts from file “FMAjax.fmp12” started
+2018-11-05 09:58:35.649 -0800	AMMcenter.fmp12	0	Script “Example Scripts” imported as “Example Scripts 2” since a script named “Example Scripts” already exists.
+2018-11-05 09:58:35.650 -0800	AMMcenter.fmp12	0	Script “onDBOpen” imported as “onDBOpen 2” since a script named “onDBOpen” already exists.
+2018-11-05 09:58:35.651 -0800	AMMcenter.fmp12	0	Script “onDBClose” imported as “onDBClose 2” since a script named “onDBClose” already exists.
+2018-11-05 09:58:35.652 -0800	AMMcenter.fmp12	0	Script “send_message_to_file” imported as “send_message_to_file 2” since a script named “send_message_to_file” already exists.
+2018-11-05 09:58:35.652 -0800	AMMcenter.fmp12	0	Script “send_messge_to_hash” imported as “send_messge_to_hash 2” since a script named “send_messge_to_hash” already exists.
+2018-11-05 09:58:35.653 -0800	AMMcenter.fmp12	0	Script “get_message” imported as “get_message 2” since a script named “get_message” already exists.
+2018-11-05 09:58:35.654 -0800	AMMcenter.fmp12	0	Script “quote_me” imported as “quote_me 2” since a script named “quote_me” already exists.
+2018-11-05 09:58:35.655 -0800	AMMcenter.fmp12	0	Script “Modules” imported as “Modules 3” since a script named “Modules” already exists.
+2018-11-05 09:58:35.656 -0800	AMMcenter.fmp12	0	Script “fmajax” imported as “fmajax 3” since a script named “fmajax” already exists.
+2018-11-05 09:58:35.658 -0800	AMMcenter.fmp12	0	Script “fmajax.READ ME” imported as “fmajax.READ ME 3” since a script named “fmajax.READ ME” already exists.
+2018-11-05 09:58:35.658 -0800	AMMcenter.fmp12	0	Script “Public” imported as “Public 3” since a script named “Public” already exists.
+2018-11-05 09:58:35.659 -0800	AMMcenter.fmp12	0	Script “fmajax.init” imported as “fmajax.init 3” since a script named “fmajax.init” already exists.
+2018-11-05 09:58:35.660 -0800	AMMcenter.fmp12	0	Script “fmajax.return_temp_path” imported as “fmajax.return_temp_path 3” since a script named “fmajax.return_temp_path” already exists.
+2018-11-05 09:58:35.661 -0800	AMMcenter.fmp12	0	Script “fmajax.(re)load_web_viewer ( [object name] )” imported as “fmajax.(re)load_web_viewer ( [object name] ) 3” since a script named “fmajax.(re)load_web_viewer ( [object name] )” already exists.
+2018-11-05 09:58:35.663 -0800	AMMcenter.fmp12	0	Script “fmajax.import_web_files ( [filename] )” imported as “fmajax.import_web_files ( [filename] ) 3” since a script named “fmajax.import_web_files ( [filename] )” already exists.
+2018-11-05 09:58:35.664 -0800	AMMcenter.fmp12	0	Script “fmajax.set_hash ( data )” imported as “fmajax.set_hash ( data ) 3” since a script named “fmajax.set_hash ( data )” already exists.
+2018-11-05 09:58:35.666 -0800	AMMcenter.fmp12	0	Script “fmajax.export_web_files ( [filename] )” imported as “fmajax.export_web_files ( [filename] ) 3” since a script named “fmajax.export_web_files ( [filename] )” already exists.
+2018-11-05 09:58:35.667 -0800	AMMcenter.fmp12	0	Script “fmajax.set_file ( data )” imported as “fmajax.set_file ( data ) 3” since a script named “fmajax.set_file ( data )” already exists.
+2018-11-05 09:58:35.668 -0800	AMMcenter.fmp12	0	Script “fmajax.set_receiving_viewer ( object name )” imported as “fmajax.set_receiving_viewer ( object name ) 3” since a script named “fmajax.set_receiving_viewer ( object name )” already exists.
+2018-11-05 09:58:35.669 -0800	AMMcenter.fmp12	0	Script “fmajax.set_callback ( js function name )” imported as “fmajax.set_callback ( js function name ) 3” since a script named “fmajax.set_callback ( js function name )” already exists.
+2018-11-05 09:58:35.670 -0800	AMMcenter.fmp12	0	Script “fmajax.new_code_file” imported as “fmajax.new_code_file 3” since a script named “fmajax.new_code_file” already exists.
+2018-11-05 09:58:35.671 -0800	AMMcenter.fmp12	0	Script “fmajax.new_web_viewer” imported as “fmajax.new_web_viewer 3” since a script named “fmajax.new_web_viewer” already exists.
+2018-11-05 09:58:35.672 -0800	AMMcenter.fmp12	0	Script “fmajax.set_dev_path” imported as “fmajax.set_dev_path 3” since a script named “fmajax.set_dev_path” already exists.
+2018-11-05 09:58:35.673 -0800	AMMcenter.fmp12	0	Script “Private” imported as “Private 3” since a script named “Private” already exists.
+2018-11-05 09:58:35.674 -0800	AMMcenter.fmp12	0	Script “fmajax.exportXSL” imported as “fmajax.exportXSL 3” since a script named “fmajax.exportXSL” already exists.
+2018-11-05 09:58:35.675 -0800	AMMcenter.fmp12	0	Script “JSONEncode” imported as “JSONEncode 3” since a script named “JSONEncode” already exists.
+2018-11-05 09:58:35.678 -0800	Example Scripts 2	0	script steps imported : 0
+2018-11-05 09:58:35.679 -0800	onDBOpen 2::2::Go to Layout	105	Layout “Introduction” missing.
+2018-11-05 09:58:35.679 -0800	onDBOpen 2	0	script steps imported : 2
+2018-11-05 09:58:35.683 -0800	onDBClose 2::8::Go to Layout	105	Layout “Introduction” missing.
+2018-11-05 09:58:35.684 -0800	onDBClose 2::10::Replace Field Contents	102	Field “url” missing.
+2018-11-05 09:58:35.684 -0800	onDBClose 2	0	script steps imported : 11
+2018-11-05 09:58:35.686 -0800	send_message_to_file 2::3::Set Variable	106	Table referred to in the calculation “main::message” is missing.
+2018-11-05 09:58:35.686 -0800	send_message_to_file 2	0	script steps imported : 4
+2018-11-05 09:58:35.688 -0800	send_messge_to_hash 2::3::Perform Script	106	Table referred to in the calculation “main::message” is missing.
+2018-11-05 09:58:35.688 -0800	send_messge_to_hash 2	0	script steps imported : 3
+2018-11-05 09:58:35.689 -0800	get_message 2::2::Set Variable	106	Table referred to in the calculation “Case (	not IsEmpty ( $_argument ) ; 	$_argument ;	$_getmessage ; 	main::message ;	Get ( ScriptParameter ))” is missing.
+2018-11-05 09:58:35.690 -0800	get_message 2	0	script steps imported : 3
+2018-11-05 09:58:35.692 -0800	quote_me 2	0	script steps imported : 5
+2018-11-05 09:58:35.693 -0800	--	0	script steps imported : 0
+2018-11-05 09:58:35.693 -0800	Modules 3	0	script steps imported : 0
+2018-11-05 09:58:35.694 -0800	fmajax 3	0	script steps imported : 0
+2018-11-05 09:58:35.702 -0800	fmajax.READ ME 3	0	script steps imported : 102
+2018-11-05 09:58:35.704 -0800	Public 3	0	script steps imported : 0
+2018-11-05 09:58:35.707 -0800	fmajax.init 3	0	script steps imported : 14
+2018-11-05 09:58:35.708 -0800	fmajax.return_temp_path 3	0	script steps imported : 2
+2018-11-05 09:58:35.715 -0800	fmajax.(re)load_web_viewer ( [object name] ) 3	0	script steps imported : 27
+2018-11-05 09:58:35.722 -0800	fmajax.import_web_files ( [filename] ) 3	0	script steps imported : 35
+2018-11-05 09:58:35.733 -0800	fmajax.set_hash ( data ) 3	0	script steps imported : 41
+2018-11-05 09:58:35.740 -0800	fmajax.export_web_files ( [filename] ) 3	0	script steps imported : 36
+2018-11-05 09:58:35.746 -0800	fmajax.set_file ( data ) 3	0	script steps imported : 30
+2018-11-05 09:58:35.749 -0800	fmajax.set_receiving_viewer ( object name ) 3	0	script steps imported : 9
+2018-11-05 09:58:35.751 -0800	fmajax.set_callback ( js function name ) 3	0	script steps imported : 9
+2018-11-05 09:58:35.754 -0800	fmajax.new_code_file 3	0	script steps imported : 18
+2018-11-05 09:58:35.757 -0800	fmajax.new_web_viewer 3	0	script steps imported : 20
+2018-11-05 09:58:35.760 -0800	fmajax.set_dev_path 3	0	script steps imported : 7
+2018-11-05 09:58:35.761 -0800	--	0	script steps imported : 0
+2018-11-05 09:58:35.762 -0800	Private 3	0	script steps imported : 0
+2018-11-05 09:58:35.765 -0800	fmajax.exportXSL 3	0	script steps imported : 13
+2018-11-05 09:58:35.768 -0800	JSONEncode 3	0	script steps imported : 3
+2018-11-05 09:58:35.769 -0800	--	0	script steps imported : 0
+2018-11-05 09:58:35.769 -0800	--	0	script steps imported : 0
+2018-11-05 09:58:35.770 -0800	--	0	script steps imported : 0
+2018-11-05 09:58:35.771 -0800	AMMcenter.fmp12	0	scripts imported : 26
+2018-11-05 09:58:35.771 -0800	AMMcenter.fmp12	0	Import completed
+2018-11-05 10:49:28.018 -0800	AMMcenter.fmp12	0	Import of scripts from file “FMAjax.fmp12” started
+2018-11-05 10:49:28.019 -0800	AMMcenter.fmp12	0	Script “Modules” imported as “Modules 4” since a script named “Modules” already exists.
+2018-11-05 10:49:28.020 -0800	AMMcenter.fmp12	0	Script “fmajax” imported as “fmajax 4” since a script named “fmajax” already exists.
+2018-11-05 10:49:28.022 -0800	AMMcenter.fmp12	0	Script “fmajax.READ ME” imported as “fmajax.READ ME 4” since a script named “fmajax.READ ME” already exists.
+2018-11-05 10:49:28.023 -0800	AMMcenter.fmp12	0	Script “Public” imported as “Public 4” since a script named “Public” already exists.
+2018-11-05 10:49:28.024 -0800	AMMcenter.fmp12	0	Script “fmajax.init” imported as “fmajax.init 4” since a script named “fmajax.init” already exists.
+2018-11-05 10:49:28.024 -0800	AMMcenter.fmp12	0	Script “fmajax.return_temp_path” imported as “fmajax.return_temp_path 4” since a script named “fmajax.return_temp_path” already exists.
+2018-11-05 10:49:28.025 -0800	AMMcenter.fmp12	0	Script “fmajax.(re)load_web_viewer ( [object name] )” imported as “fmajax.(re)load_web_viewer ( [object name] ) 4” since a script named “fmajax.(re)load_web_viewer ( [object name] )” already exists.
+2018-11-05 10:49:28.027 -0800	AMMcenter.fmp12	0	Script “fmajax.import_web_files ( [filename] )” imported as “fmajax.import_web_files ( [filename] ) 4” since a script named “fmajax.import_web_files ( [filename] )” already exists.
+2018-11-05 10:49:28.027 -0800	AMMcenter.fmp12	0	Script “fmajax.set_hash ( data )” imported as “fmajax.set_hash ( data ) 4” since a script named “fmajax.set_hash ( data )” already exists.
+2018-11-05 10:49:28.028 -0800	AMMcenter.fmp12	0	Script “fmajax.export_web_files ( [filename] )” imported as “fmajax.export_web_files ( [filename] ) 4” since a script named “fmajax.export_web_files ( [filename] )” already exists.
+2018-11-05 10:49:28.030 -0800	AMMcenter.fmp12	0	Script “fmajax.set_file ( data )” imported as “fmajax.set_file ( data ) 4” since a script named “fmajax.set_file ( data )” already exists.
+2018-11-05 10:49:28.031 -0800	AMMcenter.fmp12	0	Script “fmajax.set_receiving_viewer ( object name )” imported as “fmajax.set_receiving_viewer ( object name ) 4” since a script named “fmajax.set_receiving_viewer ( object name )” already exists.
+2018-11-05 10:49:28.032 -0800	AMMcenter.fmp12	0	Script “fmajax.set_callback ( js function name )” imported as “fmajax.set_callback ( js function name ) 4” since a script named “fmajax.set_callback ( js function name )” already exists.
+2018-11-05 10:49:28.033 -0800	AMMcenter.fmp12	0	Script “fmajax.new_code_file” imported as “fmajax.new_code_file 4” since a script named “fmajax.new_code_file” already exists.
+2018-11-05 10:49:28.034 -0800	AMMcenter.fmp12	0	Script “fmajax.new_web_viewer” imported as “fmajax.new_web_viewer 4” since a script named “fmajax.new_web_viewer” already exists.
+2018-11-05 10:49:28.035 -0800	AMMcenter.fmp12	0	Script “fmajax.set_dev_path” imported as “fmajax.set_dev_path 4” since a script named “fmajax.set_dev_path” already exists.
+2018-11-05 10:49:28.037 -0800	AMMcenter.fmp12	0	Script “Private” imported as “Private 4” since a script named “Private” already exists.
+2018-11-05 10:49:28.038 -0800	AMMcenter.fmp12	0	Script “fmajax.exportXSL” imported as “fmajax.exportXSL 4” since a script named “fmajax.exportXSL” already exists.
+2018-11-05 10:49:28.040 -0800	AMMcenter.fmp12	0	Script “JSONEncode” imported as “JSONEncode 4” since a script named “JSONEncode” already exists.
+2018-11-05 10:49:28.042 -0800	Modules 4	0	script steps imported : 0
+2018-11-05 10:49:28.043 -0800	fmajax 4	0	script steps imported : 0
+2018-11-05 10:49:28.052 -0800	fmajax.READ ME 4	0	script steps imported : 102
+2018-11-05 10:49:28.054 -0800	Public 4	0	script steps imported : 0
+2018-11-05 10:49:28.057 -0800	fmajax.init 4	0	script steps imported : 14
+2018-11-05 10:49:28.059 -0800	fmajax.return_temp_path 4	0	script steps imported : 2
+2018-11-05 10:49:28.066 -0800	fmajax.(re)load_web_viewer ( [object name] ) 4	0	script steps imported : 27
+2018-11-05 10:49:28.074 -0800	fmajax.import_web_files ( [filename] ) 4	0	script steps imported : 35
+2018-11-05 10:49:28.085 -0800	fmajax.set_hash ( data ) 4	0	script steps imported : 41
+2018-11-05 10:49:28.093 -0800	fmajax.export_web_files ( [filename] ) 4	0	script steps imported : 36
+2018-11-05 10:49:28.099 -0800	fmajax.set_file ( data ) 4	0	script steps imported : 30
+2018-11-05 10:49:28.102 -0800	fmajax.set_receiving_viewer ( object name ) 4	0	script steps imported : 9
+2018-11-05 10:49:28.105 -0800	fmajax.set_callback ( js function name ) 4	0	script steps imported : 9
+2018-11-05 10:49:28.108 -0800	fmajax.new_code_file 4	0	script steps imported : 18
+2018-11-05 10:49:28.112 -0800	fmajax.new_web_viewer 4	0	script steps imported : 20
+2018-11-05 10:49:28.115 -0800	fmajax.set_dev_path 4	0	script steps imported : 7
+2018-11-05 10:49:28.116 -0800	--	0	script steps imported : 0
+2018-11-05 10:49:28.116 -0800	Private 4	0	script steps imported : 0
+2018-11-05 10:49:28.120 -0800	fmajax.exportXSL 4	0	script steps imported : 13
+2018-11-05 10:49:28.123 -0800	JSONEncode 4	0	script steps imported : 3
+2018-11-05 10:49:28.124 -0800	--	0	script steps imported : 0
+2018-11-05 10:49:28.125 -0800	--	0	script steps imported : 0
+2018-11-05 10:49:28.126 -0800	--	0	script steps imported : 0
+2018-11-05 10:49:28.127 -0800	AMMcenter.fmp12	0	scripts imported : 19
+2018-11-05 10:49:28.127 -0800	AMMcenter.fmp12	0	Import completed
+2018-12-17 15:50:39.752 -0800	AMMcenter.fmp12	0	Import operations started
+2018-12-17 15:50:39.756 -0800	AMMcenter.fmp12	0	Import of tables from file “HTML.fmp12” started
+2018-12-17 15:50:39.775 -0800	HTML	0	fields imported : 13
+2018-12-17 15:50:39.776 -0800	AMMcenter.fmp12	0	tables imported : 1
+2018-12-17 15:50:39.776 -0800	AMMcenter.fmp12	0	Import completed
+2018-12-17 15:50:39.778 -0800	AMMcenter.fmp12	0	Import operations committed
+2018-12-17 15:50:39.779 -0800	AMMcenter.fmp12	0	==================================================================
+2018-12-17 16:00:35.765 -0800	AMMcenter.fmp12	0	Import of scripts from clipboard started
+2018-12-17 16:00:35.773 -0800	SUB_GatherPeople_TypeAhead::14::Go to Layout	105	Layout “People” missing.
+2018-12-17 16:00:35.774 -0800	SUB_GatherPeople_TypeAhead::16::Set Field	102	Field “ID_Company” missing.
+2018-12-17 16:00:35.774 -0800	SUB_GatherPeople_TypeAhead::17::Set Field	102	Field “Title” missing.
+2018-12-17 16:00:35.775 -0800	SUB_GatherPeople_TypeAhead::27::Set Variable	106	Table referred to in the calculation “"'" &  People::FirstName &" " & People::LastName &"'"” is missing.
+2018-12-17 16:00:35.777 -0800	SUB_GatherPeople_TypeAhead	0	script steps imported : 38
+2018-12-17 16:00:35.778 -0800	AMMcenter.fmp12	0	scripts imported : 1
+2018-12-17 16:00:35.778 -0800	AMMcenter.fmp12	0	Import completed

@@ -1,0 +1,26 @@
+var pairs =
+{
+"minute":{"returns":1,"portion":1,"time":1,"value":1,"12:15:23":1,"duration":1}
+,"returns":{"number":1,"15":1,"2.5":1}
+,"number":{"representing":1,"filemaker":1}
+,"representing":{"minute":1}
+,"portion":{"time":1}
+,"time":{"minute":1,"time":1,"-any":1,"value":1,"number":1,"field":1}
+,"-any":{"time":1}
+,"value":{"field":1,"returned":1}
+,"field":{"type":1,"2:30:15":1}
+,"type":{"time":1}
+,"filemaker":{"pro":1}
+,"pro":{"6.0":1}
+,"6.0":{"earlier":1}
+,"earlier":{"if":1}
+,"if":{"minute":1,"duration":1}
+,"returned":{"minute":1}
+,"12:15:23":{"returns":1}
+,"15":{"hour":1}
+,"hour":{"duration":1}
+,"duration":{"minute":1,"\u002F60":1,"time":1}
+,"\u002F60":{"returns":1}
+,"2.5":{"if":1}
+}
+;Search.control.loadWordPairs(pairs);

@@ -1,0 +1,904 @@
+<!DOCTYPE html ><html xml:lang="en" lang="en" data-highlight-require-whitespace="false" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- saved from url=(0016)http://localhost -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="keywords" content="hyperlink, hyperlinks, url, web address" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>Insert From URL</title><link rel="Prev" href="insert-from-last-visited.html" title="Previous" /><link rel="Next" href="insert-pdf.html" title="Next" /><link rel="StyleSheet" href="css/scripts_ref1.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/skin.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/social.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" /><!--[if IE 7]><link rel="StyleSheet" href="css/scripts_ref1_IE7.css" type="text/css" media="all" /><![endif]--><link rel="StyleSheet" href="css/print.css" type="text/css" media="print" /><script type="text/javascript">
+    'use strict';
+
+    var redirect_url, page_hash;
+
+    if ((window === window.top) && (window.navigator.userAgent.indexOf('bot/') === -1)) {
+        // Redirect
+        //
+        redirect_url = "../index.html#page/FMP_Help/insert-from-url.html";
+        if (window.document.location.hash.length > 1) {
+            // Sanitize and append it
+            //
+            page_hash = window.document.location.hash.substring(1);
+            page_hash = page_hash.replace(/[\\><:;"]|%5C|%3C|%3E|%3A|%3B|%22/gi, '');
+            redirect_url += '#' + page_hash;
+        }
+        window.document.location.replace(redirect_url);
+    }
+</script><script type="text/javascript" src="scripts/common.js"></script><script type="text/javascript" src="scripts/page.js"></script><script type="text/javascript" src="scripts/search-client.js"></script><script type="text/javascript" src="scripts/unidata.js"></script><script type="text/javascript" src="scripts/unibreak.js"></script><script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-15064788-14', 'auto');
+       ga('set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('send', 'pageview');
+       ga('create', 'UA-15064788-10', 'auto', 'globalProperty');
+       ga('globalProperty.set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('globalProperty.send', 'pageview');</script><script type="text/javascript"><!--
+    //FMI - tracking events for GA
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", function AddGaqPush() {
+        var links = document.getElementsByTagName("a");
+        for (var i=0; i < links.length; i++)
+        {
+            if (links[i].href.indexOf("page=help_zip") !== -1) { 
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Download', 'ZIP', '');");
+            } else if (links[i].href.indexOf("documentation") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Documentation Page', '');");
+            } else if (links[i].href.indexOf("page=doc_") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Document', '');");
+            } else if (links[i].href.indexOf("page=helphome_support") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Support', '');");
+            } else if (links[i].href.indexOf("page=feedback") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Feedback', location.href, '');");
+            }
+        }
+      }
+      , false)
+    }
+    // --></script><style type="text/css">
+/*FMI CSS*/
+      <!--
+/* General */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+	line-height: 170%;
+	background-color: rgb(245, 245, 245);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+img.Default {
+	vertical-align: text-bottom;
+}
+
+/* Page */
+div.feedbacklink
+{
+	margin:2em 0 0;
+	font-size:90%;
+	border-top:1px solid #bfbfbf;
+	padding:8px 12px 8px 12px;
+	color:#8d8d8d
+}
+
+.code_pre_wrap {
+	white-space: pre-wrap;
+}
+
+a:link .g-glosslink, a:visited .g-glosslink
+{
+	color: #000000;
+	text-decoration: underline;
+}
+
+.ti-title
+{
+	display: none;
+}
+
+span.c-code {
+  font-size: 9pt;
+}
+
+/* Page toolbar margin-top under breadcrumb */
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+}
+
+.ww_skin_toolbar {
+	padding-top: 20px;
+}
+
+.ti-title
+{
+	display: none;
+}
+.layout_wide {
+    padding: 0 0px 18px 0px;
+}
+
+div#layout_div.layout_narrow input.ww_skin_search_input,
+div#layout_div.layout_wide div#presentation_div.panel_overlay input.ww_skin_search_input {
+    display: inline;
+	visibility: visible;
+}
+
+div#container_div {
+	max-width: 1200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+	width:100%;
+	margin-top: 12px;
+}
+
+div#layout_div.layout_wide div#container_div {
+    left: 0px;
+    right: 0px;
+}
+
+div#index_content {
+  padding: 12px;
+}
+
+div#search {
+  background-color: white;
+}
+
+div#search {
+  background-color: white;
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+
+/* Search */
+body#searchBody {
+	background-color: transparent;
+}
+
+button#back_button {
+  float: left;
+  background: none;
+  background-image: url('../images/back_grey.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  border: 0;
+  text-decoration: none;
+  -webkit-apperance: none;
+  outline: 0;
+  text-display: none;
+  width: 20px;
+  height: 30px;
+  color: rgba(0,0,0,0);
+}
+
+button#back_button:hover {
+    cursor: pointer;
+	background-image: url('../images/back.png');
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+#search-input-text {
+  width: 50%;
+  background: #fff url('../images/search-50.png');
+  margin: 0;
+padding: 2px 0 2px 30px;
+height: 25px;
+background-color: #fff;
+background-size: 15px 15px;
+background-position: 5px 7px;
+background-repeat: no-repeat;
+font-size: 1.2em;
+border: 1px solid rgba(233,233,233,1);
+-webkit-appearance: none;
+border-radius: 3px;
+}
+
+#search-button {
+display: none;	/* original value: inline-block;*/
+overflow: hidden;
+width: 67px;
+height: 31px;
+color: white;
+background-image:linear-gradient(to bottom, #1681c3, #1066a1);
+border-radius: 0 4px 4px 0;
+border: 0px;
+font-size: 1em;
+padding: 3px 6px 3px 6px;
+position: absolute;
+}
+
+#search-results-container {
+  padding: 0.5em 0.5em;
+}
+
+.search-result-title {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.search-result-title > a {
+  color: rgb(67,114,255);
+  text-decoration: none;
+}
+
+.search-result-title > a:active {
+  color: rgb(67,114,255);
+}
+
+.search-result-title > a:visited {
+  color: rgb(67,114,255);
+}
+
+.search-result-summary {
+  padding-top: 4px;
+}
+
+.search-result-highlight{
+	padding:2px;
+	margin:-2px;
+	background-color: #ffffc7;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #ffffc7;
+	padding:2px;
+	margin:-2px;
+}
+
+/*tab size for code snippets - ID Custom */
+.co-code, .co1-code1, ff-funcformat, .ssf-scriptformat{
+	tab-size:3;
+}
+@media only screen and (min-width : 481px) {
+  /*see also "widget" - ID Custom */
+  .sah-seealsohead{
+	float: right;
+	width: 200px;
+	clear: both;
+	margin: 1.6em 0 0 1.8em;
+	padding: 5px 10px;
+	background-color: #F2F2F2;
+  }
+  
+  .sal-seealsolink{
+	float: right;
+	width: 200px;
+	clear: both;
+	background-color: #F2F2F2;
+	margin-top: 0 !important;
+	margin-left: 1.8em;
+	padding: 0 10px 10px;
+	line-height: 120%;
+  }
+}
+/*homepage - ID Custom */
+.welcome {
+  padding-top: 0;
+}
+
+.wol-outlinelinks,
+.wom-outlinemenu {
+  display:flex;
+  flex-wrap:wrap;
+  min-width: 140px;
+}
+.wom-outlinemenu a {
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  font-size: 11pt;
+  width: 40%;
+  background: -moz-linear-gradient(top, #f5f5f5, #fafafa); 
+  background: -webkit-linear-gradient(top,#f5f5f5, #fafafa);
+  background: linear-gradient(to bottom, #f5f5f5, #fafafa);
+  margin: 0 5px 10px 5px;
+}
+.wol-outlinelinks a{
+  font-size: 10pt;
+  width: 28%;
+}
+.wom-outlinemenu a,
+.wol-outlinelinks a{
+  padding: 10px;
+  text-align:center;
+  flex-grow: 1;
+
+}
+.wom-outlinemenu a .h-hyperlink,
+.wol-outlinelinks a .h-hyperlink,
+.wol-outlinelinks a .zh-hyper{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/*Skin.css*/
+a#banner {
+  background-image: url('images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 38px;
+  width: 300px;
+  margin-bottom: -5px;
+  display:block;
+}
+
+.ww_skin_company_logo > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:link:hover, .ww_skin_company_logo > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_name > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:link:hover, .ww_skin_company_name > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_email > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:link:hover, .ww_skin_company_email > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_progress_bar {
+    border: 1px solid #353535;
+}
+
+.ww_skin_progress_segment_complete {
+    background-color: #353535;
+}
+
+.ww_skin {
+	background-size: 600px auto;
+}
+
+.ww_skin_toc {
+    width: 38px;
+    height: 38px;
+    background-position: -306px -32px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_toc:hover {
+    background-position: -378px -32px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_toc {
+    background-position: -451px -32px;
+}
+
+a.ww_skin_toc_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_index {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -128px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_index:hover {
+    background-position: -376px -128px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_index {
+    background-position: -448px -128px;
+}
+
+a.ww_skin_index_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_home {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_home {
+    background-position: -304px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_home:hover {
+    background-position: -376px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_home {
+    background-position: -448px -1376px;
+}
+
+a.ww_skin_home_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_search {
+    height: 38px;
+	background-image: none !important;
+	width: 10px;
+  background-position: -100px -100px;
+  margin-left:3px;
+}
+
+.layout_wide .ww_skin_search{
+  width: 10px;
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_wide .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_narrow .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_search {
+    background-position: -450px -224px;
+}
+
+.ww_skin_globe {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -320px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_globe:hover {
+    background-position: -376px -320px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_globe {
+    background-position: -448px -320px;
+}
+
+a.ww_skin_globe_spacer {
+    background-image: none;
+    width: 24px;
+}
+
+.ww_skin_next {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -416px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_next {
+    background-position: -304px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_next:hover {
+    background-position: -376px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_next {
+    background-position: -448px -416px;
+}
+
+a.ww_skin_next_spacer {
+    display: none;
+}
+
+.layout_narrow a.ww_skin_next_spacer {
+    display: none;
+}
+
+.ww_skin_prev {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -512px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_prev {
+    background-position: -304px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_prev:hover {
+    background-position: -376px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_prev {
+    background-position: -448px -512px;
+}
+
+#toolbar_div {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.ww_skin_toolbar {
+	padding-top: 15px;
+}
+
+.ww_skin_toolbar_button_left {
+	padding-left: 5px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_center {
+    height: 38px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_right {
+	border: none;
+}
+
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+    background: #757575;
+}
+
+.ww_skin_search_form .ww_skin_toolbar_background_selected {
+	display: none !important;
+}
+
+.ww_skin_toolbar_left_background {
+    margin-left: 0;
+}
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+	background: transparent;
+}
+
+.ww_skin_toolbar_background_default {
+	background: transparent;
+}
+
+.ww_skin_search_input {
+  color: #525252;
+  height: 20px;
+  font-size: 13px;
+  margin: 5px 0 0 18px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  background-image: url('images/search-50.png');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding: 3px;
+  text-indent: 20px;
+  width: 250px;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_toc_container {
+	background-color: transparent;
+	border: none;
+}
+
+.ww_skin_toc_level_1 > li > div {
+    padding-left: 23px;
+}
+
+.ww_skin_toc_level_2 > li > div {
+    padding-left: 43px;
+}
+
+.ww_skin_toc_level_3 > li > div {
+    padding-left: 63px;
+}
+
+.ww_skin_toc_level_4 > li > div {
+    padding-left: 83px;
+}
+
+.ww_skin_toc_level_5 > li > div {
+    padding-left: 103px;
+}
+
+.ww_skin_toc_level_6 > li > div {
+    padding-left: 123px;
+}
+
+.ww_skin_toc_level_7 > li > div {
+    padding-left: 138px;
+}
+
+.ww_skin_toc_entry {
+    font-family: Helvetica, Arial, sans-serif;
+    border-width: 0px 0 0 0;
+    margin: 0;
+    padding: 8px 20px 8px 0;
+	line-height: 15px;
+}
+
+.ww_skin_toc_level_1:first-child > li:first-child > .ww_skin_toc_entry:first-child {
+    border-width: 0;
+}
+
+.ww_skin_toc_entry:hover {
+    background: #E0E0E0;
+}
+
+.ww_skin_toc_entry > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.ww_skin_toc_entry > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry:hover > a {
+    color: black;
+}
+
+.ww_skin_toc_entry:hover > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+    background-color: rgb(67,114,255);
+}
+
+.ww_skin_toc_dropdown {
+    margin: 2px 4px 0 0px;
+}
+
+.ww_skin_index_link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_panel_frame {
+    padding: 9px 0 0 0;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_panel_content {
+  border-width: 0px;
+  background-color: #fcfcfc;
+}
+
+.ww_skin_lightbox_frame {
+    top: 0;
+    left: 0;
+}
+
+.ww_skin_page_body {
+    padding: 30px 30px;
+	background-color: #fff;
+}
+
+.ww_skin_breadcrumbs {
+    margin: -6px -6px 0 -8px;
+    padding: 4px 24px 4px 12px;
+    color: #a4a4a4;
+    font-weight: normal;
+	max-width: 85%;
+	background: transparent;
+}
+
+.ww_skin_breadcrumbs a:link {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:visited {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:link:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_breadcrumbs a:visited:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+#wwconnect_header {
+  margin-bottom: 20px;
+}
+
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_toc_entry{
+	border: none;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+	background: rgb(67,114,255);
+}
+
+
+/* medium */
+@media only screen
+and (max-width : 769px) {
+  .ww_skin_search_input {
+    width: 170px;
+}
+
+}
+
+/* small */
+@media only screen
+and (max-width: 535px) {
+  .ww_skin_search_input {
+    width: 150px;
+  }
+
+a#banner{
+  height: 30px;
+  width: 160px;
+  margin-left: 15px;
+}
+
+div#container_div {
+  margin-top: 5px;
+}
+
+table.ww_skin_toolbar {
+  padding-top: 10px;
+}
+
+}
+
+/*phone*/
+@media only screen
+and (max-width : 435px) {
+
+  a#banner {
+    width: 129px;
+  }
+
+  .ww_skin_search_input {
+    width: 130px;
+  }
+   
+  body { 
+    overflow-x: hidden;
+  }
+  
+  .layout_narrow {
+    overflow-x: hidden;
+  }
+  
+  #presentation_div {
+    overflow-x:hidden;
+  }
+  
+  #page_div {
+    overflow-x:hidden;
+  }
+    div#page_div {
+    overflow-x: hidden;
+  }
+  html {
+   overflow-x: hidden;
+  }
+  body.ww_skin_page_body {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  
+}
+--></style></head><body id="pA_002b_002fvOUHz3_002boRcJScg_002bzqFQ" class="ww_skin_page_body" onload="Page.OnLoad('../index.html#page/FMP_Help/insert-from-url.html');"><header id="wwconnect_header"><div class="ww_skin_breadcrumbs"><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/reference.html#wwconnect_header">Reference</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/script-steps-reference.html#wwconnect_header">Script steps reference</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/fields-script-steps.html#wwconnect_header">Fields script steps</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_current">Insert From URL</span></div><div class="ww_skin_page_toolbar"><a class="ww_behavior_print ww_skin ww_skin_print" title="Print" href="#">&nbsp;</a></div></header><h1 id="ww1210738" class="ssh-scripthead">Insert From URL</h1><p id="ww1210742" class="sspu-scriptpurpose">Enters the content from a URL into a field or variable.</p><h2 id="ww1210743" class="sah-seealsohead"><span>See also</span>&nbsp;</h2><p id="ww1210747" class="sal-seealsolink">
+    <a href="../FMP_Help/scripts.html#ww1059423"
+   
+     title="Automating tasks with scripts"
+    ><span class="zh-hyper">Automating tasks with scripts</span></a></p><h2 id="ww1210750" class="ssoh-scriptoptshead"><span>Options</span>&nbsp;</h2><p id="ww1223801" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><strong class="o-onscreen">Select entire contents </strong>replaces the contents of a field or variable. If you don't select this option:</p><p id="ww1223802" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>For a field, replaces only the selected portion of the active field, or inserts data at the insertion point. The default insertion point is at the end of the field's data.</p><p id="ww1224628" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>For a variable that doesn't have 
+    <a href="../FMP_Help/glossary.html#ww1041246"
+   
+     title="Glossary"
+    ><span class="g-glosslink">container</span></a> data, inserts data at the end of the variable's current value. For a variable that has container data, replaces the contents of the variable.</p><p id="ww1223795" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><strong class="o-onscreen">With dialog </strong>specifies whether to display the "Insert from URL" Options dialog box when the script step is performed.</p><p id="ww1210757" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><strong class="o-onscreen">Target </strong>specifies the field or variable to insert the URL content into. If the variable doesn't exist, this script step creates it (see 
+    <a href="../FMP_Help/using-variables.html#ww1030458"
+   
+     title="Using variables"
+    ><span class="zh-hyper">Using variables</span></a>).</p><p id="ww1210758" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><strong class="o-onscreen">Specify URL</strong> allows you to type the URL or to create your URL from a calculation.</p><p id="ww1210759" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><strong class="o-onscreen">Automatically encode URL</strong> replaces special characters with the corresponding encoded values required for URLs. For example, a space character is replaced with <code class="c-code code_pre_wrap">%20</code>. When this option is deselected, the URL remains as it is entered. cURL options are not encoded.</p><p id="ww1270882" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><strong class="o-onscreen">Verify SSL Certificates </strong>verifies the SSL certificate of the server specified in the URL. If the certificate cannot be verified, users can choose to connect anyway or cancel to skip this script step. If the certificate cannot be verified and the 
+    <a href="../FMP_Help/set-error-capture.html#ww1207877"
+   
+     title="Set Error Capture"
+    ><span class="zh-hyper">Set Error Capture script step</span></a> is set to <strong class="o-onscreen">On</strong>, Insert From URL behaves as if the server were unavailable.</p><p id="ww1210760" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><strong class="o-onscreen">Specify cURL options</strong> allows you to enter one or more supported cURL options as a calculation. See 
+    <a href="../FMP_Help/curl-options.html#ww1127302"
+   
+     title="Supported cURL options"
+    ><span class="zh-hyper">Supported cURL options</span></a>.</p><h2 id="ww1210764" class="sscoh-scriptcompathead"><span>Compatibility</span>&nbsp;</h2><p id="ww1210794" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 262.8pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 166.32pt"><p id="ww1210767" class="sscoh1-scriptstepcompthead1"><span>Product</span>&nbsp;</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 96.48pt"><p id="ww1210769" class="sscoh2-scriptstepcompthead2"><span>Supported</span>&nbsp;</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1210771" class="ssco1p-scriptstepcompt1pro"><span>FileMaker Pro Advanced</span>&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1210773" class="sscoy-scriptstepcomptyes"><span>Yes</span>&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1210775" class="ssco1g-scriptstepcompt1go"><span>FileMaker Go</span>&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1210777" class="sscoy-scriptstepcomptyes"><span>Yes</span>&nbsp;</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1235530" class="ssco1w-scriptstepcompt1wd"><span>FileMaker WebDirect</span>&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1235532" class="sscoy-scriptstepcomptyes"><span>Yes</span>&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1235534" class="ssco1s-scriptstepcompt1svr"><span>FileMaker Server</span>&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1235536" class="sscoy-scriptstepcomptyes"><span>Yes</span>&nbsp;</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1210783" class="ssco1c-scriptstepcompt1cld"><span>FileMaker Cloud</span>&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1210785" class="sscoy-scriptstepcomptyes"><span>Yes</span>&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1235542" class="ssco1a-scriptstepcompt1api"><span>FileMaker Data API</span>&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1235544" class="sscoy-scriptstepcomptyes"><span>Yes</span>&nbsp;</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1247419" class="ssco1u-scriptstepcompt1cwp"><span>Custom Web Publishing</span>&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1247421" class="sscoy-scriptstepcomptyes"><span>Yes</span>&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1210791" class="ssco1r-scriptstepcompt1run"><span>Runtime solution</span>&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1210793" class="sscop-scriptstepcomptpartial"><span>Partial</span>&nbsp;</p></td></tr></table></div><h2 id="ww1210795" class="orh-originhead"><span>Originated in</span>&nbsp;</h2><p id="ww1210796" class="b-body">FileMaker&nbsp;Pro 12.0</p><h2 id="ww1210797" class="ssdh-scriptdeschead"><span>Description</span>&nbsp;</h2><p id="ww1210798" class="b-body">Insert From URL supports http, https, ftp, ftps, file, smb, smtp, smtps, ldap, and ldaps protocols; other protocols are unsupported and return an error. FileMaker&nbsp;Pro Advanced downloads the resource that is specified by the URL to a variable or a field.</p><p id="ww1222982" class="b-body">You must specify a target variable, specify a target field on the current layout, click in a field, or use the 
+    <a href="../FMP_Help/go-to-field.html#ww1208429"
+   
+     title="Go to Field"
+    ><span class="zh-hyper">Go to Field script step</span></a> before performing this script step. If <strong class="o-onscreen">Target</strong> is not specified, the data is placed in the active field. Otherwise, this script step returns an error code that can be captured with the 
+    <a href="../FMP_Help/get-lasterror.html#ww1290406"
+   
+     title="Get(LastError)"
+    ><span class="zh-hyper">Get(LastError) function</span></a>.</p><p id="ww1210801" class="b-body">For a list of picture and audio/video formats supported in container fields, see 
+    <a href="../FMP_Help/data-in-container-fields.html#ww1053046"
+   
+     title="Using data in container fields"
+    ><span class="zh-hyper">Using data in container fields</span></a>.</p><p id="ww1210803" class="ni-noteimportant"><span class="zan-autonum">Important&nbsp;&nbsp;</span>For better performance in FileMaker&nbsp;WebDirect, be sure that <strong class="o-onscreen">Select entire contents</strong> is selected when the target is a field.</p><h2 id="ww1210804" class="hs1n-headsub1notes"><span>Notes</span>&nbsp;</h2><p id="ww1242641" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Insert From URL supports only UTF-8 for <strong class="o-onscreen">Specify URL</strong>. However, for <strong class="o-onscreen">Specify cURL options</strong>, you can control the character encoding of parameters in cURL options. See 
+    <a href="../FMP_Help/curl-options.html#ww1127302"
+   
+     title="Supported cURL options"
+    ><span class="zh-hyper">Supported cURL options</span></a>.</p><p id="ww1250078" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>When <strong class="o-onscreen">Target</strong> is a variable, data is normally stored as text. To store as container data, specify the cURL option described in 
+    <a href="../FMP_Help/curl-options.html#ww1127302"
+   
+     title="Supported cURL options"
+    ><span class="zh-hyper">Supported cURL options</span></a>.</p><p id="ww1250082" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>To control how long this script step waits for a response from the server, specify a value for the <code class="c-code code_pre_wrap">--max-time</code> cURL option.</p><p id="ww1250083" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><strong class="o-onscreen">Specify cURL options</strong> is not supported in runtime solutions.</p><p id="ww1210806" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>In FileMaker&nbsp;WebDirect:</p><p id="ww1210807" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>If the <strong class="o-onscreen">With dialog </strong>option is <strong class="o-onscreen">On</strong>, this script step performs as if <strong class="o-onscreen">Automatically encode URL</strong> is selected.</p><p id="ww1210808" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>If <strong class="o-onscreen">Select entire contents</strong> is deselected, and Insert From URL inserts content into a text field, the contents from the URL are appended to the text field. Multiple fetches can result in unpredictable results and slower performance.</p><p id="ww1228517" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>The file protocol:</p><p id="ww1228524" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>is not supported in FileMaker&nbsp;WebDirect, the FileMaker Data API, and Custom Web Publishing</p><p id="ww1228537" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>can be used in server-side scripts only to refer to files in the Documents or temporary folder (see 
+    <a href="../FMP_Help/paths-in-server-side-scripts.html#ww1123954"
+   
+     title="Paths in server-side scripts"
+    ><span class="zh-hyper">Paths in server-side scripts</span></a>)</p><p id="ww1261235" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Paths returned by Get functions such as 
+    <a href="../FMP_Help/get-documentspath.html#ww1289621"
+   
+     title="Get(DocumentsPath)"
+    ><span class="zh-hyper">Get(DocumentsPath)</span></a> and 
+    <a href="../FMP_Help/get-temporarypath.html#ww1292778"
+   
+     title="Get(TemporaryPath)"
+    ><span class="zh-hyper">Get(TemporaryPath)</span></a> are in FileMaker format and must be converted to a standard URL format before you can use them with the file protocol in <strong class="o-onscreen">Specify URL</strong>. An easier way to access local files is to use the 
+    <a href="../FMP_Help/read-from-data-file.html#ww1259757"
+   
+     title="Read from Data File"
+    ><span class="zh-hyper">Read from Data File script step</span></a>, which uses these paths without conversion.</p><h2 id="ww1210814" class="sseh1-scriptexamhead1"><span>Example 1</span>&nbsp;</h2><p id="ww1210815" class="b-body">Accesses a website and inserts a PDF into the Sales Report container field.</p><code id="ww1210816" class="co-code code_pre_wrap">Insert from URL [ With dialog: Off ; Target: Customers::Sales Report ; "http://www.filemaker.com/sales_report.pdf" ]</code><h2 id="ww1210817" class="ssehn-scriptexamheadn"><span>Example 2</span>&nbsp;</h2><p id="ww1210818" class="b-body">Inserts a map showing the customer's address in the Address Map container field.</p><code id="ww1210819" class="co-code code_pre_wrap">Insert from URL [ With dialog: Off ; Target: Customers::Address Map ; "http://maps.google.com/maps/api/staticmap?center=" &amp; Customers::Address &amp; "&amp;zoom=14&amp;markers=" &amp; Customers::Address &amp; "&amp;size=256x256&amp;sensor=false" ]</code><h2 id="ww1210820" class="ssehn-scriptexamheadn"><span>Example 3</span>&nbsp;</h2><p id="ww1210821" class="b-body">Inserts the HTML code for http://www.apple.com.</p><code id="ww1210822" class="co-code code_pre_wrap">Insert from URL [ With dialog: Off ; Target: Customers::HTML Website Code ; "http://www.apple.com" ]</code><h2 id="ww1210824" class="ssehn-scriptexamheadn"><span>Example 4</span>&nbsp;</h2><p id="ww1210825" class="b-body">Uses the cURL options <code class="c-code code_pre_wrap">--user</code> and <code class="c-code code_pre_wrap">--upload-file</code> to upload a file from a container field to a server using the credentials <code class="c-code code_pre_wrap">myusername</code> and <code class="c-code code_pre_wrap">mypassword</code>, and stores any results from the server in the variable <code class="c-code code_pre_wrap">$$results</code>. For HTTP or HTTPS, the filename on the server will be the same as the filename in the container field.</p><code id="ww1210826" class="co-code code_pre_wrap">Set Variable [ $file ; Value: table::container ]<br />Insert from URL [ With dialog: Off ; Target: $$results ; <br />"https://www.filemaker.com/uploads" ; Verify SSL Certificates ; <br />cURL options: "--user myusername:mypassword --upload-file $file <br />&nbsp;--header \"Content-type: image/png\"" ]</code><h2 id="ww1273063" class="ssehn-scriptexamheadn"><span>Example 5</span>&nbsp;</h2><p id="ww1273064" class="b-body">Sends email via an SMTP server with a secure connection. Uses cURL options <code class="c-code code_pre_wrap">--mail-from</code> for the sender's address, <code class="c-code code_pre_wrap">--mail-rcpt</code> for the recipient's address, <code class="c-code code_pre_wrap">--upload-file</code> for the file containing the message, and <code class="c-code code_pre_wrap">--user</code> for the credentials to sign in to the SMTP server.</p><code id="ww1273065" class="co-code code_pre_wrap">Set Variable [ $mail ; Value: TextEncode ( Table::Mail ; "utf-8" ; 3 ) ]<br />Insert from URL [ Select ; With dialog: Off ; Target: $result ; <br />"smtps://smtp.example.com:465" ; Verify SSL Certificates ; cURL options: <br />	"--mail-from sender@example.com <br />	--mail-rcpt recipient@example.com <br />	--upload-file $mail <br />	--user account:password" ]</code><p id="ww1272937" class="b-body">The Table::Mail text field contains the following message content, including the email body in HTML format:</p><code id="ww1272951" class="co-code code_pre_wrap">From: Sender Name &lt;sender@example.com&gt;<br />To: Recipient Name &lt;recipient@example.com&gt;<br />Subject: Subject line<br />Content-Type: text/html; charset="utf8"<br />&lt;html&gt;&lt;body&gt;Body of email&lt;/body&gt;&lt;/html&gt;</code><h2 id="ww1272837" class="rh-relatedhead"><span>Related topics</span>&nbsp;</h2><p id="ww1210831" class="rt-relatedtopic">
+    <a href="../FMP_Help/script-steps-alphabetical.html#ww66468"
+   
+     title="Script steps reference (alphabetical list)"
+    ><span class="zh-hyper">Script steps reference (alphabetical list)</span></a></p><p id="ww1210835" class="rt-relatedtopic">
+    <a href="../FMP_Help/script-steps-category.html#ww947337"
+   
+     title="Script steps reference (category list)"
+    ><span class="zh-hyper">Script steps reference (category list)</span></a></p><!-- FMI - Feedback Link --><div class="feedbacklink">Was this topic helpful? <a href="https://www.filemaker.com/redirects/fmp18_admin.html?page=feedback&amp;lang=en" target="external_window">Send feedback.</a></div><footer><!-- Related Topics --><!--                --><!-- Disqus --><!--        --><!-- Google Translation --><!--                    --><br /></footer></body></html>

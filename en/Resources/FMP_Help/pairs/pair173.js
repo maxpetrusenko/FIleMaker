@@ -1,0 +1,23 @@
+var pairs =
+{
+"isvalidexpression":{"returns":1,"expression":1,"calculationfield":1}
+,"returns":{"true":1,"false":1}
+,"true":{"if":1}
+,"if":{"expression":1,"calculationfield":1}
+,"expression":{"syntax":1,"expression":1,"-any":1,"number":1}
+,"syntax":{"correct":1}
+,"correct":{"returns":1}
+,"false":{"isvalidexpression":1,"if":1}
+,"-any":{"calculation":1}
+,"calculation":{"expression":1}
+,"number":{"filemaker":1}
+,"filemaker":{"pro":1}
+,"pro":{"7.0":1}
+,"7.0":{"isvalidexpression":1}
+,"calculationfield":{"returns":1,"total":1,"abs":1}
+,"total":{"isvalidexpression":1}
+,"abs":{"(-1":1}
+,"(-1":{"closing":1}
+,"closing":{"parenthesis":1}
+}
+;Search.control.loadWordPairs(pairs);

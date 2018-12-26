@@ -1,0 +1,27 @@
+var pairs =
+{
+"dayofyear":{"returns":1,"date":1,"billing":1}
+,"returns":{"number":1,"32":1}
+,"number":{"days":1,"filemaker":1}
+,"days":{"year":1,"current":1}
+,"year":{"date":1,"dayofyear":1,"get":1}
+,"date":{"dayofyear":1,"date":1,"-any":1,"number":1,"returns":1,"2\u002F1\u002F2019":1,"12":1,"year":1}
+,"-any":{"calendar":1}
+,"calendar":{"date":1}
+,"filemaker":{"pro":1}
+,"pro":{"6.0":1}
+,"6.0":{"earlier":1}
+,"earlier":{"dayofyear":1}
+,"billing":{"date":1}
+,"32":{"billing":1}
+,"2\u002F1\u002F2019":{"formulas":1}
+,"formulas":{"return":1}
+,"return":{"total":1}
+,"total":{"number":1}
+,"current":{"year":1}
+,"12":{"31":1}
+,"31":{"year":1}
+,"get":{"currentdate":1}
+,"currentdate":{"dayofyear":1,"-1":1}
+}
+;Search.control.loadWordPairs(pairs);

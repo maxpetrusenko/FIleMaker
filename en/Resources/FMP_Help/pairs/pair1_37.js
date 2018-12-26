@@ -1,0 +1,19 @@
+var pairs =
+{
+"glossary":{"formatting":1}
+,"formatting":{"bar":1}
+,"bar":{"layout":1,"browse":1}
+,"layout":{"mode":1,"bar":1}
+,"mode":{"formatting":1,"macos":1,"layout":1,"windows":1,"slide":1,"status":1,"tab":1}
+,"macos":{"layout":1,"slide":1}
+,"browse":{"mode":1}
+,"windows":{"layout":1}
+,"slide":{"control":1,"panel":1}
+,"control":{"browse":1,"slide":1,"tab":1}
+,"panel":{"browse":1}
+,"status":{"toolbar":1}
+,"toolbar":{"browse":1,"layout":1}
+,"tab":{"control":1,"panels":1,"panel":1}
+,"panels":{"browse":1}
+}
+;Search.control.loadWordPairs(pairs);

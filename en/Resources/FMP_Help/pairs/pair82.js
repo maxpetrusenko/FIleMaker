@@ -1,0 +1,24 @@
+var pairs =
+{
+"time":{"functions":1,"function":1,"minute":1,"seconds":1,"time":1,"result":1}
+,"functions":{"time":1,"calculate":1}
+,"calculate":{"times":1}
+,"times":{"manipulate":1}
+,"manipulate":{"time":1}
+,"function":{"returns":1,"time":1}
+,"returns":{"hour":1}
+,"hour":{"number":1,"portion":1}
+,"number":{"representing":1,"hours":1}
+,"representing":{"hour":1,"minute":1,"seconds":1}
+,"portion":{"0-23":1,"0-59":1}
+,"0-23":{"time":1}
+,"minute":{"number":1,"portion":1}
+,"0-59":{"time":1}
+,"seconds":{"number":1,"portion":1,"use":1}
+,"result":{"number":1}
+,"hours":{"minutes":1}
+,"minutes":{"seconds":1}
+,"use":{"timestamp":1}
+,"timestamp":{"function":1}
+}
+;Search.control.loadWordPairs(pairs);

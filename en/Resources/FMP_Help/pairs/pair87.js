@@ -1,0 +1,20 @@
+var pairs =
+{
+"timestamp":{"functions":1,"timestamp":1,"date":1}
+,"functions":{"timestamps":1}
+,"timestamps":{"wide":1}
+,"wide":{"variety":1}
+,"variety":{"synchronization":1}
+,"synchronization":{"purposes":1}
+,"purposes":{"marking":1}
+,"marking":{"exact":1}
+,"exact":{"date":1}
+,"date":{"time":1,"lendar":1}
+,"time":{"event":1,"time":1,"day":1}
+,"event":{"occurred":1}
+,"occurred":{"function":1}
+,"function":{"returns":1}
+,"returns":{"timestamp":1}
+,"lendar":{"date":1}
+}
+;Search.control.loadWordPairs(pairs);

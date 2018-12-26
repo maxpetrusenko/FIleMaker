@@ -1,0 +1,21 @@
+var pairs =
+{
+"get":{"activefieldn":1,"activefieldname":1,"active":1,"field":1}
+,"activefieldn":{"ame":1}
+,"ame":{"returns":1}
+,"returns":{"name":1,"country":1}
+,"name":{"field":1,"getactivefieldname":1,"get":1}
+,"field":{"focus":1,"get":1,"name":1}
+,"focus":{"get":1,"country":1}
+,"activefieldname":{"none":1,"get":1}
+,"none":{"text":1}
+,"text":{"filemaker":1}
+,"filemaker":{"pro":1}
+,"pro":{"6.0":1}
+,"6.0":{"earlier":1}
+,"earlier":{"returns":1}
+,"country":{"focus":1,"field":1}
+,"active":{"field":1}
+,"getactivefieldname":{"get":1}
+}
+;Search.control.loadWordPairs(pairs);

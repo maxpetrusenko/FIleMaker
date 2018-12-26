@@ -1,0 +1,84 @@
+/* Social Links */
+
+#social_links {
+    display: none;
+}
+
+
+/* Reference CSS social sprite */
+
+.ww_social {
+    background-image: url('../../connect/images/social.png');
+    background-repeat: no-repeat;
+}
+
+a.ww_social {
+    color: transparent;
+    text-decoration: none;
+    outline-width: 0;
+}
+
+
+/* Twitter */
+
+.ww_social_twitter {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 24px;
+    margin-left: 6px;
+    margin-right: 6px;
+    background-position: -8px -32px;
+}
+
+a.ww_social_twitter:hover {
+    background-position: -80px -32px;
+}
+
+/* Facebook */
+
+.ww_social_facebook {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 24px;
+    margin-left: 6px;
+    margin-right: 6px;
+    background-position: -8px -128px;
+}
+
+a.ww_social_facebook:hover {
+    background-position: -80px -128px;
+}
+
+/* LinkedIn */
+
+.ww_social_linkedin {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 24px;
+    margin-left: 6px;
+    margin-right: 6px;
+    background-position: -8px -224px;
+}
+
+a.ww_social_linkedin:hover {
+    background-position: -80px -224px;
+}
+
+/* Google + 1 */
+
+.ww_social_googleplus1 {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 24px;
+    margin-left: 6px;
+    margin-right: 6px;
+    background-position: -8px -320px;
+}
+
+a.ww_social_googleplus1:hover {
+    background-position: -80px -320px;
+}

@@ -1,0 +1,956 @@
+<!DOCTYPE html ><html xml:lang="en" lang="en" data-highlight-require-whitespace="false" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- saved from url=(0016)http://localhost -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>Working with the JSON functions</title><link rel="Prev" href="contents-of-repetition.html" title="Previous" /><link rel="Next" href="plug-ins.html" title="Next" /><link rel="StyleSheet" href="css/create_db.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/skin.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/social.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" /><!--[if IE 7]><link rel="StyleSheet" href="css/create_db_IE7.css" type="text/css" media="all" /><![endif]--><link rel="StyleSheet" href="css/print.css" type="text/css" media="print" /><script type="text/javascript">
+    'use strict';
+
+    var redirect_url, page_hash;
+
+    if ((window === window.top) && (window.navigator.userAgent.indexOf('bot/') === -1)) {
+        // Redirect
+        //
+        redirect_url = "../index.html#page/FMP_Help/json-functions.html";
+        if (window.document.location.hash.length > 1) {
+            // Sanitize and append it
+            //
+            page_hash = window.document.location.hash.substring(1);
+            page_hash = page_hash.replace(/[\\><:;"]|%5C|%3C|%3E|%3A|%3B|%22/gi, '');
+            redirect_url += '#' + page_hash;
+        }
+        window.document.location.replace(redirect_url);
+    }
+</script><script type="text/javascript" src="scripts/common.js"></script><script type="text/javascript" src="scripts/page.js"></script><script type="text/javascript" src="scripts/search-client.js"></script><script type="text/javascript" src="scripts/unidata.js"></script><script type="text/javascript" src="scripts/unibreak.js"></script><script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-15064788-14', 'auto');
+       ga('set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('send', 'pageview');
+       ga('create', 'UA-15064788-10', 'auto', 'globalProperty');
+       ga('globalProperty.set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('globalProperty.send', 'pageview');</script><script type="text/javascript"><!--
+    //FMI - tracking events for GA
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", function AddGaqPush() {
+        var links = document.getElementsByTagName("a");
+        for (var i=0; i < links.length; i++)
+        {
+            if (links[i].href.indexOf("page=help_zip") !== -1) { 
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Download', 'ZIP', '');");
+            } else if (links[i].href.indexOf("documentation") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Documentation Page', '');");
+            } else if (links[i].href.indexOf("page=doc_") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Document', '');");
+            } else if (links[i].href.indexOf("page=helphome_support") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Support', '');");
+            } else if (links[i].href.indexOf("page=feedback") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Feedback', location.href, '');");
+            }
+        }
+      }
+      , false)
+    }
+    // --></script><style type="text/css">
+/*FMI CSS*/
+      <!--
+/* General */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+	line-height: 170%;
+	background-color: rgb(245, 245, 245);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+img.Default {
+	vertical-align: text-bottom;
+}
+
+/* Page */
+div.feedbacklink
+{
+	margin:2em 0 0;
+	font-size:90%;
+	border-top:1px solid #bfbfbf;
+	padding:8px 12px 8px 12px;
+	color:#8d8d8d
+}
+
+.code_pre_wrap {
+	white-space: pre-wrap;
+}
+
+a:link .g-glosslink, a:visited .g-glosslink
+{
+	color: #000000;
+	text-decoration: underline;
+}
+
+.ti-title
+{
+	display: none;
+}
+
+span.c-code {
+  font-size: 9pt;
+}
+
+/* Page toolbar margin-top under breadcrumb */
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+}
+
+.ww_skin_toolbar {
+	padding-top: 20px;
+}
+
+.ti-title
+{
+	display: none;
+}
+.layout_wide {
+    padding: 0 0px 18px 0px;
+}
+
+div#layout_div.layout_narrow input.ww_skin_search_input,
+div#layout_div.layout_wide div#presentation_div.panel_overlay input.ww_skin_search_input {
+    display: inline;
+	visibility: visible;
+}
+
+div#container_div {
+	max-width: 1200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+	width:100%;
+	margin-top: 12px;
+}
+
+div#layout_div.layout_wide div#container_div {
+    left: 0px;
+    right: 0px;
+}
+
+div#index_content {
+  padding: 12px;
+}
+
+div#search {
+  background-color: white;
+}
+
+div#search {
+  background-color: white;
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+
+/* Search */
+body#searchBody {
+	background-color: transparent;
+}
+
+button#back_button {
+  float: left;
+  background: none;
+  background-image: url('../images/back_grey.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  border: 0;
+  text-decoration: none;
+  -webkit-apperance: none;
+  outline: 0;
+  text-display: none;
+  width: 20px;
+  height: 30px;
+  color: rgba(0,0,0,0);
+}
+
+button#back_button:hover {
+    cursor: pointer;
+	background-image: url('../images/back.png');
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+#search-input-text {
+  width: 50%;
+  background: #fff url('../images/search-50.png');
+  margin: 0;
+padding: 2px 0 2px 30px;
+height: 25px;
+background-color: #fff;
+background-size: 15px 15px;
+background-position: 5px 7px;
+background-repeat: no-repeat;
+font-size: 1.2em;
+border: 1px solid rgba(233,233,233,1);
+-webkit-appearance: none;
+border-radius: 3px;
+}
+
+#search-button {
+display: none;	/* original value: inline-block;*/
+overflow: hidden;
+width: 67px;
+height: 31px;
+color: white;
+background-image:linear-gradient(to bottom, #1681c3, #1066a1);
+border-radius: 0 4px 4px 0;
+border: 0px;
+font-size: 1em;
+padding: 3px 6px 3px 6px;
+position: absolute;
+}
+
+#search-results-container {
+  padding: 0.5em 0.5em;
+}
+
+.search-result-title {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.search-result-title > a {
+  color: rgb(67,114,255);
+  text-decoration: none;
+}
+
+.search-result-title > a:active {
+  color: rgb(67,114,255);
+}
+
+.search-result-title > a:visited {
+  color: rgb(67,114,255);
+}
+
+.search-result-summary {
+  padding-top: 4px;
+}
+
+.search-result-highlight{
+	padding:2px;
+	margin:-2px;
+	background-color: #ffffc7;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #ffffc7;
+	padding:2px;
+	margin:-2px;
+}
+
+/*tab size for code snippets - ID Custom */
+.co-code, .co1-code1, ff-funcformat, .ssf-scriptformat{
+	tab-size:3;
+}
+@media only screen and (min-width : 481px) {
+  /*see also "widget" - ID Custom */
+  .sah-seealsohead{
+	float: right;
+	width: 200px;
+	clear: both;
+	margin: 1.6em 0 0 1.8em;
+	padding: 5px 10px;
+	background-color: #F2F2F2;
+  }
+  
+  .sal-seealsolink{
+	float: right;
+	width: 200px;
+	clear: both;
+	background-color: #F2F2F2;
+	margin-top: 0 !important;
+	margin-left: 1.8em;
+	padding: 0 10px 10px;
+	line-height: 120%;
+  }
+}
+/*homepage - ID Custom */
+.welcome {
+  padding-top: 0;
+}
+
+.wol-outlinelinks,
+.wom-outlinemenu {
+  display:flex;
+  flex-wrap:wrap;
+  min-width: 140px;
+}
+.wom-outlinemenu a {
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  font-size: 11pt;
+  width: 40%;
+  background: -moz-linear-gradient(top, #f5f5f5, #fafafa); 
+  background: -webkit-linear-gradient(top,#f5f5f5, #fafafa);
+  background: linear-gradient(to bottom, #f5f5f5, #fafafa);
+  margin: 0 5px 10px 5px;
+}
+.wol-outlinelinks a{
+  font-size: 10pt;
+  width: 28%;
+}
+.wom-outlinemenu a,
+.wol-outlinelinks a{
+  padding: 10px;
+  text-align:center;
+  flex-grow: 1;
+
+}
+.wom-outlinemenu a .h-hyperlink,
+.wol-outlinelinks a .h-hyperlink,
+.wol-outlinelinks a .zh-hyper{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/*Skin.css*/
+a#banner {
+  background-image: url('images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 38px;
+  width: 300px;
+  margin-bottom: -5px;
+  display:block;
+}
+
+.ww_skin_company_logo > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:link:hover, .ww_skin_company_logo > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_name > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:link:hover, .ww_skin_company_name > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_email > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:link:hover, .ww_skin_company_email > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_progress_bar {
+    border: 1px solid #353535;
+}
+
+.ww_skin_progress_segment_complete {
+    background-color: #353535;
+}
+
+.ww_skin {
+	background-size: 600px auto;
+}
+
+.ww_skin_toc {
+    width: 38px;
+    height: 38px;
+    background-position: -306px -32px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_toc:hover {
+    background-position: -378px -32px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_toc {
+    background-position: -451px -32px;
+}
+
+a.ww_skin_toc_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_index {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -128px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_index:hover {
+    background-position: -376px -128px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_index {
+    background-position: -448px -128px;
+}
+
+a.ww_skin_index_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_home {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_home {
+    background-position: -304px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_home:hover {
+    background-position: -376px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_home {
+    background-position: -448px -1376px;
+}
+
+a.ww_skin_home_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_search {
+    height: 38px;
+	background-image: none !important;
+	width: 10px;
+  background-position: -100px -100px;
+  margin-left:3px;
+}
+
+.layout_wide .ww_skin_search{
+  width: 10px;
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_wide .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_narrow .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_search {
+    background-position: -450px -224px;
+}
+
+.ww_skin_globe {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -320px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_globe:hover {
+    background-position: -376px -320px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_globe {
+    background-position: -448px -320px;
+}
+
+a.ww_skin_globe_spacer {
+    background-image: none;
+    width: 24px;
+}
+
+.ww_skin_next {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -416px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_next {
+    background-position: -304px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_next:hover {
+    background-position: -376px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_next {
+    background-position: -448px -416px;
+}
+
+a.ww_skin_next_spacer {
+    display: none;
+}
+
+.layout_narrow a.ww_skin_next_spacer {
+    display: none;
+}
+
+.ww_skin_prev {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -512px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_prev {
+    background-position: -304px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_prev:hover {
+    background-position: -376px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_prev {
+    background-position: -448px -512px;
+}
+
+#toolbar_div {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.ww_skin_toolbar {
+	padding-top: 15px;
+}
+
+.ww_skin_toolbar_button_left {
+	padding-left: 5px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_center {
+    height: 38px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_right {
+	border: none;
+}
+
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+    background: #757575;
+}
+
+.ww_skin_search_form .ww_skin_toolbar_background_selected {
+	display: none !important;
+}
+
+.ww_skin_toolbar_left_background {
+    margin-left: 0;
+}
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+	background: transparent;
+}
+
+.ww_skin_toolbar_background_default {
+	background: transparent;
+}
+
+.ww_skin_search_input {
+  color: #525252;
+  height: 20px;
+  font-size: 13px;
+  margin: 5px 0 0 18px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  background-image: url('images/search-50.png');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding: 3px;
+  text-indent: 20px;
+  width: 250px;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_toc_container {
+	background-color: transparent;
+	border: none;
+}
+
+.ww_skin_toc_level_1 > li > div {
+    padding-left: 23px;
+}
+
+.ww_skin_toc_level_2 > li > div {
+    padding-left: 43px;
+}
+
+.ww_skin_toc_level_3 > li > div {
+    padding-left: 63px;
+}
+
+.ww_skin_toc_level_4 > li > div {
+    padding-left: 83px;
+}
+
+.ww_skin_toc_level_5 > li > div {
+    padding-left: 103px;
+}
+
+.ww_skin_toc_level_6 > li > div {
+    padding-left: 123px;
+}
+
+.ww_skin_toc_level_7 > li > div {
+    padding-left: 138px;
+}
+
+.ww_skin_toc_entry {
+    font-family: Helvetica, Arial, sans-serif;
+    border-width: 0px 0 0 0;
+    margin: 0;
+    padding: 8px 20px 8px 0;
+	line-height: 15px;
+}
+
+.ww_skin_toc_level_1:first-child > li:first-child > .ww_skin_toc_entry:first-child {
+    border-width: 0;
+}
+
+.ww_skin_toc_entry:hover {
+    background: #E0E0E0;
+}
+
+.ww_skin_toc_entry > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.ww_skin_toc_entry > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry:hover > a {
+    color: black;
+}
+
+.ww_skin_toc_entry:hover > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+    background-color: rgb(67,114,255);
+}
+
+.ww_skin_toc_dropdown {
+    margin: 2px 4px 0 0px;
+}
+
+.ww_skin_index_link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_panel_frame {
+    padding: 9px 0 0 0;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_panel_content {
+  border-width: 0px;
+  background-color: #fcfcfc;
+}
+
+.ww_skin_lightbox_frame {
+    top: 0;
+    left: 0;
+}
+
+.ww_skin_page_body {
+    padding: 30px 30px;
+	background-color: #fff;
+}
+
+.ww_skin_breadcrumbs {
+    margin: -6px -6px 0 -8px;
+    padding: 4px 24px 4px 12px;
+    color: #a4a4a4;
+    font-weight: normal;
+	max-width: 85%;
+	background: transparent;
+}
+
+.ww_skin_breadcrumbs a:link {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:visited {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:link:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_breadcrumbs a:visited:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+#wwconnect_header {
+  margin-bottom: 20px;
+}
+
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_toc_entry{
+	border: none;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+	background: rgb(67,114,255);
+}
+
+
+/* medium */
+@media only screen
+and (max-width : 769px) {
+  .ww_skin_search_input {
+    width: 170px;
+}
+
+}
+
+/* small */
+@media only screen
+and (max-width: 535px) {
+  .ww_skin_search_input {
+    width: 150px;
+  }
+
+a#banner{
+  height: 30px;
+  width: 160px;
+  margin-left: 15px;
+}
+
+div#container_div {
+  margin-top: 5px;
+}
+
+table.ww_skin_toolbar {
+  padding-top: 10px;
+}
+
+}
+
+/*phone*/
+@media only screen
+and (max-width : 435px) {
+
+  a#banner {
+    width: 129px;
+  }
+
+  .ww_skin_search_input {
+    width: 130px;
+  }
+   
+  body { 
+    overflow-x: hidden;
+  }
+  
+  .layout_narrow {
+    overflow-x: hidden;
+  }
+  
+  #presentation_div {
+    overflow-x:hidden;
+  }
+  
+  #page_div {
+    overflow-x:hidden;
+  }
+    div#page_div {
+    overflow-x: hidden;
+  }
+  html {
+   overflow-x: hidden;
+  }
+  body.ww_skin_page_body {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  
+}
+--></style></head><body id="pagraeuNdbP2czxHtx_002fwBEQ" class="ww_skin_page_body" onload="Page.OnLoad('../index.html#page/FMP_Help/json-functions.html');"><header id="wwconnect_header"><div class="ww_skin_breadcrumbs"><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/creating-a-custom-app.html#wwconnect_header">Creating a custom app</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/working-with-formulas-functions.html#wwconnect_header">Working with formulas and functions</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_current">Working with the JSON functions</span></div><div class="ww_skin_page_toolbar"><a class="ww_behavior_print ww_skin ww_skin_print" title="Print" href="#">&nbsp;</a></div></header><h1 id="ww1155067" class="h3-head3">Working with the JSON functions</h1><p id="ww1155069" class="b-body">FileMaker&nbsp;Pro Advanced provides several text functions that enable your solution to parse and modify 
+    <a href="../FMP_Help/glossary.html#ww1059384"
+   
+     title="Glossary"
+    ><span class="g-glosslink">JSON</span></a> data from other sources, such as web services that transfer data in JSON format via a REST API.</p><p id="ww1155071" class="b-body">For more information about the JSON data format, see 
+    <a href="http://json.org"
+   
+     target="external_window"
+    ><span class="h-hyperlink">json.org</span></a>.</p><h2 id="ww1155072" class="hs1-headsub1">Retrieving JSON data from a web service</h2><p id="ww1155076" class="b-body">Use the 
+    <a href="../FMP_Help/insert-from-url.html#ww1210738"
+   
+     title="Insert From URL"
+    ><span class="zh-hyper">Insert From URL script step</span></a> to access a web service, specify parameters for the information to retrieve, send and receive HTTP headers, and store the results in a variable or a field.</p><p id="ww1155077" class="b-body">For example, a bakery makes its product list available to clients in JSON format via a REST API. The following returns the list of today's specials as JSON data in the $$JSON variable:</p><code id="ww1155078" class="co-code code_pre_wrap">Set Variable [ $url ; "https://&lt;bakery_domain_name&gt;/rest/api/products" ]</code><code id="ww1155079" class="co-code code_pre_wrap">Insert from URL [ With dialog: Off; Target: $$JSON ; $url ; Verify SSL Certificates ; cURL options: "--data list=specials" ]</code><p id="ww1172924" class="b-body">For the data returned in $$JSON, see 
+    <a href="../FMP_Help/json-functions.html#ww1155222"
+   
+     title="Working with the JSON functions"
+    ><span class="zh-hyper">Example JSON data</span></a>.</p><p id="ww1172925" class="b-body">FileMaker&nbsp;Pro Advanced also provides several utility functions that handle the character encoding and cryptographic signing required by some REST APIs:</p><p id="ww1155088" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>
+    <a href="../FMP_Help/hexdecode.html#ww1282085"
+   
+     title="HexDecode"
+    ><span class="zh-hyper">HexDecode function</span></a></p><p id="ww1155092" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>
+    <a href="../FMP_Help/hexencode.html#ww1282136"
+   
+     title="HexEncode"
+    ><span class="zh-hyper">HexEncode function</span></a></p><p id="ww1155096" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>
+    <a href="../FMP_Help/textdecode.html#ww1282185"
+   
+     title="TextDecode"
+    ><span class="zh-hyper">TextDecode function</span></a></p><p id="ww1155100" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>
+    <a href="../FMP_Help/textencode.html#ww1282236"
+   
+     title="TextEncode"
+    ><span class="zh-hyper">TextEncode function</span></a></p><p id="ww1155104" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>
+    <a href="../FMP_Help/base64decode.html#ww1280871"
+   
+     title="Base64Decode"
+    ><span class="zh-hyper">Base64Decode function</span></a></p><p id="ww1155108" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>
+    <a href="../FMP_Help/base64encoderfc.html#ww1280981"
+   
+     title="Base64EncodeRFC"
+    ><span class="zh-hyper">Base64EncodeRFC function</span></a></p><p id="ww1155112" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>
+    <a href="../FMP_Help/cryptauthcode.html#ww1281069"
+   
+     title="CryptAuthCode"
+    ><span class="zh-hyper">CryptAuthCode function</span></a></p><p id="ww1155116" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>
+    <a href="../FMP_Help/cryptdigest.html#ww1281248"
+   
+     title="CryptDigest"
+    ><span class="zh-hyper">CryptDigest function</span></a></p><h2 id="ww1155117" class="hs1-headsub1">Formatting JSON data</h2><p id="ww1155118" class="b-body">JSON data doesn't require spaces or line endings between elements. However, to make the data easier to read while you debug problems, use the 
+    <a href="../FMP_Help/jsonformatelements.html#ww1298671"
+   
+     title="JSONFormatElements"
+    ><span class="zh-hyper">JSONFormatElements function</span></a>, which adds tabs and line ending characters, as shown in 
+    <a href="../FMP_Help/json-functions.html#ww1155222"
+   
+     title="Working with the JSON functions"
+    ><span class="zh-hyper">Example JSON data</span></a>.</p><h2 id="ww1155126" class="hs1-headsub1">Parsing JSON data</h2><p id="ww1155127" class="b-body">Use the following JSON functions to parse JSON data—that is, to get keys, values, or entire JSON objects or arrays that you can process further:</p><p id="ww1155131" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>
+    <a href="../FMP_Help/jsongetelement.html#ww1298725"
+   
+     title="JSONGetElement"
+    ><span class="zh-hyper">JSONGetElement</span></a> – Queries JSON data for an element (an object, array, or value)</p><p id="ww1155135" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>
+    <a href="../FMP_Help/jsonlistkeys.html#ww1298787"
+   
+     title="JSONListKeys"
+    ><span class="zh-hyper">JSONListKeys</span></a> – Lists the object names (keys) or array indexes in JSON data</p><p id="ww1155139" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>
+    <a href="../FMP_Help/jsonlistvalues.html#ww1298853"
+   
+     title="JSONListValues"
+    ><span class="zh-hyper">JSONListValues</span></a> – Lists the values in JSON data</p><p id="ww1155140" class="b-body">The first parameter of these functions, <code class="c-code code_pre_wrap">json</code>, specifies the text field, variable, or text expression that contains valid JSON data to operate on.</p><p id="ww1155141" class="b-body">The second parameter, <code class="c-code code_pre_wrap">keyOrIndexOrPath</code>, specifies the portion of the JSON data to operate on:</p><p id="ww1155142" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>key – the name of a key in a JSON object</p><p id="ww1155143" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>index – the index of an element in a JSON array (the first element has an index of 0)</p><p id="ww1155144" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>path – a hierarchical string of key names, array indexes, or both</p><p id="ww1155145" class="b-body">The following syntax for the <code class="c-code code_pre_wrap">keyOrIndexOrPath</code> parameter is supported.</p><p id="ww1155171" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 400.88448pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 127.692pt"><p id="ww1155148" class="th-tablehead"><code class="c-code code_pre_wrap">keyOrIndexOrPath</code> parameter</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 273.19248pt"><p id="ww1155150" class="th-tablehead">Means</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1155152" class="td-tabledata">"."</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1155154" class="td-tabledata">(optional) The root level, if it's the first character</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1155156" class="td-tabledata">".[n]"</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1155158" class="td-tabledata">Elements at index <var class="v-variable">n</var> of an array at the root level</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1155160" class="td-tabledata">".name"</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1155162" class="td-tabledata">The key of an object named <var class="v-variable">name</var> at the root level</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1155164" class="td-tabledata">".nameA.nameB.nameC"</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1155166" class="td-tabledata">An object named <var class="v-variable">nameC</var>, which is a descendent of <var class="v-variable">nameB</var> and <var class="v-variable">nameA</var></p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1155168" class="td-tabledata">".[3][2][1]nameA[0]"</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1155170" class="td-tabledata">The first element of the array in the <var class="v-variable">nameA</var> object, which is at the third level in a set of nested arrays</p></td></tr></table></div><p id="ww1155175" class="b-body">The following example script determines the number of products in the 
+    <a href="../FMP_Help/json-functions.html#ww1155222"
+   
+     title="Working with the JSON functions"
+    ><span class="zh-hyper">Example JSON data</span></a> (stored in the $$JSON variable) using JSONListKeys, creates a record for each product, then sets fields in each record to the values obtained using JSONGetElement for each product.</p><code id="ww1155176" class="co-code code_pre_wrap">Set Variable [ $ProductCount ; Value: <br />&nbsp;&nbsp;&nbsp;ValueCount ( <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSONListKeys ( $$JSON ; "bakery.product" ) <br />&nbsp;&nbsp;&nbsp;) ] <br />Set Variable [ $i; Value: 0 ]<br />If [ $ProductCount &gt; 0 ]<br />&nbsp;&nbsp;&nbsp;Loop<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New Record/Request<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set Field [ Products::ID ; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSONGetElement ( $$JSON ; "bakery.product[" &amp; $i &amp; "]id" ) ] <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set Field [ Products::Price ; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSONGetElement ( $$JSON ; "bakery.product[" &amp; $i &amp; "]price" ) ] <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set Field [ Products::Stock ; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSONGetElement ( $$JSON ; "bakery.product[" &amp; $i &amp; "]stock" ) ]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Commit Records/Requests [ With dialog: Off ]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set Variable [ $i ; Value: $i + 1 ] <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exit Loop If [ $i <span class="sy-symbol">≥</span> $ProductCount ]<br />&nbsp;&nbsp;&nbsp;End Loop<br />End If</code><h2 id="ww1155177" class="hs1-headsub1">Changing and adding JSON data elements</h2><p id="ww1155181" class="b-body">To change values and add elements in JSON data, use the 
+    <a href="../FMP_Help/jsonsetelement.html#ww1298920"
+   
+     title="JSONSetElement"
+    ><span class="zh-hyper">JSONSetElement function</span></a>. The <code class="c-code code_pre_wrap">json</code> and <code class="c-code code_pre_wrap">keyOrIndexOrPath</code> parameters work in this function as described in 
+    <a href="../FMP_Help/json-functions.html#ww1155126"
+   
+     title="Working with the JSON functions"
+    ><span class="zh-hyper">Parsing JSON data</span></a>. If <code class="c-code code_pre_wrap">keyOrIndexOrPath</code> specifies an existing element, the value of that element is changed; if the element doesn't exist, a new element is added.</p><p id="ww1155185" class="b-body">JSONSetElement sets the specified element to the <code class="c-code code_pre_wrap">value</code> parameter. You can specify any valid JSON value, from a simple string or number to a complex object or array.</p><p id="ww1175257" class="b-body">The <code class="c-code code_pre_wrap">type</code> parameter specifies the type of data in <code class="c-code code_pre_wrap">value</code> so that the JSON parser will follow strict rules when handling each data type. For the supported data types, see 
+    <a href="../FMP_Help/jsonsetelement.html#ww1298920"
+   
+     title="JSONSetElement"
+    ><span class="zh-hyper">JSONSetElement function</span></a>. To insert data into <code class="c-code code_pre_wrap">json</code> that is already formatted as a valid JSON element, set <code class="c-code code_pre_wrap">type</code> to <code class="c-code code_pre_wrap">JSONRaw</code>.</p><p id="ww1175261" class="b-body">The following example adds the key-value pairs for a new product to an empty JSON object. Then the new object is added at the end of the product array in the $$JSON variable (see 
+    <a href="../FMP_Help/json-functions.html#ww1155222"
+   
+     title="Working with the JSON functions"
+    ><span class="zh-hyper">Example JSON data</span></a>).</p><code id="ww1155194" class="co-code code_pre_wrap">Set Variable [ $NewProduct ; Value: <br />&nbsp;&nbsp;&nbsp;JSONSetElement ( "{}" ;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ "id" ; "FB4" ; JSONString ] ; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ "name" ; "Vanilla Cake" ; JSONString ] ; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ "price" ; 17.5 ; JSONNumber ] ; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ "stock" ; 12 ; JSONNumber ] ; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ "category" ; "Cakes" ; JSONString ] ; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ "special" ; true ; JSONBoolean ] <br />&nbsp;&nbsp;&nbsp;) ]<br />Set Variable [ $NextIndex ; Value: <br />&nbsp;&nbsp;&nbsp;ValueCount ( <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSONListKeys ( $$JSON ; "bakery.product" ) <br />&nbsp;&nbsp;&nbsp;) ] <br />Set Variable [ $$JSON ; Value: <br />&nbsp;&nbsp;&nbsp;JSONSetElement ( <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$$JSON ; "bakery.product[" &amp; $NextIndex &amp; "]" ; $NewProduct ; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSONObject <br />&nbsp;&nbsp;&nbsp;) ]</code><h2 id="ww1155195" class="hs1-headsub1">Deleting JSON data elements</h2><p id="ww1155199" class="b-body">To delete an element, use the 
+    <a href="../FMP_Help/jsondeleteelement.html#ww1298611"
+   
+     title="JSONDeleteElement"
+    ><span class="zh-hyper">JSONDeleteElement function</span></a>. The <code class="c-code code_pre_wrap">json</code> and <code class="c-code code_pre_wrap">keyOrIndexOrPath</code> parameters work in this function as described in 
+    <a href="../FMP_Help/json-functions.html#ww1155126"
+   
+     title="Working with the JSON functions"
+    ><span class="zh-hyper">Parsing JSON data</span></a>. The <code class="c-code code_pre_wrap">keyOrIndexOrPath</code> parameter must specify an existing element in <code class="c-code code_pre_wrap">json</code>.</p><p id="ww1155203" class="b-body">The following example deletes the element in the product array whose "id" key has the value "FB3" in the $$JSON variable (see 
+    <a href="../FMP_Help/json-functions.html#ww1155222"
+   
+     title="Working with the JSON functions"
+    ><span class="zh-hyper">Example JSON data</span></a>).</p><code id="ww1155207" class="co-code code_pre_wrap">Set Variable [ $ProductCount ; Value: <br />&nbsp;&nbsp;&nbsp;ValueCount ( <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSONListKeys ( $$JSON ; "bakery.product" ) <br />&nbsp;&nbsp;&nbsp;) ] <br />Set Variable [ $i ; Value: 0 ]<br />If [ $ProductCount &gt; 0 ]<br />&nbsp;&nbsp;&nbsp;Loop<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set Variable [ $ID ; Value: <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSONGetElement ( $$JSON ; "bakery.product[" &amp; $i &amp; "]id" ) ]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If [ $ID = "FB3" ]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set Variable [ $$JSON ; Value: <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSONDeleteElement ( $$JSON ; "bakery.product[" &amp; $i &amp; "]" ) ]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exit Script [ Text Result: 0 ]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set Variable [ $i ; Value: $i + 1 ]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exit Loop If [ $i <span class="sy-symbol">≥</span> $ProductCount ]<br />&nbsp;&nbsp;&nbsp;End Loop<br />End If</code><h2 id="ww1155208" class="hs1-headsub1">Handling errors in JSON data</h2><p id="ww1155209" class="b-body">If an error occurs while parsing the <code class="c-code code_pre_wrap">json</code> parameter, the JSON functions return "?" followed by an error message from the JSON parser. </p><p id="ww1166901" class="b-body">For example, when the ":" after the "bakery" key is missing in 
+    <a href="../FMP_Help/json-functions.html#ww1155222"
+   
+     title="Working with the JSON functions"
+    ><span class="zh-hyper">Example JSON data</span></a>, this calculation</p><code id="ww1155213" class="co-code code_pre_wrap">JSONGetElement ( $$JSON ; "bakery.product[0]id" )</code><p id="ww1155214" class="b-body">returns this error message:</p><code id="ww1155215" class="co-code code_pre_wrap">? * Line 3, Column 2<br />&nbsp;&nbsp;Missing ':' after object member name<br />* Line 13, Column 5<br />&nbsp;&nbsp;Extra non-whitespace after JSON value.</code><p id="ww1155219" class="b-body">To determine whether JSON data is valid before using it, use the 
+    <a href="../FMP_Help/jsonformatelements.html#ww1298671"
+   
+     title="JSONFormatElements"
+    ><span class="zh-hyper">JSONFormatElements function</span></a> and test whether the first character is "?". For example:</p><code id="ww1155220" class="co-code code_pre_wrap">Set Variable [ $result ; Value: JSONFormatElements ( $$JSON ) ]<br />If [ Left ( $result ; 1 ) = "?" ]<br />&nbsp;&nbsp;&nbsp;# $$JSON contains invalid JSON data.<br />End If</code><h2 id="ww1155222" class="hs1-headsub1">Example JSON data</h2><p id="ww1155223" class="b-body">The following example JSON data contains a "bakery" object that has an array of three "product" objects, each with several key-value pairs.</p><code id="ww1155224" class="co-code code_pre_wrap">{<br />	"bakery" : <br />	{<br />		"product" : <br />		[<br />			{<br />				"id" : "FB1",<br />				"name" : "Donuts",<br />				"price": 1.99,<br />				"stock" : 43,<br />				"category" : "Breads",<br />				"special" : true<br />			},<br />			{<br />				"id" : "FB2",<br />				"price": 22.5,<br />				"name" : "Chocolate Cake",<br />				"stock" : 23,<br />				"category" : "Cakes", <br />				"special" : true<br />			},<br />			{<br />				"id" : "FB3",<br />				"price": 3.95,<br />				"name" : "Baguette",<br />				"stock" : 34,<br />				"category" : "Breads", <br />				"special" : true<br />			}<br />		]<br />	}<br />}</code><h2 id="ww1155330" class="hs1n-headsub1notes"><span>Notes</span>&nbsp;</h2><p id="ww1155344" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>The JSON parser preserves the order of elements in an array, but not the order of elements in an object. Therefore, the JSON functions may return elements in an object in a different order from the order specified.</p><h2 id="ww1155225" class="rh-relatedhead"><span>Related topics</span>&nbsp;</h2><p id="ww1155229" class="rt-relatedtopic">
+    <a href="../FMP_Help/text-functions.html#ww1272948"
+   
+     title="Text functions"
+    ><span class="zh-hyper">Text functions</span></a></p><p id="ww1155233" class="rt-relatedtopic">
+    <a href="../FMP_Help/container-functions.html#ww1280723"
+   
+     title="Container functions"
+    ><span class="zh-hyper">Container functions</span></a></p><!-- FMI - Feedback Link --><div class="feedbacklink">Was this topic helpful? <a href="https://www.filemaker.com/redirects/fmp18_admin.html?page=feedback&amp;lang=en" target="external_window">Send feedback.</a></div><footer><!-- Related Topics --><!--                --><!-- Disqus --><!--        --><!-- Google Translation --><!--                    --><br /></footer></body></html>

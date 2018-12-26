@@ -1,0 +1,20 @@
+var pairs =
+{
+"get":{"networkproto":1,"networkprotocol":1,"network":1,"protocol":1}
+,"networkproto":{"col":1}
+,"col":{"returns":1}
+,"returns":{"name":1,"tcp\u002Fip":1}
+,"name":{"network":1}
+,"network":{"protocol":1}
+,"protocol":{"tcp\u002Fip":1,"get":1}
+,"tcp\u002Fip":{"filemaker":1,"get":1}
+,"filemaker":{"machine":1,"pro":1}
+,"machine":{"get":1}
+,"networkprotocol":{"none":1,"get":1}
+,"none":{"text":1}
+,"text":{"filemaker":1}
+,"pro":{"6.0":1}
+,"6.0":{"earlier":1}
+,"earlier":{"returns":1}
+}
+;Search.control.loadWordPairs(pairs);

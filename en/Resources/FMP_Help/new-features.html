@@ -1,0 +1,1076 @@
+<!DOCTYPE html ><html xml:lang="en" lang="en" data-highlight-require-whitespace="false" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- saved from url=(0016)http://localhost -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="keywords" content="FileMaker Go" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>New features in FileMaker Pro 18 Advanced</title><link rel="Prev" href="basics.html" title="Previous" /><link rel="Next" href="using-help.html" title="Next" /><link rel="StyleSheet" href="css/fmp_basics.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/skin.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/social.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" /><!--[if IE 7]><link rel="StyleSheet" href="css/fmp_basics_IE7.css" type="text/css" media="all" /><![endif]--><link rel="StyleSheet" href="css/print.css" type="text/css" media="print" /><script type="text/javascript">
+    'use strict';
+
+    var redirect_url, page_hash;
+
+    if ((window === window.top) && (window.navigator.userAgent.indexOf('bot/') === -1)) {
+        // Redirect
+        //
+        redirect_url = "../index.html#page/FMP_Help/new-features.html";
+        if (window.document.location.hash.length > 1) {
+            // Sanitize and append it
+            //
+            page_hash = window.document.location.hash.substring(1);
+            page_hash = page_hash.replace(/[\\><:;"]|%5C|%3C|%3E|%3A|%3B|%22/gi, '');
+            redirect_url += '#' + page_hash;
+        }
+        window.document.location.replace(redirect_url);
+    }
+</script><script type="text/javascript" src="scripts/common.js"></script><script type="text/javascript" src="scripts/page.js"></script><script type="text/javascript" src="scripts/search-client.js"></script><script type="text/javascript" src="scripts/unidata.js"></script><script type="text/javascript" src="scripts/unibreak.js"></script><script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-15064788-14', 'auto');
+       ga('set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('send', 'pageview');
+       ga('create', 'UA-15064788-10', 'auto', 'globalProperty');
+       ga('globalProperty.set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('globalProperty.send', 'pageview');</script><script type="text/javascript"><!--
+    //FMI - tracking events for GA
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", function AddGaqPush() {
+        var links = document.getElementsByTagName("a");
+        for (var i=0; i < links.length; i++)
+        {
+            if (links[i].href.indexOf("page=help_zip") !== -1) { 
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Download', 'ZIP', '');");
+            } else if (links[i].href.indexOf("documentation") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Documentation Page', '');");
+            } else if (links[i].href.indexOf("page=doc_") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Document', '');");
+            } else if (links[i].href.indexOf("page=helphome_support") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Support', '');");
+            } else if (links[i].href.indexOf("page=feedback") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Feedback', location.href, '');");
+            }
+        }
+      }
+      , false)
+    }
+    // --></script><style type="text/css">
+/*FMI CSS*/
+      <!--
+/* General */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+	line-height: 170%;
+	background-color: rgb(245, 245, 245);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+img.Default {
+	vertical-align: text-bottom;
+}
+
+/* Page */
+div.feedbacklink
+{
+	margin:2em 0 0;
+	font-size:90%;
+	border-top:1px solid #bfbfbf;
+	padding:8px 12px 8px 12px;
+	color:#8d8d8d
+}
+
+.code_pre_wrap {
+	white-space: pre-wrap;
+}
+
+a:link .g-glosslink, a:visited .g-glosslink
+{
+	color: #000000;
+	text-decoration: underline;
+}
+
+.ti-title
+{
+	display: none;
+}
+
+span.c-code {
+  font-size: 9pt;
+}
+
+/* Page toolbar margin-top under breadcrumb */
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+}
+
+.ww_skin_toolbar {
+	padding-top: 20px;
+}
+
+.ti-title
+{
+	display: none;
+}
+.layout_wide {
+    padding: 0 0px 18px 0px;
+}
+
+div#layout_div.layout_narrow input.ww_skin_search_input,
+div#layout_div.layout_wide div#presentation_div.panel_overlay input.ww_skin_search_input {
+    display: inline;
+	visibility: visible;
+}
+
+div#container_div {
+	max-width: 1200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+	width:100%;
+	margin-top: 12px;
+}
+
+div#layout_div.layout_wide div#container_div {
+    left: 0px;
+    right: 0px;
+}
+
+div#index_content {
+  padding: 12px;
+}
+
+div#search {
+  background-color: white;
+}
+
+div#search {
+  background-color: white;
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+
+/* Search */
+body#searchBody {
+	background-color: transparent;
+}
+
+button#back_button {
+  float: left;
+  background: none;
+  background-image: url('../images/back_grey.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  border: 0;
+  text-decoration: none;
+  -webkit-apperance: none;
+  outline: 0;
+  text-display: none;
+  width: 20px;
+  height: 30px;
+  color: rgba(0,0,0,0);
+}
+
+button#back_button:hover {
+    cursor: pointer;
+	background-image: url('../images/back.png');
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+#search-input-text {
+  width: 50%;
+  background: #fff url('../images/search-50.png');
+  margin: 0;
+padding: 2px 0 2px 30px;
+height: 25px;
+background-color: #fff;
+background-size: 15px 15px;
+background-position: 5px 7px;
+background-repeat: no-repeat;
+font-size: 1.2em;
+border: 1px solid rgba(233,233,233,1);
+-webkit-appearance: none;
+border-radius: 3px;
+}
+
+#search-button {
+display: none;	/* original value: inline-block;*/
+overflow: hidden;
+width: 67px;
+height: 31px;
+color: white;
+background-image:linear-gradient(to bottom, #1681c3, #1066a1);
+border-radius: 0 4px 4px 0;
+border: 0px;
+font-size: 1em;
+padding: 3px 6px 3px 6px;
+position: absolute;
+}
+
+#search-results-container {
+  padding: 0.5em 0.5em;
+}
+
+.search-result-title {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.search-result-title > a {
+  color: rgb(67,114,255);
+  text-decoration: none;
+}
+
+.search-result-title > a:active {
+  color: rgb(67,114,255);
+}
+
+.search-result-title > a:visited {
+  color: rgb(67,114,255);
+}
+
+.search-result-summary {
+  padding-top: 4px;
+}
+
+.search-result-highlight{
+	padding:2px;
+	margin:-2px;
+	background-color: #ffffc7;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #ffffc7;
+	padding:2px;
+	margin:-2px;
+}
+
+/*tab size for code snippets - ID Custom */
+.co-code, .co1-code1, ff-funcformat, .ssf-scriptformat{
+	tab-size:3;
+}
+@media only screen and (min-width : 481px) {
+  /*see also "widget" - ID Custom */
+  .sah-seealsohead{
+	float: right;
+	width: 200px;
+	clear: both;
+	margin: 1.6em 0 0 1.8em;
+	padding: 5px 10px;
+	background-color: #F2F2F2;
+  }
+  
+  .sal-seealsolink{
+	float: right;
+	width: 200px;
+	clear: both;
+	background-color: #F2F2F2;
+	margin-top: 0 !important;
+	margin-left: 1.8em;
+	padding: 0 10px 10px;
+	line-height: 120%;
+  }
+}
+/*homepage - ID Custom */
+.welcome {
+  padding-top: 0;
+}
+
+.wol-outlinelinks,
+.wom-outlinemenu {
+  display:flex;
+  flex-wrap:wrap;
+  min-width: 140px;
+}
+.wom-outlinemenu a {
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  font-size: 11pt;
+  width: 40%;
+  background: -moz-linear-gradient(top, #f5f5f5, #fafafa); 
+  background: -webkit-linear-gradient(top,#f5f5f5, #fafafa);
+  background: linear-gradient(to bottom, #f5f5f5, #fafafa);
+  margin: 0 5px 10px 5px;
+}
+.wol-outlinelinks a{
+  font-size: 10pt;
+  width: 28%;
+}
+.wom-outlinemenu a,
+.wol-outlinelinks a{
+  padding: 10px;
+  text-align:center;
+  flex-grow: 1;
+
+}
+.wom-outlinemenu a .h-hyperlink,
+.wol-outlinelinks a .h-hyperlink,
+.wol-outlinelinks a .zh-hyper{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/*Skin.css*/
+a#banner {
+  background-image: url('images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 38px;
+  width: 300px;
+  margin-bottom: -5px;
+  display:block;
+}
+
+.ww_skin_company_logo > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:link:hover, .ww_skin_company_logo > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_name > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:link:hover, .ww_skin_company_name > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_email > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:link:hover, .ww_skin_company_email > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_progress_bar {
+    border: 1px solid #353535;
+}
+
+.ww_skin_progress_segment_complete {
+    background-color: #353535;
+}
+
+.ww_skin {
+	background-size: 600px auto;
+}
+
+.ww_skin_toc {
+    width: 38px;
+    height: 38px;
+    background-position: -306px -32px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_toc:hover {
+    background-position: -378px -32px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_toc {
+    background-position: -451px -32px;
+}
+
+a.ww_skin_toc_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_index {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -128px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_index:hover {
+    background-position: -376px -128px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_index {
+    background-position: -448px -128px;
+}
+
+a.ww_skin_index_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_home {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_home {
+    background-position: -304px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_home:hover {
+    background-position: -376px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_home {
+    background-position: -448px -1376px;
+}
+
+a.ww_skin_home_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_search {
+    height: 38px;
+	background-image: none !important;
+	width: 10px;
+  background-position: -100px -100px;
+  margin-left:3px;
+}
+
+.layout_wide .ww_skin_search{
+  width: 10px;
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_wide .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_narrow .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_search {
+    background-position: -450px -224px;
+}
+
+.ww_skin_globe {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -320px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_globe:hover {
+    background-position: -376px -320px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_globe {
+    background-position: -448px -320px;
+}
+
+a.ww_skin_globe_spacer {
+    background-image: none;
+    width: 24px;
+}
+
+.ww_skin_next {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -416px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_next {
+    background-position: -304px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_next:hover {
+    background-position: -376px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_next {
+    background-position: -448px -416px;
+}
+
+a.ww_skin_next_spacer {
+    display: none;
+}
+
+.layout_narrow a.ww_skin_next_spacer {
+    display: none;
+}
+
+.ww_skin_prev {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -512px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_prev {
+    background-position: -304px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_prev:hover {
+    background-position: -376px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_prev {
+    background-position: -448px -512px;
+}
+
+#toolbar_div {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.ww_skin_toolbar {
+	padding-top: 15px;
+}
+
+.ww_skin_toolbar_button_left {
+	padding-left: 5px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_center {
+    height: 38px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_right {
+	border: none;
+}
+
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+    background: #757575;
+}
+
+.ww_skin_search_form .ww_skin_toolbar_background_selected {
+	display: none !important;
+}
+
+.ww_skin_toolbar_left_background {
+    margin-left: 0;
+}
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+	background: transparent;
+}
+
+.ww_skin_toolbar_background_default {
+	background: transparent;
+}
+
+.ww_skin_search_input {
+  color: #525252;
+  height: 20px;
+  font-size: 13px;
+  margin: 5px 0 0 18px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  background-image: url('images/search-50.png');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding: 3px;
+  text-indent: 20px;
+  width: 250px;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_toc_container {
+	background-color: transparent;
+	border: none;
+}
+
+.ww_skin_toc_level_1 > li > div {
+    padding-left: 23px;
+}
+
+.ww_skin_toc_level_2 > li > div {
+    padding-left: 43px;
+}
+
+.ww_skin_toc_level_3 > li > div {
+    padding-left: 63px;
+}
+
+.ww_skin_toc_level_4 > li > div {
+    padding-left: 83px;
+}
+
+.ww_skin_toc_level_5 > li > div {
+    padding-left: 103px;
+}
+
+.ww_skin_toc_level_6 > li > div {
+    padding-left: 123px;
+}
+
+.ww_skin_toc_level_7 > li > div {
+    padding-left: 138px;
+}
+
+.ww_skin_toc_entry {
+    font-family: Helvetica, Arial, sans-serif;
+    border-width: 0px 0 0 0;
+    margin: 0;
+    padding: 8px 20px 8px 0;
+	line-height: 15px;
+}
+
+.ww_skin_toc_level_1:first-child > li:first-child > .ww_skin_toc_entry:first-child {
+    border-width: 0;
+}
+
+.ww_skin_toc_entry:hover {
+    background: #E0E0E0;
+}
+
+.ww_skin_toc_entry > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.ww_skin_toc_entry > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry:hover > a {
+    color: black;
+}
+
+.ww_skin_toc_entry:hover > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+    background-color: rgb(67,114,255);
+}
+
+.ww_skin_toc_dropdown {
+    margin: 2px 4px 0 0px;
+}
+
+.ww_skin_index_link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_panel_frame {
+    padding: 9px 0 0 0;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_panel_content {
+  border-width: 0px;
+  background-color: #fcfcfc;
+}
+
+.ww_skin_lightbox_frame {
+    top: 0;
+    left: 0;
+}
+
+.ww_skin_page_body {
+    padding: 30px 30px;
+	background-color: #fff;
+}
+
+.ww_skin_breadcrumbs {
+    margin: -6px -6px 0 -8px;
+    padding: 4px 24px 4px 12px;
+    color: #a4a4a4;
+    font-weight: normal;
+	max-width: 85%;
+	background: transparent;
+}
+
+.ww_skin_breadcrumbs a:link {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:visited {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:link:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_breadcrumbs a:visited:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+#wwconnect_header {
+  margin-bottom: 20px;
+}
+
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_toc_entry{
+	border: none;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+	background: rgb(67,114,255);
+}
+
+
+/* medium */
+@media only screen
+and (max-width : 769px) {
+  .ww_skin_search_input {
+    width: 170px;
+}
+
+}
+
+/* small */
+@media only screen
+and (max-width: 535px) {
+  .ww_skin_search_input {
+    width: 150px;
+  }
+
+a#banner{
+  height: 30px;
+  width: 160px;
+  margin-left: 15px;
+}
+
+div#container_div {
+  margin-top: 5px;
+}
+
+table.ww_skin_toolbar {
+  padding-top: 10px;
+}
+
+}
+
+/*phone*/
+@media only screen
+and (max-width : 435px) {
+
+  a#banner {
+    width: 129px;
+  }
+
+  .ww_skin_search_input {
+    width: 130px;
+  }
+   
+  body { 
+    overflow-x: hidden;
+  }
+  
+  .layout_narrow {
+    overflow-x: hidden;
+  }
+  
+  #presentation_div {
+    overflow-x:hidden;
+  }
+  
+  #page_div {
+    overflow-x:hidden;
+  }
+    div#page_div {
+    overflow-x: hidden;
+  }
+  html {
+   overflow-x: hidden;
+  }
+  body.ww_skin_page_body {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  
+}
+--></style></head><body id="phbWl23fnjq_002bLwA5IZjwDKw" class="ww_skin_page_body" onload="Page.OnLoad('../index.html#page/FMP_Help/new-features.html');"><header id="wwconnect_header"><div class="ww_skin_breadcrumbs"><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/basics.html#wwconnect_header">FileMaker Pro Advanced basics</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_current">New features in FileMaker Pro 18 Advanced</span></div><div class="ww_skin_page_toolbar"><a class="ww_behavior_print ww_skin ww_skin_print" title="Print" href="#">&nbsp;</a></div></header><h1 id="ww1133564" class="h2-head2">New features in FileMaker Pro 18 Advanced</h1><p id="ww1155975" class="b-body">FileMaker&nbsp;Pro&nbsp;18 Advanced includes the following new features and improvements.</p><h2 id="ww1159358" class="hs1-headsub1">Support for FileMaker&nbsp;Cloud 2 and FileMaker&nbsp;ID</h2><p id="ww1160230" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>FileMaker&nbsp;ID and the My Apps window – FileMaker&nbsp;ID users can sign in and use the My Apps window to work with their team's custom apps hosted by FileMaker&nbsp;Cloud 2. The single sign-in allows users to open any apps they've been granted access to. 
+    <a href="../FMP_Help/opening-managing-files.html#ww1028283"
+   
+     title="Opening and managing files"
+    ><span class="zh-hyper">Opening and managing files</span></a>.</p><p id="ww1160238" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Upload to a FileMaker&nbsp;Cloud 2 host – The new interface for uploading FileMaker&nbsp;Pro Advanced files allows team managers to upload files to their FileMaker&nbsp;Cloud 2 host. See 
+    <a href="../FMP_Help/uploading-to-server.html#ww1059150"
+   
+     title="Uploading files to a FileMaker host"
+    ><span class="zh-hyper">Uploading files to a FileMaker host</span></a>.</p><p id="ww1159652" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Manage security for files hosted by FileMaker&nbsp;Cloud 2 – For each team you're in, you can grant FileMaker&nbsp;ID users and groups access to a file, view the FileMaker&nbsp;ID user names in a group, and assign privilege sets in the Manage Security dialog box. See 
+    <a href="../FMP_Help/managing-accounts.html#ww1083622"
+   
+     title="Managing accounts"
+    ><span class="zh-hyper">Managing accounts</span></a>.</p><h2 id="ww1159656" class="hs1-headsub1">Improved data importing and file conversion</h2><p id="ww1159657" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>With the new Import Field Mapping dialog box, you can:</p><p id="ww1160299" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>choose target fields from a list that you can search</p><p id="ww1160300" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>choose any record in the source file to use as field names for certain import file types</p><p id="ww1160301" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>for each target field, choose whether to perform auto-enter options while importing</p><p id="ww1158914" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>import data that uses a custom character to separate field values</p><p id="ww1158920" class="b1-body1">See 
+    <a href="../FMP_Help/importing-data.html#ww1027874"
+   
+     title="Importing data into FileMaker Pro Advanced"
+    ><span class="zh-hyper">Importing data into FileMaker Pro Advanced</span></a> and 
+    <a href="../FMP_Help/import-export-formats.html#ww1046089"
+   
+     title="Supported import/export file formats"
+    ><span class="zh-hyper">Supported import/export file formats</span></a>.</p><p id="ww1158922" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>More conversion options – When converting certain supported file types, you can now specify a custom character that separates field values, choose any record to use as field names, choose which fields to include, and specify a target table name. See 
+    <a href="../FMP_Help/converting-to-new-file.html#ww1041065"
+   
+     title="Converting a data file to a new FileMaker Pro Advanced file"
+    ><span class="zh-hyper">Converting a data file to a new FileMaker Pro Advanced file</span></a>.</p><h2 id="ww1158967" class="hs1-headsub1">Security enhancements</h2><p id="ww1158968" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>With the new Manage Security dialog box, you can:</p><p id="ww1158969" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>work with a list of accounts filtered by authentication type, assign privilege sets to users and groups directly in the list, and perform other common tasks in the details pane without leaving the list</p><p id="ww1158970" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>manage privilege sets, extended privileges, and file access in the Advanced Security Settings dialog box</p><p id="ww1158971" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>see whether the selected authentication type is supported on the file's current host</p><p id="ww1159021" class="b1-body1">See 
+    <a href="../FMP_Help/managing-accounts.html#ww1083622"
+   
+     title="Managing accounts"
+    ><span class="zh-hyper">Managing accounts</span></a>, 
+    <a href="../FMP_Help/creating-editing-privilege-sets.html#ww1088352"
+   
+     title="Creating and editing privilege sets"
+    ><span class="zh-hyper">Creating and editing privilege sets</span></a>, 
+    <a href="../FMP_Help/managing-extended-privileges.html#ww1029551"
+   
+     title="Creating and editing extended privileges"
+    ><span class="zh-hyper">Creating and editing extended privileges</span></a>, and 
+    <a href="../FMP_Help/authorizing-access.html#ww1043154"
+   
+     title="Authorizing access to files"
+    ><span class="zh-hyper">Authorizing access to files</span></a>.</p><p id="ww1158995" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Privilege to manage accounts that don't have full access – You can now grant users the limited ability to create and delete access to a file and assign existing privilege sets without allowing them to modify groups or users that have the Full Access privilege set or create or edit privilege sets. See 
+    <a href="../FMP_Help/other-privileges.html#ww1029402"
+   
+     title="Editing other privileges"
+    ><span class="zh-hyper">Editing other privileges</span></a>.</p><p id="ww1158999" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Unsigned plug-in notification – FileMaker&nbsp;Pro Advanced notifies you when a plug-in has not been digitally signed by its developer. See 
+    <a href="../FMP_Help/permitted-hosts-preferences.html#ww1032163"
+   
+     title="Setting permitted hosts and plug-ins preferences"
+    ><span class="zh-hyper">Setting permitted hosts and plug-ins preferences</span></a>.</p><p id="ww1159478" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Full access required by default to reference a file – The option to require the Full Access privilege set to use references to a file is now enabled by default in newly created files. The option is unchanged in existing files. See 
+    <a href="../FMP_Help/authorizing-access.html#ww1043154"
+   
+     title="Authorizing access to files"
+    ><span class="zh-hyper">Authorizing access to files</span></a>.</p><p id="ww1159482" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Functions for digitally signing data – New functions allow you to digitally sign data and verify signatures of signed data with cryptographic keys. See "New functions," below.</p><p id="ww1159501" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>fmodata extended privilege – Allows access to a file from an OData provider. See 
+    <a href="../FMP_Help/extended-privileges.html#ww1029256"
+   
+     title="Editing extended privileges for a privilege set"
+    ><span class="zh-hyper">Editing extended privileges for a privilege set</span></a>.</p><h2 id="ww1160153" class="hs1-headsub1">Improved usability</h2><p id="ww1160154" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Move objects with Shift-Arrow keys – Using the Shift-Arrow keys in Layout mode now moves objects in increments 10 times larger than when using the Arrow keys. See 
+    <a href="../FMP_Help/mode-shortcuts-windows.html#ww1042904"
+   
+     title="Mode keyboard shortcuts (Windows)"
+    ><span class="zh-hyper">Mode keyboard shortcuts (Windows)</span></a> and 
+    <a href="../FMP_Help/mode-shortcuts-os-x.html#ww1028037"
+   
+     title="Mode keyboard shortcuts (macOS)"
+    ><span class="zh-hyper">Mode keyboard shortcuts (macOS)</span></a>.</p><p id="ww1160161" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Read and write external data files – Create scripts that read, write, and manage external data files—for example, to write log files or export data in a custom format. See "New script steps," below.</p><p id="ww1157930" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Open files with a version-specific URL – You can now use the fmp18 scheme in URLs to open files specifically with FileMaker&nbsp;Pro 18 Advanced or FileMaker&nbsp;Go 18. See 
+    <a href="../FMP_Help/opening-files-url.html#ww1077454"
+   
+     title="Opening files using a URL"
+    ><span class="zh-hyper">Opening files using a URL</span></a>.</p><p id="ww1160148" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Open a custom app upon start – You can now use the personalization file during a command-line installation to specify a custom app to open when FileMaker&nbsp;Pro Advanced starts. See 
+    <a href="https://www.filemaker.com/redirects/fmp18_admin.html?page=doc_net_install&amp;lang=en"
+   
+     target="external_window"
+    ><span class="h-hyperlink">FileMaker&nbsp;Pro Network Install Setup Guide</span></a>.</p><p id="ww1160150" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Save files as XML – You can now save a FileMaker&nbsp;Pro Advanced file in an XML format that represents the schema, layouts, scripts, and other parts of the file. You can use the XML file to document changes in your custom app between versions and use standard text-based tools to compare versions. See 
+    <a href="../FMP_Help/documenting-schemas.html#ww1071440"
+   
+     title="Documenting database schemas"
+    ><span class="zh-hyper">Documenting database schemas</span></a>, 
+    <a href="../FMP_Help/save-a-copy-as-xml.html#ww1273800"
+   
+     title="Save a Copy as XML"
+    ><span class="zh-hyper">Save a Copy as XML script step</span></a>, and 
+    <a href="../FMP_Help/render-file-as-xml.html#ww1260559"
+   
+     title="Render File as XML"
+    ><span class="zh-hyper">Render File as XML script step</span></a>. </p><h2 id="ww1157537" class="hs1-headsub1">Script steps</h2><p id="ww1155979" class="b-body">New script steps</p><p id="ww1155980" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Close Data File – Closes an open data file. See 
+    <a href="../FMP_Help/close-data-file.html#ww1258775"
+   
+     title="Close Data File"
+    ><span class="zh-hyper">Close Data File script step</span></a>.</p><p id="ww1155981" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Create Data File – Creates an empty, closed data file, to then open with the Open Data File script step and add data to using the Write to Data File script step. See 
+    <a href="../FMP_Help/create-data-file.html#ww1258616"
+   
+     title="Create Data File"
+    ><span class="zh-hyper">Create Data File script step</span></a>.</p><p id="ww1155983" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Delete File – Deletes a file. See 
+    <a href="../FMP_Help/delete-file.html#ww1259051"
+   
+     title="Delete File"
+    ><span class="zh-hyper">Delete File script step</span></a>.</p><p id="ww1155984" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Get Data File Position – Returns the read-write position in an open data file. See 
+    <a href="../FMP_Help/get-data-file-position.html#ww1259105"
+   
+     title="Get Data File Position"
+    ><span class="zh-hyper">Get Data File Position script step</span></a>.</p><p id="ww1155985" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Get File Exists – Returns 1 (true) if a file exists; otherwise, returns 0 (false). See 
+    <a href="../FMP_Help/get-file-exists.html#ww1259229"
+   
+     title="Get File Exists"
+    ><span class="zh-hyper">Get File Exists script step</span></a></p><p id="ww1156175" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Get File Size – Returns the size, in bytes, of a file. See 
+    <a href="../FMP_Help/get-file-size.html#ww1259358"
+   
+     title="Get File Size"
+    ><span class="zh-hyper">Get File Size script step</span></a>.</p><p id="ww1160513" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Open Data File – Opens a data file for use with other data file script steps. See 
+    <a href="../FMP_Help/open-data-file.html#ww1259483"
+   
+     title="Open Data File"
+    ><span class="zh-hyper">Open Data File script step</span></a>.</p><p id="ww1160518" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Open Favorites – Opens the Favorites window. See 
+    <a href="../FMP_Help/open-my-apps.html#ww1260222"
+   
+     title="Open Favorites"
+    ><span class="zh-hyper">Open Favorites script step</span></a>.</p><p id="ww1160521" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Open Upload to Host – Opens the Upload to Host dialog box. See 
+    <a href="../FMP_Help/upload-to-server.html#ww1218297"
+   
+     title="Open Upload To Host"
+    ><span class="zh-hyper">Open Upload To Host script step</span></a>.</p><p id="ww1155988" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Read from Data File – Reads data from an open data file. See 
+    <a href="../FMP_Help/read-from-data-file.html#ww1259757"
+   
+     title="Read from Data File"
+    ><span class="zh-hyper">Read from Data File script step</span></a>.</p><p id="ww1155989" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Rename File – Renames a file. See 
+    <a href="../FMP_Help/rename-file.html#ww1259783"
+   
+     title="Rename File"
+    ><span class="zh-hyper">Rename File script step</span></a>.</p><p id="ww1156657" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Render File as XML – Stores in a field or variable an XML representation of the schema, layouts, and scripts of an open file. See 
+    <a href="../FMP_Help/render-file-as-xml.html#ww1260559"
+   
+     title="Render File as XML"
+    ><span class="zh-hyper">Render File as XML script step</span></a>.</p><p id="ww1156599" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Save a Copy as XML – Saves a copy of the current file as an XML representation of the schema, layouts, and scripts. See 
+    <a href="../FMP_Help/save-a-copy-as-xml.html#ww1273800"
+   
+     title="Save a Copy as XML"
+    ><span class="zh-hyper">Save a Copy as XML script step</span></a>.</p><p id="ww1155990" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Set Data File Position – Sets the read-write position in an open data file. See 
+    <a href="../FMP_Help/set-data-file-position.html#ww1259908"
+   
+     title="Set Data File Position"
+    ><span class="zh-hyper">Set Data File Position script step</span></a>.</p><p id="ww1158750" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Set Error Logging – Controls whether errors are logged while the current file's scripts are running. See 
+    <a href="../FMP_Help/set-error-logging.html#ww1269257"
+   
+     title="Set Error Logging"
+    ><span class="zh-hyper">Set Error Logging script step</span></a>.</p><p id="ww1155991" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Write to Data File – Writes data to an open data file. See 
+    <a href="../FMP_Help/write-to-data-file.html#ww1260033"
+   
+     title="Write to Data File"
+    ><span class="zh-hyper">Write to Data File script step</span></a>.</p><p id="ww1155992" class="b-body">Changed script steps</p><p id="ww1155993" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Open My Apps – This script step is now Open Favorites. See 
+    <a href="../FMP_Help/open-my-apps.html#ww1260222"
+   
+     title="Open Favorites"
+    ><span class="zh-hyper">Open Favorites script step</span></a>.</p><p id="ww1156509" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Upload to FileMaker&nbsp;Server – This script step is now Open Upload to Host. See 
+    <a href="../FMP_Help/upload-to-server.html#ww1218297"
+   
+     title="Open Upload To Host"
+    ><span class="zh-hyper">Open Upload To Host script step</span></a>.</p><p id="ww1156888" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Insert from URL</p><p id="ww1159825" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Supported URL protocols now include smb, smtp, smtps, ldap, and ldaps.</p><p id="ww1159844" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Sending email via SMTP is now supported via cURL with the addition of the <code class="c-code code_pre_wrap">--mail-auth</code>, <code class="c-code code_pre_wrap">--mail-from</code>, and <code class="c-code code_pre_wrap">--mail-rcpt</code> options. This includes sending email in HTML format.</p><p id="ww1159858" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Requesting uncompressed responses from a server is now supported via the <code class="c-code code_pre_wrap">--no-compressed</code> cURL option.</p><p id="ww1157314" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>When the cURL library returns an error, the returned data is now stored in the target if the target is a text field or a text variable.</p><p id="ww1159874" class="b1-body1">See 
+    <a href="../FMP_Help/insert-from-url.html#ww1210738"
+   
+     title="Insert From URL"
+    ><span class="zh-hyper">Insert From URL script step</span></a> and 
+    <a href="../FMP_Help/curl-options.html#ww1127302"
+   
+     title="Supported cURL options"
+    ><span class="zh-hyper">Supported cURL options</span></a>.</p><p id="ww1157140" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Open Help – This script step is no longer supported in FileMaker&nbsp;WebDirect, because FileMaker&nbsp;WebDirect no longer includes Help. See 
+    <a href="../FMP_Help/open-help.html#ww1217432"
+   
+     title="Open Help"
+    ><span class="zh-hyper">Open Help script step</span></a>.</p><p id="ww1157258" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Insert from Device – This script step now recognizes PDF417, ITF-14, Aztec, and Data Matrix bar code types. See 
+    <a href="../FMP_Help/insert-from-device.html#ww1210454"
+   
+     title="Insert From Device"
+    ><span class="zh-hyper">Insert From Device script step</span></a>.</p><p id="ww1157289" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Save Records as PDF – This script step now supports the <strong class="o-onscreen">Append to existing PDF</strong> option and Security tab options in FileMaker&nbsp;Go. See 
+    <a href="../FMP_Help/save-records-as-pdf.html#ww1212730"
+   
+     title="Save Records As PDF"
+    ><span class="zh-hyper">Save Records As PDF script step</span></a>.</p><p id="ww1157359" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Import Records – This script step now supports the new options available in the Import Field Mapping dialog box. See 
+    <a href="../FMP_Help/import-records.html#ww1212259"
+   
+     title="Import Records"
+    ><span class="zh-hyper">Import Records script step</span></a>.</p><p id="ww1157432" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Convert File – For supported file formats, this script step now supports using any row in the source file as field names in the converted file, choosing which fields to import, and specifying a target table name. See 
+    <a href="../FMP_Help/convert-file.html#ww1215464"
+   
+     title="Convert File"
+    ><span class="zh-hyper">Convert File script step</span></a>.</p><h2 id="ww1157436" class="hs1-headsub1">Functions</h2><p id="ww1159530" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Some function groups in the Specify Calculation dialog box and in Help have been reorganized to better reflect their purpose. See 
+    <a href="../FMP_Help/japanese-functions.html#ww1301415"
+   
+     title="Japanese functions"
+    ><span class="zh-hyper">Japanese functions</span></a>, 
+    <a href="../FMP_Help/json-functions-category.html#ww1282789"
+   
+     title="JSON functions"
+    ><span class="zh-hyper">JSON functions</span></a>, and 
+    <a href="../FMP_Help/miscellaneous-functions.html#ww1286624"
+   
+     title="Miscellaneous functions"
+    ><span class="zh-hyper">Miscellaneous functions</span></a>.</p><p id="ww1156016" class="b-body">New functions</p><p id="ww1159388" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>CryptGenerateSignature – Generates the digital signature of the data. See 
+    <a href="../FMP_Help/cryptgeneratesignature.html#ww1281421"
+   
+     title="CryptGenerateSignature"
+    ><span class="zh-hyper">CryptGenerateSignature function</span></a>.</p><p id="ww1159431" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>CryptVerifySignature – Verifies whether a digital signature is valid for the data. See 
+    <a href="../FMP_Help/cryptverifysignature.html#ww1281466"
+   
+     title="CryptVerifySignature"
+    ><span class="zh-hyper">CryptVerifySignature function</span></a>.</p><p id="ww1156018" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Get(AccountType) – Returns the current account's authentication type. See 
+    <a href="../FMP_Help/get-accounttype.html#ww1287990"
+   
+     title="Get(AccountType)"
+    ><span class="zh-hyper">Get(AccountType) function</span></a>.</p><p id="ww1156698" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Get(OpenDataFileInfo) – Returns the file ID and path of each open data file. See 
+    <a href="../FMP_Help/get-opendatafileinfo.html#ww1291156"
+   
+     title="Get(OpenDataFileInfo)"
+    ><span class="zh-hyper">Get(OpenDataFileInfo) function</span></a>.</p><p id="ww1156941" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>SetRecursion – Sets the maximum number of iterations for recursion and loops within an expression. See 
+    <a href="../FMP_Help/set-recursion.html#ww1286394"
+   
+     title="SetRecursion"
+    ><span class="zh-hyper">SetRecursion function</span></a>.</p><p id="ww1156020" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>While – Repeats logic while the condition is true, then returns the result. See 
+    <a href="../FMP_Help/while.html#ww1286452"
+   
+     title="While"
+    ><span class="zh-hyper">While function</span></a>.</p><p id="ww1157169" class="b-body">Changed functions</p><p id="ww1157197" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Get(LastExternalErrorDetail) – This function now returns information when plug-ins don't install or load. See 
+    <a href="../FMP_Help/get-lastexternalerrordetail.html#ww1290487"
+   
+     title="Get(LastExternalErrorDetail)"
+    ><span class="zh-hyper">Get(LastExternalErrorDetail) function</span></a>.</p><h2 id="ww1156021" class="hs1-headsub1">Changed and removed features</h2><p id="ww1157000" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Custom functions that use non-tail recursion are now limited to 50,000 rather than 10,000 iterations by default, subject to available call stack space in memory. The limit can be increased or decreased using the 
+    <a href="../FMP_Help/set-recursion.html#ww1286394"
+   
+     title="SetRecursion"
+    ><span class="zh-hyper">SetRecursion function</span></a>.</p><p id="ww1157216" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Support for the Photoshop image format has been restored in macOS. See 
+    <a href="../FMP_Help/data-in-container-fields.html#ww1053046"
+   
+     title="Using data in container fields"
+    ><span class="zh-hyper">Using data in container fields</span></a>.</p><p id="ww1159580" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>The name of the FileMaker&nbsp;Pro Advanced application now includes the version number. If you use external scripts that rely on the application name, you may need to update them.</p><h2 id="ww1128712" class="rh-relatedhead"><span>Related topics</span>&nbsp;</h2><p id="ww1128716" class="rt-relatedtopic">
+    <a href="../FMP_Help/feature-compatibility.html#ww1032935"
+   
+     title="FileMaker Pro Advanced features not compatible with previous versions"
+    ><span class="zh-hyper">FileMaker Pro Advanced features not compatible with previous versions</span></a></p><!-- FMI - Feedback Link --><div class="feedbacklink">Was this topic helpful? <a href="https://www.filemaker.com/redirects/fmp18_admin.html?page=feedback&amp;lang=en" target="external_window">Send feedback.</a></div><footer><!-- Related Topics --><!--                --><!-- Disqus --><!--        --><!-- Google Translation --><!--                    --><br /></footer></body></html>

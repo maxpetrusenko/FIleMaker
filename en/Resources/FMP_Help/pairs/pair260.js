@@ -1,0 +1,22 @@
+var pairs =
+{
+"get":{"requesto":1,"requestomitstate":1,"request":1}
+,"requesto":{"mitstate":1}
+,"mitstate":{"returns":1}
+,"returns":{"true":1,"false":1,"omit":1}
+,"true":{"if":1}
+,"if":{"omit":1}
+,"omit":{"selected":1,"state":1}
+,"selected":{"current":1}
+,"current":{"find":1}
+,"find":{"request":1}
+,"request":{"returns":1,"get":1,"omit":1}
+,"false":{"get":1}
+,"requestomitstate":{"none":1,"get":1}
+,"none":{"number":1}
+,"number":{"filemaker":1}
+,"filemaker":{"pro":1}
+,"pro":{"8.0":1}
+,"8.0":{"returns":1}
+}
+;Search.control.loadWordPairs(pairs);

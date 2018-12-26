@@ -1,0 +1,932 @@
+<!DOCTYPE html ><html xml:lang="en" lang="en" data-highlight-require-whitespace="false" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- saved from url=(0016)http://localhost -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>Creating file paths</title><link rel="Prev" href="deleting-table-field-data.html" title="Previous" /><link rel="Next" href="using-variables.html" title="Next" /><link rel="StyleSheet" href="css/create_db.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/skin.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/social.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" /><!--[if IE 7]><link rel="StyleSheet" href="css/create_db_IE7.css" type="text/css" media="all" /><![endif]--><link rel="StyleSheet" href="css/print.css" type="text/css" media="print" /><script type="text/javascript">
+    'use strict';
+
+    var redirect_url, page_hash;
+
+    if ((window === window.top) && (window.navigator.userAgent.indexOf('bot/') === -1)) {
+        // Redirect
+        //
+        redirect_url = "../index.html#page/FMP_Help/creating-file-paths.html";
+        if (window.document.location.hash.length > 1) {
+            // Sanitize and append it
+            //
+            page_hash = window.document.location.hash.substring(1);
+            page_hash = page_hash.replace(/[\\><:;"]|%5C|%3C|%3E|%3A|%3B|%22/gi, '');
+            redirect_url += '#' + page_hash;
+        }
+        window.document.location.replace(redirect_url);
+    }
+</script><script type="text/javascript" src="scripts/common.js"></script><script type="text/javascript" src="scripts/page.js"></script><script type="text/javascript" src="scripts/search-client.js"></script><script type="text/javascript" src="scripts/unidata.js"></script><script type="text/javascript" src="scripts/unibreak.js"></script><script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-15064788-14', 'auto');
+       ga('set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('send', 'pageview');
+       ga('create', 'UA-15064788-10', 'auto', 'globalProperty');
+       ga('globalProperty.set', {
+       'dimension2': '18',
+       'dimension3': 'en'
+       });
+       ga('globalProperty.send', 'pageview');</script><script type="text/javascript"><!--
+    //FMI - tracking events for GA
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", function AddGaqPush() {
+        var links = document.getElementsByTagName("a");
+        for (var i=0; i < links.length; i++)
+        {
+            if (links[i].href.indexOf("page=help_zip") !== -1) { 
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Download', 'ZIP', '');");
+            } else if (links[i].href.indexOf("documentation") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Documentation Page', '');");
+            } else if (links[i].href.indexOf("page=doc_") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Document', '');");
+            } else if (links[i].href.indexOf("page=helphome_support") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Support', '');");
+            } else if (links[i].href.indexOf("page=feedback") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Feedback', location.href, '');");
+            }
+        }
+      }
+      , false)
+    }
+    // --></script><style type="text/css">
+/*FMI CSS*/
+      <!--
+/* General */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+	line-height: 170%;
+	background-color: rgb(245, 245, 245);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+img.Default {
+	vertical-align: text-bottom;
+}
+
+/* Page */
+div.feedbacklink
+{
+	margin:2em 0 0;
+	font-size:90%;
+	border-top:1px solid #bfbfbf;
+	padding:8px 12px 8px 12px;
+	color:#8d8d8d
+}
+
+.code_pre_wrap {
+	white-space: pre-wrap;
+}
+
+a:link .g-glosslink, a:visited .g-glosslink
+{
+	color: #000000;
+	text-decoration: underline;
+}
+
+.ti-title
+{
+	display: none;
+}
+
+span.c-code {
+  font-size: 9pt;
+}
+
+/* Page toolbar margin-top under breadcrumb */
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+}
+
+.ww_skin_toolbar {
+	padding-top: 20px;
+}
+
+.ti-title
+{
+	display: none;
+}
+.layout_wide {
+    padding: 0 0px 18px 0px;
+}
+
+div#layout_div.layout_narrow input.ww_skin_search_input,
+div#layout_div.layout_wide div#presentation_div.panel_overlay input.ww_skin_search_input {
+    display: inline;
+	visibility: visible;
+}
+
+div#container_div {
+	max-width: 1200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+	width:100%;
+	margin-top: 12px;
+}
+
+div#layout_div.layout_wide div#container_div {
+    left: 0px;
+    right: 0px;
+}
+
+div#index_content {
+  padding: 12px;
+}
+
+div#search {
+  background-color: white;
+}
+
+div#search {
+  background-color: white;
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+
+/* Search */
+body#searchBody {
+	background-color: transparent;
+}
+
+button#back_button {
+  float: left;
+  background: none;
+  background-image: url('../images/back_grey.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  border: 0;
+  text-decoration: none;
+  -webkit-apperance: none;
+  outline: 0;
+  text-display: none;
+  width: 20px;
+  height: 30px;
+  color: rgba(0,0,0,0);
+}
+
+button#back_button:hover {
+    cursor: pointer;
+	background-image: url('../images/back.png');
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+#search-input-text {
+  width: 50%;
+  background: #fff url('../images/search-50.png');
+  margin: 0;
+padding: 2px 0 2px 30px;
+height: 25px;
+background-color: #fff;
+background-size: 15px 15px;
+background-position: 5px 7px;
+background-repeat: no-repeat;
+font-size: 1.2em;
+border: 1px solid rgba(233,233,233,1);
+-webkit-appearance: none;
+border-radius: 3px;
+}
+
+#search-button {
+display: none;	/* original value: inline-block;*/
+overflow: hidden;
+width: 67px;
+height: 31px;
+color: white;
+background-image:linear-gradient(to bottom, #1681c3, #1066a1);
+border-radius: 0 4px 4px 0;
+border: 0px;
+font-size: 1em;
+padding: 3px 6px 3px 6px;
+position: absolute;
+}
+
+#search-results-container {
+  padding: 0.5em 0.5em;
+}
+
+.search-result-title {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.search-result-title > a {
+  color: rgb(67,114,255);
+  text-decoration: none;
+}
+
+.search-result-title > a:active {
+  color: rgb(67,114,255);
+}
+
+.search-result-title > a:visited {
+  color: rgb(67,114,255);
+}
+
+.search-result-summary {
+  padding-top: 4px;
+}
+
+.search-result-highlight{
+	padding:2px;
+	margin:-2px;
+	background-color: #ffffc7;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #ffffc7;
+	padding:2px;
+	margin:-2px;
+}
+
+/*tab size for code snippets - ID Custom */
+.co-code, .co1-code1, ff-funcformat, .ssf-scriptformat{
+	tab-size:3;
+}
+@media only screen and (min-width : 481px) {
+  /*see also "widget" - ID Custom */
+  .sah-seealsohead{
+	float: right;
+	width: 200px;
+	clear: both;
+	margin: 1.6em 0 0 1.8em;
+	padding: 5px 10px;
+	background-color: #F2F2F2;
+  }
+  
+  .sal-seealsolink{
+	float: right;
+	width: 200px;
+	clear: both;
+	background-color: #F2F2F2;
+	margin-top: 0 !important;
+	margin-left: 1.8em;
+	padding: 0 10px 10px;
+	line-height: 120%;
+  }
+}
+/*homepage - ID Custom */
+.welcome {
+  padding-top: 0;
+}
+
+.wol-outlinelinks,
+.wom-outlinemenu {
+  display:flex;
+  flex-wrap:wrap;
+  min-width: 140px;
+}
+.wom-outlinemenu a {
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  font-size: 11pt;
+  width: 40%;
+  background: -moz-linear-gradient(top, #f5f5f5, #fafafa); 
+  background: -webkit-linear-gradient(top,#f5f5f5, #fafafa);
+  background: linear-gradient(to bottom, #f5f5f5, #fafafa);
+  margin: 0 5px 10px 5px;
+}
+.wol-outlinelinks a{
+  font-size: 10pt;
+  width: 28%;
+}
+.wom-outlinemenu a,
+.wol-outlinelinks a{
+  padding: 10px;
+  text-align:center;
+  flex-grow: 1;
+
+}
+.wom-outlinemenu a .h-hyperlink,
+.wol-outlinelinks a .h-hyperlink,
+.wol-outlinelinks a .zh-hyper{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/*Skin.css*/
+a#banner {
+  background-image: url('images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 38px;
+  width: 300px;
+  margin-bottom: -5px;
+  display:block;
+}
+
+.ww_skin_company_logo > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:link:hover, .ww_skin_company_logo > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_name > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:link:hover, .ww_skin_company_name > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_email > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:link:hover, .ww_skin_company_email > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_progress_bar {
+    border: 1px solid #353535;
+}
+
+.ww_skin_progress_segment_complete {
+    background-color: #353535;
+}
+
+.ww_skin {
+	background-size: 600px auto;
+}
+
+.ww_skin_toc {
+    width: 38px;
+    height: 38px;
+    background-position: -306px -32px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_toc:hover {
+    background-position: -378px -32px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_toc {
+    background-position: -451px -32px;
+}
+
+a.ww_skin_toc_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_index {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -128px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_index:hover {
+    background-position: -376px -128px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_index {
+    background-position: -448px -128px;
+}
+
+a.ww_skin_index_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_home {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_home {
+    background-position: -304px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_home:hover {
+    background-position: -376px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_home {
+    background-position: -448px -1376px;
+}
+
+a.ww_skin_home_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_search {
+    height: 38px;
+	background-image: none !important;
+	width: 10px;
+  background-position: -100px -100px;
+  margin-left:3px;
+}
+
+.layout_wide .ww_skin_search{
+  width: 10px;
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_wide .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_narrow .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_search {
+    background-position: -450px -224px;
+}
+
+.ww_skin_globe {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -320px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_globe:hover {
+    background-position: -376px -320px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_globe {
+    background-position: -448px -320px;
+}
+
+a.ww_skin_globe_spacer {
+    background-image: none;
+    width: 24px;
+}
+
+.ww_skin_next {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -416px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_next {
+    background-position: -304px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_next:hover {
+    background-position: -376px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_next {
+    background-position: -448px -416px;
+}
+
+a.ww_skin_next_spacer {
+    display: none;
+}
+
+.layout_narrow a.ww_skin_next_spacer {
+    display: none;
+}
+
+.ww_skin_prev {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -512px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_prev {
+    background-position: -304px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_prev:hover {
+    background-position: -376px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_prev {
+    background-position: -448px -512px;
+}
+
+#toolbar_div {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.ww_skin_toolbar {
+	padding-top: 15px;
+}
+
+.ww_skin_toolbar_button_left {
+	padding-left: 5px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_center {
+    height: 38px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_right {
+	border: none;
+}
+
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+    background: #757575;
+}
+
+.ww_skin_search_form .ww_skin_toolbar_background_selected {
+	display: none !important;
+}
+
+.ww_skin_toolbar_left_background {
+    margin-left: 0;
+}
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+	background: transparent;
+}
+
+.ww_skin_toolbar_background_default {
+	background: transparent;
+}
+
+.ww_skin_search_input {
+  color: #525252;
+  height: 20px;
+  font-size: 13px;
+  margin: 5px 0 0 18px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  background-image: url('images/search-50.png');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding: 3px;
+  text-indent: 20px;
+  width: 250px;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_toc_container {
+	background-color: transparent;
+	border: none;
+}
+
+.ww_skin_toc_level_1 > li > div {
+    padding-left: 23px;
+}
+
+.ww_skin_toc_level_2 > li > div {
+    padding-left: 43px;
+}
+
+.ww_skin_toc_level_3 > li > div {
+    padding-left: 63px;
+}
+
+.ww_skin_toc_level_4 > li > div {
+    padding-left: 83px;
+}
+
+.ww_skin_toc_level_5 > li > div {
+    padding-left: 103px;
+}
+
+.ww_skin_toc_level_6 > li > div {
+    padding-left: 123px;
+}
+
+.ww_skin_toc_level_7 > li > div {
+    padding-left: 138px;
+}
+
+.ww_skin_toc_entry {
+    font-family: Helvetica, Arial, sans-serif;
+    border-width: 0px 0 0 0;
+    margin: 0;
+    padding: 8px 20px 8px 0;
+	line-height: 15px;
+}
+
+.ww_skin_toc_level_1:first-child > li:first-child > .ww_skin_toc_entry:first-child {
+    border-width: 0;
+}
+
+.ww_skin_toc_entry:hover {
+    background: #E0E0E0;
+}
+
+.ww_skin_toc_entry > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.ww_skin_toc_entry > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry:hover > a {
+    color: black;
+}
+
+.ww_skin_toc_entry:hover > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+    background-color: rgb(67,114,255);
+}
+
+.ww_skin_toc_dropdown {
+    margin: 2px 4px 0 0px;
+}
+
+.ww_skin_index_link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_panel_frame {
+    padding: 9px 0 0 0;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_panel_content {
+  border-width: 0px;
+  background-color: #fcfcfc;
+}
+
+.ww_skin_lightbox_frame {
+    top: 0;
+    left: 0;
+}
+
+.ww_skin_page_body {
+    padding: 30px 30px;
+	background-color: #fff;
+}
+
+.ww_skin_breadcrumbs {
+    margin: -6px -6px 0 -8px;
+    padding: 4px 24px 4px 12px;
+    color: #a4a4a4;
+    font-weight: normal;
+	max-width: 85%;
+	background: transparent;
+}
+
+.ww_skin_breadcrumbs a:link {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:visited {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:link:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_breadcrumbs a:visited:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+#wwconnect_header {
+  margin-bottom: 20px;
+}
+
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_toc_entry{
+	border: none;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+	background: rgb(67,114,255);
+}
+
+
+/* medium */
+@media only screen
+and (max-width : 769px) {
+  .ww_skin_search_input {
+    width: 170px;
+}
+
+}
+
+/* small */
+@media only screen
+and (max-width: 535px) {
+  .ww_skin_search_input {
+    width: 150px;
+  }
+
+a#banner{
+  height: 30px;
+  width: 160px;
+  margin-left: 15px;
+}
+
+div#container_div {
+  margin-top: 5px;
+}
+
+table.ww_skin_toolbar {
+  padding-top: 10px;
+}
+
+}
+
+/*phone*/
+@media only screen
+and (max-width : 435px) {
+
+  a#banner {
+    width: 129px;
+  }
+
+  .ww_skin_search_input {
+    width: 130px;
+  }
+   
+  body { 
+    overflow-x: hidden;
+  }
+  
+  .layout_narrow {
+    overflow-x: hidden;
+  }
+  
+  #presentation_div {
+    overflow-x:hidden;
+  }
+  
+  #page_div {
+    overflow-x:hidden;
+  }
+    div#page_div {
+    overflow-x: hidden;
+  }
+  html {
+   overflow-x: hidden;
+  }
+  body.ww_skin_page_body {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  
+}
+--></style></head><body id="ppnIUAGIlh8Ctzsf5sntP3g" class="ww_skin_page_body" onload="Page.OnLoad('../index.html#page/FMP_Help/creating-file-paths.html');"><header id="wwconnect_header"><div class="ww_skin_breadcrumbs"><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/creating-a-custom-app.html#wwconnect_header">Creating a custom app</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_current">Creating file paths</span></div><div class="ww_skin_page_toolbar"><a class="ww_behavior_print ww_skin ww_skin_print" title="Print" href="#">&nbsp;</a></div></header><h1 id="ww1183808" class="h2-head2">Creating file paths</h1><p id="ww1183811" class="b-body">You can specify 
+    <a href="../FMP_Help/glossary.html#ww1027722"
+   
+     title="Glossary"
+    ><span class="g-glosslink">file paths</span></a> to an external file or a FileMaker 
+    <a href="../FMP_Help/glossary.html#ww1027629"
+   
+     title="Glossary"
+    ><span class="g-glosslink">data source</span></a>. Each named file or FileMaker data source can consist of one or more file paths. Use multiple file paths when you want FileMaker 
+    <a href="../FMP_Help/glossary.html#ww1027578"
+   
+     title="Glossary"
+    ><span class="g-glosslink">clients</span></a> to search a list of potential files. </p><p id="ww1184042" class="b-body">For information on adding a FileMaker data source and specifying file paths, see 
+    <a href="../FMP_Help/connecting-to-data-sources.html#ww1027612"
+   
+     title="Connecting to external data sources"
+    ><span class="zh-hyper">Connecting to external data sources</span></a>. </p><p id="ww1184044" class="b-body">FileMaker clients support file paths in special FileMaker formats:</p><p id="ww1184088" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 532.8pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 106.7004pt"><p id="ww1184047" class="th-tablehead">Type of path</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 241.82712pt"><p id="ww1184049" class="th-tablehead">Description</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 184.27248pt"><p id="ww1184051" class="th-tablehead">Format</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1184053" class="td-tabledata">Relative</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1184055" class="td-tabledata">The path to a target file specified from the current database's location or from the user's Documents folder (see notes, below)</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1184057" class="td-tabledata"><code class="c-code code_pre_wrap">file:directoryName/fileName</code></p><p id="ww1184058" class="td-tabledata"><code class="c-code code_pre_wrap">filemac:directoryName/</code></p><p id="ww1184059" class="td-tabledata"><code class="c-code code_pre_wrap">filewin:../fileName</code></p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1184061" class="td-tabledata">Full local or remote (macOS)</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1184063" class="td-tabledata">The absolute path to a target file or folder, either local or on a remote volume, beginning at the top level of the file system</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1184065" class="td-tabledata"><code class="c-code code_pre_wrap">filemac:/volumeName/directoryName/fileName</code></p><p id="ww1184066" class="td-tabledata"><code class="c-code code_pre_wrap">filemac:/volumeName/directoryName/</code></p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1184068" class="td-tabledata">Full local (Windows)</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1184070" class="td-tabledata">The absolute path to a target file or folder in Windows, beginning at the top level of the file system</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1184072" class="td-tabledata"><code class="c-code code_pre_wrap">filewin:/driveletter:/directoryName/fileName</code></p><p id="ww1184073" class="td-tabledata"><code class="c-code code_pre_wrap">filewin:/driveletter:/directoryName/</code></p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1184075" class="td-tabledata">Full remote (Windows)</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1184077" class="td-tabledata">The absolute path to a target file or folder on a Windows volume shared using Windows file sharing</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1184079" class="td-tabledata"><code class="c-code code_pre_wrap">filewin://computerName/shareName/directoryName/fileName</code></p><p id="ww1184080" class="td-tabledata"><code class="c-code code_pre_wrap">filewin://computerName/shareName/directoryName/</code></p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1184082" class="td-tabledata">FileMaker Network</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1184085" class="td-tabledata">The network path to a 
+    <a href="../FMP_Help/glossary.html#ww1028096"
+   
+     title="Glossary"
+    ><span class="g-glosslink">shared</span></a> FileMaker&nbsp;Pro Advanced file</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1184087" class="td-tabledata"><code class="c-code code_pre_wrap">fmnet:/hostNameOrIPaddress/fileName</code></p></td></tr></table></div><h2 id="ww1185084" class="hs1-headsub1">About path prefixes</h2><p id="ww1185210" class="b-body">A path prefix determines when FileMaker clients can use a specific path:</p><p id="ww1185428" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Prefixes beginning with <code class="c-code code_pre_wrap">file</code>, <code class="c-code code_pre_wrap">image</code>, or <code class="c-code code_pre_wrap">movie</code> specify the data type of the file. Script steps that work only with specific data types require <code class="c-code code_pre_wrap">image</code> or <code class="c-code code_pre_wrap">movie</code> (see below); otherwise, use <code class="c-code code_pre_wrap">file</code>.</p><p id="ww1185257" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Prefixes ending with <code class="c-code code_pre_wrap">win</code>, <code class="c-code code_pre_wrap">mac</code>, or <code class="c-code code_pre_wrap">linux</code> specify the platform the path can be used on.</p><p id="ww1185305" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>The <code class="c-code code_pre_wrap">fmnet</code> prefix specifies a network path to a shared FileMaker&nbsp;Pro Advanced file.</p><p id="ww1185325" class="b-body">You can use prefixes that begin with <code class="c-code code_pre_wrap">file</code> for any full or relative path. The <code class="c-code code_pre_wrap">file</code> prefix can be used on any platform.</p><p id="ww1186543" class="b-body">Because it can be difficult to create multiple platform-specific paths, in many cases it's easier to use only the <code class="c-code code_pre_wrap">file</code> prefix (without a platform ending) along with the 
+    <a href="../FMP_Help/get-temporarypath.html#ww1292778"
+   
+     title="Get(TemporaryPath)"
+    ><span class="zh-hyper">Get(TemporaryPath) function</span></a> or 
+    <a href="../FMP_Help/get-documentspath.html#ww1289621"
+   
+     title="Get(DocumentsPath)"
+    ><span class="zh-hyper">Get(DocumentsPath) function</span></a> to specify a single path as a 
+    <a href="../FMP_Help/glossary.html#ww1028231"
+   
+     title="Glossary"
+    ><span class="g-glosslink">variable</span></a>. At runtime, a variable path using these functions works specifically on the current client's platform. For example, a variable defined with the following expression specifies the myfile.txt file in the client's temporary folder:</p><code id="ww1186104" class="co-code code_pre_wrap">"file:" &amp; Get ( TemporaryPath ) &amp; "myfile.txt"</code><p id="ww1186105" class="b-body">The following table lists all supported path prefixes and gives examples of where they can be used.</p><p id="ww1185526" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 315.54576000000003pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 76.40424pt"><p id="ww1185871" class="th-tablehead">Path prefix</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 239.14152pt"><p id="ww1185873" class="th-tablehead">Used for</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1185740" class="td-tabledata"><code class="c-code code_pre_wrap">file</code> </p><p id="ww1185741" class="td-tabledata"><code class="c-code code_pre_wrap">filemac</code> </p><p id="ww1185742" class="td-tabledata"><code class="c-code code_pre_wrap">filewin</code> </p><p id="ww1185743" class="td-tabledata"><code class="c-code code_pre_wrap">filelinux</code> </p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1185745" class="td-tabledata">Importing and exporting data using the 
+    <a href="../FMP_Help/import-records.html#ww1212259"
+   
+     title="Import Records"
+    ><span class="zh-hyper">Import Records script step</span></a> and 
+    <a href="../FMP_Help/export-records.html#ww1212129"
+   
+     title="Export Records"
+    ><span class="zh-hyper">Export Records script step</span></a>, FileMaker data sources, files inserted into 
+    <a href="../FMP_Help/glossary.html#ww1041246"
+   
+     title="Glossary"
+    ><span class="g-glosslink">container fields</span></a> using the 
+    <a href="../FMP_Help/insert-file.html#ww1210352"
+   
+     title="Insert File"
+    ><span class="zh-hyper">Insert File script step</span></a>, and script steps that work with 
+    <a href="../FMP_Help/glossary.html#ww1070240"
+   
+     title="Glossary"
+    ><span class="g-glosslink">data files</span></a> </p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1185780" class="td-tabledata"><code class="c-code code_pre_wrap">image</code> </p><p id="ww1185781" class="td-tabledata"><code class="c-code code_pre_wrap">imagemac</code> </p><p id="ww1185782" class="td-tabledata"><code class="c-code code_pre_wrap">imagewin</code> </p><p id="ww1185783" class="td-tabledata"><code class="c-code code_pre_wrap">imagelinux</code> </p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1185760" class="td-tabledata">Image or PDF files inserted into container fields using the 
+    <a href="../FMP_Help/insert-pdf.html#ww1210839"
+   
+     title="Insert PDF"
+    ><span class="zh-hyper">Insert PDF script step</span></a> or 
+    <a href="../FMP_Help/insert-picture.html#ww1210927"
+   
+     title="Insert Picture"
+    ><span class="zh-hyper">Insert Picture script step</span></a>, respectively</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1185837" class="td-tabledata"><code class="c-code code_pre_wrap">movie</code> </p><p id="ww1185838" class="td-tabledata"><code class="c-code code_pre_wrap">moviemac</code> </p><p id="ww1185839" class="td-tabledata"><code class="c-code code_pre_wrap">moviewin</code> </p><p id="ww1185762" class="td-tabledata"><code class="c-code code_pre_wrap">movielinux</code> </p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1185764" class="td-tabledata">Audio/video files inserted into container fields using the 
+    <a href="../FMP_Help/insert-audio-video.html#ww1209925"
+   
+     title="Insert Audio/Video"
+    ><span class="zh-hyper">Insert Audio/Video script step</span></a></p></td></tr></table></div><h2 id="ww1030372" class="hs1-headsub1">Examples of multiple file paths</h2><p id="ww1186415" class="b-body">When you add external data sources or create 
+    <a href="../FMP_Help/glossary.html#ww1028072"
+   
+     title="Glossary"
+    ><span class="g-glosslink">scripts</span></a> that access files, you can use multiple file paths when you want FileMaker clients to search a list of potential files. File paths are searched in the order in which they appear. A FileMaker client opens the first file it is able to successfully locate, which completes the search. Each file path must be on a separate line.</p><p id="ww1176204" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><em class="e-emphasis">Example 1: </em>In this example, a FileMaker&nbsp;Pro Advanced database must work on two different operating systems: a Windows system and a macOS system that each accesses local files. On both platforms, the database must access a local file named test.xlsx. </p><code id="ww1186306" class="co1-code1 code_pre_wrap">filewin:/C:/ExcelFiles/Hosted/test.xlsx<br />filemac:/MacintoshHD/ExcelFiles/Hosted/test.xlsx</code><p id="ww1186314" class="b1-body1">Alternatively, if the Hosted folder is in both systems' Documents folder, you can use a variable set to this expression to specify a single path that works on both platforms:</p><code id="ww1186330" class="co1-code1 code_pre_wrap">"file:" &amp; Get ( DocumentsPath ) &amp; "Hosted/test.xlsx"</code><p id="ww1186377" class="b1-body1">See "Examples of using variables in file paths" below.</p><p id="ww1186307" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><em class="e-emphasis">Example 2: </em>In this example for a scripted record import, a FileMaker&nbsp;Pro Advanced database should access a file that is hosted. However, because the host may not be available, you also reference two alternate files, one hosted by a different server, the other stored locally on your hard drive. If the first network file is unavailable, FileMaker clients will search for the second network file. If the second network file is also unavailable, FileMaker clients will search for the local file.</p><code id="ww1119822" class="co1-code1 code_pre_wrap">fmnet:/host1.domain.com/Databases/test.fmp12<br />fmnet:/host2.domain.com/Databases/test.fmp12<br />file:../Databases/test.fmp12</code><h2 id="ww1152092" class="hs1-headsub1">Examples of using variables in file paths</h2><p id="ww1152094" class="b-body">Variables let you specify file or folder paths dynamically in many 
+    <a href="../FMP_Help/glossary.html#ww1028072"
+   
+     title="Glossary"
+    ><span class="g-glosslink">script</span></a> steps, such as the 
+    <a href="../FMP_Help/insert-file.html#ww1210352"
+   
+     title="Insert File"
+    ><span class="zh-hyper">Insert File script step</span></a> and 
+    <a href="../FMP_Help/import-records.html#ww1212259"
+   
+     title="Import Records"
+    ><span class="zh-hyper">Import Records script step</span></a>. See 
+    <a href="../FMP_Help/using-variables.html#ww1030458"
+   
+     title="Using variables"
+    ><span class="zh-hyper">Using variables</span></a>.</p><p id="ww1030396" class="b-body">In the examples below, assume the following variables:</p><code id="ww1030397" class="co-code code_pre_wrap">$fileName = "test.xlsx"<br />$username = "JohnSmith"<br />$targetDir = "Documents/Clients"<br />$chosenType = "filewin"<br />$$source = "file:Documents/2019/demo files"<br />$driveLetter = "G:"<br />$docsFilePath = "file:" &amp; Get ( DocumentsPath ) &amp; "test.xlsx"<br />$searchList = "file:old results.txt<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file:../archived/old results.txt"</code><p id="ww1030441" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 532.8pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 146.6424pt"><p id="ww1152232" class="th-tablehead">To</p></td><td style="background-color: #DFDFDF; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 201.06648pt"><p id="ww1152234" class="th-tablehead">Path list entry</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 185.09112pt"><p id="ww1152236" class="th-tablehead">Resolved path list</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1152238" class="td-tabledata">Specify a filename only</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1152240" class="td-tabledata"><code class="c-code code_pre_wrap">file:testing/$fileName</code></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1152242" class="td-tabledata"><code class="c-code code_pre_wrap">file:testing/test.xlsx</code></p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1152244" class="td-tabledata">Specify one or more directories in a path</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1152246" class="td-tabledata"><code class="c-code code_pre_wrap">file:$username/$fileName</code></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1152248" class="td-tabledata"><code class="c-code code_pre_wrap">file:JohnSmith/test.xlsx</code></p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1186213" class="td-tabledata">Specify a file in the Documents folder on any supported platform</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1186215" class="td-tabledata"><code class="c-code code_pre_wrap">$docsFilePath</code> </p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1186217" class="td-tabledata">Windows: <code class="c-code code_pre_wrap">/C:/Users/John Smith/Documents/test.xlsx</code> </p><p id="ww1186218" class="td-tabledata">macOS: <code class="c-code code_pre_wrap">/Macintosh HD/Users/johnsmith/Documents/test.xlsx</code> </p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1152250" class="td-tabledata">Specify absolute paths or relative paths, with various path type prefixes</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1152252" class="td-tabledata"><code class="c-code code_pre_wrap">filewin:/$driveLetter/$targetDir/contacts.txt</code></p><p id="ww1152253" class="td-tabledata"><code class="c-code code_pre_wrap">imagemac:../$targetDir/photo.jpg</code></p><p id="ww1155606" class="td-tabledata"><code class="c-code code_pre_wrap">movie:$targetDir/movie.mp4</code> </p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1152255" class="td-tabledata"><code class="c-code code_pre_wrap">filewin:/G:/Documents/Clients/contacts.txt</code></p><p id="ww1152256" class="td-tabledata"><code class="c-code code_pre_wrap">imagemac:../Documents/Clients/photo.jpg</code></p><p id="ww1155617" class="td-tabledata"><code class="c-code code_pre_wrap">movie:Documents/Clients/movie.mp4</code> </p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1152258" class="td-tabledata">Specify a path type prefix dynamically or as part of a longer path</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1152260" class="td-tabledata"><code class="c-code code_pre_wrap">$chosenType:/$driveLetter/$targetDir</code></p><p id="ww1152261" class="td-tabledata"><code class="c-code code_pre_wrap">$$source/$fileName</code></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1152263" class="td-tabledata"><code class="c-code code_pre_wrap">filewin:/G:/Documents/Clients</code></p><p id="ww1152264" class="td-tabledata"><code class="c-code code_pre_wrap">file:Documents/2019/demo files/test.xlsx</code></p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1152266" class="td-tabledata">Specify one or more complete paths</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1152268" class="td-tabledata"><code class="c-code code_pre_wrap">$searchList</code></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1152270" class="td-tabledata"><code class="c-code code_pre_wrap">file:old results.txt</code></p><p id="ww1152271" class="td-tabledata"><code class="c-code code_pre_wrap">file:../archived/old results.txt</code></p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1152273" class="td-tabledata">Specify a directory (not a file)</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1152275" class="td-tabledata"><code class="c-code code_pre_wrap">file:$targetDir/</code></p><p id="ww1152276" class="td-tabledata"><code class="c-code code_pre_wrap">$$source/</code></p><p id="ww1152277" class="td-tabledata"><code class="c-code code_pre_wrap">file:$targetDir/$username/</code></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1152279" class="td-tabledata"><code class="c-code code_pre_wrap">file:Documents/Clients/</code></p><p id="ww1186129" class="td-tabledata"><code class="c-code code_pre_wrap">file:Documents/2019/demo files/</code></p><p id="ww1152281" class="td-tabledata"><code class="c-code code_pre_wrap">file:Documents/Clients/JohnSmith/</code></p></td></tr></table></div><h2 id="ww1152193" class="hs1n-headsub1notes"><span>Notes</span>&nbsp;</h2><p id="ww1183447" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>To access a file located on a shared Windows volume, use the network path format. This format is only compatible with shared Windows volumes. It is not compatible with shared macOS volumes or FileMaker Network sharing.</p><p id="ww1136490" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>To access a file located on a remote macOS volume, ensure that the volume is mounted first and begin the path with <code class="c-code code_pre_wrap">filemac</code>. For example, to export records to the file named <code class="c-code code_pre_wrap">test.xlsx</code> in the <code class="c-code code_pre_wrap">Clients</code> folder on the <code class="c-code code_pre_wrap">Home</code> volume on the <code class="c-code code_pre_wrap">myhost</code> server, the path would be <code class="c-code code_pre_wrap">filemac:/Home/Clients/test.xlsx</code> if you mounted the <code class="c-code code_pre_wrap">Home</code> volume on <code class="c-code code_pre_wrap">myhost</code>.</p><p id="ww1030449" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Do not use an asterisk (<strong class="o-onscreen">*</strong>) as a wildcard character in network file paths, as it slows FileMaker network traffic. When possible, replace an asterisk with the appropriate IP address or use variables in file paths.</p><p id="ww1030456" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Use the following characters as separators in a file path list: "/", ":", or carriage return.</p><p id="ww1152407" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>You can use variables in FileMaker data source references. See 
+    <a href="../FMP_Help/editing-external-data-sources.html#ww1027714"
+   
+     title="Editing FileMaker data sources"
+    ><span class="zh-hyper">Editing FileMaker data sources</span></a>.</p><p id="ww1160502" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>If the current database is opened locally, a relative path is to a target file specified from the current database's location. If the current database is opened remotely, a relative path is to a target file specified from:</p><p id="ww1160509" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>the host's network address, if the path is to a FileMaker&nbsp;Pro Advanced file (any folders in the path are ignored)</p><p id="ww1160729" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>the user's Documents folder, if the path is to a file of any other type</p><p id="ww1160730" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Access to files varies by client:</p><p id="ww1160731" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>For FileMaker&nbsp;Pro Advanced and FileMaker&nbsp;Go, access to local files is limited only by the operating system.</p><p id="ww1160716" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>For server-side scripts, file access is limited to the Documents folder and temporary folder. See 
+    <a href="../FMP_Help/paths-in-server-side-scripts.html#ww1123954"
+   
+     title="Paths in server-side scripts"
+    ><span class="zh-hyper">Paths in server-side scripts</span></a>.</p><p id="ww1160720" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>FileMaker&nbsp;WebDirect, the FileMaker Data API, and Custom Web Publishing cannot access the server's file system.</p><!-- FMI - Feedback Link --><div class="feedbacklink">Was this topic helpful? <a href="https://www.filemaker.com/redirects/fmp18_admin.html?page=feedback&amp;lang=en" target="external_window">Send feedback.</a></div><footer><!-- Related Topics --><!--                --><!-- Disqus --><!--        --><!-- Google Translation --><!--                    --><br /></footer></body></html>

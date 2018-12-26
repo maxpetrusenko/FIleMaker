@@ -1,0 +1,4 @@
+﻿Timestamp	Filename	Error	Message
+2018-12-12 10:16:42.527 -0800	FMJSImageRotate.fmp12	0	*** Started consistency check of improperly closed file, total of 259 block(s) to check
+2018-12-12 10:16:42.534 -0800	FMJSImageRotate.fmp12	0	Reset maximum block sequence number to 368860
+2018-12-12 10:16:42.534 -0800	FMJSImageRotate.fmp12	0	*** Completed consistency check, checked 259 block(s)

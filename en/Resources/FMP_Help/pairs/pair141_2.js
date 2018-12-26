@@ -1,0 +1,22 @@
+var pairs =
+{
+"spelling":{"script":1,"selection":1,"record":1,"entire":1,"options":1}
+,"script":{"steps":1}
+,"steps":{"spelling":1,"check":1}
+,"check":{"spelling":1}
+,"selection":{"text":1}
+,"text":{"check":1}
+,"record":{"check":1}
+,"entire":{"found":1}
+,"found":{"set":1}
+,"set":{"correct":1,"spelling":1}
+,"correct":{"word":1}
+,"word":{"set":1}
+,"options":{"file":1}
+,"file":{"select":1}
+,"select":{"dictionary":1}
+,"dictionary":{"edit":1}
+,"edit":{"user":1}
+,"user":{"dictionary":1}
+}
+;Search.control.loadWordPairs(pairs);

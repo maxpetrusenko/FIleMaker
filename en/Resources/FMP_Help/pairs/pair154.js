@@ -1,0 +1,21 @@
+var pairs =
+{
+"cos":{"returns":1,"angleinradians":1,"1.047":1,"radians":1}
+,"returns":{"cosine":1,".50017107":1,".5":1}
+,"cosine":{"cos":1}
+,"angleinradians":{"cos":1,"angleinradians":1,"-any":1}
+,"-any":{"numeric":1}
+,"numeric":{"expression":1}
+,"expression":{"field":1,"radians":1}
+,"field":{"numeric":1}
+,"radians":{"number":1,"60":1}
+,"number":{"filemaker":1}
+,"filemaker":{"pro":1}
+,"pro":{"6.0":1}
+,"6.0":{"earlier":1}
+,"earlier":{"cos":1}
+,"1.047":{"returns":1}
+,".50017107":{"cos":1}
+,"60":{"returns":1}
+}
+;Search.control.loadWordPairs(pairs);

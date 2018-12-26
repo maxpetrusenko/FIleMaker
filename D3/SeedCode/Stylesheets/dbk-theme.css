@@ -1,0 +1,339 @@
+ /* Default Theme */
+
+/* Shared classes */
+
+/* Default icon color - can be overriden further down */
+.dbk_icon {
+	color: rgb(50,118,177);
+}
+/* Icon color in a disabled state */
+.dbk_icon_disabled {
+	color: rgba(100,100,100, 0.5);
+}
+
+/* Default button style - Mainly used to close popovers */
+.dbk_button_default {
+	color: rgb(51,51,51);
+	background-color: rgb(255,255,255);
+	border-color: rgb(204,204,204);
+}
+.dbk_button_default:hover {
+	background-color: rgb(230,230,230);
+	border-color: rgb(173,173,173);
+}
+
+/* Primary button style - Mainly used to style action buttons like the "advanced filters" button in the sidebar. */
+.dbk_button_primary {
+	color: rgb(255,255,255);
+	background-color: rgb(66,139,202);
+	border-color: rgb(53,126,189);
+}
+.dbk_button_primary:hover {
+	color: rgb(255,255,255);
+	background-color: rgb(48,113,169);
+	border-color: rgb(40,94,142);
+}
+
+/* Link button style - Used for buttons like "reset filters" where they have a url style design. */
+.dbk_button_link {
+}
+.dbk_button_link:hover {
+}
+
+/* Delete button style - Used to style the delete button in the event popover */
+/* Text color signifies danger - Currently used for delete button in edit popover and status popover*/
+.dbk_button_text_danger {
+	color: rgb(217,83,79);
+}
+.dbk_button_text_danger:hover {
+	color: rgb(201,48,44);
+}
+
+/* Background color signifies danger */
+.dbk_button_danger {
+	color: rgb(255,255,255);
+	background-color: rgb(217,83,79);
+	border-color: rgb(212,63,58);
+}
+.dbk_button_danger:hover {
+	background-color: rgb(201,48,44);
+	border-color: rgb(172,41,37);
+}
+
+/* Items presented in lists like calendar and filter lists in sidebar or the select lists in the edit event popover (time-picker) */
+.dbk_listSelectButton {
+	background-color: transparent;
+	color: rgba(255,255,255, .4);
+}
+
+.dbk_listSelectButton.dbk_selected {
+	background-color: rgba(43,93,205,1);
+	color: rgb(255,255,255);
+}
+
+/* Navigation button style - Mainly used for navigating dates in the header and also for viewing contact and project records */
+.dbk_button_nav {
+	color: rgb(50,118,177);
+}
+.dbk_button_navTitle {
+	color: rgb(50,118,177);
+}
+
+/* !-- Additions Block Do Not Remove - Shared Classes --> */
+/* New and updated styles will go after this block */
+/* <-- Additions Block End --! */
+
+/* Sidebar */
+/* Sidebar background - Remove gradient styles to use a solid color here */
+.dbk_sidebar {
+	background: rgb(84,84,84); /* Old browsers */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(84,84,84,1)), color-stop(100%,rgba(45,45,45,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(84,84,84,1) 0%,rgba(45,45,45,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -ms-linear-gradient(top,  rgba(84,84,84,1) 0%,rgba(45,45,45,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(84,84,84,1) 0%,rgba(45,45,45,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#545454', endColorstr='#2d2d2d',GradientType=0 ); /* IE6-9 */
+}
+	/* Tab panel in sidebar */
+	.dbk_sidebar .dbk_tabButton {
+		color: rgb(51,51,51);
+		background-color: rgb(255,255,255);
+		border-color: rgb(204,204,204);
+	}
+	.dbk_sidebar .dbk_tabButton.dbk_selected {
+		color: rgb(255,255,255);
+		background-color: rgb(66,139,202);
+		border-color: rgb(53,126,189);
+	}
+	.dbk_sidebar .dbk_tabButton:hover {
+		color: rgb(51,51,51);
+		background-color: rgb(230,230,230);
+		border-color: rgb(173,173,173);
+	}
+	.dbk_sidebar .dbk_tabButton.dbk_selected:hover {
+		color: rgb(255,255,255);
+		background-color: rgb(66,139,202);
+		border-color: rgb(53,126,189);
+	}
+	.dbk_sidebar .dbk_tabButton .dbk_icon {
+		color: inherit;
+	}
+
+	/* Navigation arrows outside sidebar mini calendar */
+	.dbk_sidebar .dbk_icon {
+		color: rgb(154,154,154);
+	}
+
+	.dbk_settings {
+		color: rgb(255,255,255);
+	}
+	.dbk_sidebar .dbk_contentDivider {
+		background-color: rgb(50,50,50);
+	}
+	.dbk_settings .dbk_dropDownMenu {
+		color: rgb(255,255,255);
+		background-color: rgb(50,50,50);
+		border-color: rgb(0,0,0);
+	}
+
+/* !-- Additions Block Do Not Remove - Sidebar --> */
+/* New and updated styles will go after this block */
+/* <-- Additions Block End --! */
+
+/* Header */
+.dbk_header {
+	color: rgb(0,0,0);
+}
+
+	/* Show and hide sidebar button tab */
+	.dbk_header .dbk_show_hide_sidebar {
+		background-color: rgb(252,248,227);
+		opacity: 0.5;
+	}
+
+	/* Title in header - This is the main date display in the header */
+	.dbk_header .dbk_title {
+		color: inherit;
+	}
+
+	/* Main view navigation buttons - This is the styling for the menu to change views (ie. week, month etc.) */
+	.dbk_viewNav .dbk_button_primary {
+		background-color: rgb(255,255,255);
+		color: rgb(50,118,177);
+	}
+	.dbk_viewNav .dbk_button_primary:hover {
+		background-color: rgb(238,238,238);
+	}
+	.dbk_viewNav .dbk_selected .dbk_button_primary {
+		color: rgb(255,255,255);
+		background-color: rgb(66,139,202);
+	}
+	.dbk_viewNav .dbk_selected .dbk_button_primary:hover {
+		color: rgb(255,255,255);
+		background-color: rgb(66,139,202);
+	}
+
+	/* Column header - This is the header above the calendar columns that usually contains the day of week names above month, and week views or the resource names on resource view */
+	.dbk_columnHeader {
+
+	}
+
+	/* Below you can style the day of week column headers. So if you would like the word "Sunday" to be a different color for example you could add that styling below */
+	.dbk_columnHeader .dbk_day_today {
+
+	}
+	.dbk_columnHeader .dbk_day_sun {
+
+	}
+	.dbk_columnHeader  .dbk_day_mon {
+
+	}
+	.dbk_columnHeader  .dbk_day_tue {
+
+	}
+	.dbk_columnHeader  .dbk_day_wed {
+
+	}
+	.dbk_columnHeader  .dbk_day_thu {
+
+	}
+	.dbk_columnHeader  .dbk_day_fri {
+
+	}
+	.dbk_columnHeader  .dbk_day_sat {
+
+	}
+
+/* !-- Additions Block Do Not Remove - Header --> */
+/* New and updated styles will go after this block */
+/* <-- Additions Block End --! */
+
+/* Main calendar view */
+/* Calendar content - could be used to change background color behind the calendar grid for example */
+.dbk_calendarContent {
+	background-color: rgb(255, 255, 255);
+}
+
+/* Below you can style the day of week columns. So if you would like the background for the Sunday column to be a different color for example you could add that styling below */
+.dbk_calendarContent .dbk_day_today {
+
+}
+.dbk_calendarContent .dbk_day_sun {
+
+}
+.dbk_calendarContent  .dbk_day_mon {
+
+}
+.dbk_calendarContent  .dbk_day_tue {
+
+}
+.dbk_calendarContent  .dbk_day_wed {
+
+}
+.dbk_calendarContent  .dbk_day_thu {
+
+}
+.dbk_calendarContent  .dbk_day_fri {
+
+}
+.dbk_calendarContent  .dbk_day_sat {
+
+}
+/* !-- Additions Block Do Not Remove - Calendar --> */
+/* New and updated styles will go after this block */
+/* <-- Additions Block End --! */
+
+/* Edit event popover */
+.dbk_editEvent {
+	color: inherit;
+}
+	/* Color swatch for event popover */
+	.dbk_editEvent .dbk_color_swatch {
+		display: block; /* Change this to display: none; to hide the angled color swatch */
+	}
+
+	/* List select style for edit popover - This is the highlight when an item is selected for example when clicking to change the date / time */
+	.dbk_editEvent .dbk_listSelectButton {
+		color: inherit;
+		background-color: transparent;
+	}
+	.dbk_editEvent .dbk_listSelectButton.dbk_selected {
+		color: rgb(255,255,255);
+		background-color: rgba(100,100,100, 0.76);
+	}
+
+	/* Label inside the list select button for example "Start", "End", "Status" etc... */
+	.dbk_editEvent .dbk_listSelectButton .dbk_label {
+		color: rgb(125,125,125);
+	}
+	.dbk_editEvent .dbk_listSelectButton.dbk_selected .dbk_label {
+		color: rgb(175,175,175);
+	}
+
+/* !-- Additions Block Do Not Remove - Event Popover --> */
+/* New and updated styles will go after this block */
+/* <-- Additions Block End --! */
+
+/* Picker slide out panel */
+.dbk_slidePanel {
+	background-color: rgb(100,100,100);
+	color: rgb(255,255,255);
+}
+
+	/* Select list style override for inside slide out panel */
+	.dbk_slidePanel .dbk_listSelectButton {
+		color: rgb(255,255,255);
+		background-color: transparent;
+	}
+	.dbk_slidePanel .dbk_listSelectButton.dbk_selected {
+		background-color: rgb(43,93,205);
+	}
+	.dbk_slidePanel .dbk_listSelectButton:hover {
+		background-color: rgb(40,69,126);
+	}
+
+	.dbk_slidePanel .dbk_listSelectButton.dbk_header {
+		background-color: rgb(71,70,71);
+	}
+	.dbk_slidePanel .dbk_listSelectButton.dbk_header:hover {
+		background-color: rgb(71,70,71);
+	}
+
+	.dbk_slidePanel .dbk_listSelectButton.dbk_selected.dbk_header {
+		background-color: rgba(43,93,205,1);
+	}
+	.dbk_slidePanel .dbk_listSelectButton.dbk_selected.dbk_header:hover {
+		background-color: rgba(43,93,205,1);
+	}
+
+	/* Buttons in slide out panel */
+	.dbk_slidePanel .dbk_button_default {
+		color: rgb(50,50,50);
+		background-color: rgb(107,107,108);
+		border-color: rgba(0,0,0, 0.3);
+	}
+	.dbk_slidePanel .dbk_button_default:hover {
+		background-color: rgb(97,97,98);
+	}
+
+/* !-- Additions Block Do Not Remove - Slide Panel --> */
+/* New and updated styles will go after this block */
+/* <-- Additions Block End --! */
+
+/* Specific icons used but no override styles applied */
+/* http://astronautweb.co/snippet/font-awesome/ to get the content for changing icons */
+.dbk_icon_home {}
+.dbk_icon_angle_left {}
+.dbk_icon_angle_right {}
+.dbk_icon_cog {}
+.dbk_icon_check {}
+.dbk_icon_arrow_left {}
+.dbk_icon_arrow_right {}
+.dbk_icon_chevron_circle_right {}
+.dbk_icon_chevron_circle_left {}
+.dbk_icon_help {}
+.dbk_icon_add {}
+.dbk_icon_cog {}
+
+/* !-- Additions Block Do Not Remove - More Classes --> */
+/* New and updated styles will go after this block */
+/* <-- Additions Block End --!

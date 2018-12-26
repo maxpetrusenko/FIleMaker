@@ -1,0 +1,25 @@
+var pairs =
+{
+"sqrt":{"calculates":1,"number":1,"equation":1,"returns":1,"squarefeet":1}
+,"calculates":{"square":1}
+,"square":{"root":1}
+,"root":{"number":1}
+,"number":{"sqrt":1,"number":1,"-any":1,"numeric":1,"filemaker":1,"field":1}
+,"-any":{"positive":1}
+,"positive":{"number":1}
+,"numeric":{"expression":1}
+,"expression":{"field":1,"number":1}
+,"field":{"numeric":1,"36":1}
+,"filemaker":{"pro":1}
+,"pro":{"6.0":1}
+,"6.0":{"earlier":1}
+,"earlier":{"use":1}
+,"use":{"function":1}
+,"function":{"calculate":1}
+,"calculate":{"sqrt":1}
+,"equation":{"sqrt":1}
+,"returns":{"sqrt":1,"if":1}
+,"squarefeet":{"returns":1,"number":1}
+,"if":{"squarefeet":1}
+}
+;Search.control.loadWordPairs(pairs);

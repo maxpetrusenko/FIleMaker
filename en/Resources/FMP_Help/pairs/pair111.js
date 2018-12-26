@@ -1,0 +1,21 @@
+var pairs =
+{
+"daynamej":{"returns":1,"date":1}
+,"returns":{"text":1,"japanese":1}
+,"text":{"japanese":1,"filemaker":1,"full":1}
+,"japanese":{"full":1,"text":1}
+,"full":{"name":1}
+,"name":{"weekday":1}
+,"weekday":{"date":1,"occurring":1}
+,"date":{"daynamej":1,"date":1,"-any":1,"text":1,"2021":1}
+,"-any":{"calendar":1}
+,"calendar":{"date":1}
+,"filemaker":{"pro":1}
+,"pro":{"6.0":1}
+,"6.0":{"earlier":1}
+,"earlier":{"daynamej":1}
+,"2021":{"returns":1}
+,"occurring":{"january":1}
+,"january":{"2021":1}
+}
+;Search.control.loadWordPairs(pairs);

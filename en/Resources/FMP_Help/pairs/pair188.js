@@ -1,0 +1,20 @@
+var pairs =
+{
+"get":{"accounttype":1,"account":1,"authentication":1}
+,"accounttype":{"returns":1,"none":1,"get":1}
+,"returns":{"current":1}
+,"current":{"account\u0027s":1}
+,"account\u0027s":{"authentication":1}
+,"authentication":{"type":1}
+,"type":{"get":1,"getaccounttype":1,"authenticate":1}
+,"none":{"text":1}
+,"text":{"filemaker":1}
+,"filemaker":{"pro":1}
+,"pro":{"18.0":1}
+,"18.0":{"advanced":1}
+,"advanced":{"get":1}
+,"account":{"type":1}
+,"getaccounttype":{"get":1}
+,"authenticate":{"via":1}
+}
+;Search.control.loadWordPairs(pairs);
